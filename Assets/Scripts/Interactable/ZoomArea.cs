@@ -1,29 +1,22 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class ZoomArea : MonoBehaviour, IInteractable, IPointerClickHandler
 {
     [SerializeField] private GameObject zoomViewPrefab;
-    private RoomController roomController;
 
 
 
-    private void Start()
+    public void Interact()
     {
-        roomController = GameManager.Instance.RoomController;
-    }
-
-
-
-    public void OnInteract()
-    {
-        roomController.ZoomInView(zoomViewPrefab);
+        GameManager.Instance.RoomController.ZoomInView(zoomViewPrefab);
     }
 
 
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        OnInteract();
+        Interact();
     }
 }

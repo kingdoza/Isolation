@@ -4,6 +4,7 @@ using UnityEngine;
 public class RoomController : MonoBehaviour {
     [SerializeField] private List<Room> rooms;
     private UIController uiController;
+    private TimeController timeController;
     private Room defaultRoom;
     private Room currentRoom;
     private GameObject currentView;
@@ -14,6 +15,7 @@ public class RoomController : MonoBehaviour {
     public void InitRoomAndShow()
     {
         uiController = GameManager.Instance.UIController;
+        timeController = GameManager.Instance.TimeController;
 
         if (defaultRoom == null)
         {
@@ -30,8 +32,8 @@ public class RoomController : MonoBehaviour {
     public void ZoomOutView()
     {
         isZoomIn = false;
-        ShowRoomView(currentRoom.CurrentView);
-        SetViewMoveButtons();
+        ChangeRoomView(currentRoom.CurrentView);
+        timeController.ProgressMinutes(ProgressTimeType.ZoomOut);
     }
 
 
@@ -39,8 +41,8 @@ public class RoomController : MonoBehaviour {
     public void ZoomInView(GameObject newView) 
     {
         isZoomIn = true;
-        ShowRoomView(newView);
-        SetViewMoveButtons();
+        ChangeRoomView(newView);
+        timeController.ProgressMinutes(ProgressTimeType.ZoomIn);
     }
 
 
@@ -52,6 +54,14 @@ public class RoomController : MonoBehaviour {
             Destroy(currentView);
         }
         currentView = Instantiate(newView);
+        SetViewMoveButtons();
+    }
+
+
+
+    private void ChangeRoomView(GameObject newView)
+    {
+        uiController.FadeOutThenIn(ShowRoomView, newView);
     }
 
 
@@ -59,7 +69,8 @@ public class RoomController : MonoBehaviour {
     public void MoveLeft()
     {
         --currentRoom.ViewIndex;
-        ShowRoomView(currentRoom.CurrentView);
+        ChangeRoomView(currentRoom.CurrentView);
+        timeController.ProgressMinutes(ProgressTimeType.Move);
     }
 
 
@@ -67,7 +78,8 @@ public class RoomController : MonoBehaviour {
     public void MoveRight()
     {
         ++currentRoom.ViewIndex;
-        ShowRoomView(currentRoom.CurrentView);
+        ChangeRoomView(currentRoom.CurrentView);
+        timeController.ProgressMinutes(ProgressTimeType.Move);
     }
 
 
@@ -77,7 +89,6 @@ public class RoomController : MonoBehaviour {
         isZoomIn = false;
         currentRoom = newRoom;
         currentRoom.ViewIndex = viewIndex;
-        SetViewMoveButtons();
     }
 
 
