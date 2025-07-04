@@ -9,6 +9,13 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler
 
 
 
+    private void Start()
+    {
+        gameObject.AddComponent<MouseHover>();
+    }
+
+
+
     public void Interact()
     {
         Debug.Log(itemName + " is clicked!!!");

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -5,6 +6,16 @@ using UnityEngine.EventSystems;
 public class ZoomArea : MonoBehaviour, IInteractable, IPointerClickHandler
 {
     [SerializeField] private GameObject zoomViewPrefab;
+
+
+
+    private void Start()
+    {
+        if(gameObject.GetComponent<MouseHover>() == null)
+        {
+            gameObject.AddComponent<MouseHover>();
+        }
+    }
 
 
 
