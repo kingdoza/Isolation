@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class SpriteResizer : MonoBehaviour
 {
-    private const float TargetWidth = 1920;
+    private const float TargetWidth = 1800;
 
 
 
