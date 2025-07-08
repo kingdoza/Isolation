@@ -10,6 +10,8 @@ public class RoomController : MonoBehaviour {
     private GameObject currentView;
     private bool isZoomIn;
 
+    public GameObject CurrentView => currentView;
+
 
 
     public void InitRoomAndShow()
@@ -54,6 +56,7 @@ public class RoomController : MonoBehaviour {
             Destroy(currentView);
         }
         currentView = Instantiate(newView);
+        Camera.main.gameObject.GetComponent<EgdeScroller>().InitPosAndSetView(currentView);
         SetViewMoveButtons();
     }
 
