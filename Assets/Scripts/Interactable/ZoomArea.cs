@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class ZoomArea : MonoBehaviour, IInteractable, IPointerClickHandler
+public class ZoomArea : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameObject zoomViewPrefab;
 
@@ -21,13 +21,21 @@ public class ZoomArea : MonoBehaviour, IInteractable, IPointerClickHandler
 
     public void Interact()
     {
-        GameManager.Instance.RoomController.ZoomInView(zoomViewPrefab);
+            GameManager.Instance.RoomController.ZoomInView(zoomViewPrefab);
     }
 
 
 
-    public void OnPointerClick(PointerEventData eventData)
+    private void OnMouseUp()
     {
-        Interact();
+        if (!DragScroller.IsDragging)
+            Interact();
     }
+
+
+
+    //public void OnPointerClick(PointerEventData eventData)
+    //{
+    //    Interact();
+    //}
 }

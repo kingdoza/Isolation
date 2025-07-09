@@ -27,7 +27,16 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Interact();
+        //if(!DragScroller.IsDragging)
+        //    Interact();
+    }
+
+
+
+    private void OnMouseUp()
+    {
+        if(!DragScroller.IsDragging)
+            Interact();
     }
 
 

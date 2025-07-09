@@ -56,7 +56,7 @@ public class RoomController : MonoBehaviour {
             Destroy(currentView);
         }
         currentView = Instantiate(newView);
-        Camera.main.gameObject.GetComponent<EgdeScroller>().InitPosAndSetView(currentView);
+        Camera.main.gameObject.GetComponent<DragScroller>().InitPosAndSetView(currentView);
         SetViewMoveButtons();
     }
 
