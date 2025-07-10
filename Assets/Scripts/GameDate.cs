@@ -169,6 +169,16 @@ public class GameDate : ICloneable
     public string DateString => $"{years:D4}-{months:D2}-{days:D2}";
     public string TimeString => $"{hours:D2}:{minutes:D2}";
     public string FullString => $"{DateString} {TimeString}";
+
+
+    public string TwelveClockTimeString(out string ampm)
+    {
+        int twelveClockHours = hours % 12;
+        if (twelveClockHours == 0)
+            twelveClockHours = 12;
+        ampm = hours >= 12 ? "PM" : "AM";
+        return $"{twelveClockHours:D2}:{minutes:D2}";
+    }
 }
 
 

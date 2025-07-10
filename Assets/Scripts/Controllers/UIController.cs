@@ -15,6 +15,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private float fadeWait;
 
     [Header("날짜&시간 UI")] [Space]
+    [SerializeField] private TextMeshProUGUI ampmUI;
     [SerializeField] private TextMeshProUGUI timeUI;
     [SerializeField] private TextMeshProUGUI dateUI;
     [SerializeField] private TextMeshProUGUI daysOfWeekUI;
@@ -80,7 +81,8 @@ public class UIController : MonoBehaviour
 
     public void ShowGameDateClock(GameDate gameDate)
     {
-        timeUI.text = gameDate.TimeString;
+        timeUI.text = gameDate.TwelveClockTimeString(out string ampm);
+        ampmUI.text = ampm;
         dateUI.text = gameDate.DateString;
         daysOfWeekUI.text = gameDate.DayOfWeek.ToString();
     }
