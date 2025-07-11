@@ -14,7 +14,6 @@ public class GameManager : PersistentSingleton<GameManager>
     public Vector2 ViewSpriteSize => viewSpriteSize;
 
 
-
     private void Start()
     {
         StartStage();
