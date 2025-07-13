@@ -1266,7 +1266,7 @@ MonoBehaviour:
     months: 7
     days: 1
     dayOfWeek: 0
-  limitDayGap: 1
+  limitDayGap: 2
   wakeupHour: 19
   sleepHour: 7
   isWakeupStart: 1
@@ -2455,6 +2455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c158a77ef860a884882308e5aacb448f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomController: {fileID: 0}
   hoverCursor: {fileID: 2800000, guid: 0b566e821e62bea479def8d6d6d1867f, type: 3}
   viewSpriteSize: {x: 1920, y: 1080}
 --- !u!4 &1921262178
