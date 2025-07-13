@@ -1,40 +1,31 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Item : MonoBehaviour, IInteractable, IPointerClickHandler
+public class Item : MonoBehaviour, IInteractable
 {
     [SerializeField] private string itemName;
-    [SerializeField] private Sprite itemicon;//
+
     public string ItemName => itemName;
+    protected Sprite itemicon;
     private Color originalColor;
-    private SpriteRenderer spriteRenderer;//
+    private SpriteRenderer spriteRenderer;
 
 
 
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();//
+        itemicon = GetComponent<SpriteRenderer>().sprite;
+        spriteRenderer = GetComponent<SpriteRenderer>();
         gameObject.AddComponent<MouseHover>();
         originalColor = GetComponent<SpriteRenderer>().color;
     }
 
 
 
-    public void Interact()
+    public virtual void Interact()
     {
         Debug.Log(itemName + " is clicked!!!");
         GameManager.Instance.TimeController.ProgressMinutes(ProgressTimeType.ItemInteract);
-        Sprite icon = GetComponent<SpriteRenderer>().sprite;
-        InventoryUI.Instance.AddItem(itemicon);
-        Destroy(gameObject);
-    } 
-
-
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if(!DragScroller.IsDragging)
-            Interact();
     }
 
 

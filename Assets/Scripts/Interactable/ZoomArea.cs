@@ -21,7 +21,7 @@ public class ZoomArea : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-            GameManager.Instance.RoomController.ZoomInView(zoomViewPrefab);
+        GameManager.Instance.RoomController.ZoomInView(zoomViewPrefab);
     }
 
 
@@ -31,11 +31,4 @@ public class ZoomArea : MonoBehaviour, IInteractable
         if (!DragScroller.IsDragging)
             Interact();
     }
-
-
-
-    //public void OnPointerClick(PointerEventData eventData)
-    //{
-    //    Interact();
-    //}
 }
