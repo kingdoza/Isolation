@@ -2,27 +2,19 @@ using UnityEngine;
 
 public class InteractController : MonoBehaviour
 {
-    private UIController uiController;
-    private TimeController timeController;
+    [SerializeField] private LightSwitch lightSwitch;
 
 
 
-    public void Init()
+    public void EnableLightSwitch()
     {
-        uiController = GameManager.Instance.UIController;
-        timeController = GameManager.Instance.TimeController;
+        lightSwitch.CanInteract = true;
     }
 
 
 
-    private void HandleZoomAreaInteract(IInteractable sender)
+    public void DisableLightSwitch() 
     {
-
-    }
-
-
-    private void HandleItemInteract(IInteractable sender)
-    {
-
-    }
+        lightSwitch.CanInteract = false;
+    }   
 }

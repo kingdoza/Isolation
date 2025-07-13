@@ -14,4 +14,11 @@ public class MouseHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
+
+
+
+    private void OnDisable()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    }
 }

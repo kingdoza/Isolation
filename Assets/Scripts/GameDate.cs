@@ -7,9 +7,9 @@ public class GameDate : ICloneable
     [SerializeField] private int years;
     [SerializeField] private int months;
     [SerializeField] private int days;
-    [SerializeField] private int hours;
-    [SerializeField] private int minutes;
     [SerializeField] private DayOfWeek dayOfWeek;
+    private int hours;
+    private int minutes;
 
     public int Years => years;
     public int Months => months;

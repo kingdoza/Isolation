@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: cd27275e8cbc9ec4d926286459ba99a0
+  - enabled: 1
+    path: Assets/Scenes/Clock.unity
+    guid: 6b2659be445a9184aa1e85d1a0c41e5a
+  - enabled: 1
+    path: Assets/Scenes/TimeOver.unity
+    guid: ea597b2ae77d20143bf9b48b437e2eb7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

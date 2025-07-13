@@ -113,4 +113,11 @@ public class RoomController : MonoBehaviour {
             uiController.EnableMoveButtons();
         }
     }
+
+
+
+    public void DestroyView()
+    {
+        Destroy(currentView);
+    }
 }

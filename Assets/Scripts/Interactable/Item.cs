@@ -1,23 +1,47 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Item : MonoBehaviour, IInteractable
+public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private string itemName;
-
-    public string ItemName => itemName;
+    private bool canInteract = true;
     protected Sprite itemicon;
     private Color originalColor;
     private SpriteRenderer spriteRenderer;
 
+    public string ItemName => itemName;
+    public bool CanInteract
+    {
+        get => canInteract; set
+        {
+            MouseHover mouseHoverComp = GetComponent<MouseHover>();
+            canInteract = value;
+            if (mouseHoverComp == null)
+                return;
+            if (canInteract)
+            {
+                mouseHoverComp.enabled = true;
+            }
+            else
+            {
+                mouseHoverComp.enabled = false;
+            }
+        }
+    }
 
 
-    private void Start()
+
+    private void Awake()
     {
         itemicon = GetComponent<SpriteRenderer>().sprite;
         spriteRenderer = GetComponent<SpriteRenderer>();
         gameObject.AddComponent<MouseHover>();
         originalColor = GetComponent<SpriteRenderer>().color;
+
+        if (gameObject.GetComponent<MouseHover>() == null)
+        {
+            gameObject.AddComponent<MouseHover>();
+        }
     }
 
 
@@ -30,23 +54,25 @@ public class Item : MonoBehaviour, IInteractable
 
 
 
-    private void OnMouseUp()
+    public void OnPointerClick(PointerEventData eventData)
     {
-        if(!DragScroller.IsDragging)
+        if (!DragScroller.IsDragging && CanInteract)
             Interact();
     }
 
 
 
-    private void OnMouseEnter()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        spriteRenderer.color = Color.gray;
+        if(CanInteract)
+            spriteRenderer.color = Color.gray;
     }
 
 
 
-    private void OnMouseExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
-        spriteRenderer.color = originalColor;
+        if (CanInteract)
+            spriteRenderer.color = originalColor;
     }
 }
