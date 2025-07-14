@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,7 +8,7 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointer
     private bool canInteract = true;
     protected Sprite itemicon;
     private Color originalColor;
-    private SpriteRenderer spriteRenderer;
+    protected SpriteRenderer spriteRenderer;
 
     public string ItemName => itemName;
     public bool CanInteract
@@ -24,6 +25,7 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointer
             }
             else
             {
+                spriteRenderer.color = originalColor;
                 mouseHoverComp.enabled = false;
             }
         }
@@ -31,7 +33,7 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointer
 
 
 
-    private void Awake()
+    protected virtual void Start()
     {
         itemicon = GetComponent<SpriteRenderer>().sprite;
         spriteRenderer = GetComponent<SpriteRenderer>();

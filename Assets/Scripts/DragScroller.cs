@@ -2,6 +2,8 @@
 
 public class DragScroller : MonoBehaviour
 {
+    public static bool CanDrag { get; set; } = true;
+
     private Vector2 camViewSize;
     private Vector2 scrollMinPos;
     private Vector2 scrollMaxPos;
@@ -25,7 +27,10 @@ public class DragScroller : MonoBehaviour
 
     private void Update()
     {
-        HandleDrag();
+        if (CanDrag)
+            HandleDrag();
+        else
+            isDragging = false;
     }
 
 

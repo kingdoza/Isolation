@@ -25,6 +25,7 @@ public class RoomController : MonoBehaviour {
         }
 
         isZoomIn = false;
+        DragScroller.CanDrag = true;
         MoveRoom(rooms[0]);
         ShowRoomView(defaultRoom.CurrentView);
     }
@@ -34,6 +35,7 @@ public class RoomController : MonoBehaviour {
     public void ZoomOutView()
     {
         isZoomIn = false;
+        DragScroller.CanDrag = true;
         ChangeRoomView(currentRoom.CurrentView);
         timeController.ProgressMinutes(ProgressTimeType.ZoomOut);
     }
@@ -43,6 +45,7 @@ public class RoomController : MonoBehaviour {
     public void ZoomInView(GameObject newView) 
     {
         isZoomIn = true;
+        DragScroller.CanDrag = false;
         ChangeRoomView(newView);
         timeController.ProgressMinutes(ProgressTimeType.ZoomIn);
     }

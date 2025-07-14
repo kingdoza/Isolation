@@ -119,7 +119,7 @@ public class TimeController : MonoBehaviour
 
     public bool IsLastDay()
     {
-        return ((limitGameDate - currentGameDate) / 60) < 24;
+        return ((limitGameDate - currentGameDate) / 60) <= 12;
     }
 
 

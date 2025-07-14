@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
     private bool isSleeping = false;
     public bool IsSleeping => isSleeping;
+    [HideInInspector] public UnityEvent OnSleep;
+    [HideInInspector] public UnityEvent OnWakeup;
 
 
 
@@ -13,7 +16,8 @@ public class Player : MonoBehaviour
             return;
         isSleeping = true;
         GameManager.Instance.FilterController.SetSleep();
-        GameManager.Instance.InteractController.DisableLightSwitch();
+        OnSleep?.Invoke();
+        //GameManager.Instance.InteractController.DisableLightSwitch();
     }
 
 
@@ -22,10 +26,10 @@ public class Player : MonoBehaviour
     {
         isSleeping = false;
         GameManager.Instance.FilterController.SetWakeup();
-
-        if (GameManager.Instance.TimeController.IsLastDay())
-            GameManager.Instance.InteractController.DisableLightSwitch();
-        else
-            GameManager.Instance.InteractController.EnableLightSwitch();
+        OnWakeup?.Invoke();
+        //if (GameManager.Instance.TimeController.IsLastDay())
+        //    GameManager.Instance.InteractController.DisableLightSwitch();
+        //else
+        //    GameManager.Instance.InteractController.EnableLightSwitch();
     }
 }

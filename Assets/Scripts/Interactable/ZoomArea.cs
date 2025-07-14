@@ -44,9 +44,9 @@ public class ZoomArea : MonoBehaviour, IInteractable, IPointerClickHandler
 
 
 
-    public void OnPointerClick(PointerEventData eventData)
+    public virtual void OnPointerClick(PointerEventData eventData)
     {
-        if (!DragScroller.IsDragging)
+        if (!DragScroller.IsDragging && CanInteract)
             Interact();
     }
 }
