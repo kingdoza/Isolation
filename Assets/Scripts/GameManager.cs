@@ -19,6 +19,24 @@ public class GameManager : PersistentSingleton<GameManager>
     public Player Player => player;
     public Texture2D HoverCursor => hoverCursor;
     public Vector2 ViewSpriteSize => viewSpriteSize;
+    //
+
+    public GameObject BackGround;
+
+    //
+
+    //
+
+    void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            bool isActive = BackGround.activeSelf;
+            BackGround.SetActive(!isActive);
+
+
+        }
+    }
 
 
 
@@ -41,4 +59,8 @@ public class GameManager : PersistentSingleton<GameManager>
         roomController.InitRoomAndShow();
         timeController.InitGameTime();
     }
+   
+    
+
+
 }
