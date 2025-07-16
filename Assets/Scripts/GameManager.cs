@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class GameManager : PersistentSingleton<GameManager>
 {
@@ -39,11 +40,29 @@ public class GameManager : PersistentSingleton<GameManager>
     }
 
 
+    
+        // private void Start()
+        // {
+        //     BackGround.SetActive(true);
+        // }
 
-    private void Start()
+    //  더 좋은 방법 있으면 대체하는게 좋을듯
+    protected override void Awake()
     {
+        base.Awake(); 
+
+        if (Instance == this)
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+    }
+    
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log($"[GameManager] Scene loaded: {scene.name}");
         StartStage();
     }
+    // 
 
 
 
@@ -55,12 +74,17 @@ public class GameManager : PersistentSingleton<GameManager>
         filterController = FindAnyObjectByType<FilterController>();
         interactController = FindAnyObjectByType<InteractController>();
         player = FindAnyObjectByType<Player>();
+        BackGround = GameObject.Find("Background"); //
+        BackGround.SetActive(false);  //
+        
 
         roomController.InitRoomAndShow();
         timeController.InitGameTime();
+        
     }
    
     
+
 
 
 }
