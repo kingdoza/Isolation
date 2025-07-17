@@ -22,5 +22,8 @@ public class LightSwitch : Item
         CanInteract = false;
         spriteRenderer.sprite = switchOffSprite;
         spriteRenderer.color = Color.white;
+
+        SoundController soundPlayer = GameManager.Instance.SoundController;
+        soundPlayer.PlaySFX(soundPlayer.LightSwitch);
     }
 }

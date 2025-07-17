@@ -9,6 +9,7 @@ public class GameManager : PersistentSingleton<GameManager>
     private TimeController timeController;
     private FilterController filterController;
     private InteractController interactController;
+    private SoundController soundController;
     private Player player;
     [SerializeField] private Texture2D hoverCursor;
     [SerializeField] private Vector2 viewSpriteSize;
@@ -17,6 +18,7 @@ public class GameManager : PersistentSingleton<GameManager>
     public TimeController TimeController => timeController;
     public FilterController FilterController => filterController;
     public InteractController InteractController => interactController;
+    public SoundController SoundController => soundController;
     public Player Player => player;
     public Texture2D HoverCursor => hoverCursor;
     public Vector2 ViewSpriteSize => viewSpriteSize;
@@ -73,10 +75,11 @@ public class GameManager : PersistentSingleton<GameManager>
         timeController = FindAnyObjectByType<TimeController>();
         filterController = FindAnyObjectByType<FilterController>();
         interactController = FindAnyObjectByType<InteractController>();
+        soundController = FindAnyObjectByType<SoundController>();
         player = FindAnyObjectByType<Player>();
+
         BackGround = GameObject.Find("Background"); //
         BackGround.SetActive(false);  //
-
 
         roomController.InitRoomAndShow();
         timeController.InitGameTime();

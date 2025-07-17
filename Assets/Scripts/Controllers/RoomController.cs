@@ -5,6 +5,7 @@ public class RoomController : MonoBehaviour {
     [SerializeField] private List<Room> rooms;
     private UIController uiController;
     private TimeController timeController;
+    private SoundController soundController;
     private Room defaultRoom;
     private Room currentRoom;
     private GameObject currentView;
@@ -26,14 +27,17 @@ public class RoomController : MonoBehaviour {
     {
         if (Input.GetKeyUp(KeyCode.LeftArrow) && !isZoomIn)
         {
+            soundController.PlaySFX(soundController.Click);
             MoveLeft();
         }
         if (Input.GetKeyUp(KeyCode.RightArrow) && !isZoomIn)
         {
+            soundController.PlaySFX(soundController.Click);
             MoveRight();
         }
         if (Input.GetKeyUp(KeyCode.DownArrow) && isZoomIn)
         {
+            soundController.PlaySFX(soundController.Click);
             ZoomOutView();
         }
     }
@@ -44,6 +48,7 @@ public class RoomController : MonoBehaviour {
     {
         uiController = GameManager.Instance.UIController;
         timeController = GameManager.Instance.TimeController;
+        soundController = GameManager.Instance.SoundController;
 
         if (defaultRoom == null)
         {
