@@ -30,7 +30,7 @@ public class GameManager : PersistentSingleton<GameManager>
 
     void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel")) // esc칠때 설정켜지고 꺼지고 
         {
             bool isActive = BackGround.activeSelf;
             BackGround.SetActive(!isActive);
@@ -40,27 +40,27 @@ public class GameManager : PersistentSingleton<GameManager>
     }
 
 
-    
-        // private void Start()
-        // {
-        //     BackGround.SetActive(true);
-        // }
-
     //  더 좋은 방법 있으면 대체하는게 좋을듯
     protected override void Awake()
     {
-        base.Awake(); 
+        base.Awake();
 
         if (Instance == this)
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
     }
-    
+
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log($"[GameManager] Scene loaded: {scene.name}");
-        StartStage();
+        Debug.Log($"[GameManager] Scene loaded: {scene.name}"); //게임 씬 재로딩할때 스타트 스테이지 로딩 
+        if (scene.name == "Clock")
+        {
+
+            StartStage();
+        }
+
     }
     // 
 
@@ -76,14 +76,13 @@ public class GameManager : PersistentSingleton<GameManager>
         player = FindAnyObjectByType<Player>();
         BackGround = GameObject.Find("Background"); //
         BackGround.SetActive(false);  //
-        
+
 
         roomController.InitRoomAndShow();
         timeController.InitGameTime();
-        
+
     }
-   
-    
+
 
 
 
