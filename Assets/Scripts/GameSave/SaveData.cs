@@ -1,16 +1,22 @@
+using System;
 using UnityEngine;
 
-public class Game : MonoBehaviour
+[Serializable]
+public class SaveData
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public RoomController roomController;
+    public UIController uiController;
+    public TimeController timeController;
+    public FilterController filterController;
+    public InteractController interactController;
+    public Player player;
+    public Texture2D hoverCursor;
+    public Vector2 viewSpriteSize;
+    public RoomController RoomController;
+    public UIController UIController;
+    public TimeController TimeController;
+    public FilterController FilterController;
+    public InteractController InteractController;
+    public Player Player;
+    
 }
