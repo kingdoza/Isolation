@@ -16,7 +16,7 @@ public class DragScroller : MonoBehaviour
 
 
 
-    private void Start()
+    private void Awake()
     {
         camera = GetComponent<Camera>();
         camViewSize.y = camera.orthographicSize * 2f;
