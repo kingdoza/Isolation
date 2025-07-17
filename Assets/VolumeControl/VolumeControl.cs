@@ -13,10 +13,14 @@ public class SettingsController : MonoBehaviour
 
     void Start()
     {
-        
         masterSlider.minValue = MinVolume;
+        masterSlider.maxValue = 1.4125f; 
+
         bgmSlider.minValue = MinVolume;
+        bgmSlider.maxValue = 1.4125f;
+
         sfxSlider.minValue = MinVolume;
+        sfxSlider.maxValue = 1.4125f;
 
         LoadVolumeSettings();
     }
