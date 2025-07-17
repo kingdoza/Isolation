@@ -14,6 +14,32 @@ public class RoomController : MonoBehaviour {
 
 
 
+    private void Update()
+    {
+        if(uiController && !uiController.IsFading)
+            HandleArrowKeyInput();
+    }
+
+
+
+    private void HandleArrowKeyInput()
+    {
+        if (Input.GetKeyUp(KeyCode.LeftArrow) && !isZoomIn)
+        {
+            MoveLeft();
+        }
+        if (Input.GetKeyUp(KeyCode.RightArrow) && !isZoomIn)
+        {
+            MoveRight();
+        }
+        if (Input.GetKeyUp(KeyCode.DownArrow) && isZoomIn)
+        {
+            ZoomOutView();
+        }
+    }
+
+
+
     public void InitRoomAndShow()
     {
         uiController = GameManager.Instance.UIController;

@@ -20,6 +20,11 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dateUI;
     [SerializeField] private TextMeshProUGUI daysOfWeekUI;
 
+    private bool isFading = false;
+    public bool IsFading => isFading;
+
+
+
     public void EnableMoveButtons(params MoveDirection[] directions)
     {
         foreach (var moveButton in moveButtons)
@@ -32,9 +37,7 @@ public class UIController : MonoBehaviour
 
     public void FadeIn(float duration)
     {
-        fadeCanvas.DOFade(1f, duration)
-            .SetEase(Ease.OutQuad);
-
+        fadeCanvas.DOFade(1f, duration).SetEase(Ease.OutQuad);
         fadeCanvas.interactable = true;
         fadeCanvas.blocksRaycasts = true;
     }
@@ -59,6 +62,7 @@ public class UIController : MonoBehaviour
         Sequence seq = DOTween.Sequence();
         fadeCanvas.gameObject.SetActive(true);
 
+        isFading = true;
         seq.Append(fadeCanvas.DOFade(1f, fadeDuration))
            .AppendCallback(() => viewChangeAction?.Invoke(newView))
            .AppendInterval(fadeWait)
@@ -74,6 +78,7 @@ public class UIController : MonoBehaviour
                fadeCanvas.interactable = false;
                fadeCanvas.blocksRaycasts = false;
                fadeCanvas.gameObject.SetActive(false);
+               isFading = false;
            });
     }
 
