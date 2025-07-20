@@ -10,17 +10,18 @@ public class SettingsController : MonoBehaviour
     public Slider sfxSlider;
 
     private const float MinVolume = 0.0001f; 
+    private const float MaxVolume = 0.8913f;
 
     void Start()
     {
         masterSlider.minValue = MinVolume;
-        masterSlider.maxValue = 1.4125f; 
+        masterSlider.maxValue = MaxVolume;
 
         bgmSlider.minValue = MinVolume;
-        bgmSlider.maxValue = 1.4125f;
+        bgmSlider.maxValue = MaxVolume;
 
         sfxSlider.minValue = MinVolume;
-        sfxSlider.maxValue = 1.4125f;
+        sfxSlider.maxValue = MaxVolume;
 
         LoadVolumeSettings();
     }
