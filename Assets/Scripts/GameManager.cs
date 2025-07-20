@@ -25,21 +25,34 @@ public class GameManager : PersistentSingleton<GameManager>
     //
 
     public GameObject BackGround;
-
+    
     //
-
+    public GameObject UIBlocker;
     //
-
+    public RoomController RC;
     void Update()
     {
-        if (Input.GetButtonDown("Cancel")) // esc칠때 설정켜지고 꺼지고 
+        if (Input.GetButtonDown("Cancel"))
         {
             bool isActive = BackGround.activeSelf;
             BackGround.SetActive(!isActive);
+            UIBlocker.SetActive(!isActive);
 
-
+            if (!isActive)
+            {
+                Time.timeScale = 0f;
+                RC.enabled = false;
+                DragScroller.CanDrag = false;
+            }
+            else
+            {
+                Time.timeScale = 1f;
+                RC.enabled = true;
+                DragScroller.CanDrag = true;
+            }
         }
     }
+    
 
 
     //  더 좋은 방법 있으면 대체하는게 좋을듯

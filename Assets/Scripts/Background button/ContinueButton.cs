@@ -9,13 +9,19 @@ public class ContinueButton : MonoBehaviour
     }
 
     public GameObject Background;
+    public GameObject UIBlocker;
+    public RoomController RC;
 
     public void ClickContinue()
     {
         Background.SetActive(false);
+        UIBlocker.SetActive(false);
+        Time.timeScale = 1f;
+        RC.enabled = true;
+        DragScroller.CanDrag = true;
     }
 
 
-    // Update is called once per frame
+    
     
 }
