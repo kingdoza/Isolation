@@ -96,6 +96,7 @@ public class GameManager : PersistentSingleton<GameManager>
 
         roomController.InitRoomAndShow();
         timeController.InitGameTime();
+        uiController.DisableMindTree();
 
     }
 

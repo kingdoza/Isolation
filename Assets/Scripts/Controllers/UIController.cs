@@ -20,6 +20,11 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dateUI;
     [SerializeField] private TextMeshProUGUI daysOfWeekUI;
 
+    [Header("심상 관련 UI")] [Space]
+    [SerializeField] private CanvasGroup mindTreePanel;
+    [SerializeField] private GameObject toMindButton;
+    [SerializeField] private GameObject toRoomButton;
+
     private bool isFading = false;
     public bool IsFading => isFading;
 
@@ -90,6 +95,30 @@ public class UIController : MonoBehaviour
         ampmUI.text = ampm;
         dateUI.text = gameDate.DateString;
         daysOfWeekUI.text = gameDate.DayOfWeek.ToString();
+    }
+
+
+
+    public void EnableMindTree()
+    {
+        toMindButton.SetActive(false);
+        toRoomButton.SetActive(true);
+        DragScroller.CanDrag = false;
+        mindTreePanel.alpha = 1f;
+        mindTreePanel.interactable = true;
+        mindTreePanel.blocksRaycasts = true;
+    }
+
+
+
+    public void DisableMindTree()
+    {
+        toMindButton.SetActive(true);
+        toRoomButton.SetActive(false);
+        DragScroller.CanDrag = true;
+        mindTreePanel.alpha = 0f;
+        mindTreePanel.interactable = false;
+        mindTreePanel.blocksRaycasts = false;
     }
 
 
