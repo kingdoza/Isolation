@@ -18,11 +18,17 @@ public class InventoryUI : MonoBehaviour
         else
             Destroy(gameObject);
     }
-
-    public void AddItem(Sprite itemIcon)
+    public void AddItem(CollectibleItem item)
     {
         GameObject slot = Instantiate(slotPrefab, slotParent);
         Image image = slot.transform.Find("Image").GetComponent<Image>();
-        image.sprite = itemIcon;
+        image.sprite = item.InventorySprite;
     }
+
+    // public void AddItem(Sprite itemIcon)
+    // {
+    //     GameObject slot = Instantiate(slotPrefab, slotParent);
+    //     Image image = slot.transform.Find("Image").GetComponent<Image>();
+    //     image.sprite = itemIcon;
+    // }
 }

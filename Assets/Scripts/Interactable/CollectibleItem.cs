@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 public class CollectibleItem : Item
 {
     [SerializeField] private Sprite inventorySprite;
+    public Sprite InventorySprite => inventorySprite;
 
 
 
@@ -11,7 +12,7 @@ public class CollectibleItem : Item
     {
         //webhook test
         base.Interact();
-        InventoryUI.Instance.AddItem(itemicon);
+        InventoryUI.Instance.AddItem(this);
         Destroy(gameObject);
     }
 }
