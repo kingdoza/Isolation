@@ -18,7 +18,7 @@ public class ContinueButton : MonoBehaviour
         UIBlocker.SetActive(false);
         Time.timeScale = 1f;
         RC.enabled = true;
-        DragScroller.CanDrag = true;
+        //DragScroller.CanDrag = true;
     }
 
 

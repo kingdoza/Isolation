@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
+using static ControllerUtils;
 
 public class GameManager : PersistentSingleton<GameManager>
 {
@@ -44,13 +44,13 @@ public class GameManager : PersistentSingleton<GameManager>
             {
                 Time.timeScale = 0f;
                 RC.enabled = false;
-                DragScroller.CanDrag = false;
+                //DragScroller.CanDrag = false;
             }
             else
             {
                 Time.timeScale = 1f;
                 RC.enabled = true;
-                DragScroller.CanDrag = true;
+                //DragScroller.CanDrag = true;
             }
         }
     }
@@ -66,6 +66,13 @@ public class GameManager : PersistentSingleton<GameManager>
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
+    }
+
+
+
+    private void Start()
+    {
+        RegisterDragScrollCondition(() => !BackGround.activeSelf);
     }
 
 

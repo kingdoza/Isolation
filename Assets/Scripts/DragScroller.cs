@@ -1,8 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 public class DragScroller : MonoBehaviour
 {
-    public static bool CanDrag { get; set; } = true;
+    private List<Func<bool>> dragConditions = new List<Func<bool>>();
+    public bool CanDrag => dragConditions.All(cond => cond());
 
     private Vector2 camViewSize;
     private Vector2 scrollMinPos;
@@ -79,5 +83,20 @@ public class DragScroller : MonoBehaviour
         scrollMaxPos = (Vector2)viewBounds.max - camViewSize / 2;
         scrollMinPos += Vector2.one * 0.05f;
         scrollMaxPos -= Vector2.one * 0.05f;
+    }
+
+
+
+    public void RegisterCondition(Func<bool> condition)
+    {
+        if (!dragConditions.Contains(condition))
+            dragConditions.Add(condition);
+    }
+
+
+
+    public void UnregisterCondition(Func<bool> condition)
+    {
+        dragConditions.Remove(condition);
     }
 }

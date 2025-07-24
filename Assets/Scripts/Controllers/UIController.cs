@@ -3,6 +3,7 @@ using UnityEngine;
 using System;
 using DG.Tweening;
 using TMPro;
+using static ControllerUtils;
 
 public class UIController : MonoBehaviour
 {
@@ -27,6 +28,12 @@ public class UIController : MonoBehaviour
 
     private bool isFading = false;
     public bool IsFading => isFading;
+
+
+    private void Start()
+    {
+        RegisterDragScrollCondition(() => !mindTreePanel.activeSelf);
+    }
 
 
 
@@ -103,7 +110,7 @@ public class UIController : MonoBehaviour
     {
         toMindButton.SetActive(false);
         toRoomButton.SetActive(true);
-        DragScroller.CanDrag = false;
+        //DragScroller.CanDrag = false;
         mindTreePanel.SetActive(true);
     }
 
@@ -113,7 +120,7 @@ public class UIController : MonoBehaviour
     {
         toMindButton.SetActive(true);
         toRoomButton.SetActive(false);
-        DragScroller.CanDrag = true;
+        //DragScroller.CanDrag = true;
         mindTreePanel.SetActive(false);
     }
 

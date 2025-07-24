@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static ControllerUtils;
 
 public class RoomController : MonoBehaviour {
     [SerializeField] private List<Room> rooms;
@@ -12,6 +13,13 @@ public class RoomController : MonoBehaviour {
     private bool isZoomIn;
 
     public GameObject CurrentView => currentView;
+
+
+
+    private void Start()
+    {
+        RegisterDragScrollCondition(() => !isZoomIn);
+    }
 
 
 
@@ -56,7 +64,7 @@ public class RoomController : MonoBehaviour {
         }
 
         isZoomIn = false;
-        DragScroller.CanDrag = true;
+        //DragScroller.CanDrag = true;
         MoveRoom(rooms[0]);
         ShowRoomView(defaultRoom.CurrentView);
     }
@@ -66,7 +74,7 @@ public class RoomController : MonoBehaviour {
     public void ZoomOutView()
     {
         isZoomIn = false;
-        DragScroller.CanDrag = true;
+        //DragScroller.CanDrag = true;
         ChangeRoomView(currentRoom.CurrentView);
         timeController.ProgressMinutes(ProgressTimeType.ZoomOut);
     }
@@ -76,7 +84,7 @@ public class RoomController : MonoBehaviour {
     public void ZoomInView(GameObject newView) 
     {
         isZoomIn = true;
-        DragScroller.CanDrag = false;
+        //DragScroller.CanDrag = false;
         ChangeRoomView(newView);
         timeController.ProgressMinutes(ProgressTimeType.ZoomIn);
     }

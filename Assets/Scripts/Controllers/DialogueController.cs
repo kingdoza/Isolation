@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static ControllerUtils;
 
 
 public class DialogueController : MonoBehaviour
@@ -18,7 +19,14 @@ public class DialogueController : MonoBehaviour
 
 
 
-    public void StartItemDialogSequence(DialogueItem item) 
+    private void Start()
+    {
+        RegisterDragScrollCondition(() => !dialoguePanel.activeSelf);
+    }
+
+
+
+    public void StartItemDialogSequence(DialogueItem item)
     {
         textBox.text = "";
         EnableDialoguePanel();
