@@ -1046,6 +1046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: "\uCC45"
+  inventorySprite: {fileID: -6265769554833276791, guid: 0c9d4bcc567275b4bbbcc03c94565e57, type: 3}
 --- !u!1 &7154543789999426926
 GameObject:
   m_ObjectHideFlags: 0
