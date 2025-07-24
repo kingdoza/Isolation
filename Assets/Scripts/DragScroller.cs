@@ -43,12 +43,23 @@ public class DragScroller : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if (!CanDrag)
+            {
+                isDragging = false;
+                return;
+            }
             dragOrigin = camera.ScreenToWorldPoint(Input.mousePosition);
             isDragging = false;
         }
 
         if (Input.GetMouseButton(0))
         {
+            if (!CanDrag)
+            {
+                isDragging = false;
+                return;
+            }
+
             Vector3 current = camera.ScreenToWorldPoint(Input.mousePosition);
             Vector3 difference = dragOrigin - current;
 

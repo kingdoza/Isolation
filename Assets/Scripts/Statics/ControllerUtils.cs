@@ -5,7 +5,6 @@ public static class ControllerUtils
 {
     public static void RegisterDragScrollCondition(Func<bool> condition)
     {
-        Debug.Log(condition);
         DragScroller dragScroller = Camera.main.GetComponent<DragScroller>();
         dragScroller.RegisterCondition(condition);
     }
