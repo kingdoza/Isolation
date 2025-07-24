@@ -10,6 +10,7 @@ public class GameManager : PersistentSingleton<GameManager>
     private FilterController filterController;
     private InteractController interactController;
     private SoundController soundController;
+    private DialogueController dialogueController;
     private Player player;
     [SerializeField] private Texture2D hoverCursor;
     [SerializeField] private Vector2 viewSpriteSize;
@@ -19,6 +20,7 @@ public class GameManager : PersistentSingleton<GameManager>
     public FilterController FilterController => filterController;
     public InteractController InteractController => interactController;
     public SoundController SoundController => soundController;
+    public DialogueController DialogueController => dialogueController;
     public Player Player => player;
     public Texture2D HoverCursor => hoverCursor;
     public Vector2 ViewSpriteSize => viewSpriteSize;
@@ -83,12 +85,14 @@ public class GameManager : PersistentSingleton<GameManager>
 
     private void StartStage()
     {
+        //나중에 FindAnyObjectByType 는 전부 최적화 필요, 모든 컨트롤러들은 Controllers 안에 있으니
         roomController = FindAnyObjectByType<RoomController>();
         uiController = FindAnyObjectByType<UIController>();
         timeController = FindAnyObjectByType<TimeController>();
         filterController = FindAnyObjectByType<FilterController>();
         interactController = FindAnyObjectByType<InteractController>();
         soundController = FindAnyObjectByType<SoundController>();
+        dialogueController = FindAnyObjectByType<DialogueController>();
         player = FindAnyObjectByType<Player>();
 
         BackGround = GameObject.Find("Background"); //
@@ -97,7 +101,7 @@ public class GameManager : PersistentSingleton<GameManager>
         roomController.InitRoomAndShow();
         timeController.InitGameTime();
         uiController.DisableMindTree();
-
+        dialogueController.DisableDialoguePanel();
     }
 
 

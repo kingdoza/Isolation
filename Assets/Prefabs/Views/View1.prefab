@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4450541677563801746}
   - component: {fileID: 4494396554077805052}
-  - component: {fileID: 2991723106315322671}
   - component: {fileID: 5205355481028195191}
+  - component: {fileID: 7093280084790219975}
   m_Layer: 0
   m_Name: "\uCC45\uC7A5_\uCC3D\uBB38_0"
   m_TagString: Untagged
@@ -89,19 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2991723106315322671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 989331318547585862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56b61707b7769da46816de14140da8f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: "\uCC3D\uBB38"
 --- !u!60 &5205355481028195191
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -464,6 +451,33 @@ PolygonCollider2D:
       - {x: -32.18, y: -3.7949998}
       - {x: -31.98, y: -3.7749999}
   m_UseDelaunayMesh: 0
+--- !u!114 &7093280084790219975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989331318547585862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf239557ea723c49a7f76c95584d0da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: "\uCC3D\uBB38"
+  wakeupDialogs:
+  - The wind whispered quiet secrets through the tall trees, rustling the leaves
+    like a voice only nature could understand.
+  - She closed the book with a soft smile, her mind still lingering in the world
+    of its final pages.
+  - Nothing feels better than a warm cup of coffee on a rainy morning, when everything
+    outside is still and gray.
+  sleepDialogs:
+  - They walked slowly, hand in hand, beneath the fading sunset that painted the
+    sky in gentle colors.
+  - Every step forward was a quiet promise to keep going, even when the road ahead
+    seemed uncertain.
+  - In the quiet of the night, the city still had stories to tell, hidden in lights
+    and distant sounds.
 --- !u!1 &1304356523292498458
 GameObject:
   m_ObjectHideFlags: 0
