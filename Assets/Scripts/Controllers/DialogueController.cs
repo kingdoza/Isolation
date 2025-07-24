@@ -21,7 +21,7 @@ public class DialogueController : MonoBehaviour
     public void StartItemDialogSequence(DialogueItem item) 
     {
         textBox.text = "";
-        dialoguePanel.SetActive(true);
+        EnableDialoguePanel();
         bool isPlayerSleep = GameManager.Instance.Player.IsSleeping;
         targetTexts = isPlayerSleep ? item.SleepDialogs : item.WakeupDialogs;
         targetSentence = targetTexts[0];
@@ -72,9 +72,19 @@ public class DialogueController : MonoBehaviour
 
 
 
+    private void EnableDialoguePanel()
+    {
+        //DragScroller.CanDrag = false;
+        textBox.text = "";
+        dialoguePanel.SetActive(true);
+    }
+
+
+
     public void DisableDialoguePanel()
     {
         isTyping = false;
+        //DragScroller.CanDrag = true;
         dialoguePanel.SetActive(false);
         textBox.text = "";
     }
