@@ -98,6 +98,10 @@ public class RoomController : MonoBehaviour {
             Destroy(currentView);
         }
         currentView = Instantiate(newView);
+
+        currentView.AddComponent<RoomDragScroller>();
+        currentView.AddComponent<BoxCollider2D>();
+
         Camera.main.gameObject.GetComponent<DragScroller>().InitPosAndSetView(currentView);
         SetViewMoveButtons();
     }
