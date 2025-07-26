@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static ControllerUtils;
 
 public class LightSwitch : Item
 {
@@ -23,7 +24,6 @@ public class LightSwitch : Item
         spriteRenderer.sprite = switchOffSprite;
         spriteRenderer.color = Color.white;
 
-        SoundController soundPlayer = GameManager.Instance.SoundController;
-        soundPlayer.PlaySFX(soundPlayer.LightSwitch);
+        PlaySFX(SFXClips.LightSwitch);
     }
 }

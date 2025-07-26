@@ -37,17 +37,17 @@ public class RoomController : MonoBehaviour {
     {
         if (Input.GetKeyUp(KeyCode.LeftArrow) && !isZoomIn)
         {
-            soundController.PlaySFX(soundController.Click);
+            PlaySFX(SFXClips.Click);
             MoveLeft();
         }
         if (Input.GetKeyUp(KeyCode.RightArrow) && !isZoomIn)
         {
-            soundController.PlaySFX(soundController.Click);
+            PlaySFX(SFXClips.Click);
             MoveRight();
         }
         if (Input.GetKeyUp(KeyCode.DownArrow) && isZoomIn)
         {
-            soundController.PlaySFX(soundController.Click);
+            PlaySFX(SFXClips.Click);
             ZoomOutView();
         }
     }

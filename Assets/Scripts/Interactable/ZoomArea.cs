@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using static ControllerUtils;
 
 public class ZoomArea : MonoBehaviour, IInteractable, IPointerClickHandler
 {
@@ -42,7 +43,7 @@ public class ZoomArea : MonoBehaviour, IInteractable, IPointerClickHandler
         GameManager.Instance.RoomController.ZoomInView(zoomViewPrefab);
 
         SoundController soundPlayer = GameManager.Instance.SoundController;
-        soundPlayer.PlaySFX(soundPlayer.Click);
+        PlaySFX(SFXClips.Click);
     }
 
 
