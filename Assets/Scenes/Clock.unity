@@ -247,7 +247,7 @@ Transform:
   m_GameObject: {fileID: 115597398}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.727355, y: 0.37623334, z: 0.084942095}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1666,6 +1666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594cbf2098d8d444ca0bfd37364a63be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rightLayout: {fileID: 2060738835}
 --- !u!1 &566528688
 GameObject:
   m_ObjectHideFlags: 0
@@ -5724,7 +5725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shadowDistance: 6
-  startAlpha: 0.4
+  startAlpha: 0.35
 --- !u!114 &1648255111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5737,7 +5738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.4}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.35}
   m_EffectDistance: {x: -1, y: 0}
   m_UseGraphicAlpha: 1
 --- !u!114 &1648255112
@@ -5752,7 +5753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.06666668}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.05833334}
   m_EffectDistance: {x: -6, y: 0}
   m_UseGraphicAlpha: 1
 --- !u!114 &1648255113
@@ -5767,7 +5768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.13333333}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.11666666}
   m_EffectDistance: {x: -5, y: 0}
   m_UseGraphicAlpha: 1
 --- !u!114 &1648255114
@@ -5782,7 +5783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.2}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.175}
   m_EffectDistance: {x: -4, y: 0}
   m_UseGraphicAlpha: 1
 --- !u!114 &1648255115
@@ -5797,7 +5798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.26666668}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.23333332}
   m_EffectDistance: {x: -3, y: 0}
   m_UseGraphicAlpha: 1
 --- !u!114 &1648255116
@@ -5812,7 +5813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.33333334}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.29166666}
   m_EffectDistance: {x: -2, y: 0}
   m_UseGraphicAlpha: 1
 --- !u!1 &1648340430

@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DragScroller : MonoBehaviour
 {
+    [SerializeField] private LayoutElement rightLayout;
     private List<Func<bool>> dragConditions = new List<Func<bool>>();
     public bool CanDrag => dragConditions.All(cond => cond());
 
@@ -92,6 +94,8 @@ public class DragScroller : MonoBehaviour
         Bounds viewBounds = viewObject.GetComponent<SpriteRenderer>().bounds;
         scrollMinPos = (Vector2)viewBounds.min + camViewSize / 2;
         scrollMaxPos = (Vector2)viewBounds.max - camViewSize / 2;
+        float rightWorldOffset = (rightLayout.preferredWidth / Screen.width) * camViewSize.x;
+        scrollMaxPos.x += rightWorldOffset;
         scrollMinPos += Vector2.one * 0.05f;
         scrollMaxPos -= Vector2.one * 0.05f;
     }
