@@ -1,14 +1,18 @@
+using DG.Tweening.Core.Easing;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static ControllerUtils;
+using static UnityEditor.Progress;
 
 
 public class DialogueController : MonoBehaviour
 {
+    [SerializeField] private Color darkenColor;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI textBox;
     [SerializeField] private float typeDelay = 0.1f;
@@ -16,6 +20,7 @@ public class DialogueController : MonoBehaviour
     private string[] targetTexts;
     private string targetSentence;
     private bool isTyping = false;
+    private UnityEvent OnDialogueClosed = new UnityEvent();
 
 
 
@@ -26,13 +31,40 @@ public class DialogueController : MonoBehaviour
 
 
 
+    private void SetOtherRoomObjectsColor(GameObject targetObject, Color color)
+    {
+        GameObject viewObject = GameManager.Instance.RoomController.CurrentView;
+        SpriteRenderer[] childsRenderers = viewObject.GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer renderer in childsRenderers)
+        {
+            if (targetObject.GetComponent<SpriteRenderer>() == renderer)
+                continue;
+            renderer.color = color;
+        }
+    }
+
+
+
     public void StartItemDialogSequence(DialogueItem item)
+    {
+        SetOtherRoomObjectsColor(item.gameObject, darkenColor);
+        GameManager.Instance.UIController.DisableMoveButtons();
+
+        OnDialogueClosed.AddListener(() => SetOtherRoomObjectsColor(item.gameObject, Color.white));
+        OnDialogueClosed.AddListener(() => GameManager.Instance.UIController.EnableMoveButtons());
+
+        bool isPlayerSleep = GameManager.Instance.Player.IsSleeping;
+        StartDialogueSequence(isPlayerSleep ? item.SleepDialogs : item.WakeupDialogs);
+    }
+
+
+
+    private void StartDialogueSequence(string[] sentences)
     {
         textBox.text = "";
         EnableDialoguePanel();
-        bool isPlayerSleep = GameManager.Instance.Player.IsSleeping;
-        targetTexts = isPlayerSleep ? item.SleepDialogs : item.WakeupDialogs;
-        targetSentence = targetTexts[0];
+        targetTexts = sentences;
+        targetSentence = targetTexts[textIndex = 0];
         StartCoroutine(TypeText_Co());
     }
 
@@ -91,6 +123,8 @@ public class DialogueController : MonoBehaviour
 
     public void DisableDialoguePanel()
     {
+        OnDialogueClosed?.Invoke();
+        OnDialogueClosed.RemoveAllListeners();
         isTyping = false;
         //DragScroller.CanDrag = true;
         dialoguePanel.SetActive(false);

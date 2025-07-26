@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 using static ControllerUtils;
 
 public class RoomController : MonoBehaviour {
@@ -11,6 +12,7 @@ public class RoomController : MonoBehaviour {
     private Room currentRoom;
     private GameObject currentView;
     private bool isZoomIn;
+    public bool IsZoomIn => isZoomIn;
 
     public GameObject CurrentView => currentView;
 
@@ -99,11 +101,11 @@ public class RoomController : MonoBehaviour {
         }
         currentView = Instantiate(newView);
 
-        currentView.AddComponent<RoomDragScroller>();
-        currentView.AddComponent<BoxCollider2D>();
+        //currentView.AddComponent<RoomDragScroller>();
+        //currentView.AddComponent<BoxCollider2D>();
 
         Camera.main.gameObject.GetComponent<DragScroller>().InitPosAndSetView(currentView);
-        SetViewMoveButtons();
+        uiController.EnableMoveButtons();
     }
 
 
@@ -146,17 +148,20 @@ public class RoomController : MonoBehaviour {
     {
         if (isZoomIn)
         {
-            uiController.EnableMoveButtons(MoveDirection.Down);
+            uiController.EnableMoveButtons();
+            //uiController.EnableMoveButtons(MoveDirection.Down);
             return;
         }
 
         if (currentRoom.Views.Count > 1)
         {
-            uiController.EnableMoveButtons(MoveDirection.Left, MoveDirection.Right);
+            uiController.EnableMoveButtons();
+            //uiController.EnableMoveButtons(MoveDirection.Left, MoveDirection.Right);
         }
         else
         {
-            uiController.EnableMoveButtons();
+            //uiController.EnableMoveButtons();
+            uiController.DisableMoveButtons();
         }
     }
 

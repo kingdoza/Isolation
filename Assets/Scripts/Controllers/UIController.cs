@@ -37,7 +37,7 @@ public class UIController : MonoBehaviour
 
 
 
-    public void EnableMoveButtons(params MoveDirection[] directions)
+    private void SetMoveButtons(params MoveDirection[] directions)
     {
         foreach (var moveButton in moveButtons)
         {
@@ -45,6 +45,26 @@ public class UIController : MonoBehaviour
             moveButton.button.SetActive(shouldEnable);
         }
     }
+
+
+
+    public void DisableMoveButtons()
+    {
+        SetMoveButtons();
+    }
+
+
+
+    public void EnableMoveButtons()
+    {
+        MoveDirection[] zoomOutDirs = { MoveDirection.Left, MoveDirection.Right };
+        MoveDirection[] zoomInDirs = { MoveDirection.Down };
+
+        bool isZoomIn = GameManager.Instance.RoomController.IsZoomIn;
+        MoveDirection[] moveDirs = isZoomIn ? zoomInDirs : zoomOutDirs;
+        SetMoveButtons(moveDirs);
+    }
+
 
 
     public void FadeIn(float duration)
