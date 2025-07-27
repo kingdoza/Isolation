@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1347b4141a48b374f9f6d5cf5eb3f8c0, type: 3}
   m_Name: SO_CursorTextures
   m_EditorClassIdentifier: 
-  normal: {fileID: 2800000, guid: 0c07e23a09a184d4eaa058fbb4085749, type: 3}
-  click: {fileID: 2800000, guid: 9eeaa30bfd021ab4ba69ae254bd316b2, type: 3}
+  normal: {fileID: 2800000, guid: a9811d4281f60ed40807d4ad762a0a2d, type: 3}
+  click: {fileID: 2800000, guid: 5ef76e33ac2fe2f47a3e09cd0db1c24d, type: 3}
