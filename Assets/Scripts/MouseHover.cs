@@ -1,24 +1,25 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static ControllerUtils;
 
 public class MouseHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Cursor.SetCursor(GameManager.Instance.HoverCursor, Vector2.zero, CursorMode.Auto);
+        SetCursorTexture(CursorTextures.Click);
     }
 
 
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        SetCursorTexture(CursorTextures.Normal);
     }
 
 
 
     private void OnDisable()
     {
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        SetCursorTexture(CursorTextures.Normal);
     }
 }

@@ -73,6 +73,7 @@ public class GameManager : PersistentSingleton<GameManager>
     private void Start()
     {
         RegisterDragScrollCondition(() => !BackGround.activeSelf);
+        SetCursorTexture(CursorTextures.Normal);
     }
 
 

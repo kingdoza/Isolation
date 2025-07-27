@@ -39,6 +39,24 @@ public static class ControllerUtils
 
 
 
+    private static CursorLibrary cursorTextures;
+
+    public static CursorLibrary CursorTextures
+    {
+        get
+        {
+            if (cursorTextures == null)
+                cursorTextures = Resources.Load<CursorLibrary>("SO_CursorTextures");
+
+            if (cursorTextures == null)
+                Debug.LogError("CursorTextures asset not found in Resources!");
+
+            return cursorTextures;
+        }
+    }
+
+
+
     public static void RegisterDragScrollCondition(Func<bool> condition)
     {
         DragScroller dragScroller = Camera.main.GetComponent<DragScroller>();
@@ -50,5 +68,12 @@ public static class ControllerUtils
     public static void PlaySFX(AudioClip clip)
     {
         GameManager.Instance.SoundController.PlaySFX(clip);
+    }
+
+
+
+    public static void SetCursorTexture(Texture2D texture)
+    {
+        Cursor.SetCursor(texture, Vector2.zero, CursorMode.Auto);
     }
 }
