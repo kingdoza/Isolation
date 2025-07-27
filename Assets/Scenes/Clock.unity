@@ -1667,6 +1667,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightLayout: {fileID: 2060738835}
+  sensitivity: 20
+  smoothTime: 0.05
 --- !u!1 &566528688
 GameObject:
   m_ObjectHideFlags: 0

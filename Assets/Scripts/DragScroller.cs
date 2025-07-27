@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class DragScroller : MonoBehaviour
 {
     [SerializeField] private LayoutElement rightLayout;
+    [SerializeField] private float sensitivity;
+    [SerializeField] private float smoothTime;
     private List<Func<bool>> dragConditions = new List<Func<bool>>();
     public bool CanDrag => dragConditions.All(cond => cond());
 
@@ -15,6 +17,8 @@ public class DragScroller : MonoBehaviour
     private Vector2 scrollMaxPos;
 
     private Vector3 dragOrigin;
+    private Vector3 targetPosition;
+    private Vector3 smoothVel;
     private new Camera camera;
 
     private static bool isDragging = false;
@@ -27,6 +31,7 @@ public class DragScroller : MonoBehaviour
         camera = GetComponent<Camera>();
         camViewSize.y = camera.orthographicSize * 2f;
         camViewSize.x = camViewSize.y * camera.aspect;
+        targetPosition = camera.transform.position;
     }
 
 
@@ -63,21 +68,26 @@ public class DragScroller : MonoBehaviour
             }
 
             Vector3 current = camera.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 difference = (dragOrigin - current);
+            Vector3 difference = (dragOrigin - current) * sensitivity;
 
             if (difference.magnitude > 0.05f)
             {
                 isDragging = true;
 
-                camera.transform.position += difference;
-                Vector3 clampedPosition = camera.transform.position;
-                clampedPosition.x = Mathf.Clamp(clampedPosition.x, scrollMinPos.x, scrollMaxPos.x);
-                clampedPosition.y = Mathf.Clamp(clampedPosition.y, scrollMinPos.y, scrollMaxPos.y);
-                camera.transform.position = clampedPosition;
+                targetPosition = camera.transform.position + difference;
+                targetPosition.x = Mathf.Clamp(targetPosition.x, scrollMinPos.x, scrollMaxPos.x);
+                targetPosition.y = Mathf.Clamp(targetPosition.y, scrollMinPos.y, scrollMaxPos.y);
 
                 dragOrigin = camera.ScreenToWorldPoint(Input.mousePosition);
             }
         }
+
+        camera.transform.position = Vector3.SmoothDamp(
+            camera.transform.position,
+            targetPosition,
+            ref smoothVel, 
+            smoothTime
+        );
 
         if (Input.GetMouseButtonUp(0))
         {
@@ -90,6 +100,7 @@ public class DragScroller : MonoBehaviour
     public void InitPosAndSetView(GameObject viewObject)
     {
         transform.position = new Vector3(0, 0, -10);
+        targetPosition = transform.position;
 
         Bounds viewBounds = viewObject.GetComponent<SpriteRenderer>().bounds;
         scrollMinPos = (Vector2)viewBounds.min + camViewSize / 2;
