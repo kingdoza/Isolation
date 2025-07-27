@@ -63,7 +63,7 @@ public class DragScroller : MonoBehaviour
             }
 
             Vector3 current = camera.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 difference = dragOrigin - current;
+            Vector3 difference = (dragOrigin - current);
 
             if (difference.magnitude > 0.05f)
             {

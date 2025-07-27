@@ -7742,6 +7742,7 @@ GameObject:
   - component: {fileID: 2060738832}
   - component: {fileID: 2060738835}
   - component: {fileID: 2060738834}
+  - component: {fileID: 2060738836}
   m_Layer: 5
   m_Name: RightArea
   m_TagString: Untagged
@@ -7798,6 +7799,18 @@ MonoBehaviour:
   m_FlexibleWidth: 0
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &2060738836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060738831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 312321a3d0578bb44b7f47d623d39392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2064625818
 GameObject:
   m_ObjectHideFlags: 0
