@@ -109,7 +109,7 @@ public class GameManager : PersistentSingleton<GameManager>
         player.InitMotives();
         roomController.InitRoomAndShow();
         timeController.InitGameTime();
-        uiController.DisableMindTree();
+        uiController.InitMindTreeUI();
         dialogueController.DisableDialoguePanel();
     }
 

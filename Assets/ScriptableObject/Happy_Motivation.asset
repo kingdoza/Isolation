@@ -24,3 +24,5 @@ MonoBehaviour:
     itemNames:
     - "\uC5B4\uBA38\uB2C8\uC758 \uC790\uC601\uC5C5 \uD3EC\uC2A4\uD130"
     - "\uACE0\uB4F1\uD559\uAD50 \uC878\uC5C5\uC0AC\uC9C4"
+  slotContainer: {fileID: 0}
+  evidenceSlotPrefab: {fileID: 0}

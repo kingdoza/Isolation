@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [HideInInspector] public UnityEvent OnSleep;
     [HideInInspector] public UnityEvent OnWakeup;
     public Dictionary<EndingType, MotiveProgress> MotiveProgresses { get; private set; }
+    [HideInInspector] public UnityEvent<MotiveProgress, string> OnItemCollect;
 
 
 
@@ -58,6 +59,7 @@ public class Player : MonoBehaviour
         if (item.CollectStatus != CollectStatus.Positive)
             return;
         MotiveProgresses[item.EndingType].Collect(item);
+        OnItemCollect?.Invoke(MotiveProgresses[item.EndingType], item.ItemName);
     }
 }
 
@@ -115,6 +117,8 @@ public class MotiveProgress
         int evidenceCount = Motive.evidences.Count;
         for (int i = 0; i < evidenceCount; ++i)
         {
+            if (IsEvidenceCleared(i))
+                continue;
             string collectibleItemName = Motive.evidences[i].itemNames[ClearedItemIdx[i]];
             if (item.ItemName == collectibleItemName)
             {
@@ -124,5 +128,14 @@ public class MotiveProgress
             }
         }
         Debug.LogError(item.ItemName + " is not collectible.");
+    }
+
+
+
+    public bool IsEvidenceCleared(int evidenceIdx)
+    {
+        int evidenceItemCount = Motive.evidences[evidenceIdx].itemNames.Count;
+        int collectedItemCount = ClearedItemIdx[evidenceIdx];
+        return collectedItemCount >= evidenceItemCount;
     }
 }

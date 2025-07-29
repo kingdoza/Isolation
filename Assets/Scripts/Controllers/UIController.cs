@@ -22,7 +22,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI daysOfWeekUI;
 
     [Header("심상 관련 UI")] [Space]
-    [SerializeField] private GameObject mindTreePanel;
+    [SerializeField] private MindTreeUI mindTreeUI;
     [SerializeField] private GameObject toMindButton;
     [SerializeField] private GameObject toRoomButton;
 
@@ -32,7 +32,15 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
-        RegisterDragScrollCondition(() => !mindTreePanel.activeSelf);
+        RegisterDragScrollCondition(() => !mindTreeUI.gameObject.activeSelf);
+    }
+
+
+
+    public void InitMindTreeUI()
+    {
+        mindTreeUI.Init();
+        DisableMindTree();
     }
 
 
@@ -131,7 +139,7 @@ public class UIController : MonoBehaviour
         toMindButton.SetActive(false);
         toRoomButton.SetActive(true);
         //DragScroller.CanDrag = false;
-        mindTreePanel.SetActive(true);
+        mindTreeUI.gameObject.SetActive(true);
     }
 
 
@@ -141,7 +149,7 @@ public class UIController : MonoBehaviour
         toMindButton.SetActive(true);
         toRoomButton.SetActive(false);
         //DragScroller.CanDrag = true;
-        mindTreePanel.SetActive(false);
+        mindTreeUI.gameObject.SetActive(false);
     }
 
 

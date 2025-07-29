@@ -10,6 +10,11 @@ public class Motivation : ScriptableObject
     public string title;
     public string subtitle;
     public List<Evidence> evidences;
+
+#if UNITY_EDITOR
+    public GameObject slotContainer;
+    public GameObject evidenceSlotPrefab;
+#endif
 }
 
 
