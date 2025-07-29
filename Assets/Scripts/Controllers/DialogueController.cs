@@ -22,6 +22,8 @@ public class DialogueController : MonoBehaviour
     private bool isTyping = false;
     private UnityEvent OnDialogueClosed = new UnityEvent();
 
+    public Color DarkenColor => darkenColor;
+
 
 
     private void Start()
@@ -31,27 +33,10 @@ public class DialogueController : MonoBehaviour
 
 
 
-    private void SetOtherRoomObjectsColor(GameObject targetObject, Color color)
-    {
-        GameObject viewObject = GameManager.Instance.RoomController.CurrentView;
-        SpriteRenderer[] childsRenderers = viewObject.GetComponentsInChildren<SpriteRenderer>();
-        foreach (SpriteRenderer renderer in childsRenderers)
-        {
-            if (targetObject.GetComponent<SpriteRenderer>() == renderer)
-                continue;
-            renderer.color = color;
-        }
-    }
-
-
-
     public void StartItemDialogSequence(DialogueItem item)
     {
-        SetOtherRoomObjectsColor(item.gameObject, darkenColor);
-        GameManager.Instance.UIController.DisableMoveButtons();
-
-        OnDialogueClosed.AddListener(() => SetOtherRoomObjectsColor(item.gameObject, Color.white));
-        OnDialogueClosed.AddListener(() => GameManager.Instance.UIController.EnableMoveButtons());
+        item.OnDiaglogueStart();
+        OnDialogueClosed.AddListener(item.OnDialogueEnd);
 
         bool isPlayerSleep = GameManager.Instance.Player.IsSleeping;
         StartDialogueSequence(isPlayerSleep ? item.SleepDialogs : item.WakeupDialogs);

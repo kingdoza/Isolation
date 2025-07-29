@@ -2,19 +2,24 @@ using UnityEngine;
 
 public class InteractController : MonoBehaviour
 {
-    [SerializeField] private LightSwitch lightSwitch;
+    [SerializeField] private TriggerItem[] triggerItems;
 
 
 
-    public void EnableLightSwitch()
+    public void SetTriggerItems(GameObject currentView)
     {
-        lightSwitch.CanInteract = true;
+        Player player = GameManager.Instance.Player;
+        triggerItems = currentView.GetComponentsInChildren<TriggerItem>();
+        foreach (TriggerItem item in triggerItems)
+        {
+            item.CollectStatus = player.GetCollectStatus(item);
+        }
     }
 
 
 
-    public void DisableLightSwitch() 
+    public void SetTriggerItems()
     {
-        lightSwitch.CanInteract = false;
-    }   
+        SetTriggerItems(GameManager.Instance.RoomController.CurrentView);
+    }
 }

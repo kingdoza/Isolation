@@ -100,6 +100,7 @@ public class RoomController : MonoBehaviour {
             Destroy(currentView);
         }
         currentView = Instantiate(newView);
+        GameManager.Instance.InteractController.SetTriggerItems(currentView);
 
         //currentView.AddComponent<RoomDragScroller>();
         //currentView.AddComponent<BoxCollider2D>();
@@ -162,6 +163,19 @@ public class RoomController : MonoBehaviour {
         {
             //uiController.EnableMoveButtons();
             uiController.DisableMoveButtons();
+        }
+    }
+
+
+
+    public void SetOtherRoomObjectsColor(GameObject exceptObject, Color color)
+    {
+        SpriteRenderer[] childsRenderers = CurrentView.GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer renderer in childsRenderers)
+        {
+            if (exceptObject.GetComponent<SpriteRenderer>() == renderer)
+                continue;
+            renderer.color = color;
         }
     }
 

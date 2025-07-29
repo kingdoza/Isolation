@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4450541677563801746}
   - component: {fileID: 4494396554077805052}
   - component: {fileID: 5205355481028195191}
-  - component: {fileID: 7093280084790219975}
+  - component: {fileID: 2700863564372893346}
   m_Layer: 0
   m_Name: "\uCC45\uC7A5_\uCC3D\uBB38_0"
   m_TagString: Untagged
@@ -451,7 +451,7 @@ PolygonCollider2D:
       - {x: -32.18, y: -3.7949998}
       - {x: -31.98, y: -3.7749999}
   m_UseDelaunayMesh: 0
---- !u!114 &7093280084790219975
+--- !u!114 &2700863564372893346
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -460,10 +460,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 989331318547585862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cf239557ea723c49a7f76c95584d0da, type: 3}
+  m_Script: {fileID: 11500000, guid: 1eee369b908ea4049be6ccda4bbde3ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: "\uCC3D\uBB38"
+  itemName: "\uACF5\uBB34\uC6D0 \uC2DC\uD5D8 \uAD50\uC7AC"
   wakeupDialogs:
   - The wind whispered quiet secrets through the tall trees, rustling the leaves
     like a voice only nature could understand.
@@ -478,6 +478,8 @@ MonoBehaviour:
     seemed uncertain.
   - In the quiet of the night, the city still had stories to tell, hidden in lights
     and distant sounds.
+  endingType: 1
+  collectStatus: 1
 --- !u!1 &1304356523292498458
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,8 +490,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2900190765428006035}
   - component: {fileID: 6946408030178758544}
-  - component: {fileID: 5729950672649281506}
   - component: {fileID: 8472346309910257278}
+  - component: {fileID: 3562696254187655377}
   m_Layer: 0
   m_Name: Item
   m_TagString: Untagged
@@ -567,19 +569,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5729950672649281506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1304356523292498458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56b61707b7769da46816de14140da8f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: "\uC544\uC774\uD15C1"
 --- !u!61 &8472346309910257278
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -626,6 +615,27 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3562696254187655377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304356523292498458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eee369b908ea4049be6ccda4bbde3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: "\uC54C\uBC14 \uAD6C\uC9C1\uD3EC\uC2A4\uD130"
+  wakeupDialogs:
+  - The sky turned orange as the sun began to set.
+  - She forgot her umbrella on the train again.
+  sleepDialogs:
+  - They decided to meet at the coffee shop near campus.
+  - A sudden noise startled the cat from its nap.
+  endingType: 1
+  collectStatus: 1
 --- !u!1 &1717248777902321460
 GameObject:
   m_ObjectHideFlags: 0

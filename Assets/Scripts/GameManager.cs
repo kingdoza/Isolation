@@ -106,6 +106,7 @@ public class GameManager : PersistentSingleton<GameManager>
         BackGround = GameObject.Find("Background"); //
         BackGround.SetActive(false);  //
 
+        player.InitMotives();
         roomController.InitRoomAndShow();
         timeController.InitGameTime();
         uiController.DisableMindTree();

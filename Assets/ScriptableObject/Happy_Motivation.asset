@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d8ef522558e63549b88f5cff261e3bc, type: 3}
+  m_Name: Happy_Motivation
+  m_EditorClassIdentifier: 
+  type: 1
+  title: "\uC6B0\uD654"
+  subtitle: "\uD5C8\uBB3C\uC744 \uBC97\uC73C\uBA70"
+  evidences:
+  - title: "\uC9C4\uB85C\uC640 \uAFC8"
+    itemNames:
+    - "\uC54C\uBC14 \uAD6C\uC9C1\uD3EC\uC2A4\uD130"
+    - "\uACF5\uBB34\uC6D0 \uC2DC\uD5D8 \uAD50\uC7AC"
+  - title: "\uC5B4\uBA38\uB2C8\uC5D0\uC758 \uC774\uD574"
+    itemNames:
+    - "\uC5B4\uBA38\uB2C8\uC758 \uC790\uC601\uC5C5 \uD3EC\uC2A4\uD130"
+    - "\uACE0\uB4F1\uD559\uAD50 \uC878\uC5C5\uC0AC\uC9C4"
