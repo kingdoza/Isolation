@@ -14,6 +14,7 @@ public class DialogueController : MonoBehaviour
 {
     [SerializeField] private Color darkenColor;
     [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private GameObject dialogueTextUI;
     [SerializeField] private TextMeshProUGUI textBox;
     [SerializeField] private float typeDelay = 0.1f;
     private int textIndex = 0;
@@ -29,6 +30,7 @@ public class DialogueController : MonoBehaviour
     private void Start()
     {
         RegisterDragScrollCondition(() => !dialoguePanel.activeSelf);
+        RegisterDragScrollCondition(() => !dialogueTextUI.activeSelf);
     }
 
 
@@ -102,6 +104,7 @@ public class DialogueController : MonoBehaviour
         //DragScroller.CanDrag = false;
         textBox.text = "";
         dialoguePanel.SetActive(true);
+        dialogueTextUI.SetActive(true);
     }
 
 
@@ -113,6 +116,7 @@ public class DialogueController : MonoBehaviour
         isTyping = false;
         //DragScroller.CanDrag = true;
         dialoguePanel.SetActive(false);
+        dialogueTextUI.SetActive(false);
         textBox.text = "";
     }
 }

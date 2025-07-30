@@ -1,14 +1,14 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
 using static ControllerUtils;
 
 public class RoomController : MonoBehaviour {
     [SerializeField] private Color focusBackgroundColor;
+    [SerializeField] private GameObject focusPanel;
     [SerializeField] private List<Room> rooms;
     private UIController uiController;
     private TimeController timeController;
-    private SoundController soundController;
     private Room defaultRoom;
     private Room currentRoom;
     private GameObject currentView;
@@ -60,7 +60,6 @@ public class RoomController : MonoBehaviour {
     {
         uiController = GameManager.Instance.UIController;
         timeController = GameManager.Instance.TimeController;
-        soundController = GameManager.Instance.SoundController;
 
         if (defaultRoom == null)
         {
@@ -78,9 +77,24 @@ public class RoomController : MonoBehaviour {
     public void FocusItem(GameObject focusView)
     {
         isZoomIn = true;
-        SetOtherRoomObjectsColor(null, focusBackgroundColor);
-        itemFocusedView = Instantiate(focusView, new Vector3(0, 0, 10), Quaternion.identity);
+        if (itemFocusedView)
+        {
+            OutFocusItem();
+        }
+        focusPanel.SetActive(true);
+        //SetOtherRoomObjectsColor(null, focusBackgroundColor);
+        itemFocusedView = Instantiate(focusView);
         uiController.EnableMoveButtons();
+    }
+
+
+
+    private void OutFocusItem()
+    {
+        Destroy(itemFocusedView);
+        focusPanel.SetActive(false);
+        //SetOtherRoomObjectsColor(null, Color.white);
+        //SetViewbjectsColorAndStatus(Color.white, true);
     }
 
 
@@ -90,8 +104,7 @@ public class RoomController : MonoBehaviour {
         isZoomIn = false;
         if (itemFocusedView) 
         {
-            Destroy(itemFocusedView);
-            SetOtherRoomObjectsColor(null, Color.white);
+            OutFocusItem();
             return;
         }
         //DragScroller.CanDrag = true;
@@ -181,6 +194,26 @@ public class RoomController : MonoBehaviour {
         {
             //uiController.EnableMoveButtons();
             uiController.DisableMoveButtons();
+        }
+    }
+
+
+
+    private void SetViewbjectsColorAndStatus(Color spriteColor, bool interactStatus)
+    {
+        GameObject[] viewObjects = GetComponentsInChildren<Transform>(true).Select(t => t.gameObject).ToArray();
+        foreach (GameObject viewObj in viewObjects)
+        {
+            SpriteRenderer sr = viewObj.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                sr.color = spriteColor;
+            }
+            IInteractable interactable = viewObj.GetComponent<IInteractable>();
+            if (interactable != null)
+            {
+                interactable.CanInteract = interactStatus;
+            }
         }
     }
 

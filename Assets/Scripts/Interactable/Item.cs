@@ -33,11 +33,10 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointer
 
 
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         itemicon = GetComponent<SpriteRenderer>().sprite;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        gameObject.AddComponent<MouseHover>();
         originalColor = GetComponent<SpriteRenderer>().color;
 
         if (gameObject.GetComponent<MouseHover>() == null)
@@ -66,8 +65,18 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointer
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(CanInteract)
-            spriteRenderer.color = Color.gray;
+        if (CanInteract)
+            ChangeAllSubSpritesColor(Color.gray);
+    }
+
+
+
+    private void ChangeAllSubSpritesColor(Color color)
+    {
+        foreach(SpriteRenderer childSr in GetComponentsInChildren<SpriteRenderer>())
+        {
+            childSr.color = color;
+        }
     }
 
 
@@ -75,6 +84,6 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointer
     public void OnPointerExit(PointerEventData eventData)
     {
         if (CanInteract)
-            spriteRenderer.color = originalColor;
+            ChangeAllSubSpritesColor(originalColor);
     }
 }

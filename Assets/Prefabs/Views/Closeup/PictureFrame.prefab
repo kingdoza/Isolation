@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 18218909229831665}
   - component: {fileID: 1048524256344011991}
   - component: {fileID: 9067025987777774}
-  - component: {fileID: 7358075209851950786}
   - component: {fileID: 874670266091661501}
+  - component: {fileID: 5585862645037595848}
+  - component: {fileID: 314974111151456874}
+  - component: {fileID: 8000670863467486515}
   m_Layer: 0
   m_Name: "(3) \uC561\uC790"
   m_TagString: Untagged
@@ -237,25 +239,6 @@ PolygonCollider2D:
       - {x: 13.91232, y: -7.6570325}
       - {x: 14.087538, y: -7.0612907}
   m_UseDelaunayMesh: 0
---- !u!114 &7358075209851950786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102030722732483332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cf239557ea723c49a7f76c95584d0da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 
-  wakeupDialogs:
-  - The cat jumped gracefully onto the windowsill, basking in the afternoon sun.
-  - She had never been to Paris before, but the city felt strangely familiar.
-  sleepDialogs:
-  - Without hesitation, he deleted the message and turned off his phone.
-  - A sudden breeze rustled the leaves, breaking the eerie silence of the forest.
 --- !u!114 &874670266091661501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +251,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d68ff95989f944e8cc1f46f1b5d475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5585862645037595848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102030722732483332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eee369b908ea4049be6ccda4bbde3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: "\uACE0\uB4F1\uD559\uAD50 \uC878\uC5C5\uC0AC\uC9C4"
+  wakeupDialogs:
+  - The cat jumped gracefully onto the windowsill, basking in the afternoon sun.
+  - She had never been to Paris before, but the city felt strangely familiar.
+  sleepDialogs:
+  - Without hesitation, he deleted the message and turned off his phone.
+  - A sudden breeze rustled the leaves, breaking the eerie silence of the forest.
+  endingType: 1
+  collectStatus: 1
+--- !u!114 &314974111151456874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102030722732483332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d8f4b59cd9ca84886c088b4e444ceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: "\uC561\uC790"
+  focusViewPrefab: {fileID: 6907309563162764960, guid: 513fc8564145d1f42a5d86756384d924, type: 3}
+--- !u!114 &8000670863467486515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102030722732483332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2899b05e7db5b124aa74e387bac66981, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wakeupInteract: {fileID: 5585862645037595848}
+  sleepInteract: {fileID: 314974111151456874}
 --- !u!1 &153577740902668046
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,6 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c09cdabeac3be45b8581a940d55d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scale: 1
 --- !u!1 &6946962990857543032
 GameObject:
   m_ObjectHideFlags: 0

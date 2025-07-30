@@ -8,9 +8,9 @@ public class LightSwitch : Item
     [SerializeField] private Sprite switchOnSprite;
 
 
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        base.Awake();
         spriteRenderer.sprite = switchOnSprite;
     }
 

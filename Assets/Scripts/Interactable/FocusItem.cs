@@ -2,34 +2,16 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using static ControllerUtils;
 
-public class FocusItem : MonoBehaviour, IInteractable, IPointerClickHandler
+public class FocusItem : Item
 {
     [SerializeField] private GameObject focusViewPrefab;
-    private bool canInteract = true;
 
-    public bool CanInteract
+
+
+
+    protected override void Awake()
     {
-        get => canInteract; set
-        {
-            MouseHover mouseHoverComp = GetComponent<MouseHover>();
-            canInteract = value;
-            if (mouseHoverComp == null)
-                return;
-            if (canInteract)
-            {
-                mouseHoverComp.enabled = true;
-            }
-            else
-            {
-                mouseHoverComp.enabled = false;
-            }
-        }
-    }
-
-
-
-    private void Awake()
-    {
+        base.Awake();
         if(gameObject.GetComponent<MouseHover>() == null)
         {
             gameObject.AddComponent<MouseHover>();
@@ -38,19 +20,11 @@ public class FocusItem : MonoBehaviour, IInteractable, IPointerClickHandler
 
 
 
-    public void Interact()
+    public override void Interact()
     {
         GameManager.Instance.RoomController.FocusItem(focusViewPrefab);
 
         SoundController soundPlayer = GameManager.Instance.SoundController;
         PlaySFX(SFXClips.Click);
-    }
-
-
-
-    public virtual void OnPointerClick(PointerEventData eventData)
-    {
-        if (!DragScroller.IsDragging && CanInteract)
-            Interact();
     }
 }

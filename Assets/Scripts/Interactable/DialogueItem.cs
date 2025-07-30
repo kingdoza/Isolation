@@ -7,15 +7,17 @@ public class DialogueItem : Item
     [TextArea] [SerializeField] private string[] sleepDialogs;
     private DialogueController dialogueController;
     private RoomController roomController;
+    private int originSortingLayer;
 
     public string[] WakeupDialogs => wakeupDialogs;
     public string[] SleepDialogs => sleepDialogs;
 
 
 
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        base.Awake();
+        originSortingLayer = GetComponent<SpriteRenderer>().sortingOrder;
         dialogueController = GameManager.Instance.DialogueController;
         roomController = GameManager.Instance.RoomController;
     }
@@ -32,15 +34,19 @@ public class DialogueItem : Item
 
     public virtual void OnDiaglogueStart()
     {
-        roomController.SetOtherRoomObjectsColor(gameObject, dialogueController.DarkenColor);
+        //roomController.SetOtherRoomObjectsColor(gameObject, dialogueController.DarkenColor);
         GameManager.Instance.UIController.DisableMoveButtons();
+        GetComponent<SpriteRenderer>().sortingOrder = 100;
+        CanInteract = false;
     }
 
 
 
     public virtual void OnDialogueEnd()
     {
-        roomController.SetOtherRoomObjectsColor(gameObject, Color.white);
+        //roomController.SetOtherRoomObjectsColor(gameObject, Color.white);
         GameManager.Instance.UIController.EnableMoveButtons();
+        GetComponent<SpriteRenderer>().sortingOrder = originSortingLayer;
+        CanInteract = true;
     }
 }

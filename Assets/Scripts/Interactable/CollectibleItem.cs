@@ -10,7 +10,6 @@ public class CollectibleItem : Item
 
     public override void Interact()
     {
-        //webhook test
         base.Interact();
         InventoryUI.Instance.AddItem(this);
         Destroy(gameObject);
