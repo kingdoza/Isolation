@@ -101,12 +101,12 @@ public class RoomController : MonoBehaviour {
 
     public void ZoomOutView()
     {
-        isZoomIn = false;
         if (itemFocusedView) 
         {
             OutFocusItem();
             return;
         }
+        isZoomIn = false;
         //DragScroller.CanDrag = true;
         ChangeRoomView(currentRoom.CurrentView);
         timeController.ProgressMinutes(ProgressTimeType.ZoomOut);
