@@ -1947,7 +1947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotParent: {fileID: 977728906}
-  slotPrefab: {fileID: 5030242033438432127, guid: 143d0c87a58a2ed4bb0691fbbc522b02, type: 3}
+  slotPrefab: {fileID: 1377950451372820801, guid: aa77f539245bf9e4c8a894ee2c0aa3a9, type: 3}
 --- !u!1 &467715622
 GameObject:
   m_ObjectHideFlags: 0
@@ -7553,7 +7553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8291,8 +8291,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 15, y: -6.7960815}
-  m_SizeDelta: {x: 130, y: 1040.5}
+  m_AnchoredPosition: {x: 15, y: -15.117493}
+  m_SizeDelta: {x: 130, y: 1032.1787}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1416230737
 MonoBehaviour:
