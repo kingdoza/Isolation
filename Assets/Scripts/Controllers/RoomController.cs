@@ -4,6 +4,7 @@ using UnityEngine.InputSystem.XR;
 using static ControllerUtils;
 
 public class RoomController : MonoBehaviour {
+    [SerializeField] private Color focusBackgroundColor;
     [SerializeField] private List<Room> rooms;
     private UIController uiController;
     private TimeController timeController;
@@ -13,6 +14,7 @@ public class RoomController : MonoBehaviour {
     private GameObject currentView;
     private bool isZoomIn;
     public bool IsZoomIn => isZoomIn;
+    private GameObject itemFocusedView;
 
     public GameObject CurrentView => currentView;
 
@@ -73,9 +75,25 @@ public class RoomController : MonoBehaviour {
 
 
 
+    public void FocusItem(GameObject focusView)
+    {
+        isZoomIn = true;
+        SetOtherRoomObjectsColor(null, focusBackgroundColor);
+        itemFocusedView = Instantiate(focusView, new Vector3(0, 0, 10), Quaternion.identity);
+        uiController.EnableMoveButtons();
+    }
+
+
+
     public void ZoomOutView()
     {
         isZoomIn = false;
+        if (itemFocusedView) 
+        {
+            Destroy(itemFocusedView);
+            SetOtherRoomObjectsColor(null, Color.white);
+            return;
+        }
         //DragScroller.CanDrag = true;
         ChangeRoomView(currentRoom.CurrentView);
         timeController.ProgressMinutes(ProgressTimeType.ZoomOut);
@@ -173,7 +191,7 @@ public class RoomController : MonoBehaviour {
         SpriteRenderer[] childsRenderers = CurrentView.GetComponentsInChildren<SpriteRenderer>();
         foreach (SpriteRenderer renderer in childsRenderers)
         {
-            if (exceptObject.GetComponent<SpriteRenderer>() == renderer)
+            if (exceptObject != null && exceptObject.GetComponent<SpriteRenderer>() == renderer)
                 continue;
             renderer.color = color;
         }

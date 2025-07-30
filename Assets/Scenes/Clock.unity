@@ -1947,7 +1947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotParent: {fileID: 977728906}
-  slotPrefab: {fileID: 8741607988819901103, guid: a780d7de86399a14b933230693c39e9b, type: 3}
+  slotPrefab: {fileID: 1377950451372820801, guid: aa77f539245bf9e4c8a894ee2c0aa3a9, type: 3}
 --- !u!1 &467715622
 GameObject:
   m_ObjectHideFlags: 0
@@ -3407,7 +3407,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 000000005752c00b
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -6455,6 +6455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0015e1068f22d6e4e99d17c44af836ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  focusBackgroundColor: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
   rooms:
   - {fileID: 2115499221}
 --- !u!4 &1118970127
