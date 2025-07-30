@@ -41,7 +41,7 @@ public class ZoomArea : MonoBehaviour, IInteractable, IPointerClickHandler
         GameManager.Instance.RoomController.ZoomInView(zoomViewPrefab);
 
         SoundController soundPlayer = GameManager.Instance.SoundController;
-        PlaySFX(SFXClips.Click);
+        PlaySFX(SFXClips.click);
     }
 
 

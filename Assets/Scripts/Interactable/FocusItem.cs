@@ -25,6 +25,6 @@ public class FocusItem : Item
         GameManager.Instance.RoomController.FocusItem(focusViewPrefab);
 
         SoundController soundPlayer = GameManager.Instance.SoundController;
-        PlaySFX(SFXClips.Click);
+        PlaySFX(SFXClips.click);
     }
 }
