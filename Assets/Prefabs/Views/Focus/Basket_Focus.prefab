@@ -106,6 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: "\uB4DC\uB77C\uC774\uBC84"
   inventorySprite: {fileID: 568235248234228953, guid: bc93a21815859114681a743080a719ad, type: 3}
+  useType: 1
 --- !u!60 &8905794582111548709
 PolygonCollider2D:
   m_ObjectHideFlags: 0

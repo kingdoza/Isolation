@@ -1,5 +1,8 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static ControllerUtils;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -11,6 +14,12 @@ public class InventoryUI : MonoBehaviour
     [Header("슬롯 프리팹")]
     [SerializeField] private GameObject slotPrefab;
 
+    private List<InventorySlot> slots = new List<InventorySlot>();
+    private InventorySlot slotSelected = null;
+    private bool canSelect = true;
+
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -18,11 +27,30 @@ public class InventoryUI : MonoBehaviour
         else
             Destroy(gameObject);
     }
+
+
+
     public void AddItem(CollectibleItem item)
     {
         GameObject slot = Instantiate(slotPrefab, slotParent);
-        Image image = slot.transform.Find("Image").GetComponent<Image>();
-        image.sprite = item.InventorySprite;
+
+        InventorySlot newSlot = slot.GetComponent<InventorySlot>();
+        slots.Add(newSlot);
+        newSlot.OnClicked.AddListener(OnSlotClicked);
+        newSlot.SetItem(item);
+        //Image image = slot.transform.Find("Image").GetComponent<Image>();
+        //image.sprite = item.InventorySprite;
+    }
+
+
+
+    public void OnSlotClicked(InventorySlot clickedSlot)
+    {
+        if (!canSelect) return;
+
+        slotSelected?.Unselect();
+        slotSelected = (slotSelected == clickedSlot) ? null : clickedSlot;
+        slotSelected?.Select();
     }
 
     // public void AddItem(Sprite itemIcon)

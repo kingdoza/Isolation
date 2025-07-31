@@ -26,6 +26,9 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject toMindButton;
     [SerializeField] private GameObject toRoomButton;
 
+    [Header("좌측 UI 상호작용")] [Space]
+    [SerializeField] private CanvasGroup[] leftUICanvases;
+
     private bool isFading = false;
     public bool IsFading => isFading;
 
@@ -33,6 +36,7 @@ public class UIController : MonoBehaviour
     private void Start()
     {
         RegisterDragScrollCondition(() => !mindTreeUI.gameObject.activeSelf);
+        GameManager.Instance.Player.OnInventoryItemSelect.AddListener(OnPlayerItemSelected);
     }
 
 
@@ -150,6 +154,44 @@ public class UIController : MonoBehaviour
         toRoomButton.SetActive(false);
         //DragScroller.CanDrag = true;
         mindTreeUI.gameObject.SetActive(false);
+    }
+
+
+
+    private void OnPlayerItemSelected(UsableItem uitemType)
+    {
+        if(uitemType == UsableItem.None)
+        {
+            EnableLeftUI();
+        }
+        else
+        {
+            DisableLeftUI();
+        }
+    }
+
+
+
+    private void EnableLeftUI()
+    {
+        foreach (CanvasGroup uiCanvas in leftUICanvases)
+        {
+            uiCanvas.alpha = 1;
+            uiCanvas.interactable = true;
+            uiCanvas.blocksRaycasts = true;
+        }
+    }
+
+
+
+    private void DisableLeftUI()
+    {
+        foreach (CanvasGroup uiCanvas in leftUICanvases)
+        {
+            uiCanvas.alpha = 0.5f;
+            uiCanvas.interactable = false;
+            uiCanvas.blocksRaycasts = false;
+        }
     }
 
 

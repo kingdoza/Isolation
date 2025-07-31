@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using static ControllerUtils;
 
 public class Player : MonoBehaviour
 {
@@ -11,7 +12,19 @@ public class Player : MonoBehaviour
     [HideInInspector] public UnityEvent OnSleep;
     [HideInInspector] public UnityEvent OnWakeup;
     public Dictionary<EndingType, MotiveProgress> MotiveProgresses { get; private set; }
+
     [HideInInspector] public UnityEvent<MotiveProgress, string> OnItemCollect;
+    [HideInInspector] public UnityEvent<UsableItem> OnInventoryItemSelect;
+    [SerializeField] private UsableItem usingItemType = UsableItem.None;
+
+    public UsableItem UsingItemType => usingItemType;
+
+
+
+    private void Start()
+    {
+        RegisterDragScrollCondition(() => usingItemType == UsableItem.None);
+    }
 
 
 
@@ -60,6 +73,14 @@ public class Player : MonoBehaviour
             return;
         MotiveProgresses[item.EndingType].Collect(item);
         OnItemCollect?.Invoke(MotiveProgresses[item.EndingType], item.ItemName);
+    }
+
+
+
+    public void SelectUsableItem(UsableItem uitem)
+    {
+        usingItemType = uitem;
+        OnInventoryItemSelect?.Invoke(uitem);
     }
 }
 

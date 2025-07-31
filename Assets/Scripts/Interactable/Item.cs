@@ -47,6 +47,13 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointer
 
 
 
+    private void Start()
+    {
+        GameManager.Instance.Player.OnInventoryItemSelect.AddListener(OnPlayerItemSelected);
+    }
+
+
+
     public virtual void Interact()
     {
         Debug.Log(itemName + " is clicked!!!");
@@ -85,5 +92,12 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointer
     {
         if (CanInteract)
             ChangeAllSubSpritesColor(originalColor);
+    }
+
+
+
+    protected virtual void OnPlayerItemSelected(UsableItem selectedItem)
+    {
+        CanInteract = selectedItem == UsableItem.None;
     }
 }

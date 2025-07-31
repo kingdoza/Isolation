@@ -36,6 +36,13 @@ public class ZoomArea : MonoBehaviour, IInteractable, IPointerClickHandler
 
 
 
+    private void Start()
+    {
+        GameManager.Instance.Player.OnInventoryItemSelect.AddListener(OnPlayerItemSelected);
+    }
+
+
+
     public void Interact()
     {
         GameManager.Instance.RoomController.ZoomInView(zoomViewPrefab);
@@ -50,5 +57,12 @@ public class ZoomArea : MonoBehaviour, IInteractable, IPointerClickHandler
     {
         if (!DragScroller.IsDragging && CanInteract)
             Interact();
+    }
+
+
+
+    private void OnPlayerItemSelected(UsableItem selectedItem)
+    {
+        CanInteract = selectedItem == UsableItem.None;
     }
 }

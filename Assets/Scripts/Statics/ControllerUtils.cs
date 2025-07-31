@@ -75,6 +75,13 @@ public static class ControllerUtils
 
     public static void SetCursorTexture(Texture2D texture)
     {
-        Cursor.SetCursor(texture, Vector2.zero, CursorMode.Auto);
+        SetCursorTexture(texture, Vector2.zero);
+    }
+
+
+
+    public static void SetCursorTexture(Texture2D texture, Vector2 hotspot)
+    {
+        Cursor.SetCursor(texture, hotspot, CursorMode.Auto);
     }
 }

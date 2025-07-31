@@ -6,20 +6,26 @@ public class MouseHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 {
     public void OnPointerEnter(PointerEventData eventData)
     {
-        SetCursorTexture(CursorTextures.Click);
+        Player player = GameManager.Instance.Player;
+        if (player == null || player.UsingItemType == UsableItem.None)
+            SetCursorTexture(CursorTextures.Click);
     }
 
 
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        SetCursorTexture(CursorTextures.Normal);
+        Player player = GameManager.Instance.Player;
+        if (player == null || player.UsingItemType == UsableItem.None)
+            SetCursorTexture(CursorTextures.Normal);
     }
 
 
 
     private void OnDisable()
     {
-        SetCursorTexture(CursorTextures.Normal);
+        Player player = GameManager.Instance.Player;
+        if (player == null || player.UsingItemType == UsableItem.None)
+            SetCursorTexture(CursorTextures.Normal);
     }
 }
