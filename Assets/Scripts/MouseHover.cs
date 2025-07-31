@@ -28,6 +28,9 @@ public class MouseHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             return;
         Player player = GameManager.Instance.Player;
         if (player == null || player.UsingItemType == UsableItem.None)
+        {
             SetCursorTexture(CursorTextures.Normal);
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
     }
 }

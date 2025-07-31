@@ -25,6 +25,13 @@ public class LightSwitch : Item
 
 
 
+    protected override void Update()
+    {
+        base.Update();
+    }
+
+
+
     public override void Interact()
     {
         base.Interact();

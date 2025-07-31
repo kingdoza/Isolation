@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using static ControllerUtils;
@@ -10,7 +11,10 @@ public class PhotoFrame : MonoBehaviour
     [SerializeField] private List<CollectibleItem> screwsToCollect;
     [SerializeField] private FramePlate backPlateOpen;
     [SerializeField] private FramePlate backPlateClose;
-    [SerializeField] private SortSwitcher photoSwitcher;
+    [SerializeField] private SortSwitcher photoSwitcher1;
+    [SerializeField] private SortSwitcher photoSwitcher2;
+    private Item[] subItems;
+    private bool convertStatus = false;
     private Info info;
     private int jointScrewCount = 4;
     private int screwToJoint = 4;
@@ -22,12 +26,18 @@ public class PhotoFrame : MonoBehaviour
     private void Start()
     {
         info = GameManager.Instance.PuzzleController.PhotoFrameInfo;
+        convertStatus = info.isConverted;
+        photoSwitcher1.GetComponent<Collider2D>().enabled = true;
+        photoSwitcher2.GetComponent<Collider2D>().enabled = false;
         LoadByInfo();
 
         item = GetComponent<Item>();
         item.RegisterInteractCondition(() => jointScrewCount >= screwToJoint);
         backPlateClose.RegisterInteractCondition(() => jointScrewCount <= 0);
-        photoSwitcher.OnItemUse.AddListener(OnPhothSwitched);
+        photoSwitcher1.OnItemUse.AddListener(OnPhothSwitched);
+        photoSwitcher2.OnItemUse.AddListener(OnPhothSwitched);
+        photoSwitcher1.RegisterInteractCondition(() => !convertStatus);
+        photoSwitcher2.RegisterInteractCondition(() => convertStatus);
 
         foreach (Screw screw in GetComponentsInChildren<Screw>(true)) 
         {
@@ -42,9 +52,10 @@ public class PhotoFrame : MonoBehaviour
     private void LoadByInfo()
     {
         //photoRenderer.sprite = info.isConverted ? oldFamilyPhoto : graduationPhoto;
-        if(info.isConverted)
+        if(convertStatus)
         {
-            photoSwitcher.Interact();
+            photoSwitcher1.Interact();
+            SwitchPhotoCollider();
         }
         if(info.isFirstOpened)
         {
@@ -62,7 +73,20 @@ public class PhotoFrame : MonoBehaviour
     private void OnPhothSwitched(ItemUsePoint interaction)
     {
         //PlaySFX(SFXClips.familiyPhoto_FrameTurn);
-        info.isConverted = !info.isConverted;
+        convertStatus = !convertStatus;
+        SwitchPhotoCollider();
+    }
+
+
+
+    private void SwitchPhotoCollider()
+    {
+        Collider2D col1 = photoSwitcher1.GetComponent<Collider2D>();
+        Collider2D col2 = photoSwitcher2.GetComponent<Collider2D>();
+
+        bool temp = col1.enabled;
+        col1.enabled = col2.enabled;
+        col2.enabled = temp;
     }
 
 
@@ -87,6 +111,10 @@ public class PhotoFrame : MonoBehaviour
     private void JointScrew()
     {
         ++jointScrewCount;
+        if (jointScrewCount >= screwToJoint)
+        {
+            info.isConverted = convertStatus;
+        }
     }
 
 

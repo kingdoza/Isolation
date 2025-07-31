@@ -79,7 +79,7 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointer
         }
         else
         {
-            spriteRenderer.color = originalColor;
+            //spriteRenderer.color = originalColor;
             mouseHoverComp.enabled = false;
         }
     }
