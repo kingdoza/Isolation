@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -5,36 +8,45 @@ using UnityEngine.EventSystems;
 public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private string itemName;
-    private bool canInteract = true;
+    //private bool canInteract = true;
     protected Sprite itemicon;
     private Color originalColor;
     protected SpriteRenderer spriteRenderer;
+    protected virtual UsableItem InteractItemStatus => UsableItem.None;
+    private MouseHover mouseHoverComp;
 
     public string ItemName => itemName;
-    public bool CanInteract
-    {
-        get => canInteract; set
-        {
-            MouseHover mouseHoverComp = GetComponent<MouseHover>();
-            canInteract = value;
-            if (mouseHoverComp == null)
-                return;
-            if (canInteract)
-            {
-                mouseHoverComp.enabled = true;
-            }
-            else
-            {
-                spriteRenderer.color = originalColor;
-                mouseHoverComp.enabled = false;
-            }
-        }
-    }
+    //public bool CanInteract
+    //{
+    //    get => canInteract; set
+    //    {
+    //        MouseHover mouseHoverComp = GetComponent<MouseHover>();
+    //        canInteract = value && interactConditions.All(cond => cond());
+    //        if (mouseHoverComp == null)
+    //            return;
+    //        if (canInteract)
+    //        {
+    //            mouseHoverComp.enabled = true;
+    //        }
+    //        else
+    //        {
+    //            spriteRenderer.color = originalColor;
+    //            mouseHoverComp.enabled = false;
+    //        }
+    //    }
+    //}
+
+
+
+    public bool CanInteract { get => interactConditions.All(cond => cond()); }
+
+    private List<Func<bool>> interactConditions = new List<Func<bool>>();
 
 
 
     protected virtual void Awake()
     {
+        mouseHoverComp = GetComponent<MouseHover>();
         itemicon = GetComponent<SpriteRenderer>().sprite;
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = GetComponent<SpriteRenderer>().color;
@@ -47,9 +59,36 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointer
 
 
 
-    private void Start()
+    protected virtual void Start()
     {
-        GameManager.Instance.Player.OnInventoryItemSelect.AddListener(OnPlayerItemSelected);
+        //GameManager.Instance.Player.OnInventoryItemSelect.AddListener(OnPlayerItemSelected);
+        Player player = GameManager.Instance.Player;
+        RegisterInteractCondition(() => player.UsingItemType == InteractItemStatus);
+    }
+
+
+
+    protected virtual void Update()
+    {
+        if (mouseHoverComp == null)
+            return;
+
+        if (CanInteract)
+        {
+            mouseHoverComp.enabled = true;
+        }
+        else
+        {
+            spriteRenderer.color = originalColor;
+            mouseHoverComp.enabled = false;
+        }
+    }
+
+
+
+    public void RegisterInteractCondition(Func<bool> condition)
+    {
+        interactConditions.Add(condition);
     }
 
 
@@ -96,8 +135,8 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointer
 
 
 
-    protected virtual void OnPlayerItemSelected(UsableItem selectedItem)
-    {
-        CanInteract = selectedItem == UsableItem.None;
-    }
+    //protected virtual void OnPlayerItemSelected(UsableItem selectedItem)
+    //{
+    //    CanInteract = selectedItem == UsableItem.None;
+    //}
 }

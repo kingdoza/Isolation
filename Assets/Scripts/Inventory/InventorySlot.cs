@@ -7,7 +7,7 @@ using static ControllerUtils;
 
 public class InventorySlot : MonoBehaviour, IPointerClickHandler
 {
-    private CollectibleItem slotItem;
+    [SerializeField] private CollectibleItem slotItem;
     private Texture2D itemTexture;
     [HideInInspector] public UnityEvent<InventorySlot> OnClicked = new UnityEvent<InventorySlot>();
 

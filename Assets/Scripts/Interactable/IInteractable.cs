@@ -4,6 +4,6 @@ using UnityEngine.Events;
 
 public interface IInteractable
 {
-    bool CanInteract { get; set; }
+    bool CanInteract { get; }
     void Interact();
 }

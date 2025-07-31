@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class DisabledItem : Item
 {
-    private void OnEnable()
+    protected override void Start()
     {
-        CanInteract = false;
+        RegisterInteractCondition(() => !gameObject.activeSelf);
     }
+    //private void OnEnable()
+    //{
+    //    CanInteract = false;
+    //}
 
 
 
-    private void OnDisable()
-    {
-        CanInteract = true;
-    }
+    //private void OnDisable()
+    //{
+    //    CanInteract = true;
+    //}
 }

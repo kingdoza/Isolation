@@ -6,6 +6,7 @@ public class LightSwitch : Item
 {
     [SerializeField] private Sprite switchOffSprite;
     [SerializeField] private Sprite switchOnSprite;
+    private bool isSwitched = false;
 
 
     protected override void Awake()
@@ -16,11 +17,20 @@ public class LightSwitch : Item
 
 
 
+    protected override void Start()
+    {
+        base.Start();
+        RegisterInteractCondition(() => !isSwitched);
+    }
+
+
+
     public override void Interact()
     {
         base.Interact();
         GameManager.Instance.Player.Sleep();
-        CanInteract = false;
+        isSwitched = true;
+        //CanInteract = false;
         spriteRenderer.sprite = switchOffSprite;
         spriteRenderer.color = Color.white;
 

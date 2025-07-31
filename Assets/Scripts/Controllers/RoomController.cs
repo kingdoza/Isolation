@@ -4,6 +4,8 @@ using UnityEngine;
 using static ControllerUtils;
 
 public class RoomController : MonoBehaviour {
+    public static HashSet<string> CollectedItemNames { get; set; } = new HashSet<string>();
+
     [SerializeField] private Color focusBackgroundColor;
     [SerializeField] private GameObject focusPanel;
     [SerializeField] private List<Room> rooms;
@@ -84,6 +86,12 @@ public class RoomController : MonoBehaviour {
         focusPanel.SetActive(true);
         //SetOtherRoomObjectsColor(null, focusBackgroundColor);
         itemFocusedView = Instantiate(focusView);
+        CollectibleItem[] subCollectibleItems = itemFocusedView.GetComponentsInChildren<CollectibleItem>();
+        foreach (CollectibleItem childItem in subCollectibleItems)
+        {
+            if (CollectedItemNames.Contains(childItem.ItemName))
+                childItem.gameObject.SetActive(false);
+        }
         uiController.EnableMoveButtons();
     }
 
@@ -212,7 +220,7 @@ public class RoomController : MonoBehaviour {
             IInteractable interactable = viewObj.GetComponent<IInteractable>();
             if (interactable != null)
             {
-                interactable.CanInteract = interactStatus;
+                //interactable.CanInteract = interactStatus;
             }
         }
     }

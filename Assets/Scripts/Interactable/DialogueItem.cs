@@ -8,6 +8,7 @@ public class DialogueItem : Item
     private DialogueController dialogueController;
     private RoomController roomController;
     private int originSortingLayer;
+    private bool isDialogueProcess = false;
 
     public string[] WakeupDialogs => wakeupDialogs;
     public string[] SleepDialogs => sleepDialogs;
@@ -20,6 +21,14 @@ public class DialogueItem : Item
         originSortingLayer = GetComponent<SpriteRenderer>().sortingOrder;
         dialogueController = GameManager.Instance.DialogueController;
         roomController = GameManager.Instance.RoomController;
+    }
+
+
+
+    protected override void Start()
+    {
+        base.Start();
+        RegisterInteractCondition(() => !isDialogueProcess);
     }
 
 
@@ -37,7 +46,8 @@ public class DialogueItem : Item
         //roomController.SetOtherRoomObjectsColor(gameObject, dialogueController.DarkenColor);
         GameManager.Instance.UIController.DisableMoveButtons();
         GetComponent<SpriteRenderer>().sortingOrder = 100;
-        CanInteract = false;
+        isDialogueProcess = true;
+        //CanInteract = false;
     }
 
 
@@ -47,6 +57,7 @@ public class DialogueItem : Item
         //roomController.SetOtherRoomObjectsColor(gameObject, Color.white);
         GameManager.Instance.UIController.EnableMoveButtons();
         GetComponent<SpriteRenderer>().sortingOrder = originSortingLayer;
-        CanInteract = true;
+        isDialogueProcess = false;
+        //CanInteract = true;
     }
 }
