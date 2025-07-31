@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Chair : DraggableItem
 {
+    [SerializeField] private ZoomItem closetTopZoom;
     private Info info;
 
 
@@ -14,6 +15,7 @@ public class Chair : DraggableItem
         {
             transform.position = new Vector2(rightEnd.position.x, transform.position.y);
         }
+        closetTopZoom.RegisterInteractCondition(() => Mathf.Approximately(transform.position.x, rightEnd.position.x));
     }
 
 
