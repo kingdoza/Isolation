@@ -24,6 +24,8 @@ public class MouseHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     private void OnDisable()
     {
+        if (DraggableItem.isDragging)
+            return;
         Player player = GameManager.Instance.Player;
         if (player == null || player.UsingItemType == UsableItem.None)
             SetCursorTexture(CursorTextures.Normal);

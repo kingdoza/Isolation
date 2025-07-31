@@ -1408,7 +1408,7 @@ GameObject:
   - component: {fileID: 2063550491815973372}
   - component: {fileID: 8641425827654456506}
   - component: {fileID: 8062347146957983067}
-  - component: {fileID: 2630085287737877713}
+  - component: {fileID: 467073552381243488}
   m_Layer: 0
   m_Name: "(8) \uC758\uC790"
   m_TagString: Untagged
@@ -1633,7 +1633,7 @@ PolygonCollider2D:
       - {x: -14.80941, y: -18.873207}
       - {x: -14.106061, y: -17.583733}
   m_UseDelaunayMesh: 0
---- !u!114 &2630085287737877713
+--- !u!114 &467073552381243488
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

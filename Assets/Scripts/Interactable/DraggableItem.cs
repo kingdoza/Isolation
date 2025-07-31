@@ -1,3 +1,6 @@
+using System;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using static ControllerUtils;
@@ -7,13 +10,14 @@ public class DraggableItem : Item
     [SerializeField] protected Transform leftEnd;
     [SerializeField] protected Transform rightEnd;
 
-    private bool isDragging = false;
+    public static bool isDragging = false;
     private float offsetX;
     private float fixedY;
     private Camera mainCamera;
 
     private bool hasReachedLeft = false;
     private bool hasReachedRight = false;
+    private Collider2D[] otherColliders;
 
     private bool isMouseOn = false;
 
@@ -23,20 +27,30 @@ public class DraggableItem : Item
     protected override void Start()
     {
         base.Start();
-        if(leftEnd == null)
+        Transform currentView = GameManager.Instance.RoomController.CurrentView.transform;
+        if (leftEnd == null)
         {
             leftEnd = new GameObject(ItemName + "LeftEnd").transform;
+            leftEnd.SetParent(currentView);
             leftEnd.position = transform.position;
         }
         if (rightEnd == null)
         {
             rightEnd = new GameObject(ItemName + "RightEnd").transform;
+            rightEnd.SetParent(currentView);
             rightEnd.position = transform.position;
         }
 
+        mouseHoverComp = GetComponent<MouseHover>();
+        RegisterDragScrollCondition(() => !isMouseOn);
         RegisterDragScrollCondition(() => !isDragging);
         mainCamera = Camera.main;
         fixedY = transform.position.y;
+
+        otherColliders = GameManager.Instance.RoomController.CurrentView
+            .GetComponentsInChildren<Collider2D>(true) // true면 비활성화 포함
+            .Where(c => !GetComponents<Collider2D>().Contains(c))
+            .ToArray();
     }
 
 
@@ -44,6 +58,8 @@ public class DraggableItem : Item
     private void OnMouseDown()
     {
         isDragging = true;
+        mouseHoverComp.enabled = false;
+        SetCursorTexture(CursorTextures.Click);
         Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         offsetX = transform.position.x - mouseWorldPos.x;
     }
@@ -53,8 +69,13 @@ public class DraggableItem : Item
     private void OnMouseUp()
     {
         isDragging = false;
+        Array.ForEach(otherColliders, col => col.enabled = true);
+        mouseHoverComp.enabled = true;
         if (isMouseOn == false)
+        {
+            SetCursorTexture(CursorTextures.Normal);
             ChangeAllSubSpritesColor(originalColor);
+        }
     }
 
 
@@ -115,6 +136,7 @@ public class DraggableItem : Item
         isMouseOn = true;
         if (CanInteract)
         {
+            Array.ForEach(otherColliders, col => col.enabled = false);
             ChangeAllSubSpritesColor(Color.gray);
         }
     }
@@ -126,6 +148,7 @@ public class DraggableItem : Item
         isMouseOn = false;
         if (CanInteract && !isDragging)
         {
+            Array.ForEach(otherColliders, col => col.enabled = true);
             ChangeAllSubSpritesColor(originalColor);
         }
     }

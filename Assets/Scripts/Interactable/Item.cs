@@ -13,7 +13,7 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointer
     protected Color originalColor;
     protected SpriteRenderer spriteRenderer;
     protected virtual UsableItem InteractItemStatus => UsableItem.None;
-    private MouseHover mouseHoverComp;
+    protected MouseHover mouseHoverComp;
 
     public string ItemName => itemName;
     //public bool CanInteract
