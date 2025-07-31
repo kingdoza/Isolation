@@ -34,6 +34,6 @@ public class LightSwitch : Item
         spriteRenderer.sprite = switchOffSprite;
         spriteRenderer.color = Color.white;
 
-        PlaySFX(SFXClips.lightSwitch);
+        PlaySFX(SFXClips.lightSwitch_On);
     }
 }

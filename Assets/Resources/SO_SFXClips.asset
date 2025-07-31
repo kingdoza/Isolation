@@ -12,5 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49440f5099f5ac7448506fc998eba53c, type: 3}
   m_Name: SO_SFXClips
   m_EditorClassIdentifier: 
-  click: {fileID: 0}
-  lightSwitch: {fileID: 8300000, guid: ffd6e8e1b636e5c419aa2358000e1c9d, type: 3}
+  narration: {fileID: 8300000, guid: 3945897645a25dd438e91b90c54d1a73, type: 3}
+  lightSwitch_On: {fileID: 8300000, guid: eaff37f18e83aa64d8d206e3a41973ab, type: 3}
+  lightSwitch_Off: {fileID: 8300000, guid: aabc65f48bfd7a14e95b86391914c2ea, type: 3}
+  click: {fileID: 8300000, guid: ac97ddd7332406d48a66c472d7cbfbfd, type: 3}
+  familiyPhoto_FrameFocus: {fileID: 8300000, guid: 437946457544708439878416ccdd917d, type: 3}
+  familiyPhoto_FrameTurn: {fileID: 8300000, guid: 12ad6cb3fe3f5324db9293d95aa53645, type: 3}
+  familiyPhoto_BasketFocus: {fileID: 8300000, guid: 68b2dbe9a8c31e840b6a84c6494a6d11, type: 3}
+  familiyPhoto_DriverSave: {fileID: 8300000, guid: 1b8aaa38c2d3bfc4e9c25d1e89658f9f, type: 3}
+  familiyPhoto_Screwing: {fileID: 8300000, guid: 610fea6cb6d286242b05ce144c2e2039, type: 3}
+  familiyPhoto_ScrewSave: {fileID: 8300000, guid: 78dfa501cf223bc4cb53e29f7bca5a62, type: 3}
+  familiyPhoto_Hover: {fileID: 8300000, guid: 12ad6cb3fe3f5324db9293d95aa53645, type: 3}
+  familiyPhoto_PhotoSwitch: {fileID: 8300000, guid: 1ad92b53c963da6489898648410a3829, type: 3}
+  alcohol_FridgeOpen: {fileID: 8300000, guid: dd400a48e96341f40abac42a652bb033, type: 3}
+  alcohol_FridgeClose: {fileID: 8300000, guid: b78568a9a53107f49841385fa7a3b27d, type: 3}
+  marriage_ClosetOpen: {fileID: 8300000, guid: 20b5e2bb70323ac40b9d6ca17a835a0e, type: 3}
+  marriage_ClosetClose: {fileID: 8300000, guid: 6132c6916a24cf547a5253d3e628088c, type: 3}
+  marriage_BagFocus: {fileID: 8300000, guid: 81c295ea9d958f94f8a76bd54d8c6a89, type: 3}
+  marriage_BagOpen: {fileID: 8300000, guid: cf9f65d366134a14d9593e3ea476233b, type: 3}
+  marriage_PaperTakeout: {fileID: 8300000, guid: bf6e631c0382a8a48b70bada84ea1d77, type: 3}
+  marriage_PaperSave: {fileID: 8300000, guid: 81c295ea9d958f94f8a76bd54d8c6a89, type: 3}

@@ -5,7 +5,8 @@ public class SFXLibrary : ScriptableObject
 {
     [Header("±âº»")] [Space]
     public AudioClip narration;
-    public AudioClip lightSwitch;
+    public AudioClip lightSwitch_On;
+    public AudioClip lightSwitch_Off;
     public AudioClip click;
 
     [Header("ÈçÀû2")] [Space]
