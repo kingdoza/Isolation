@@ -4,6 +4,7 @@ using UnityEngine.Events;
 public class StatusSwitcher : ItemUsePoint
 {
     [SerializeField] private StatusSwitcher otherStatus;
+    public StatusSwitcher OtherStatus => otherStatus;
 
 
 
