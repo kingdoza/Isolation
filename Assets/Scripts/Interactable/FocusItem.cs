@@ -7,13 +7,14 @@ using static ControllerUtils;
 public class FocusItem : Item
 {
     [SerializeField] private GameObject focusViewPrefab;
+    protected virtual AudioClip ClikBase => SFXClips.click; //
 
 
 
     protected override void Awake()
     {
         base.Awake();
-        if(gameObject.GetComponent<MouseHover>() == null)
+        if (gameObject.GetComponent<MouseHover>() == null)
         {
             gameObject.AddComponent<MouseHover>();
         }
@@ -26,6 +27,6 @@ public class FocusItem : Item
         GameManager.Instance.RoomController.FocusItem(focusViewPrefab);
 
         SoundController soundPlayer = GameManager.Instance.SoundController;
-        PlaySFX(SFXClips.click);
+        PlaySFX(ClikBase);
     }
 }

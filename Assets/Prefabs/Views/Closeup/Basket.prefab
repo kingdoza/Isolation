@@ -97,9 +97,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6913821023781112454}
   - component: {fileID: 6713881366345999243}
-  - component: {fileID: 7059188019087028906}
   - component: {fileID: 1377552540191578828}
   - component: {fileID: 5328707690353632053}
+  - component: {fileID: 2040032345376733359}
   m_Layer: 0
   m_Name: "(5) \uBC14\uAD6C\uB2C8"
   m_TagString: Untagged
@@ -177,20 +177,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7059188019087028906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2241169933780290820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01d8f4b59cd9ca84886c088b4e444ceb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: "\uBC14\uAD6C\uB2C8"
-  focusViewPrefab: {fileID: 6907309563162764960, guid: ae8367ff68008e54098d61f409c18723, type: 3}
 --- !u!60 &1377552540191578828
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -354,6 +340,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d68ff95989f944e8cc1f46f1b5d475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2040032345376733359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2241169933780290820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60e87c3923c39e409f0f05e899b545d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: "\uBC14\uAD6C\uB2C8"
+  focusViewPrefab: {fileID: 6907309563162764960, guid: ae8367ff68008e54098d61f409c18723, type: 3}
 --- !u!1 &2857077962549504875
 GameObject:
   m_ObjectHideFlags: 0
