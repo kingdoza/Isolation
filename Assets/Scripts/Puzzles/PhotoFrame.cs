@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static ControllerUtils;
 
 public class PhotoFrame : MonoBehaviour
 {
@@ -60,6 +61,7 @@ public class PhotoFrame : MonoBehaviour
 
     private void OnPhothSwitched(ItemUsePoint interaction)
     {
+        //PlaySFX(SFXClips.familiyPhoto_FrameTurn);
         info.isConverted = !info.isConverted;
     }
 

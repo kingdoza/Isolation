@@ -10,7 +10,7 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointer
     [SerializeField] private string itemName;
     //private bool canInteract = true;
     protected Sprite itemicon;
-    private Color originalColor;
+    protected Color originalColor;
     protected SpriteRenderer spriteRenderer;
     protected virtual UsableItem InteractItemStatus => UsableItem.None;
     private MouseHover mouseHoverComp;
@@ -109,7 +109,7 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointer
 
 
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public virtual void OnPointerEnter(PointerEventData eventData)
     {
         if (CanInteract)
             ChangeAllSubSpritesColor(Color.gray);
@@ -117,7 +117,7 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointer
 
 
 
-    private void ChangeAllSubSpritesColor(Color color)
+    protected void ChangeAllSubSpritesColor(Color color)
     {
         foreach(SpriteRenderer childSr in GetComponentsInChildren<SpriteRenderer>())
         {
@@ -127,7 +127,7 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointer
 
 
 
-    public void OnPointerExit(PointerEventData eventData)
+    public virtual void OnPointerExit(PointerEventData eventData)
     {
         if (CanInteract)
             ChangeAllSubSpritesColor(originalColor);
