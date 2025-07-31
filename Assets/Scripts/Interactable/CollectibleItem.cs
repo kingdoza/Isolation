@@ -14,6 +14,7 @@ public class CollectibleItem : Item
     {
         base.Interact();
         InventoryUI.Instance.AddItem(this);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 }
