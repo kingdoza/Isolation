@@ -6,7 +6,7 @@ public class ExitButton : MonoBehaviour
     public GameObject Background;
     public void ClickExit()
     {
-        
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainScene");
 
     }

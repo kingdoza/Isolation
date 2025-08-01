@@ -40,7 +40,7 @@ public class MouseHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         if (player == null || player.UsingItemType == UsableItem.None)
         {
             SetCursorTexture(CursorTextures.Normal);
-            GetComponent<SpriteRenderer>().color = originalColor;
+            GetComponent<SpriteRenderer>().color = Color.white;
         }
     }
 }
