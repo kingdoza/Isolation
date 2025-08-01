@@ -73,8 +73,11 @@ public class UIController : MonoBehaviour
         MoveDirection[] zoomInDirs = { MoveDirection.Down };
 
         bool isZoomIn = GameManager.Instance.RoomController.IsZoomIn;
-        MoveDirection[] moveDirs = isZoomIn ? zoomInDirs : zoomOutDirs;
-        SetMoveButtons(moveDirs);
+        bool isFocusIn = GameManager.Instance.RoomController.IsFocusIn;
+        if (isZoomIn || isFocusIn)
+            SetMoveButtons(zoomInDirs);
+        else
+            SetMoveButtons(zoomOutDirs);
     }
 
 

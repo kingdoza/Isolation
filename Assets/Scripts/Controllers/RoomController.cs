@@ -17,6 +17,9 @@ public class RoomController : MonoBehaviour {
     private GameObject currentView;
     private bool isZoomIn;
     public bool IsZoomIn => isZoomIn;
+
+    private bool isFocusIn;
+    public bool IsFocusIn => isFocusIn;
     private GameObject itemFocusedView;
 
     public GameObject CurrentView => currentView;
@@ -81,7 +84,7 @@ public class RoomController : MonoBehaviour {
 
     public void FocusItem(GameObject focusView)
     {
-        isZoomIn = true;
+        isFocusIn = true;
         if (itemFocusedView)
         {
             OutFocusItem();
@@ -102,8 +105,10 @@ public class RoomController : MonoBehaviour {
 
     private void OutFocusItem()
     {
+        isFocusIn = false;
         Destroy(itemFocusedView);
         focusPanel.SetActive(false);
+        uiController.EnableMoveButtons();
         OnFocusOut?.Invoke();
         //SetOtherRoomObjectsColor(null, Color.white);
         //SetViewbjectsColorAndStatus(Color.white, true);

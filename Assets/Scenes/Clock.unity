@@ -4949,7 +4949,7 @@ MonoBehaviour:
     months: 7
     days: 1
     dayOfWeek: 0
-  limitDayGap: 2
+  limitDayGap: 7
   wakeupHour: 19
   sleepHour: 7
   isWakeupStart: 1
