@@ -19,6 +19,7 @@ public class SoundController : MonoBehaviour
     public void PlayBGM()
     {
         bgmSource.clip = bgmClips.main;
+        bgmSource.loop = true;
         bgmSource.Play();
     }
 }
