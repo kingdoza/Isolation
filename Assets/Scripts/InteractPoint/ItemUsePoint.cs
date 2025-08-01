@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class ItemUsePoint : Item
 {
     [SerializeField] private UsableItem usableItem;
+    [SerializeField] protected bool isUseOnce = false;
     [HideInInspector] public UnityEvent<ItemUsePoint> OnItemUse = new UnityEvent<ItemUsePoint>();
     protected override UsableItem InteractItemStatus => usableItem;
 
@@ -15,6 +16,8 @@ public class ItemUsePoint : Item
     {
         base.Interact();
         OnItemUse?.Invoke(this);
+        if (isUseOnce)
+            InventoryUI.Instance.DeleteSelectedSlot();
     }
 
 

@@ -4,7 +4,7 @@ using static ControllerUtils;
 
 public class GameManager : PersistentSingleton<GameManager>
 {
-    [SerializeField] private RoomController roomController;
+    private RoomController roomController;
     private UIController uiController;
     private TimeController timeController;
     private FilterController filterController;
@@ -40,18 +40,18 @@ public class GameManager : PersistentSingleton<GameManager>
         {
             bool isActive = BackGround.activeSelf;
             BackGround.SetActive(!isActive);
-            UIBlocker.SetActive(!isActive);
+            //UIBlocker.SetActive(!isActive);
 
             if (!isActive)
             {
                 Time.timeScale = 0f;
-                RC.enabled = false;
+                roomController.enabled = false;
                 //DragScroller.CanDrag = false;
             }
             else
             {
                 Time.timeScale = 1f;
-                RC.enabled = true;
+                roomController.enabled = true;
                 //DragScroller.CanDrag = true;
             }
         }
@@ -74,7 +74,8 @@ public class GameManager : PersistentSingleton<GameManager>
 
     private void Start()
     {
-        RegisterDragScrollCondition(() => !BackGround.activeSelf);
+        soundController = GetComponentInChildren<SoundController>();
+        soundController.PlayBGM();
         SetCursorTexture(CursorTextures.Normal);
     }
 
@@ -84,7 +85,7 @@ public class GameManager : PersistentSingleton<GameManager>
         Debug.Log($"[GameManager] Scene loaded: {scene.name}"); //게임 씬 재로딩할때 스타트 스테이지 로딩 
         if (scene.name == "Clock")
         {
-
+            RegisterDragScrollCondition(() => !BackGround.activeSelf);
             StartStage();
         }
 
@@ -101,7 +102,7 @@ public class GameManager : PersistentSingleton<GameManager>
         timeController = FindAnyObjectByType<TimeController>();
         filterController = FindAnyObjectByType<FilterController>();
         interactController = FindAnyObjectByType<InteractController>();
-        soundController = FindAnyObjectByType<SoundController>();
+        //soundController = FindAnyObjectByType<SoundController>();
         dialogueController = FindAnyObjectByType<DialogueController>();
         puzzleController = FindAnyObjectByType<PuzzleController>();
         player = FindAnyObjectByType<Player>();

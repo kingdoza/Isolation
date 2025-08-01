@@ -10,6 +10,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     [SerializeField] private CollectibleItem slotItem;
     private Texture2D itemTexture;
     [HideInInspector] public UnityEvent<InventorySlot> OnClicked = new UnityEvent<InventorySlot>();
+    public CollectibleItem SlotItem => slotItem;
 
 
 

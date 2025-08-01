@@ -272,8 +272,8 @@ GameObject:
   - component: {fileID: 8464934658959395551}
   - component: {fileID: 8192636777692965910}
   - component: {fileID: 1734584006964574070}
-  - component: {fileID: 6711547351250623093}
   - component: {fileID: 3583416411196356800}
+  - component: {fileID: 6711547351250623093}
   - component: {fileID: 1877379697199705548}
   - component: {fileID: 4122461810781217143}
   - component: {fileID: 5504856274029792656}
@@ -362,7 +362,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2476455013326314084}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e3482e71941e414cbb62f2d302bc75c, type: 3}
   m_Name: 
@@ -374,20 +374,6 @@ MonoBehaviour:
   graduationPhoto:
     item: {fileID: 1877379697199705548}
     sprite: {fileID: 21300000, guid: 0c07f9a47cffe4b498f6f93ab40dc3d3, type: 3}
---- !u!114 &6711547351250623093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2476455013326314084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2899b05e7db5b124aa74e387bac66981, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wakeupInteract: {fileID: 0}
-  sleepInteract: {fileID: 3583416411196356800}
 --- !u!114 &3583416411196356800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +388,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: "\uC561\uC790"
   focusViewPrefab: {fileID: 6907309563162764960, guid: 513fc8564145d1f42a5d86756384d924, type: 3}
+--- !u!114 &6711547351250623093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2476455013326314084}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2899b05e7db5b124aa74e387bac66981, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wakeupInteract: {fileID: 0}
+  sleepInteract: {fileID: 3583416411196356800}
 --- !u!114 &1877379697199705548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +409,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2476455013326314084}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1eee369b908ea4049be6ccda4bbde3ca, type: 3}
   m_Name: 
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2476455013326314084}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1eee369b908ea4049be6ccda4bbde3ca, type: 3}
   m_Name: 

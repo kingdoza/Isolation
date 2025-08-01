@@ -647,6 +647,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1453486246}
   - {fileID: 1667219591}
   - {fileID: 2035908169}
   m_Father: {fileID: 1033713758}
@@ -6351,7 +6352,6 @@ RectTransform:
   - {fileID: 779714243}
   - {fileID: 659373962}
   - {fileID: 906094963}
-  - {fileID: 1453486246}
   - {fileID: 141932918}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6801,6 +6801,9 @@ MonoBehaviour:
   focusPanel: {fileID: 913039774}
   rooms:
   - {fileID: 2115499221}
+  OnFocusOut:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1118970127
 Transform:
   m_ObjectHideFlags: 0
@@ -8703,7 +8706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1453486246
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8711,12 +8714,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453486245}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1033713758}
+  m_Father: {fileID: 141932918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -9978,7 +9981,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10075,7 +10078,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10173,6 +10176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmSource: {fileID: 1653366618}
   sfxSource: {fileID: 1653366617}
+  bgmClips: {fileID: 11400000, guid: b6242283972221241ba33bbd0c4a70ee, type: 2}
 --- !u!1 &1661663240
 GameObject:
   m_ObjectHideFlags: 0
@@ -11619,7 +11623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c158a77ef860a884882308e5aacb448f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomController: {fileID: 1118970126}
   hoverCursor: {fileID: 2800000, guid: 0b566e821e62bea479def8d6d6d1867f, type: 3}
   viewSpriteSize: {x: 1920, y: 1080}
   BackGround: {fileID: 141932917}

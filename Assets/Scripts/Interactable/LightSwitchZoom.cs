@@ -9,16 +9,29 @@ public class LightSwitchZoom : ZoomArea
     [SerializeField] private Sprite switchOffSprite;
     [SerializeField] private Sprite switchOnSprite;
     private SpriteRenderer spriteRenderer;
+    private Player player;
 
 
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        Player player = GameManager.Instance.Player;
+        player = GameManager.Instance.Player;
         player.OnWakeup.AddListener(OnPlayerWakeup);
         player.OnSleep.AddListener(OnPlayerSleep);
 
+        if (player.IsSleeping)
+            OnPlayerSleep();
+        else
+            OnPlayerWakeup();
+
+        GameManager.Instance.RoomController.OnFocusOut.AddListener(OnFocusOut);
+    }
+
+
+
+    private void OnFocusOut()
+    {
         if (player.IsSleeping)
             OnPlayerSleep();
         else

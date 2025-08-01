@@ -53,6 +53,51 @@ public class InventoryUI : MonoBehaviour
         slotSelected?.Select();
     }
 
+
+
+    public bool HasTwoScrews()
+    {
+        int screwCount = 0;
+        foreach (InventorySlot slot in slots)
+        {
+            if (slot.SlotItem.UseType == UsableItem.Screw)
+                ++screwCount;
+        }
+        return screwCount >= 2;
+    }
+
+
+
+    public void DeleteTwoScrews()
+    {
+        foreach (InventorySlot slot in slots)
+        {
+            if (slot.SlotItem.UseType != UsableItem.Screw)
+                continue;
+            DeleteSlot(slot);
+        }
+    }
+
+
+
+    public void DeleteSelectedSlot()
+    {
+        if (slotSelected == null) 
+            return;
+        DeleteSlot(slotSelected);
+        slotSelected = null;
+    }
+
+
+
+    public void DeleteSlot(InventorySlot targetSlot)
+    {
+        targetSlot.Unselect();
+        Destroy(targetSlot.gameObject);
+    }
+
+
+
     // public void AddItem(Sprite itemIcon)
     // {
     //     GameObject slot = Instantiate(slotPrefab, slotParent);

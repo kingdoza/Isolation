@@ -2,5 +2,5 @@ using UnityEngine;
 
 public enum UsableItem
 {
-    None, ScrewDriver, Screw
+    None, ScrewDriver, Screw, DrawerHandle
 }

@@ -4,6 +4,16 @@ using static ControllerUtils;
 
 public class MouseHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    private Color originalColor;
+
+
+
+    private void Start()
+    {
+        originalColor = GetComponent<SpriteRenderer>().color;
+    }
+
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         Player player = GameManager.Instance.Player;
@@ -30,7 +40,7 @@ public class MouseHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         if (player == null || player.UsingItemType == UsableItem.None)
         {
             SetCursorTexture(CursorTextures.Normal);
-            GetComponent<SpriteRenderer>().color = Color.white;
+            GetComponent<SpriteRenderer>().color = originalColor;
         }
     }
 }
