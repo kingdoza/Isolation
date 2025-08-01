@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using static ControllerUtils;
 public class SortSwitcher : ItemUsePoint
 {
     [SerializeField] private SpriteRenderer renderder1;
@@ -13,5 +13,7 @@ public class SortSwitcher : ItemUsePoint
         int sortingOrder1 = renderder1.sortingOrder;
         renderder1.sortingOrder = renderder2.sortingOrder;
         renderder2.sortingOrder = sortingOrder1;
+
+        PlaySFX(SFXClips.familiyPhoto_PhotoSwitch);
     }
 }
