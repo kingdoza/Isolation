@@ -119,5 +119,8 @@ public class GameManager : PersistentSingleton<GameManager>
 
 
 
-
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

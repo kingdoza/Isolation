@@ -7,7 +7,6 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static ControllerUtils;
-using static UnityEditor.Progress;
 
 
 public class DialogueController : MonoBehaviour
