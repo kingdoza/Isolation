@@ -100,8 +100,8 @@ GameObject:
   - component: {fileID: 6674036258317599346}
   - component: {fileID: 7625708437396076818}
   - component: {fileID: 6026245117048846498}
-  - component: {fileID: 5736353912653008858}
   - component: {fileID: 850042667213094739}
+  - component: {fileID: 196072927536072509}
   m_Layer: 0
   m_Name: FrameFront_Focus
   m_TagString: Untagged
@@ -251,20 +251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d68ff95989f944e8cc1f46f1b5d475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5736353912653008858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6907309563162764960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01d8f4b59cd9ca84886c088b4e444ceb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: "\uC561\uC790 \uC815\uBA74"
-  focusViewPrefab: {fileID: 6907309563162764960, guid: dd62bb2348f4f5a4a83cdbfb6da19a6f, type: 3}
 --- !u!114 &850042667213094739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,3 +266,17 @@ MonoBehaviour:
   photoRenderer: {fileID: 8434558739374012123}
   graduationPhoto: {fileID: 21300000, guid: c5c693e25a5857c41880d0298d654f4e, type: 3}
   oldFamiliyPhoto: {fileID: 21300000, guid: a2f31c578b2fbc1469b71626553cc735, type: 3}
+--- !u!114 &196072927536072509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6907309563162764960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94475990a63524e4186be771b43d26fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: "\uC561\uC790\uC815\uBA74"
+  focusViewPrefab: {fileID: 6907309563162764960, guid: dd62bb2348f4f5a4a83cdbfb6da19a6f, type: 3}
