@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 9fa10cd522e4eed4a862f2646013654c
+guid: 4c80d0d36bceb9a4c94feecc38be5174
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6334630877149819122
-    second: "(4) \uC120\uD06C\uB9BC_0"
+      213: -1135844335185280183
+    second: "(4) \uC561\uC790 \uD504\uB808\uC784_0"
+  - first:
+      213: 7762577117887475867
+    second: "(4) \uC561\uC790 \uD504\uB808\uC784_1"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "(4) \uC120\uD06C\uB9BC_0"
+      name: "(4) \uC561\uC790 \uD504\uB808\uC784_0"
       rect:
         serializedVersion: 2
-        x: 2984
-        y: 2504
-        width: 362
-        height: 820
+        x: 3930
+        y: 2131
+        width: 1444
+        height: 1632
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f07cbf683129e750800000000000000
-      internalID: 6334630877149819122
+      spriteID: 9434429589bac30f0800000000000000
+      internalID: -1135844335185280183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "(4) \uC561\uC790 \uD504\uB808\uC784_1"
+      rect:
+        serializedVersion: 2
+        x: 3930
+        y: 2371
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b903245c2c63abb60800000000000000
+      internalID: 7762577117887475867
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "(4) \uC120\uD06C\uB9BC_0": 6334630877149819122
+      "(4) \uC561\uC790 \uD504\uB808\uC784_0": -1135844335185280183
+      "(4) \uC561\uC790 \uD504\uB808\uC784_1": 7762577117887475867
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

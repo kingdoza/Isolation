@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using static ControllerUtils;
 
 public class RoomController : MonoBehaviour {
@@ -19,6 +20,8 @@ public class RoomController : MonoBehaviour {
     private GameObject itemFocusedView;
 
     public GameObject CurrentView => currentView;
+
+    public UnityEvent OnFocusOut = new UnityEvent();
 
 
 
@@ -101,6 +104,7 @@ public class RoomController : MonoBehaviour {
     {
         Destroy(itemFocusedView);
         focusPanel.SetActive(false);
+        OnFocusOut?.Invoke();
         //SetOtherRoomObjectsColor(null, Color.white);
         //SetViewbjectsColorAndStatus(Color.white, true);
     }

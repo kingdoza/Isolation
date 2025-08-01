@@ -6,6 +6,9 @@ public class InteractSelector : MonoBehaviour
     [SerializeField] private Item sleepInteract;
     private IInteractable currentInteract;
 
+    public Item WakeupInteract { set => wakeupInteract = value; }
+    public Item SleepInteract { set => sleepInteract = value; }
+
 
 
     private void Start()

@@ -8,7 +8,6 @@ using UnityEngine.EventSystems;
 public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private string itemName;
-    //private bool canInteract = true;
     protected Sprite itemicon;
     protected Color originalColor;
     protected SpriteRenderer spriteRenderer;

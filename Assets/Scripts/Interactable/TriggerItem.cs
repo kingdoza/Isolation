@@ -3,7 +3,7 @@ using UnityEngine;
 public class TriggerItem : DialogueItem
 {
     [SerializeField] private EndingType endingType;
-    [SerializeField] private CollectStatus collectStatus = CollectStatus.Negative;
+    private CollectStatus collectStatus = CollectStatus.Negative;
 
     public EndingType EndingType => endingType;
     public CollectStatus CollectStatus { get => collectStatus; set

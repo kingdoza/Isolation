@@ -290,13 +290,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: "\uC220"
   wakeupDialogs:
-  - A
-  - B
+  - "\uC220"
+  - "\uB9E5\uC8FC"
   sleepDialogs:
-  - A
-  - B
+  - "\uC220"
+  - "\uB9E5\uC8FC"
   endingType: 0
-  collectStatus: 1
 --- !u!60 &1056349256281151392
 PolygonCollider2D:
   m_ObjectHideFlags: 0

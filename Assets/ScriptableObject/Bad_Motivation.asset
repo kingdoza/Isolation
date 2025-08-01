@@ -18,7 +18,5 @@ MonoBehaviour:
   evidences:
   - title: "\uAC00\uC815\uBD88\uD654"
     itemNames:
-    - "\uC624\uB798\uB41C \uAC00\uC871 \uC0AC\uC9C4"
+    - "\uC624\uB798\uB41C \uAC00\uC871\uC0AC\uC9C4"
     - "\uC220"
-  slotContainer: {fileID: 0}
-  evidenceSlotPrefab: {fileID: 5030242033438432127, guid: 143d0c87a58a2ed4bb0691fbbc522b02, type: 3}

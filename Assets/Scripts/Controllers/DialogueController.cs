@@ -37,11 +37,13 @@ public class DialogueController : MonoBehaviour
 
     public void StartItemDialogSequence(DialogueItem item)
     {
+        bool isPlayerSleep = GameManager.Instance.Player.IsSleeping;
+        string[] dialogueTexts = isPlayerSleep ? item.SleepDialogs : item.WakeupDialogs;
+        if (dialogueTexts == null || dialogueTexts.Length <= 0)
+            return;
         item.OnDiaglogueStart();
         OnDialogueClosed.AddListener(item.OnDialogueEnd);
-
-        bool isPlayerSleep = GameManager.Instance.Player.IsSleeping;
-        StartDialogueSequence(isPlayerSleep ? item.SleepDialogs : item.WakeupDialogs);
+        StartDialogueSequence(dialogueTexts);
     }
 
 

@@ -13,7 +13,6 @@ public class PhotoFrame : MonoBehaviour
     [SerializeField] private FramePlate backPlateClose;
     [SerializeField] private SortSwitcher photoSwitcher1;
     [SerializeField] private SortSwitcher photoSwitcher2;
-    private Item[] subItems;
     private bool convertStatus = false;
     private Info info;
     private int jointScrewCount = 4;
