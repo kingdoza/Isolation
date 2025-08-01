@@ -12766,10 +12766,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomName: "\uBC29"
   views:
-  - {fileID: 7154543789999426926, guid: 1176d8bc80ba2e24aab945a5e82b76cc, type: 3}
+  - {fileID: 7154543789999426926, guid: 33801cf9c6f889c4e9bc24826ce9b120, type: 3}
   - {fileID: 22411710814010833, guid: 9b1ff3efb17e6104691fe85915c352fe, type: 3}
-  - {fileID: 3407988332131748097, guid: 8f6eebe034fbf724ba69cf223f19e904, type: 3}
-  - {fileID: 6038186748799628573, guid: 95cb8c67737080848a4794f932aa7d14, type: 3}
+  - {fileID: 3407988332131748097, guid: 5e3e06743fc07164580849a69c7cac6e, type: 3}
+  - {fileID: 6038186748799628573, guid: bb5976417ec42d847bd9d981605bb166, type: 3}
 --- !u!1 &2135418245
 GameObject:
   m_ObjectHideFlags: 0
