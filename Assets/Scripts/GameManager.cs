@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static ControllerUtils;
@@ -72,6 +73,7 @@ public class GameManager : PersistentSingleton<GameManager>
 
 
 
+
     private void Start()
     {
         soundController = GetComponentInChildren<SoundController>();
@@ -115,12 +117,5 @@ public class GameManager : PersistentSingleton<GameManager>
         timeController.InitGameTime();
         uiController.InitMindTreeUI();
         dialogueController.DisableDialoguePanel();
-    }
-
-
-
-    public void ExitGame()
-    {
-        Application.Quit();
     }
 }
