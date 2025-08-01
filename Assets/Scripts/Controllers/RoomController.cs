@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using static ControllerUtils;
 
 public class RoomController : MonoBehaviour {
-    public static HashSet<string> CollectedItemNames { get; set; } = new HashSet<string>();
+    public HashSet<string> CollectedItemNames { get; set; } = new HashSet<string>();
 
     [SerializeField] private Color focusBackgroundColor;
     [SerializeField] private GameObject focusPanel;

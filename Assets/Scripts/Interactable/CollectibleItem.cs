@@ -16,7 +16,7 @@ public class CollectibleItem : Item
         base.Interact();
         InventoryUI.Instance.AddItem(this);
         gameObject.SetActive(false);
-        RoomController.CollectedItemNames.Add(ItemName);
+        GameManager.Instance.RoomController.CollectedItemNames.Add(ItemName);
         //Destroy(gameObject);
     }
 }
