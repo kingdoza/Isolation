@@ -21,7 +21,6 @@ public class MouseInputSystem : SceneSingleton<MouseInputSystem>
         {
             inputTarget = GetHighestInteraction();
             inputTarget?.OnInteractStart();
-            //Debug.Log(inputTarget);
         }
 
         if (Input.GetMouseButton(0))

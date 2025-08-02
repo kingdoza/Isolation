@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: MouseInputs
+  m_EditorClassIdentifier: 
+  m_GroupName: MouseInputs
+  m_GUID: a146958b3d0e2134ca6bc8bef41fd2d6
+  m_SerializeEntries:
+  - m_GUID: 0528b933d2334e140bb6d03b6e3973ad
+    m_Address: Assets/Scripts/Refactor/ScirptableObjects/ClickInteract.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28f430e94a9ae044ebf793236fb7f933
+    m_Address: Assets/Scripts/Refactor/ScirptableObjects/DragInteract.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 953bf79323a155f42b41d758cd4bd7eb
+    m_Address: Assets/Scripts/Refactor/ScirptableObjects/CamMoveInteract.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: c056d5fae685cb844acf710de133a3d8, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 985ab06319f5a3644a4884d6e104fe81, type: 2}
+    - {fileID: 11400000, guid: 3cf0b389e0571d94da0942b306c3dfd6, type: 2}
