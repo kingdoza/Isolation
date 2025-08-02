@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 465812583}
   - component: {fileID: 465812584}
   - component: {fileID: 465812585}
+  - component: {fileID: 465812586}
   m_Layer: 0
   m_Name: Click
   m_TagString: Untagged
@@ -365,6 +366,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1482c1e531da0e34cb65dc20842df8fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CursorEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CursorExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &465812586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465812578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30c787f018501842928bd512c06f8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &653252546
@@ -831,6 +850,7 @@ GameObject:
   - component: {fileID: 1844034469}
   - component: {fileID: 1844034468}
   - component: {fileID: 1844034470}
+  - component: {fileID: 1844034471}
   m_Layer: 0
   m_Name: Drag
   m_TagString: Untagged
@@ -976,6 +996,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1482c1e531da0e34cb65dc20842df8fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CursorEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CursorExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1844034471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844034465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30c787f018501842928bd512c06f8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1978841201
@@ -1140,6 +1178,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1482c1e531da0e34cb65dc20842df8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CursorEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CursorExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
