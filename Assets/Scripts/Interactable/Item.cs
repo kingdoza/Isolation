@@ -15,25 +15,6 @@ public class Item : MonoBehaviour, IInteractable, IPointerClickHandler, IPointer
     protected MouseHover mouseHoverComp;
 
     public string ItemName => itemName;
-    //public bool CanInteract
-    //{
-    //    get => canInteract; set
-    //    {
-    //        MouseHover mouseHoverComp = GetComponent<MouseHover>();
-    //        canInteract = value && interactConditions.All(cond => cond());
-    //        if (mouseHoverComp == null)
-    //            return;
-    //        if (canInteract)
-    //        {
-    //            mouseHoverComp.enabled = true;
-    //        }
-    //        else
-    //        {
-    //            spriteRenderer.color = originalColor;
-    //            mouseHoverComp.enabled = false;
-    //        }
-    //    }
-    //}
 
 
 
