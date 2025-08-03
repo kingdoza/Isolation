@@ -3,13 +3,13 @@ using static EtcUtils;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(CursorHover))]
-public class RoomObject : MonoBehaviour
+public class RoomStuff : MonoBehaviour
 {
-    private MouseInteraction inputComp;
-    private CursorHover hoverComp;
-    private Collider2D colliderComp;
+    protected MouseInteraction inputComp;
+    protected CursorHover hoverComp;
+    protected Collider2D colliderComp;
 
-    private Color originalColor;
+    protected Color originalColor;
 
 
 
@@ -31,14 +31,14 @@ public class RoomObject : MonoBehaviour
 
 
 
-    private void OnCursorEntered()
+    protected virtual void OnCursorEntered()
     {
         GetComponent<SpriteRenderer>().color = Color.gray;
     }
 
 
 
-    private void OnCursorExited()
+    protected virtual void OnCursorExited()
     {
         GetComponent<SpriteRenderer>().color = originalColor;
     }

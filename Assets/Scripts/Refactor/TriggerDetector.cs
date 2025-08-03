@@ -4,8 +4,8 @@ using UnityEngine.Events;
 public class TriggerDetector : MonoBehaviour
 {
     [SerializeField] private string targetTag;
-    private UnityEvent<Collider2D> TriggerEnterEvent = new UnityEvent<Collider2D>();
-    private UnityEvent<Collider2D> TriggerExitEvent = new UnityEvent<Collider2D>();
+    [HideInInspector] public UnityEvent<Collider2D> TriggerEnterEvent = new UnityEvent<Collider2D>();
+    [HideInInspector] public UnityEvent<Collider2D> TriggerExitEvent = new UnityEvent<Collider2D>();
 
 
 

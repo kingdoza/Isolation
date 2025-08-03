@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Click : MouseInteraction
 {
     protected override string InputLayerName => "Clickable";
     public override bool IsPassDown => false;
+    [HideInInspector] public UnityEvent ClickEvent = new UnityEvent();
 
 
 
@@ -24,6 +26,7 @@ public class Click : MouseInteraction
     public override void OnInteractEnd()
     {
         OnClick();
+        ClickEvent?.Invoke();
     }
 
 

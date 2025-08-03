@@ -39,7 +39,7 @@ public class LimitedDrag : Drag
 
     public override void OnInteracting()
     {
-        Vector3 newPosition = (Vector2)GetMouseWorldPosition() + offset;
+        Vector3 newPosition = CalculateNewPosition();
         float clampedX = Mathf.Clamp(newPosition.x, lowerLimitPos.x, higherLimitPos.x);
         float clampedY = Mathf.Clamp(newPosition.y, lowerLimitPos.y, higherLimitPos.y);
         Vector3 clampedPosition = new Vector3(clampedX, clampedY, transform.position.z);

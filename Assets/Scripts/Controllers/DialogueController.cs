@@ -21,6 +21,7 @@ public class DialogueController : MonoBehaviour
     private string targetSentence;
     private bool isTyping = false;
     private UnityEvent OnDialogueClosed = new UnityEvent();
+    [HideInInspector] public UnityEvent DiagloueEndEvent = new UnityEvent();
 
     public Color DarkenColor => darkenColor;
 
@@ -47,7 +48,7 @@ public class DialogueController : MonoBehaviour
 
 
 
-    private void StartDialogueSequence(string[] sentences)
+    public void StartDialogueSequence(string[] sentences)
     {
         textBox.text = "";
         EnableDialoguePanel();

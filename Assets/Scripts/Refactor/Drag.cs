@@ -4,6 +4,7 @@ using static EtcUtils;
 
 public class Drag : MouseInteraction
 {
+    [SerializeField] private DragDirection dragDirection;
     protected override string InputLayerName => "Draggable";
     public override bool IsPassDown => false;
     protected Vector2 offset;
@@ -18,6 +19,22 @@ public class Drag : MouseInteraction
 
 
 
+    protected virtual Vector3 CalculateNewPosition()
+    {
+        Vector3 newPosition = (Vector2)GetMouseWorldPosition() + offset;
+        if (dragDirection == DragDirection.Vertical)
+        {
+            newPosition.x = transform.position.x;
+        }
+        else if (dragDirection == DragDirection.Horizontal)
+        {
+            newPosition.y = transform.position.y;
+        }
+        return newPosition;
+    }
+
+
+
     public override void OnInteractStart()
     {
         offset = transform.position - GetMouseWorldPosition();
@@ -28,7 +45,7 @@ public class Drag : MouseInteraction
 
     public override void OnInteracting()
     {
-        Vector3 newPosition = (Vector2)GetMouseWorldPosition() + offset;
+        Vector3 newPosition = CalculateNewPosition();
         dragDistance += Vector2.Distance(transform.position, newPosition);
         transform.position = newPosition;
     }
@@ -45,5 +62,12 @@ public class Drag : MouseInteraction
     public override bool HasInteracted()
     {
         return dragDistance > Mathf.Epsilon;
+    }
+
+
+
+    protected enum DragDirection
+    {
+        Vertical, Horizontal, Plane
     }
 }
