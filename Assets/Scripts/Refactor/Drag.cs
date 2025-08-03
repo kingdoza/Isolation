@@ -1,12 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 using static EtcUtils;
 
 public class Drag : MouseInteraction
 {
     protected override string InputLayerName => "Draggable";
     public override bool IsPassDown => false;
-    private Vector2 offset;
-    private float dragDistance = 0;
+    protected Vector2 offset;
+    protected float dragDistance = 0;
 
 
 
