@@ -1,4 +1,5 @@
 using UnityEngine;
+using static EtcUtils;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(CursorHover))]
@@ -21,7 +22,7 @@ public class RoomObject : MonoBehaviour
 
         if (!inputComp || !hoverComp || !colliderComp)
         {
-            Debug.LogError(name + " has no necessary Component");
+            PrintErrorLog(gameObject, Error.NullComp);
         }
 
         hoverComp.CursorEnterEvent.AddListener(OnCursorEntered);
