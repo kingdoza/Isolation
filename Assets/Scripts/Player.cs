@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using static ControllerUtils;
 
-public class Player : MonoBehaviour
+public class Player : SceneSingleton<Player>
 {
     [SerializeField] private Motivation[] motivations;
     private bool isSleeping = false;

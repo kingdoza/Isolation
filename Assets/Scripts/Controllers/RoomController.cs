@@ -145,10 +145,11 @@ public class RoomController : MonoBehaviour {
         }
         //currentView = Instantiate(newView);
         //GameManager.Instance.InteractController.SetTriggerItems(currentView);
+        Camera.main.transform.position = new Vector3(0, 0, Camera.main.transform.position.z);
 
         currentView = newView;
         currentView.SetActive(true);
-        Camera.main.transform.position = new Vector3(0, 0, Camera.main.transform.position.z);
+        //Camera.main.transform.position = new Vector3(0, 0, Camera.main.transform.position.z);
 
         //Camera.main.gameObject.GetComponent<DragScroller>().InitPosAndSetView(currentView);
         uiController.EnableMoveButtons();

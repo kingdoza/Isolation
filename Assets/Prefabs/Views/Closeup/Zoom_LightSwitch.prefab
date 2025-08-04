@@ -99,8 +99,11 @@ GameObject:
   - component: {fileID: 2246463785111785797}
   - component: {fileID: 6675480010979860438}
   - component: {fileID: 5837316212156651771}
-  - component: {fileID: 3283596864300736878}
-  - component: {fileID: 3407905932484275334}
+  - component: {fileID: 2012390104657608969}
+  - component: {fileID: 3374378226832704468}
+  - component: {fileID: 910037293632727564}
+  - component: {fileID: 5118678892863322323}
+  - component: {fileID: 2950894760025743814}
   m_Layer: 0
   m_Name: Switch
   m_TagString: Untagged
@@ -438,7 +441,7 @@ PolygonCollider2D:
       - {x: 16.1, y: 2.33}
       - {x: 16.22, y: 2.6599998}
   m_UseDelaunayMesh: 0
---- !u!114 &3283596864300736878
+--- !u!114 &2012390104657608969
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -447,13 +450,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8454452025449844423}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 650100a2ee8ea734286a24a50478f4ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 51a560c748ac2e94485adc69a147a316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: wj
-  switchOffSprite: {fileID: 21300000, guid: c8e592822dc9c974b8332b44ebd9cbef, type: 3}
-  switchOnSprite: {fileID: 21300000, guid: 84981ad6ae8bc054882a57538fa1aaab, type: 3}
---- !u!114 &3407905932484275334
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3374378226832704468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -462,6 +465,52 @@ MonoBehaviour:
   m_GameObject: {fileID: 8454452025449844423}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d68ff95989f944e8cc1f46f1b5d475, type: 3}
+  m_Script: {fileID: 11500000, guid: 1482c1e531da0e34cb65dc20842df8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CursorEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CursorExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &910037293632727564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8454452025449844423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6dc8a065ab3d947bcb995d1e073983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5118678892863322323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8454452025449844423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5bd8314f2f8d1469892bf2b911399f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wakeStatus: 1
+  sleepStatus: 0
+--- !u!114 &2950894760025743814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8454452025449844423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00315d9825112643a5fa6b444c68fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wakeSprite: {fileID: 21300000, guid: 84981ad6ae8bc054882a57538fa1aaab, type: 3}
+  sleepSprite: {fileID: 21300000, guid: c8e592822dc9c974b8332b44ebd9cbef, type: 3}

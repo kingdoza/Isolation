@@ -2517,6 +2517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentivity: 20
   smoothTime: 0.05
+  rightLayout: {fileID: 2060738835}
 --- !u!1 &521773313
 GameObject:
   m_ObjectHideFlags: 0
@@ -4949,7 +4950,7 @@ MonoBehaviour:
     months: 7
     days: 1
     dayOfWeek: 0
-  limitDayGap: 7
+  limitDayGap: 2
   wakeupHour: 19
   sleepHour: 7
   isWakeupStart: 1
@@ -9432,6 +9433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1623162178}
   - component: {fileID: 1623162179}
+  - component: {fileID: 1623162180}
   m_Layer: 0
   m_Name: MouseSystems
   m_TagString: Untagged
@@ -9511,6 +9513,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1623162180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623162177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6354d7857e85cc48b892119da0d0699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comp1: {fileID: 0}
+  comp2: {fileID: 0}
 --- !u!1 &1623278815
 GameObject:
   m_ObjectHideFlags: 0

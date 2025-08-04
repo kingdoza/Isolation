@@ -35,6 +35,14 @@ public class CameraDragArea : MouseInteraction
 
 
 
+    private void OnEnable()
+    {
+        //mainCamera.transform.position = new Vector3(0, 0, mainCamera.transform.position.z);
+        OnInteractStart();
+    }
+
+
+
     private void Update()
     {
         mainCamera.transform.position = Vector3.SmoothDamp(
@@ -60,6 +68,11 @@ public class CameraDragArea : MouseInteraction
         Bounds viewBounds = GetComponent<SpriteRenderer>().bounds;
         scrollMinPos = (Vector2)viewBounds.min + camViewSize / 2;
         scrollMaxPos = (Vector2)viewBounds.max - camViewSize / 2;
+        if (_camDragData.RightLayout)
+        {
+            float rightWorldOffset = (_camDragData.RightLayout.preferredWidth / Screen.width) * camViewSize.x;
+            scrollMaxPos.x += rightWorldOffset;
+        }
         scrollMinPos += Vector2.one * 0.01f;
         scrollMaxPos -= Vector2.one * 0.01f;
     }
