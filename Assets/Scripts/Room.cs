@@ -15,8 +15,9 @@ public class Room : MonoBehaviour
     {
         foreach (GameObject viewPrefab in viewPrefabs)
         {
-            viewPrefab.SetActive(false);
-            views.Add(Instantiate(viewPrefab));
+            GameObject view = Instantiate(viewPrefab);
+            view.SetActive(false);
+            views.Add(view);
         }
     }
 

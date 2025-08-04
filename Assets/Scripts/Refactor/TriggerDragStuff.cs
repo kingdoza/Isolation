@@ -28,12 +28,12 @@ public class TriggerDragStuff : RoomStuff
 
     private void Triggered(Collider2D collision)
     {
-
+        Debug.Log("Triggered");
     }
 
 
     private void Untriggered(Collider2D collision)
     {
-
+        Debug.Log("Untriggered");
     }
 }

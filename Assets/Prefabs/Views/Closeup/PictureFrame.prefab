@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 2944747730879295780}
   - component: {fileID: 1775057079287581522}
   - component: {fileID: 910549594005882665}
+  - component: {fileID: 7627644641694145799}
   m_Layer: 0
   m_Name: "(4) \uC561\uC790 \uD504\uB808\uC784"
   m_TagString: Untagged
@@ -653,6 +654,117 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   focusPrefab: {fileID: 6907309563162764960, guid: 513fc8564145d1f42a5d86756384d924, type: 3}
+--- !u!60 &7627644641694145799
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502494579317787351}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 71.76935, y: 60.24}
+    newSize: {x: 71.76935, y: 60.24}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 12.6157055, y: -4.8535423}
+      - {x: 12.790924, y: -4.222757}
+      - {x: 12.896055, y: -3.8372772}
+      - {x: 12.931098, y: -3.662059}
+      - {x: 12.966142, y: -3.4167535}
+      - {x: 13.176404, y: -2.8560555}
+      - {x: 13.4917965, y: -1.7346596}
+      - {x: 13.702058, y: -1.3842232}
+      - {x: 13.91232, y: -0.6483071}
+      - {x: 13.947364, y: -0.19273995}
+      - {x: 14.087538, y: 0.08760907}
+      - {x: 14.40293, y: 1.033787}
+      - {x: 14.648236, y: 2.1201394}
+      - {x: 14.928585, y: 2.9611864}
+      - {x: 14.963629, y: 3.2415354}
+      - {x: 15.17389, y: 3.6971025}
+      - {x: 15.208934, y: 4.0475388}
+      - {x: 15.349109, y: 4.3629317}
+      - {x: 15.45424, y: 4.8184986}
+      - {x: 15.45424, y: 5.0287604}
+      - {x: 15.314065, y: 5.168935}
+      - {x: 14.823454, y: 5.2390223}
+      - {x: 14.473018, y: 5.274066}
+      - {x: 13.4917965, y: 5.344153}
+      - {x: 12.825968, y: 5.3791966}
+      - {x: 11.564397, y: 5.4142404}
+      - {x: 11.284048, y: 5.449284}
+      - {x: 10.688306, y: 5.484328}
+      - {x: 9.111343, y: 5.484328}
+      - {x: 9.0763, y: 5.519371}
+      - {x: 8.760907, y: 5.5544147}
+      - {x: 8.340384, y: 5.5544147}
+      - {x: 8.235252, y: 5.449284}
+      - {x: 7.8497725, y: 4.713368}
+      - {x: 7.884816, y: 4.15267}
+      - {x: 7.8147287, y: 3.942408}
+      - {x: 7.709598, y: 3.4167535}
+      - {x: 7.2540307, y: 1.8748341}
+      - {x: 7.0788126, y: 1.2440487}
+      - {x: 6.833507, y: 0.33291447}
+      - {x: 6.483071, y: -0.68335074}
+      - {x: 6.272809, y: -1.3842232}
+      - {x: 6.097591, y: -2.0500522}
+      - {x: 6.0625477, y: -2.5056193}
+      - {x: 5.9574165, y: -2.8910992}
+      - {x: 5.3967185, y: -4.888586}
+      - {x: 5.3967185, y: -5.4142404}
+      - {x: 5.431762, y: -5.519371}
+      - {x: 5.712111, y: -5.519371}
+      - {x: 6.588202, y: -5.624502}
+      - {x: 7.1138563, y: -5.729633}
+      - {x: 7.6395106, y: -5.904851}
+      - {x: 8.515601, y: -6.115113}
+      - {x: 8.620732, y: -6.115113}
+      - {x: 9.18143, y: -6.1501565}
+      - {x: 9.636997, y: -6.290331}
+      - {x: 10.232739, y: -6.290331}
+      - {x: 10.443001, y: -6.395462}
+      - {x: 11.038742, y: -6.5005927}
+      - {x: 11.389179, y: -6.57068}
+      - {x: 12.019964, y: -6.57068}
+      - {x: 12.125095, y: -6.465549}
+      - {x: 12.300313, y: -6.115113}
+      - {x: 12.405444, y: -5.4142404}
+  m_UseDelaunayMesh: 0
 --- !u!1 &2118793972603487200
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,7 +947,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2476455013326314084}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}

@@ -7,7 +7,7 @@ public class FocusStuff : ClickableStuff
 {
     private static Dictionary<GameObject, GameObject> _instantiatedMap = new();
     [SerializeField] private GameObject focusPrefab;
-    [SerializeField] private GameObject focusView;
+    private GameObject focusView;
     public GameObject FocusView => focusView;
 
 

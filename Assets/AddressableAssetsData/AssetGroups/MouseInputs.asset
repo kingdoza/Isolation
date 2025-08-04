@@ -14,7 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: MouseInputs
   m_GUID: a146958b3d0e2134ca6bc8bef41fd2d6
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 33801cf9c6f889c4e9bc24826ce9b120
+    m_Address: Assets/Prefabs/Views/View1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e3e06743fc07164580849a69c7cac6e
+    m_Address: Assets/Prefabs/Views/View3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb5976417ec42d847bd9d981605bb166
+    m_Address: Assets/Prefabs/Views/View4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c056d5fae685cb844acf710de133a3d8, type: 2}
   m_SchemaSet:

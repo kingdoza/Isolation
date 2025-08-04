@@ -7,8 +7,6 @@ public class CameraDragArea : MouseInteraction
     private static DragData _camDragData;
     protected override string InputLayerName => "CameraMovable";
     public override bool IsPassDown => true;
-    [SerializeField] private float sensitivity;
-    [SerializeField] private float smoothTime;
 
     private Vector2 camViewSize;
     private Vector2 scrollMinPos;
