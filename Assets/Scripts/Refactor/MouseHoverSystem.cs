@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -22,7 +23,8 @@ public class MouseHoverSystem : SceneSingleton<MouseHoverSystem>
 
     private void Update()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
+        if (EventSystem.current.IsPointerOverGameObject())// ||
+            //(HoverTarget && MouseInputSystem.Instance.IsAllowedInputObject(HoverTarget.gameObject) == false))
         {
             HoverTarget = null;
             return;

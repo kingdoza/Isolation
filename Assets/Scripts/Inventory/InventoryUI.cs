@@ -44,6 +44,20 @@ public class InventoryUI : MonoBehaviour
 
 
 
+    public void AddItem(ItemData itemData)
+    {
+        GameObject slot = Instantiate(slotPrefab, slotParent);
+
+        InventorySlot newSlot = slot.GetComponent<InventorySlot>();
+        slots.Add(newSlot);
+        newSlot.OnClicked.AddListener(OnSlotClicked);
+        newSlot.SetItem(itemData);
+        //Image image = slot.transform.Find("Image").GetComponent<Image>();
+        //image.sprite = item.InventorySprite;
+    }
+
+
+
     public void OnSlotClicked(InventorySlot clickedSlot)
     {
         if (!canSelect) return;

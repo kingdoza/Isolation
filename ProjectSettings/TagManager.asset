@@ -16,7 +16,7 @@ TagManager:
   - Clickable
   - Draggable
   - CameraMovable
-  - 
+  - MouseBlock
   - 
   - 
   - 
@@ -43,6 +43,15 @@ TagManager:
     locked: 0
   - name: Focus
     uniqueID: 197153367
+    locked: 0
+  - name: AAA
+    uniqueID: 1475718733
+    locked: 0
+  - name: ZZZ
+    uniqueID: 3408175527
+    locked: 0
+  - name: FFF
+    uniqueID: 1688479725
     locked: 0
   m_RenderingLayers:
   - Default

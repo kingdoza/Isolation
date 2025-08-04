@@ -7,9 +7,11 @@ using static ControllerUtils;
 public class InventorySlot : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private CollectibleItem slotItem;
+    private ItemData item;
     private Texture2D itemTexture;
     [HideInInspector] public UnityEvent<InventorySlot> OnClicked = new UnityEvent<InventorySlot>();
     public CollectibleItem SlotItem => slotItem;
+    public ItemData Item => item;
 
 
 
@@ -40,21 +42,45 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
 
 
 
+    public void SetItem(ItemData itemData)
+    {
+        item = itemData;
+        transform.Find("Image").GetComponent<Image>().sprite = item.Icon;
+    }
+
+
+
+    //public void Select()
+    //{
+    //    SetItemCursor();
+    //    GetComponent<Image>().color = Color.gray;
+    //    GameManager.Instance.Player.SelectUsableItem(slotItem.UseType);
+    //}
+
+
+
     public void Select()
     {
-        SetItemCursor();
         GetComponent<Image>().color = Color.gray;
-        GameManager.Instance.Player.SelectUsableItem(slotItem.UseType);
+        GameManager.Instance.Player.SelectItem(item);
     }
 
 
 
     public void Unselect()
     {
-        SetCursorTexture(CursorTextures.Normal);
         GetComponent<Image>().color = Color.white;
-        GameManager.Instance.Player.SelectUsableItem(UsableItem.None);
+        GameManager.Instance.Player.UnselectItem();
     }
+
+
+
+    //public void Unselect()
+    //{
+    //    SetCursorTexture(CursorTextures.Normal);
+    //    GetComponent<Image>().color = Color.white;
+    //    GameManager.Instance.Player.SelectUsableItem(UsableItem.None);
+    //}
 
 
 

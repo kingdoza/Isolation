@@ -91,6 +91,12 @@ public class GameManager : PersistentSingleton<GameManager>
             StartStage();
         }
 
+        if (scene.name == "Refactor")
+        {
+            RegisterDragScrollCondition(() => !BackGround.activeSelf);
+            StartStage();
+        }
+
     }
     // 
 

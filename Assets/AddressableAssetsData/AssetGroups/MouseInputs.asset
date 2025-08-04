@@ -14,22 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: MouseInputs
   m_GUID: a146958b3d0e2134ca6bc8bef41fd2d6
-  m_SerializeEntries:
-  - m_GUID: 0528b933d2334e140bb6d03b6e3973ad
-    m_Address: Assets/Scripts/Refactor/ScirptableObjects/ClickInteract.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 28f430e94a9ae044ebf793236fb7f933
-    m_Address: Assets/Scripts/Refactor/ScirptableObjects/DragInteract.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 953bf79323a155f42b41d758cd4bd7eb
-    m_Address: Assets/Scripts/Refactor/ScirptableObjects/CamMoveInteract.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c056d5fae685cb844acf710de133a3d8, type: 2}
   m_SchemaSet:

@@ -16,8 +16,13 @@ public class Player : MonoBehaviour
     [HideInInspector] public UnityEvent<MotiveProgress, string> OnItemCollect;
     [HideInInspector] public UnityEvent<UsableItem> OnInventoryItemSelect;
     [SerializeField] private UsableItem usingItemType = UsableItem.None;
+    [HideInInspector] public UnityEvent<ItemData> ItemSelectEvent = new UnityEvent<ItemData>();
+    [HideInInspector] public UnityEvent<ItemData> ItemUnselectEvent = new UnityEvent<ItemData>();
+    private ItemData itemInUse;
 
     public UsableItem UsingItemType => usingItemType;
+
+    public ItemData ItemInUse => itemInUse;
 
 
 
@@ -81,6 +86,24 @@ public class Player : MonoBehaviour
     {
         usingItemType = uitem;
         OnInventoryItemSelect?.Invoke(uitem);
+    }
+
+
+
+    public void SelectItem(ItemData item)
+    {
+        itemInUse = item;
+        ItemSelectEvent?.Invoke(item);
+    }
+
+
+
+    public void UnselectItem()
+    {
+        if (itemInUse == null)
+            return;
+        ItemUnselectEvent?.Invoke(itemInUse);
+        itemInUse = null;
     }
 }
 

@@ -98,8 +98,9 @@ GameObject:
   - component: {fileID: 6913821023781112454}
   - component: {fileID: 6713881366345999243}
   - component: {fileID: 1377552540191578828}
-  - component: {fileID: 5328707690353632053}
-  - component: {fileID: 2040032345376733359}
+  - component: {fileID: 3695048499643791775}
+  - component: {fileID: 2470933927280647137}
+  - component: {fileID: 4598704337560690718}
   m_Layer: 0
   m_Name: "(5) \uBC14\uAD6C\uB2C8"
   m_TagString: Untagged
@@ -328,7 +329,7 @@ PolygonCollider2D:
       - {x: -18.859503, y: -15.350759}
       - {x: -18.218483, y: -15.384497}
   m_UseDelaunayMesh: 0
---- !u!114 &5328707690353632053
+--- !u!114 &3695048499643791775
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -337,10 +338,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2241169933780290820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d68ff95989f944e8cc1f46f1b5d475, type: 3}
+  m_Script: {fileID: 11500000, guid: 51a560c748ac2e94485adc69a147a316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2040032345376733359
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2470933927280647137
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -349,11 +353,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 2241169933780290820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d60e87c3923c39e409f0f05e899b545d, type: 3}
+  m_Script: {fileID: 11500000, guid: 1482c1e531da0e34cb65dc20842df8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: "\uBC14\uAD6C\uB2C8"
-  focusViewPrefab: {fileID: 6907309563162764960, guid: ae8367ff68008e54098d61f409c18723, type: 3}
+  CursorEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CursorExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4598704337560690718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2241169933780290820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a822cb98f2f0ea9408d2baf3ecec62a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusPrefab: {fileID: 6907309563162764960, guid: ae8367ff68008e54098d61f409c18723, type: 3}
 --- !u!1 &2857077962549504875
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,13 +28,6 @@ public class RoomController : MonoBehaviour {
 
 
 
-    private void Start()
-    {
-        RegisterDragScrollCondition(() => !isZoomIn);
-    }
-
-
-
     private void Update()
     {
         if(uiController && !uiController.IsFading)
@@ -66,6 +59,11 @@ public class RoomController : MonoBehaviour {
 
     public void InitRoomAndShow()
     {
+        foreach (Room room in rooms)
+        {
+            room.CreateViewInstances();
+        }
+
         uiController = GameManager.Instance.UIController;
         timeController = GameManager.Instance.TimeController;
 
@@ -89,15 +87,10 @@ public class RoomController : MonoBehaviour {
         {
             OutFocusItem();
         }
+        MouseInteraction.DisableSubObjectInputs(currentView);
         focusPanel.SetActive(true);
-        //SetOtherRoomObjectsColor(null, focusBackgroundColor);
-        itemFocusedView = Instantiate(focusView);
-        CollectibleItem[] subCollectibleItems = itemFocusedView.GetComponentsInChildren<CollectibleItem>();
-        foreach (CollectibleItem childItem in subCollectibleItems)
-        {
-            if (CollectedItemNames.Contains(childItem.ItemName))
-                childItem.gameObject.SetActive(false);
-        }
+        itemFocusedView = focusView;
+        itemFocusedView.SetActive(true);
         uiController.EnableMoveButtons();
     }
 
@@ -106,7 +99,10 @@ public class RoomController : MonoBehaviour {
     private void OutFocusItem()
     {
         isFocusIn = false;
-        Destroy(itemFocusedView);
+        itemFocusedView.SetActive(false);
+        MouseInteraction.EnableSubObjectInputs(currentView);
+        itemFocusedView = null;
+        //Destroy(itemFocusedView);
         focusPanel.SetActive(false);
         uiController.EnableMoveButtons();
         OnFocusOut?.Invoke();
@@ -143,17 +139,18 @@ public class RoomController : MonoBehaviour {
 
     private void ShowRoomView(GameObject newView)
     {
-        if(currentRoom != null)
+        if(currentView != null)
         {
-            Destroy(currentView);
+            currentView.SetActive(false);
         }
-        currentView = Instantiate(newView);
-        GameManager.Instance.InteractController.SetTriggerItems(currentView);
+        //currentView = Instantiate(newView);
+        //GameManager.Instance.InteractController.SetTriggerItems(currentView);
 
-        //currentView.AddComponent<RoomDragScroller>();
-        //currentView.AddComponent<BoxCollider2D>();
+        currentView = newView;
+        currentView.SetActive(true);
+        Camera.main.transform.position = new Vector3(0, 0, Camera.main.transform.position.z);
 
-        Camera.main.gameObject.GetComponent<DragScroller>().InitPosAndSetView(currentView);
+        //Camera.main.gameObject.GetComponent<DragScroller>().InitPosAndSetView(currentView);
         uiController.EnableMoveButtons();
     }
 

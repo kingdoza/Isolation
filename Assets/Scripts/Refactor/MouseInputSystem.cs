@@ -1,17 +1,36 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class MouseInputSystem : SceneSingleton<MouseInputSystem>
 {
+    private readonly static List<string> _sortingLayerNames = new List<string>();
     [SerializeField] private LayerMask[] inputLayers;
     private MouseInteraction inputTarget;
+
+    private string allowedSortingLayer = SortingLayerAll;
+    private const string SortingLayerDisabled = "__none__";
+    private const string SortingLayerAll = "__all__";
+
+
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        for (int i = SortingLayer.layers.Length - 1; i >= 0; --i)
+        {
+            _sortingLayerNames.Add(SortingLayer.layers[i].name);
+        }
+    }
 
 
 
     private void Update()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
+        if (EventSystem.current.IsPointerOverGameObject())// ||
+            //(inputTarget && IsAllowedInputObject(inputTarget.gameObject)))
         {
             inputTarget = null;
             return;
@@ -47,13 +66,28 @@ public class MouseInputSystem : SceneSingleton<MouseInputSystem>
 
 
 
+    public bool IsAllowedInputObject(GameObject targetObject)
+    {
+        if (!targetObject) 
+            return false;
+        if (allowedSortingLayer.Equals(SortingLayerAll))
+            return true;
+        string targetLayerName = targetObject.GetComponent<SpriteRenderer>().sortingLayerName;
+        return targetLayerName.Equals(allowedSortingLayer);
+    }
+
+
+    
     private MouseInteraction GetHighestInteraction()
     {
         MouseInteraction interaction = null;
-        foreach (LayerMask layer in inputLayers)
+        foreach (string sortLayer in _sortingLayerNames)
         {
-            if (interaction = GetLayerInteraction(layer))
-                break;
+            foreach (LayerMask layer in inputLayers)
+            {
+                if (interaction = GetLayerInteraction(layer))
+                    break;
+            }
         }
         return interaction;
     }
@@ -67,10 +101,13 @@ public class MouseInputSystem : SceneSingleton<MouseInputSystem>
         int index = Array.FindIndex(inputLayers, mask => (mask.value & targetMask) != 0);
 
         MouseInteraction interaction = null;
-        for (int i = index + 1; i < inputLayers.Length; ++i)
+        foreach (string sortLayer in _sortingLayerNames)
         {
-            if (interaction = GetLayerInteraction(inputLayers[i]))
-                break;
+            for (int i = index + 1; i < inputLayers.Length; ++i)
+            {
+                if (interaction = GetLayerInteraction(inputLayers[i]))
+                    break;
+            }
         }
         return interaction;
     }

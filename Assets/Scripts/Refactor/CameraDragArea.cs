@@ -4,6 +4,7 @@ using static EtcUtils;
 
 public class CameraDragArea : MouseInteraction
 {
+    private static DragData _camDragData;
     protected override string InputLayerName => "CameraMovable";
     public override bool IsPassDown => true;
     [SerializeField] private float sensitivity;
@@ -25,6 +26,9 @@ public class CameraDragArea : MouseInteraction
     protected override void Awake()
     {
         base.Awake();
+        if (_camDragData == null)
+            _camDragData = Camera.main.GetComponent<DragData>();
+
         mainCamera = Camera.main;
         SetCamereViewSize();
         SetMovementLimit();
@@ -39,7 +43,7 @@ public class CameraDragArea : MouseInteraction
             mainCamera.transform.position,
             targetPosition,
             ref smoothVel,
-            smoothTime
+            _camDragData.SmoothTime
         );
     }
 
@@ -79,7 +83,7 @@ public class CameraDragArea : MouseInteraction
         Vector3 difference = dragOrigin - current;
         if (difference.magnitude >= Mathf.Epsilon)
         {
-            targetPosition = mainCamera.transform.position + difference * sensitivity;
+            targetPosition = mainCamera.transform.position + difference * _camDragData.Sensitivity;
             targetPosition.x = Mathf.Clamp(targetPosition.x, scrollMinPos.x, scrollMaxPos.x);
             targetPosition.y = Mathf.Clamp(targetPosition.y, scrollMinPos.y, scrollMaxPos.y);
             dragDistance += difference.magnitude;

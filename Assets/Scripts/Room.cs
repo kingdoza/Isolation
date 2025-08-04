@@ -5,8 +5,20 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     [SerializeField] private string roomName;
-    [SerializeField] private List<GameObject> views;
+    [SerializeField] private List<GameObject> viewPrefabs;
+    private List<GameObject> views = new List<GameObject>();
     private int viewIndex;
+
+
+
+    public void CreateViewInstances()
+    {
+        foreach (GameObject viewPrefab in viewPrefabs)
+        {
+            viewPrefab.SetActive(false);
+            views.Add(Instantiate(viewPrefab));
+        }
+    }
 
 
 
