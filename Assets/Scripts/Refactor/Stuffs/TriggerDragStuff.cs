@@ -3,10 +3,12 @@ using static EtcUtils;
 
 [RequireComponent(typeof(LimitedDrag))]
 [RequireComponent(typeof(CursorHover))]
-public class TriggerDragStuff : RoomStuff
+public class TriggerDragStuff : BaseStuff
 {
     private TriggerDetector triggerDectectComp;
     private Collider2D triggerColliderComp;
+
+    protected override StuffTypeData StuffData => GameData.DragStuffData;
 
 
 

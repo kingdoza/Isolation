@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Click))]
-public abstract class ClickableStuff : RoomStuff
+public abstract class ClickableStuff : BaseStuff
 {
     protected override void Awake()
     {
@@ -11,5 +11,8 @@ public abstract class ClickableStuff : RoomStuff
 
 
 
-    protected abstract void OnClicked();
+    protected virtual void OnClicked()
+    {
+        GameManager.Instance.TimeController.ProgressMinutes(StuffData.MinuteWaste);
+    }
 }

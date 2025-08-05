@@ -9,6 +9,7 @@ public class FocusStuff : ClickableStuff
     [SerializeField] private GameObject focusPrefab;
     private GameObject focusView;
     public GameObject FocusView => focusView;
+    protected override StuffTypeData StuffData => GameData.FocusStuffData;
 
 
 
@@ -34,6 +35,7 @@ public class FocusStuff : ClickableStuff
 
     protected override void OnClicked()
     {
+        base.OnClicked();
         GameManager.Instance.RoomController.FocusItem(focusView);
     }
 }

@@ -122,7 +122,7 @@ public class RoomController : MonoBehaviour {
         isZoomIn = false;
         //DragScroller.CanDrag = true;
         ChangeRoomView(currentRoom.CurrentView);
-        timeController.ProgressMinutes(ProgressTimeType.ZoomOut);
+        //timeController.ProgressMinutes(ProgressTimeType.ZoomOut);
     }
 
 
@@ -132,7 +132,7 @@ public class RoomController : MonoBehaviour {
         isZoomIn = true;
         //DragScroller.CanDrag = false;
         ChangeRoomView(newView);
-        timeController.ProgressMinutes(ProgressTimeType.ZoomIn);
+        //timeController.ProgressMinutes(ProgressTimeType.ZoomIn);
     }
 
 

@@ -66,6 +66,26 @@ public class TimeController : MonoBehaviour
 
 
 
+    public void ProgressMinutes(int minutes)
+    {
+        GameDate prevGameDate = (GameDate)currentGameDate.Clone();
+        currentGameDate.AdvanceMinutes(minutes);
+
+        bool isCurrentTimeSleep = IsSleepingTime();
+        if (IsSleepingTime(prevGameDate) != isCurrentTimeSleep)
+        {
+            OnTimeStatusChanged(!isCurrentTimeSleep);
+        }
+
+        uiController.ShowGameDateClock(currentGameDate);
+        if (currentGameDate >= limitGameDate)
+        {
+            TimeOver();
+        }
+    }
+
+
+
     private void OnTimeStatusChanged(bool isWakeup)
     {
         if (isWakeup)

@@ -12,8 +12,8 @@ public class MouseHoverSystem : SceneSingleton<MouseHoverSystem>
         {
             if (hoverTarget != value)
             {
-                value?.OnCursorEnter();
                 hoverTarget?.OnCursorExit();
+                value?.OnCursorEnter();
             }
             hoverTarget = value;
         }
@@ -23,8 +23,7 @@ public class MouseHoverSystem : SceneSingleton<MouseHoverSystem>
 
     private void Update()
     {
-        if (EventSystem.current.IsPointerOverGameObject())// ||
-            //(HoverTarget && MouseInputSystem.Instance.IsAllowedInputObject(HoverTarget.gameObject) == false))
+        if (EventSystem.current.IsPointerOverGameObject())
         {
             HoverTarget = null;
             return;

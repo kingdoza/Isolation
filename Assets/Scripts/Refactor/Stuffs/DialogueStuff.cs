@@ -8,6 +8,7 @@ public class DialogueStuff : ClickableStuff
     private DialogueController dialogueController;
     private int originSortingLayer;
     private bool isDialogueProcess = false;
+    protected override StuffTypeData StuffData => GameData.DialogueStuffData;
 
 
 
@@ -21,6 +22,7 @@ public class DialogueStuff : ClickableStuff
 
     protected override void OnClicked()
     {
+        base.OnClicked();
         OnDiaglogueStart();
         dialogueController.DiagloueEndEvent.AddListener(OnDialogueClosed);
         dialogueController.StartDialogueSequence(dialogues);
