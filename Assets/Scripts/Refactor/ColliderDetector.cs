@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TriggerDetector : MonoBehaviour
+public class ColliderDetector : MonoBehaviour
 {
     [SerializeField] private string targetTag;
     [HideInInspector] public UnityEvent<Collider2D> TriggerEnterEvent = new UnityEvent<Collider2D>();

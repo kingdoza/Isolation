@@ -3,19 +3,17 @@ using static EtcUtils;
 
 [RequireComponent(typeof(LimitedDrag))]
 [RequireComponent(typeof(CursorHover))]
-public class TriggerDragStuff : BaseStuff
+public class TriggerDragStuff : DraggableStuff
 {
-    private TriggerDetector triggerDectectComp;
+    private ColliderDetector triggerDectectComp;
     private Collider2D triggerColliderComp;
-
-    protected override StuffTypeData StuffData => GameData.DragStuffData;
 
 
 
     protected override void Awake()
     {
         base.Awake();
-        triggerDectectComp = GetComponentInChildren<TriggerDetector>();
+        triggerDectectComp = GetComponentInChildren<ColliderDetector>();
         triggerColliderComp = GetComponentInChildren<Collider2D>();
         if (triggerDectectComp == null || triggerColliderComp == null)
         {
