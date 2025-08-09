@@ -63,11 +63,11 @@ public class Drag : MouseInteraction
     {
         return dragDistance > Mathf.Epsilon;
     }
+}
 
 
 
-    protected enum DragDirection
-    {
-        Vertical, Horizontal, Plane
-    }
+public enum DragDirection
+{
+    Vertical, Horizontal, Plane
 }

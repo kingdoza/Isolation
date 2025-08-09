@@ -35,6 +35,7 @@ public class FocusStuff : ClickableStuff
 
     protected override void OnClicked()
     {
+        if (!enabled) return;
         base.OnClicked();
         GameManager.Instance.RoomController.FocusItem(focusView);
     }

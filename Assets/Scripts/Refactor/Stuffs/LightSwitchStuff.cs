@@ -10,6 +10,7 @@ public class LightSwitchStuff : ClickableStuff
 
     protected override void OnClicked()
     {
+        if (!enabled) return;
         base.OnClicked();
         Player.Instance.Sleep();
     }

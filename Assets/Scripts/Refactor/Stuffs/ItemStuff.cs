@@ -11,6 +11,7 @@ public class ItemStuff : ClickableStuff
 
     protected override void OnClicked()
     {
+        if (!enabled) return;
         base.OnClicked();
         InventoryUI.Instance.AddItem(itemData);
         gameObject.SetActive(false);

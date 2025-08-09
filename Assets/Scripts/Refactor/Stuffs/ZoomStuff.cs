@@ -20,6 +20,7 @@ public class ZoomStuff : ClickableStuff
 
     protected override void OnClicked()
     {
+        if (!enabled) return;
         base.OnClicked();
         GameManager.Instance.RoomController.ZoomInView(zoomView);
     }

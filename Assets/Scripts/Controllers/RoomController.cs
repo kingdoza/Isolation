@@ -25,6 +25,7 @@ public class RoomController : MonoBehaviour {
     public GameObject CurrentView => currentView;
 
     public UnityEvent OnFocusOut = new UnityEvent();
+    private Stack<GameObject> zoomStack = new Stack<GameObject>();
 
 
 
@@ -90,6 +91,8 @@ public class RoomController : MonoBehaviour {
         MouseInteraction.DisableSubObjectInputs(currentView);
         focusPanel.SetActive(true);
         itemFocusedView = focusView;
+        Vector3 cameraPos = Camera.main.transform.position;
+        itemFocusedView.transform.position = new Vector3(cameraPos.x, cameraPos.y, 0);
         itemFocusedView.SetActive(true);
         uiController.EnableMoveButtons();
     }
@@ -119,16 +122,29 @@ public class RoomController : MonoBehaviour {
             OutFocusItem();
             return;
         }
-        isZoomIn = false;
-        //DragScroller.CanDrag = true;
-        ChangeRoomView(currentRoom.CurrentView);
-        //timeController.ProgressMinutes(ProgressTimeType.ZoomOut);
+        if (zoomStack.Count != 0)
+        {
+            isZoomIn = true;
+            ChangeRoomView(zoomStack.Pop());
+        }
+        else
+        {
+            isZoomIn = false;
+            ChangeRoomView(currentRoom.CurrentView);
+
+        }
+        //isZoomIn = false;
+        //ChangeRoomView(zoomStack.Pop());
     }
 
 
 
-    public void ZoomInView(GameObject newView) 
+    public void ZoomInView(GameObject newView)
     {
+        if (isZoomIn)
+        {
+            zoomStack.Push(currentView);
+        }
         isZoomIn = true;
         //DragScroller.CanDrag = false;
         ChangeRoomView(newView);

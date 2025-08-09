@@ -98,11 +98,11 @@ GameObject:
   - component: {fileID: 5773021017189113034}
   - component: {fileID: 7890662398679302455}
   - component: {fileID: 5756276699997650520}
-  - component: {fileID: 7161439080833585895}
   - component: {fileID: 3188451091207945518}
   - component: {fileID: 1075539220395241834}
-  - component: {fileID: 5141703710261068018}
   - component: {fileID: 5929259519224430592}
+  - component: {fileID: 8017642865607922539}
+  - component: {fileID: 3631826420611178591}
   m_Layer: 0
   m_Name: LightSwitch
   m_TagString: Untagged
@@ -275,20 +275,6 @@ PolygonCollider2D:
       - {x: 3.6499999, y: 1.5799999}
       - {x: 3.79, y: 1.5799999}
   m_UseDelaunayMesh: 0
---- !u!114 &7161439080833585895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825878080128673709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00315d9825112643a5fa6b444c68fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wakeSprite: {fileID: 21300000, guid: fb85e48c2b58fbd4296c90bc1cd1ab0d, type: 3}
-  sleepSprite: {fileID: 21300000, guid: 37da4215881bba34ea7ffe94b0da4393, type: 3}
 --- !u!114 &3188451091207945518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,20 +308,6 @@ MonoBehaviour:
   CursorExitEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5141703710261068018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825878080128673709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c5bd8314f2f8d1469892bf2b911399f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wakeStatus: 1
-  sleepStatus: 0
 --- !u!114 &5929259519224430592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,6 +321,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomPrefab: {fileID: 6907309563162764960, guid: e3fb2f752020fc24fbcf392b668b0a77, type: 3}
+--- !u!114 &8017642865607922539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825878080128673709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 986d9efbd643f9140be8002390b956de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 1
+    targetComponent: {fileID: 0}
+  trueConditonStatus: 1
+  falseConditonStatus: 0
+--- !u!114 &3631826420611178591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825878080128673709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410fcd4fbcd29094197db15c098f2629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 1
+    targetComponent: {fileID: 0}
+  trueConditonSprite: {fileID: 21300000, guid: fb85e48c2b58fbd4296c90bc1cd1ab0d, type: 3}
+  falseConditonSprite: {fileID: 21300000, guid: 37da4215881bba34ea7ffe94b0da4393, type: 3}
 --- !u!1 &2511131467383531443
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec1743eb202a3c4295bdf3c2201ad14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dragDirection: 2
 --- !u!61 &6016356511443305509
 BoxCollider2D:
   m_ObjectHideFlags: 0

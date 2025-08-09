@@ -34,6 +34,7 @@ public abstract class BaseStuff : MonoBehaviour
 
     protected virtual void OnCursorEntered()
     {
+        if (!enabled) return;
         GetComponent<SpriteRenderer>().color = Color.gray;
         SetCursorTexture(StuffData.CursorTexture);
     }
@@ -42,6 +43,7 @@ public abstract class BaseStuff : MonoBehaviour
 
     protected virtual void OnCursorExited()
     {
+        if (!enabled) return;
         GetComponent<SpriteRenderer>().color = originalColor;
         SetCursorTexture();
     }

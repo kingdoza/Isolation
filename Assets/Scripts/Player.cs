@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using static ControllerUtils;
 
-public class Player : SceneSingleton<Player>
+public class Player : SceneSingleton<Player>, ITriggerEventSendable
 {
     [SerializeField] private Motivation[] motivations;
     private bool isSleeping = false;
@@ -20,9 +20,17 @@ public class Player : SceneSingleton<Player>
     [HideInInspector] public UnityEvent<ItemData> ItemUnselectEvent = new UnityEvent<ItemData>();
     private ItemData itemInUse;
 
+    public event Action TriggerChangeAction;
     public UsableItem UsingItemType => usingItemType;
 
     public ItemData ItemInUse => itemInUse;
+
+
+
+    protected override void Awake()
+    {
+        TriggerEventController.Instance.PlayerWakeTrigger = this;
+    }
 
 
 
@@ -52,6 +60,7 @@ public class Player : SceneSingleton<Player>
         isSleeping = true;
         GameManager.Instance.FilterController.SetSleep();
         OnSleep?.Invoke();
+        TriggerChangeAction?.Invoke();
     }
 
 
@@ -61,6 +70,7 @@ public class Player : SceneSingleton<Player>
         isSleeping = false;
         GameManager.Instance.FilterController.SetWakeup();
         OnWakeup?.Invoke();
+        TriggerChangeAction?.Invoke();
     }
 
 
@@ -104,6 +114,13 @@ public class Player : SceneSingleton<Player>
             return;
         ItemUnselectEvent?.Invoke(itemInUse);
         itemInUse = null;
+    }
+
+
+
+    public bool GetTriggerValue()
+    {
+        return !IsSleeping;
     }
 }
 

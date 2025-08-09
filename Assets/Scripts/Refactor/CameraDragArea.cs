@@ -4,6 +4,7 @@ using static EtcUtils;
 
 public class CameraDragArea : MouseInteraction
 {
+    [SerializeField] private DragDirection dragDirection = DragDirection.Plane;
     private static DragData _camDragData;
     protected override string InputLayerName => "CameraMovable";
     public override bool IsPassDown => true;
@@ -75,6 +76,17 @@ public class CameraDragArea : MouseInteraction
         }
         scrollMinPos += Vector2.one * 0.01f;
         scrollMaxPos -= Vector2.one * 0.01f;
+
+        if (dragDirection == DragDirection.Vertical)
+        {
+            scrollMinPos.x = 0;
+            scrollMaxPos.x = 0;
+        }
+        else if (dragDirection == DragDirection.Horizontal)
+        {
+            scrollMinPos.y = 0;
+            scrollMaxPos.y = 0;
+        }
     }
 
 

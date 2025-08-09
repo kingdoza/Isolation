@@ -13,6 +13,7 @@ public class GameManager : PersistentSingleton<GameManager>
     private SoundController soundController;
     private DialogueController dialogueController;
     private PuzzleController puzzleController;
+    private TriggerEventController triggerController;
     private Player player;
     [SerializeField] private Texture2D hoverCursor;
     [SerializeField] private Vector2 viewSpriteSize;
@@ -24,6 +25,7 @@ public class GameManager : PersistentSingleton<GameManager>
     public SoundController SoundController => soundController;
     public DialogueController DialogueController => dialogueController;
     public PuzzleController PuzzleController => puzzleController;
+    public TriggerEventController TriggerController => triggerController;
     public Player Player => player;
     public Texture2D HoverCursor => hoverCursor;
     public Vector2 ViewSpriteSize => viewSpriteSize;
@@ -113,6 +115,7 @@ public class GameManager : PersistentSingleton<GameManager>
         //soundController = FindAnyObjectByType<SoundController>();
         dialogueController = FindAnyObjectByType<DialogueController>();
         puzzleController = FindAnyObjectByType<PuzzleController>();
+        triggerController = FindAnyObjectByType<TriggerEventController>();
         player = FindAnyObjectByType<Player>();
 
         BackGround = GameObject.Find("Background"); //

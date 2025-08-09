@@ -20,6 +20,7 @@ public class ColliderDetector : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (!collision.gameObject.activeInHierarchy || !gameObject.activeInHierarchy) return;
         if (collision.CompareTag(targetTag) == false)
             return;
         TriggerExitEvent?.Invoke(collision);

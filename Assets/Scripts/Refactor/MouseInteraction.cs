@@ -36,6 +36,20 @@ public abstract class MouseInteraction : MonoBehaviour
 
 
 
+    public virtual void SetStatus(bool newStatus)
+    {
+        if (newStatus)
+        {
+            EnableInput();
+        }
+        else
+        {
+            DisableInput();
+        }
+    }
+
+
+
     public abstract void OnInteractStart();
     public abstract void OnInteracting();
     public abstract void OnInteractEnd();
