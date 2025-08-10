@@ -100,6 +100,9 @@ public class TriggerEvent
             case GlobalTriggerEvent.FramePhotoFlip:
                 targetSender = TriggerEventController.Instance.FramePhotoFlip;
                 break;
+            case GlobalTriggerEvent.DrawerStick:
+                targetSender = TriggerEventController.Instance.DrawerStick;
+                break;
             default:
                 break;
         }

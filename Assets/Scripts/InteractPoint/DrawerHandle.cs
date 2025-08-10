@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class DrawerHandler : ItemUsePoint
+public class DrawerHandler2 : ItemUsePoint
 {
 
 

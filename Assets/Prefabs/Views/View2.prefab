@@ -488,6 +488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a8b49ae2d5e1c40b0a8302ecec498e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactItem: 0
+  isCovered: 0
 --- !u!60 &2082608397826644917
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -819,6 +821,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa6bf434218bd46b2eb6f8ca6da95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactItem: 0
+  isCovered: 0
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   zoomPrefab: {fileID: 6907309563162764960, guid: 87607cdaf01808b478c84555ceb6ae25, type: 3}
 --- !u!1 &1803683206557661688
 GameObject:
@@ -1086,6 +1093,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0188e7b02c871e941a08687bb284d692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactItem: 0
+  isCovered: 0
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   zoomPrefab: {fileID: 6907309563162764960, guid: e3fb2f752020fc24fbcf392b668b0a77, type: 3}
 --- !u!114 &9197097793188574116
 MonoBehaviour:
@@ -1218,6 +1230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6424117233591932610}
   - component: {fileID: 7380382698036493623}
+  - component: {fileID: 4830553771226064359}
   m_Layer: 0
   m_Name: "(6)(2) \uC637\uC7A5\uC190\uC7A1\uC774"
   m_TagString: Untagged
@@ -1295,6 +1308,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4830553771226064359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3658738889655806111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410fcd4fbcd29094197db15c098f2629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 5
+    targetComponent: {fileID: 0}
+  trueConditonSprite: {fileID: 21300000, guid: 52ba38b653235e94e9f7c3ad8b16b94e, type: 3}
+  falseConditonSprite: {fileID: 0}
 --- !u!1 &4100037564915833223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,6 +1757,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa6bf434218bd46b2eb6f8ca6da95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactItem: 0
+  isCovered: 0
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   zoomPrefab: {fileID: 6038186748799628573, guid: 5fc5fa4450e404643bdf10df35e224a4, type: 3}
 --- !u!1 &4977011431589232059
 GameObject:
@@ -1997,6 +2032,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a822cb98f2f0ea9408d2baf3ecec62a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactItem: 0
+  isCovered: 0
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   focusPrefab: {fileID: 5651985761257646465, guid: 56f7b2586d6c648438dc6b6f57bc8557, type: 3}
 --- !u!1 &6329980729259520064
 GameObject:
@@ -2368,4 +2408,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa6bf434218bd46b2eb6f8ca6da95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactItem: 0
+  isCovered: 0
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   zoomPrefab: {fileID: 6907309563162764960, guid: 057d9db82b118ed419e0b8aa4056996f, type: 3}

@@ -241,6 +241,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa6bf434218bd46b2eb6f8ca6da95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactItem: 0
+  isCovered: 0
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   zoomPrefab: {fileID: 6907309563162764960, guid: 057d9db82b118ed419e0b8aa4056996f, type: 3}
 --- !u!61 &5907316732580174372
 BoxCollider2D:
@@ -472,6 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1343701868173754104}
   - component: {fileID: 1725102724315744054}
+  - component: {fileID: 3586469302590024053}
   m_Layer: 0
   m_Name: "(4)(4) \uC190\uC7A1\uC774(\uB450\uBC88\uC9F8\uC11C\uB78D)(\uD37C\uC990\uC6A9)"
   m_TagString: Untagged
@@ -549,6 +555,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3586469302590024053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5368474610336091237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410fcd4fbcd29094197db15c098f2629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 5
+    targetComponent: {fileID: 0}
+  trueConditonSprite: {fileID: 21300000, guid: 03f51adebc0e21e4e87450bf7d16f1d5, type: 3}
+  falseConditonSprite: {fileID: 0}
 --- !u!1 &5879045518320464242
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,6 +1104,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa6bf434218bd46b2eb6f8ca6da95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactItem: 0
+  isCovered: 0
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   zoomPrefab: {fileID: 6907309563162764960, guid: 66e6fc4bb142d614daf5e4582d6732b8, type: 3}
 --- !u!114 &7580661118237990577
 MonoBehaviour:
@@ -1109,6 +1137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525fd3276ba668b489cc3e8a047e8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactItem: 0
+  isCovered: 0
 --- !u!114 &2864110393999237219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1121,6 +1151,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a822cb98f2f0ea9408d2baf3ecec62a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactItem: 0
+  isCovered: 0
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   focusPrefab: {fileID: 5651985761257646465, guid: 56f7b2586d6c648438dc6b6f57bc8557, type: 3}
 --- !u!1 &8634128529877790684
 GameObject:
