@@ -41,6 +41,6 @@ public class Click : MouseInteraction
 
     private void OnClick()
     {
-        Debug.Log("Clicked");
+        //Debug.Log("Clicked");
     }
 }

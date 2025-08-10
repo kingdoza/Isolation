@@ -38,7 +38,7 @@ public class PhotoFrame : MonoBehaviour
         photoSwitcher1.RegisterInteractCondition(() => !convertStatus);
         photoSwitcher2.RegisterInteractCondition(() => convertStatus);
 
-        foreach (Screw screw in GetComponentsInChildren<Screw>(true)) 
+        foreach (OldScrew screw in GetComponentsInChildren<OldScrew>(true)) 
         {
             if(screw.IsJoint == false)
                 screw.RegisterInteractCondition(() => backPlateClose.gameObject.activeSelf);
@@ -62,7 +62,7 @@ public class PhotoFrame : MonoBehaviour
             jointScrewCount = 2;
             foreach (CollectibleItem screw in screwsToCollect)
             {
-                screw.GetComponent<Screw>().OtherStatus.gameObject.SetActive(false);
+                screw.GetComponent<OldScrew>().OtherStatus.gameObject.SetActive(false);
             }
         }
     }
@@ -92,7 +92,7 @@ public class PhotoFrame : MonoBehaviour
 
     private void OnScrewInteracted(ItemUsePoint interaction)
     {
-        Screw screw = interaction as Screw;
+        OldScrew screw = interaction as OldScrew;
         if (screw == null) return;
 
         if (screw.IsJoint)

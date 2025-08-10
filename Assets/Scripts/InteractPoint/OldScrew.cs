@@ -1,7 +1,7 @@
 using UnityEngine;
 using static ControllerUtils;
 
-public class Screw : StatusSwitcher
+public class OldScrew : StatusSwitcher
 {
     [SerializeField] private bool isJoint;
     public bool IsJoint => isJoint;

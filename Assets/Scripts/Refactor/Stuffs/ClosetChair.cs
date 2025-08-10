@@ -19,7 +19,7 @@ public class ClosetChair : DraggableStuff, ITriggerEventSendable
         base.Awake();
         colliderDectectComp = GetComponentInChildren<ColliderDetector>();
         detectorColliderComp = GetComponentInChildren<Collider2D>();
-        TriggerEventController.Instance.ClosetChairTrigger = this;
+        TriggerEventController.Instance.ChairRightReach = this;
         if (colliderDectectComp == null || detectorColliderComp == null)
         {
             PrintErrorLog(gameObject, Error.NullComp);

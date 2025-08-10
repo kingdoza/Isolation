@@ -29,7 +29,7 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
 
     protected override void Awake()
     {
-        TriggerEventController.Instance.PlayerWakeTrigger = this;
+        TriggerEventController.Instance.PlayerWakeup = this;
     }
 
 
@@ -112,8 +112,8 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
     {
         if (itemInUse == null)
             return;
-        ItemUnselectEvent?.Invoke(itemInUse);
         itemInUse = null;
+        ItemUnselectEvent?.Invoke(itemInUse);
     }
 
 

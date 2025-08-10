@@ -1,9 +1,14 @@
+using NUnit.Framework;
 using NUnit.Framework.Constraints;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class ConditionalActivator : MonoBehaviour
 {
+    private UnityEvent DestroyEvent = new();
+
     private void OnEnable()
     {
         SetConditionalComponent();
@@ -11,9 +16,44 @@ public abstract class ConditionalActivator : MonoBehaviour
 
 
 
+    private void OnDestroy()
+    {
+        DestroyEvent?.Invoke();
+        DestroyEvent?.RemoveAllListeners();
+    }
+
+
+
     protected virtual void OnTriggerStatusChanged()
     {
         SetConditionalComponent();
+    }
+
+
+
+    protected virtual void InitTrigger(TriggerEvent triggerEvent, GlobalTriggerEvent globalType)
+    {
+        triggerEvent = new(globalType);
+        triggerEvent.SetTargetSender();
+        triggerEvent.TargetSender.TriggerChangeAction += OnTriggerStatusChanged;
+        DestroyEvent.AddListener(() => triggerEvent.TargetSender.TriggerChangeAction -= OnTriggerStatusChanged);
+    }
+
+
+
+    protected virtual void InitTrigger(TriggerEvent triggerEvent)
+    {
+        triggerEvent.SetTargetSender();
+        triggerEvent.TargetSender.TriggerChangeAction += OnTriggerStatusChanged;
+        DestroyEvent.AddListener(() => triggerEvent.TargetSender.TriggerChangeAction -= OnTriggerStatusChanged);
+    }
+
+
+
+    protected virtual void InitTrigger(ITriggerEventSendable triggerEvent)
+    {
+        triggerEvent.TriggerChangeAction += OnTriggerStatusChanged;
+        DestroyEvent.AddListener(() => triggerEvent.TriggerChangeAction -= OnTriggerStatusChanged);
     }
 
 
@@ -26,11 +66,18 @@ public abstract class ConditionalActivator : MonoBehaviour
 [Serializable]
 public class TriggerEvent
 {
-    [SerializeField] private GlobalTriggerEvent globalType;
-    [SerializeField] private MonoBehaviour targetComponent;
-    private ITriggerEventSendable targetSender;
+    [SerializeField] protected GlobalTriggerEvent globalType;
+    [SerializeField] protected MonoBehaviour targetComponent;
+    protected ITriggerEventSendable targetSender;
 
     public ITriggerEventSendable TargetSender => targetSender;
+
+
+
+    public TriggerEvent(GlobalTriggerEvent globalType)
+    {
+        SetTargetSender(globalType);
+    }
 
 
 
@@ -41,11 +88,17 @@ public class TriggerEvent
             case GlobalTriggerEvent.None:
                 targetSender = targetComponent as ITriggerEventSendable;
                 break;
-            case GlobalTriggerEvent.PlayerWake:
-                targetSender = TriggerEventController.Instance.PlayerWakeTrigger;
+            case GlobalTriggerEvent.PlayerWakeup:
+                targetSender = TriggerEventController.Instance.PlayerWakeup;
                 break;
-            case GlobalTriggerEvent.ClosetChair:
-                targetSender = TriggerEventController.Instance.ClosetChairTrigger;
+            case GlobalTriggerEvent.ChairRightReach:
+                targetSender = TriggerEventController.Instance.ChairRightReach;
+                break;
+            case GlobalTriggerEvent.FirstScrewsLoose:
+                targetSender = TriggerEventController.Instance.FirstScrewsLoose;
+                break;
+            case GlobalTriggerEvent.FramePhotoFlip:
+                targetSender = TriggerEventController.Instance.FramePhotoFlip;
                 break;
             default:
                 break;
@@ -59,4 +112,75 @@ public class TriggerEvent
         this.globalType = globalType;
         SetTargetSender();
     }
+
+
+
+    public bool GetValue()
+    {
+        if (targetSender == null)
+            SetTargetSender();
+        return targetSender.GetTriggerValue();
+    }
+}
+
+
+
+public static class TriggerEventExtension
+{
+    public static bool GetValue(this TriggerEvent[] triggerEvents, EvaluateType evaluateType)
+    {
+        switch (evaluateType)
+        {
+            case EvaluateType.OR:
+                return triggerEvents.EvaluateOr();
+            case EvaluateType.AND:
+                return triggerEvents.EvaluateAnd();
+        }
+        return false;
+    }
+
+
+
+    public static bool GetValue(this List<TriggerEvent> triggerEvents, EvaluateType evaluateType)
+    {
+        switch (evaluateType)
+        {
+            case EvaluateType.OR:
+                return triggerEvents.ToArray().EvaluateOr();
+            case EvaluateType.AND:
+                return triggerEvents.ToArray().EvaluateAnd();
+        }
+        return false;
+    }
+
+
+
+    private static bool EvaluateOr(this TriggerEvent[] triggerEvents)
+    {
+        bool evaluation = false;
+        foreach (TriggerEvent triggerEvent in triggerEvents)
+        {
+            evaluation = evaluation || triggerEvent.GetValue();
+        }
+        return evaluation;
+    }
+
+
+
+    private static bool EvaluateAnd(this TriggerEvent[] triggerEvents)
+    {
+        bool evaluation = true;
+        foreach (TriggerEvent triggerEvent in triggerEvents)
+        {
+            evaluation = evaluation && triggerEvent.GetValue();
+        }
+        return evaluation;
+    }
+}
+
+
+
+public enum EvaluateType
+{
+    OR, AND
 }

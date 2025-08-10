@@ -1,10 +1,10 @@
 using UnityEngine;
 using static EtcUtils;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(CursorHover))]
 public abstract class BaseStuff : MonoBehaviour
 {
+    [SerializeField] private ItemType interactItem = ItemType.None;
     protected abstract StuffTypeData StuffData { get; }
     protected MouseInteraction inputComp;
     protected CursorHover hoverComp;

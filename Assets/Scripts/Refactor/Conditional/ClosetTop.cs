@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ClosetTop : ConditionalActivator
 {
-    private TriggerEvent playerWakeTrigger = new();
-    private TriggerEvent closetChairTrigger = new();
+    private TriggerEvent playerWakeTrigger;
+    private TriggerEvent closetChairTrigger;
     [SerializeField] private ZoomStuff zoomStuff;
     [SerializeField] private FocusStuff focusStuff;
     [SerializeField] private InactiveStuff inactiveStuff;
@@ -12,8 +12,10 @@ public class ClosetTop : ConditionalActivator
 
     protected void Awake()
     {
-        playerWakeTrigger.SetTargetSender(GlobalTriggerEvent.PlayerWake);
-        closetChairTrigger.SetTargetSender(GlobalTriggerEvent.ClosetChair);
+        playerWakeTrigger = new(GlobalTriggerEvent.PlayerWakeup);
+        closetChairTrigger = new(GlobalTriggerEvent.ChairRightReach);
+        playerWakeTrigger.SetTargetSender();
+        closetChairTrigger.SetTargetSender();
         playerWakeTrigger.TargetSender.TriggerChangeAction += OnTriggerStatusChanged;
         closetChairTrigger.TargetSender.TriggerChangeAction += OnTriggerStatusChanged;
     }

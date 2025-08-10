@@ -37,6 +37,8 @@ public class UIController : MonoBehaviour
     {
         RegisterDragScrollCondition(() => !mindTreeUI.gameObject.activeSelf);
         GameManager.Instance.Player.OnInventoryItemSelect.AddListener(OnPlayerItemSelected);
+        Player.Instance.ItemSelectEvent.AddListener((ItemData) => DisableLeftUI());
+        Player.Instance.ItemUnselectEvent.AddListener((ItemData) => EnableLeftUI());
     }
 
 

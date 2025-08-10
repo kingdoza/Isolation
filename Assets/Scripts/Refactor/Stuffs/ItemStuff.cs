@@ -13,8 +13,16 @@ public class ItemStuff : ClickableStuff
     {
         if (!enabled) return;
         base.OnClicked();
-        InventoryUI.Instance.AddItem(itemData);
-        gameObject.SetActive(false);
+        Acquire();
         //GameManager.Instance.RoomController.CollectedItemNames.Add(ItemName);
+    }
+
+
+
+    public void Acquire()
+    {
+        InventoryUI.Instance.AddItem(itemData);
+        Destroy(gameObject);
+        //gameObject.SetActive(false);
     }
 }

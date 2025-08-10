@@ -9,8 +9,7 @@ public abstract class SingleConditonActivator : ConditionalActivator
 
     protected virtual void Awake()
     {
-        triggerEvent.SetTargetSender();
-        triggerEvent.TargetSender.TriggerChangeAction += OnTriggerStatusChanged;
+        InitTrigger(triggerEvent);
     }
 
 

@@ -3,6 +3,7 @@ using UnityEngine;
 public class PuzzleController : MonoBehaviour
 {
     public ITriggerEventSendable ClosetChair { get; set; }
+    public ITriggerEventSendable FrameScrewsLoose { get; set; }
 
 
     public PhotoFrame.Info PhotoFrameInfo { get; set; } = new PhotoFrame.Info();
