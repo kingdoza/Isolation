@@ -59,21 +59,36 @@ public abstract class MouseInteraction : MonoBehaviour
 
     public static void EnableSubObjectInputs(GameObject targetObject)
     {
-        MouseInteraction[] interactions = targetObject.GetComponentsInChildren<MouseInteraction>();
-        foreach (MouseInteraction interaction in interactions)
+        //MouseInteraction[] interactions = targetObject.GetComponentsInChildren<MouseInteraction>();
+        //foreach (MouseInteraction interaction in interactions)
+        //{
+        //    interaction.EnableInput();
+        //}
+
+        BaseStuff[] baseStuffs = targetObject.GetComponentsInChildren<BaseStuff>();
+        foreach (BaseStuff stuff in baseStuffs)
         {
-            interaction.EnableInput();
+            stuff.IsCovered = false;
         }
+        targetObject.GetComponentInChildren<CameraDragArea>()?.EnableInput();
     }
 
 
 
     public static void DisableSubObjectInputs(GameObject targetObject)
     {
-        MouseInteraction[] interactions = targetObject.GetComponentsInChildren<MouseInteraction>();
-        foreach (MouseInteraction interaction in interactions)
+        //MouseInteraction[] interactions = targetObject.GetComponentsInChildren<MouseInteraction>();
+        //foreach (MouseInteraction interaction in interactions)
+        //{
+        //    interaction.DisableInput();
+        //}
+
+        BaseStuff[] baseStuffs = targetObject.GetComponentsInChildren<BaseStuff>();
+        foreach (BaseStuff stuff in baseStuffs)
         {
-            interaction.DisableInput();
+            Debug.Log(stuff.gameObject);
+            stuff.IsCovered = true;
         }
+        targetObject.GetComponentInChildren<CameraDragArea>()?.DisableInput();
     }
 }

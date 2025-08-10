@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(ClickableStuff))]
 public class FrameBack : ConditionalActivator
 {
-    [SerializeField] private TriggerEvent itemSelectTrigger;
     [SerializeField] private TriggerEvent screwsTightTrigger;
     [SerializeField] private TriggerEvent screwsLooseTrigger;
     [SerializeField] private TriggerEvent photoFlipTrigger;
@@ -20,7 +19,6 @@ public class FrameBack : ConditionalActivator
 
     private void Awake()
     {
-        InitTrigger(itemSelectTrigger);
         InitTrigger(screwsTightTrigger);
         InitTrigger(screwsLooseTrigger);
         InitTrigger(photoFlipTrigger);
@@ -36,7 +34,7 @@ public class FrameBack : ConditionalActivator
 
     protected override void SetConditionalComponent()
     {
-        if (itemSelectTrigger.GetValue() && screwsTightTrigger.GetValue())
+        if (screwsTightTrigger.GetValue())
         {
             inactiveStuff.enabled = false;
             clickableStuff.enabled = true;

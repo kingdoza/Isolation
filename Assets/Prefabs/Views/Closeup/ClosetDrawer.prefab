@@ -350,9 +350,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5309233274056538086}
   - component: {fileID: 2922314208347592738}
-  - component: {fileID: 5632418072317478918}
   - component: {fileID: 5869971039376642985}
-  - component: {fileID: 4484570701289260891}
+  - component: {fileID: 9079763286416292881}
   m_Layer: 0
   m_Name: "\uC190\uC7A1\uC774 \uBD80\uCC29"
   m_TagString: Untagged
@@ -430,18 +429,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5632418072317478918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5515993795289686595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d68ff95989f944e8cc1f46f1b5d475, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &5869971039376642985
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -488,7 +475,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4484570701289260891
+--- !u!114 &9079763286416292881
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -497,13 +484,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5515993795289686595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9cbb733787e0004a8efe12e169a674b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1482c1e531da0e34cb65dc20842df8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: "\uC190\uC7A1\uC774 \uBD80\uCC29"
-  usableItem: 3
-  isUseOnce: 1
-  OnItemUse:
+  CursorEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CursorExitEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6748873983898298108
@@ -716,7 +703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowerDrawerClose: {fileID: 1008539757609899551}
-  handleAttachPoint: {fileID: 4484570701289260891}
+  handleAttachPoint: {fileID: 0}
   attachedHandle: {fileID: 6748873983898298108}
 --- !u!1 &7100566067416084487
 GameObject:

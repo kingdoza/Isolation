@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ToggleStuff : ClickableStuff
 {
     protected override StuffTypeData StuffData => GameData.FocusStuffData;
     [SerializeField] private GameObject toggleObject;
     [SerializeField] private bool initialEnable;
+    [HideInInspector] public UnityEvent<GameObject> ToggleEvent = new();
 
 
 
@@ -22,5 +24,6 @@ public class ToggleStuff : ClickableStuff
         base.OnClicked();
         toggleObject.SetActive(true);
         gameObject.SetActive(false);
+        ToggleEvent?.Invoke(toggleObject);
     }
 }

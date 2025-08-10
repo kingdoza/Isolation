@@ -37,6 +37,7 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
     private void Start()
     {
         RegisterDragScrollCondition(() => usingItemType == UsableItem.None);
+        UnselectItem();
     }
 
 
@@ -114,6 +115,15 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
             return;
         itemInUse = null;
         ItemUnselectEvent?.Invoke(itemInUse);
+    }
+
+
+
+    public bool IsUsingItemTypeMatched(ItemType itemType)
+    {
+        if (itemInUse == null)
+            return itemType == ItemType.None;
+        return itemInUse.Type == itemType; 
     }
 
 

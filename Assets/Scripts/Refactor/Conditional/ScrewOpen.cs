@@ -6,29 +6,22 @@ public class ScrewOpen : ScrewClose
     [SerializeField] private TriggerEvent screwsLooseTrigger;
     [SerializeField] private TriggerEvent plateCloseTrigger;
     public new event Action TriggerChangeAction;
-    [SerializeField] private bool isTight = true;
+    //[SerializeField] private bool isTight = true;
 
 
 
 
     public override bool GetTriggerValue()
     {
-        return isTight;
+        return !isLoose;
     }
 
 
 
-    private void OnEnable()
+    protected override void OnStuffClicked(GameObject toggledObject)
     {
-        isTight = false;
-        TriggerChangeAction?.Invoke();
-    }
-
-
-
-    private void OnDisable()
-    {
-        isTight = true;
+        isLoose = false;
+        toggledObject.GetComponent<ScrewClose>().IsLoose = false;
         TriggerChangeAction?.Invoke();
     }
 
@@ -37,16 +30,9 @@ public class ScrewOpen : ScrewClose
     protected override void Awake()
     {
         base.Awake();
+        toggleStuff.enabled = false;
         InitTrigger(plateCloseTrigger);
         InitTrigger(screwsLooseTrigger);
-    }
-
-
-
-    protected override void OnStuffClicked()
-    {
-        isTight = true;
-        TriggerChangeAction?.Invoke();
     }
 
 
@@ -60,7 +46,7 @@ public class ScrewOpen : ScrewClose
         //    return;
         //}
         //if (!playerWakeTrigger.GetValue() && driverSelectTrigger.GetValue() && plateCloseTrigger.GetValue())
-        if (driverSelectTrigger.GetValue() && plateCloseTrigger.GetValue())
+        if (plateCloseTrigger.GetValue())
         {
             inactiveStuff.enabled = false;
             toggleStuff.enabled = true;

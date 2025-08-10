@@ -26,4 +26,10 @@ public class InactiveStuff : BaseStuff
     {
         mouseInteraction.EnableInput();
     }
+
+
+
+    protected override void ChangeInputStatus() 
+    {
+    }
 }
