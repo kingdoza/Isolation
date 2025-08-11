@@ -484,7 +484,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa6bf434218bd46b2eb6f8ca6da95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -758,7 +763,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa6bf434218bd46b2eb6f8ca6da95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -945,7 +955,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa6bf434218bd46b2eb6f8ca6da95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1439,7 +1454,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa6bf434218bd46b2eb6f8ca6da95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1719,6 +1739,8 @@ GameObject:
   - component: {fileID: 2776052667050475812}
   - component: {fileID: 121283287933902013}
   - component: {fileID: 6391503989837357899}
+  - component: {fileID: 5871046915229343770}
+  - component: {fileID: 6268898590114833485}
   m_Layer: 0
   m_Name: "(7) \uCC45\uC7A5(\uCC45)"
   m_TagString: Untagged
@@ -1923,7 +1945,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59e771cc7258cac4086770e92097b20f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1931,6 +1958,46 @@ MonoBehaviour:
   endingType: 1
   evidenceName: "\uACF5\uBB34\uC6D0 \uC2DC\uD5D8 \uAD50\uC7AC"
   collectStatus: 1
+--- !u!114 &5871046915229343770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154178351829723340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b336ca803e9d17c4eb94d318206ed794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
+  interactItem: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  dialogues:
+  - "\uCC45\uC774\uB2E4"
+--- !u!114 &6268898590114833485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154178351829723340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3537679be75f424ba61d440b92123d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 1
+    targetComponent: {fileID: 0}
+  trueConditonStuff: {fileID: 6391503989837357899}
+  falseConditonStuff: {fileID: 5871046915229343770}
 --- !u!1 &7154543789999426926
 GameObject:
   m_ObjectHideFlags: 0

@@ -5050,21 +5050,9 @@ MonoBehaviour:
   OnWakeup:
     m_PersistentCalls:
       m_Calls: []
-  OnItemCollect:
+  EvidenceCollectEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 779714245}
-        m_TargetAssemblyTypeName: MindTreeUI, Assembly-CSharp
-        m_MethodName: OnPlayerItemCollected
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnInventoryItemSelect:
     m_PersistentCalls:
       m_Calls: []
@@ -5075,6 +5063,10 @@ MonoBehaviour:
   ItemUnselectEvent:
     m_PersistentCalls:
       m_Calls: []
+  onWakeupDialogues:
+  - "\uB0AE\uC774 \uB418\uC5C8\uB2E4."
+  onSleepDialogues:
+  - "\uBC24\uC774 \uB418\uC5C8\uB2E4."
 --- !u!4 &874042128
 Transform:
   m_ObjectHideFlags: 0
@@ -13010,7 +13002,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactItem: 0
-  isCovered: 0
 --- !u!1 &2087457457
 GameObject:
   m_ObjectHideFlags: 0

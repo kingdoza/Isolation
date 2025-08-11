@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public abstract class ConditionalActivator : MonoBehaviour
 {
@@ -33,8 +34,8 @@ public abstract class ConditionalActivator : MonoBehaviour
 
     protected virtual void InitTrigger(TriggerEvent triggerEvent, GlobalTriggerEvent globalType)
     {
-        triggerEvent = new(globalType);
-        triggerEvent.SetTargetSender();
+        //triggerEvent = new(globalType);
+        triggerEvent.SetTargetSender(globalType);
         triggerEvent.TargetSender.TriggerChangeAction += OnTriggerStatusChanged;
         DestroyEvent.AddListener(() => triggerEvent.TargetSender.TriggerChangeAction -= OnTriggerStatusChanged);
     }
@@ -104,6 +105,7 @@ public class TriggerEvent
                 targetSender = TriggerEventController.Instance.DrawerStick;
                 break;
             default:
+                Debug.LogError("Invalid GlobalType");
                 break;
         }
     }

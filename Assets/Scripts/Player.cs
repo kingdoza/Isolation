@@ -14,10 +14,14 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
     public Dictionary<EndingType, MotiveProgress> MotiveProgresses { get; private set; }
 
     [HideInInspector] public UnityEvent<MotiveProgress, string> EvidenceCollectEvent;
+
     [HideInInspector] public UnityEvent<UsableItem> OnInventoryItemSelect;
     [SerializeField] private UsableItem usingItemType = UsableItem.None;
     [HideInInspector] public UnityEvent<ItemData> ItemSelectEvent = new UnityEvent<ItemData>();
     [HideInInspector] public UnityEvent<ItemData> ItemUnselectEvent = new UnityEvent<ItemData>();
+
+    [SerializeField] private string[] onWakeupDialogues;
+    [SerializeField] private string[] onSleepDialogues;
     private ItemData itemInUse;
 
     public event Action TriggerChangeAction;
@@ -29,6 +33,7 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
 
     protected override void Awake()
     {
+        Debug.Log("Player Awake");
         TriggerEventController.Instance.PlayerWakeup = this;
     }
 
@@ -60,6 +65,7 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
             return;
         isSleeping = true;
         GameManager.Instance.FilterController.SetSleep();
+        ShowWakeSleepDialogues(onSleepDialogues);
         OnSleep?.Invoke();
         TriggerChangeAction?.Invoke();
     }
@@ -70,8 +76,27 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
     {
         isSleeping = false;
         GameManager.Instance.FilterController.SetWakeup();
+        ShowWakeSleepDialogues(onWakeupDialogues);
         OnWakeup?.Invoke();
         TriggerChangeAction?.Invoke();
+    }
+
+
+
+    private void ShowWakeSleepDialogues(string[] dialogues)
+    {
+        Debug.Log("Dialogue Start");
+        GameManager.Instance.UIController.DisableMoveButtons();
+        GameManager.Instance.DialogueController.DiagloueEndEvent.AddListener(OnDiaglogueClosed); 
+        GameManager.Instance.DialogueController.StartDialogueSequence(dialogues);
+    }
+
+
+
+    private void OnDiaglogueClosed()
+    {
+        GameManager.Instance.UIController.EnableMoveButtons();
+        Debug.Log("Dialogue End");
     }
 
 

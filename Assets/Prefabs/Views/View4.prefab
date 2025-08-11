@@ -449,7 +449,6 @@ GameObject:
   - component: {fileID: 6335554761826645166}
   - component: {fileID: 7387483376501146299}
   - component: {fileID: 3366458330807686284}
-  - component: {fileID: 7230282567642803991}
   - component: {fileID: 4603091989742008111}
   m_Layer: 0
   m_Name: LightSwitch
@@ -701,24 +700,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0188e7b02c871e941a08687bb284d692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomPrefab: {fileID: 6907309563162764960, guid: e3fb2f752020fc24fbcf392b668b0a77, type: 3}
---- !u!114 &7230282567642803991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5537415392013174671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 986d9efbd643f9140be8002390b956de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   triggerEvent:
-    globalType: 1
+    globalType: 0
     targetComponent: {fileID: 0}
-  trueConditonStatus: 1
-  falseConditonStatus: 0
+  interactItem: 0
+  wakeEnabled: 1
+  sleepEnabled: 0
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  zoomPrefab: {fileID: 6907309563162764960, guid: e3fb2f752020fc24fbcf392b668b0a77, type: 3}
 --- !u!114 &4603091989742008111
 MonoBehaviour:
   m_ObjectHideFlags: 0

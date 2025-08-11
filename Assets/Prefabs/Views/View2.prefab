@@ -488,8 +488,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a8b49ae2d5e1c40b0a8302ecec498e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 1
 --- !u!60 &2082608397826644917
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -821,8 +825,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa6bf434218bd46b2eb6f8ca6da95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 0
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -842,7 +850,6 @@ GameObject:
   - component: {fileID: 7661493068384172138}
   - component: {fileID: 6578117265341779515}
   - component: {fileID: 9197097793188574116}
-  - component: {fileID: 3974038289993245464}
   m_Layer: 0
   m_Name: LightSwitch
   m_TagString: Untagged
@@ -1093,8 +1100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0188e7b02c871e941a08687bb284d692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 0
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1116,23 +1127,6 @@ MonoBehaviour:
     targetComponent: {fileID: 0}
   trueConditonSprite: {fileID: 21300000, guid: 138e2a68691e7a54ba22aefa42f48b6f, type: 3}
   falseConditonSprite: {fileID: 21300000, guid: bb8289316385a844faf9711c8492efbd, type: 3}
---- !u!114 &3974038289993245464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803683206557661688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 986d9efbd643f9140be8002390b956de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerEvent:
-    globalType: 1
-    targetComponent: {fileID: 0}
-  trueConditonStatus: 1
-  falseConditonStatus: 0
 --- !u!1 &2318022794972555820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1757,8 +1751,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa6bf434218bd46b2eb6f8ca6da95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 0
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2032,8 +2030,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a822cb98f2f0ea9408d2baf3ecec62a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 0
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2408,8 +2410,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa6bf434218bd46b2eb6f8ca6da95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 0
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []

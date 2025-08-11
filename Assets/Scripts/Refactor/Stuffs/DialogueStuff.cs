@@ -26,6 +26,7 @@ public class DialogueStuff : ClickableStuff
 
     protected override void OnClicked()
     {
+        if (!enabled) return;
         if (dialogues.Length <= 0) return;
         base.OnClicked();
         OnDiaglogueStart();

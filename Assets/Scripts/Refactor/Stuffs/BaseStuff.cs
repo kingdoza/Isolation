@@ -1,10 +1,13 @@
 using UnityEngine;
 using static EtcUtils;
+using static UnityEngine.EventSystems.EventTrigger;
 
 [RequireComponent(typeof(CursorHover))]
-public abstract class BaseStuff : MonoBehaviour
+public abstract class BaseStuff : SingleConditonActivator
 {
     [SerializeField] protected ItemType interactItem = ItemType.None;
+    [SerializeField] private bool wakeEnabled = true;
+    [SerializeField] private bool sleepEnabled = true;
     protected abstract StuffTypeData StuffData { get; }
     protected MouseInteraction inputComp;
     protected CursorHover hoverComp;
@@ -22,11 +25,15 @@ public abstract class BaseStuff : MonoBehaviour
      }
 
     private bool isItemMatched = false;
+    private bool isValidTime = false;
 
 
 
-    protected virtual void Awake()
+    protected new virtual void Awake()
     {
+        //base.Awake();
+        triggerEvent = new(GlobalTriggerEvent.PlayerWakeup);
+        InitTrigger(triggerEvent);
         inputComp = GetComponent<MouseInteraction>();
         hoverComp = GetComponent<CursorHover>();
         colliderComp = GetComponent<Collider2D>();
@@ -63,7 +70,7 @@ public abstract class BaseStuff : MonoBehaviour
     {
         if (!enabled) return;
         isItemMatched = Player.Instance.IsUsingItemTypeMatched(interactItem);
-        inputComp.SetStatus(isItemMatched && !isCovered);
+        inputComp.SetStatus(isItemMatched && !isCovered && isValidTime);
     }
 
 
@@ -82,5 +89,21 @@ public abstract class BaseStuff : MonoBehaviour
         if (!enabled) return;
         GetComponent<SpriteRenderer>().color = originalColor;
         SetCursorTexture();
+    }
+
+
+
+    protected override void SetTrueComponent()
+    {
+        isValidTime = wakeEnabled;
+        ChangeInputStatus();
+    }
+
+
+
+    protected override void SetFalseComponent()
+    {
+        isValidTime = sleepEnabled;
+        ChangeInputStatus();
     }
 }

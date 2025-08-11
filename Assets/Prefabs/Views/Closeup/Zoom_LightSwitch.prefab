@@ -102,7 +102,6 @@ GameObject:
   - component: {fileID: 2012390104657608969}
   - component: {fileID: 3374378226832704468}
   - component: {fileID: 910037293632727564}
-  - component: {fileID: 5118678892863322323}
   - component: {fileID: 2950894760025743814}
   m_Layer: 0
   m_Name: Switch
@@ -486,20 +485,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a6dc8a065ab3d947bcb995d1e073983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5118678892863322323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8454452025449844423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c5bd8314f2f8d1469892bf2b911399f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wakeStatus: 1
-  sleepStatus: 0
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
+  interactItem: 0
+  wakeEnabled: 1
+  sleepEnabled: 0
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2950894760025743814
 MonoBehaviour:
   m_ObjectHideFlags: 0

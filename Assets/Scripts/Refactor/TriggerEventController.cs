@@ -13,8 +13,9 @@ public class TriggerEventController : SceneSingleton<TriggerEventController>
 
 
 
-    private void FixedUpdate()
+    private void Update()
     {
+        //Debug.Log("PlayerWakeup : " + PlayerWakeup);
         //Debug.Log("FirstScrewsLoose : " + FirstScrewsLoose.GetTriggerValue());
         //Debug.Log("FramePhotoFlip : " + FramePhotoFlip.GetTriggerValue());
     }

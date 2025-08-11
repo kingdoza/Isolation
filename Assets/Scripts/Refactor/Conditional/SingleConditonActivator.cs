@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class SingleConditonActivator : ConditionalActivator
 {
-    [SerializeField] private TriggerEvent triggerEvent;
+    [SerializeField] protected TriggerEvent triggerEvent;
 
 
 
@@ -16,6 +16,7 @@ public abstract class SingleConditonActivator : ConditionalActivator
 
     protected override void SetConditionalComponent()
     {
+        Debug.Log($"{GetType().Name} ({name}), {triggerEvent.TargetSender}");
         if (triggerEvent.TargetSender.GetTriggerValue())
         {
             SetTrueComponent();
