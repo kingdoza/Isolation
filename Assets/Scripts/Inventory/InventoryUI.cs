@@ -26,6 +26,9 @@ public class InventoryUI : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+
+        Player.Instance.OnSleep.AddListener(OpenAllSlots);
+        Player.Instance.OnWakeup.AddListener(CloseAllSlots);
     }
 
 
@@ -108,6 +111,29 @@ public class InventoryUI : MonoBehaviour
     {
         targetSlot.Unselect();
         Destroy(targetSlot.gameObject);
+    }
+
+
+
+    private void CloseAllSlots()
+    {
+        canSelect = false;
+        slotSelected?.Unselect();
+        foreach (InventorySlot slot in slots)
+        {
+            slot.Close();
+        }
+    }
+
+
+
+    private void OpenAllSlots()
+    {
+        canSelect = true;
+        foreach (InventorySlot slot in slots)
+        {
+            slot.Close();
+        }
     }
 
 

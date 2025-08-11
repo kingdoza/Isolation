@@ -374,6 +374,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a822cb98f2f0ea9408d2baf3ecec62a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
+  interactItem: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   focusPrefab: {fileID: 6907309563162764960, guid: ae8367ff68008e54098d61f409c18723, type: 3}
 --- !u!1 &2857077962549504875
 GameObject:

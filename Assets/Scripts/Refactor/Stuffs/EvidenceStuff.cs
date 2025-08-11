@@ -35,6 +35,7 @@ public class EvidenceStuff : DialogueStuff
     {
         if (!enabled) return;
         isItemMatched = Player.Instance.IsUsingItemTypeMatched(interactItem);
+        isValidTime = Player.Instance.IsSleeping ? sleepEnabled : wakeEnabled;
         bool isUnfinished = Player.Instance.IsSleeping || collectStatus != CollectStatus.Finished;
         inputComp.SetStatus(isItemMatched && !isCovered && isValidTime && isUnfinished);
     }

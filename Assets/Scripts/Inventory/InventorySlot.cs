@@ -1,3 +1,4 @@
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -6,12 +7,15 @@ using static ControllerUtils;
 
 public class InventorySlot : MonoBehaviour, IPointerClickHandler
 {
+    [SerializeField] private Sprite closeSprite;
+    [SerializeField] private Sprite openSprite;
     [SerializeField] private CollectibleItem slotItem;
     private ItemData item;
     private Texture2D itemTexture;
     [HideInInspector] public UnityEvent<InventorySlot> OnClicked = new UnityEvent<InventorySlot>();
     public CollectibleItem SlotItem => slotItem;
     public ItemData Item => item;
+    private GameObject itemIconObject;
 
 
 
@@ -25,7 +29,8 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     public void SetItem(CollectibleItem item)
     {
         slotItem = item;
-        transform.Find("Image").GetComponent<Image>().sprite = item.InventorySprite;
+        itemIconObject = transform.Find("Image").gameObject;
+        itemIconObject.GetComponent<Image>().sprite = item.InventorySprite;
 
         Rect spriteRect = slotItem.InventorySprite.rect;
         Texture2D spriteTexture = slotItem.InventorySprite.texture;
@@ -45,7 +50,8 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     public void SetItem(ItemData itemData)
     {
         item = itemData;
-        transform.Find("Image").GetComponent<Image>().sprite = item.Icon;
+        itemIconObject = transform.Find("Image").gameObject;
+        itemIconObject.GetComponent<Image>().sprite = item.Icon;
     }
 
 
@@ -88,5 +94,21 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     {
         Vector2 hotspot = new Vector2(itemTexture.width / 2, itemTexture.height / 2);
         SetCursorTexture(itemTexture, hotspot);
+    }
+
+
+
+    public void Open()
+    {
+        itemIconObject.SetActive(true);
+        GetComponent<Image>().sprite = openSprite;
+    }
+
+
+
+    public void Close()
+    {
+        itemIconObject.SetActive(false);
+        GetComponent<Image>().sprite = closeSprite;
     }
 }

@@ -13,6 +13,10 @@ public class TimeController : SceneSingleton<TimeController>
     [SerializeField] private bool isWakeupStart;
     [SerializeField] private string[] wakeupDialogue;
     [SerializeField] private string[] sleepDialogue;
+    [Header("시작 시간(테스트 전용)")] [Space]
+    [SerializeField] private bool isTest;
+    [SerializeField] private int hours;
+    [SerializeField] private int minutes;
     private Dictionary<ProgressTimeType, int> progressionDict;
     private GameDate currentGameDate;
     private GameDate limitGameDate;
@@ -27,16 +31,22 @@ public class TimeController : SceneSingleton<TimeController>
         uiController.FadeCompleteEvent.AddListener(CheckTimeChanged);
 
         currentGameDate = (GameDate)startGameDate.Clone();
-        currentGameDate.AdvanceHours(isWakeupStart ? wakeupHour : sleepHour);
         currentGameDate.NormalizeTime();
 
         limitGameDate = (GameDate)startGameDate.Clone();
         limitGameDate.AdvanceDays(limitDayGap);
         limitGameDate.AdvanceHours(sleepHour);
-        currentGameDate.NormalizeTime();
+        limitGameDate.NormalizeTime();
+
+        if (isTest)
+            ProgressMinutes(hours * 60 + minutes);
+        else
+        {
+            currentGameDate.AdvanceHours(isWakeupStart ? wakeupHour : sleepHour);
+            OnTimeStatusChanged(isWakeupStart);
+        }
 
         uiController.ShowGameDateClock(currentGameDate);
-        OnTimeStatusChanged(isWakeupStart);
         isTimeChanged = false;
 
         progressionDict = new Dictionary<ProgressTimeType, int>();

@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Unity.Collections;
 using UnityEditor.PackageManager;
 using UnityEngine;
@@ -5,6 +6,20 @@ using static GameData;
 
 public static class EtcUtils
 {
+    public static Vector2 GetCenter(this Texture2D texture)
+    {
+        return new Vector2(texture.width / 2, texture.height / 2);
+    }
+
+
+
+    public static void SetCursorTexture(Texture2D texture, Vector2 hotspot)
+    {
+        Cursor.SetCursor(texture, hotspot, CursorMode.Auto);
+    }
+
+
+
     public static void SetCursorTexture(Texture2D texture)
     {
         Cursor.SetCursor(texture, Vector2.zero, CursorMode.Auto);

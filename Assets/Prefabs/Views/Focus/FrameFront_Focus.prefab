@@ -355,7 +355,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4cab205013602c43b851ccb32b66090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []

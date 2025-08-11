@@ -6,15 +6,15 @@ using static UnityEngine.EventSystems.EventTrigger;
 public abstract class BaseStuff : SingleConditonActivator
 {
     [SerializeField] protected ItemType interactItem = ItemType.None;
-    [SerializeField] private bool wakeEnabled = true;
-    [SerializeField] private bool sleepEnabled = true;
+    [SerializeField] protected bool wakeEnabled;
+    [SerializeField] protected bool sleepEnabled;
     protected abstract StuffTypeData StuffData { get; }
     protected MouseInteraction inputComp;
     protected CursorHover hoverComp;
     protected Collider2D colliderComp;
     protected Color originalColor;
 
-    protected bool isCovered = false;
+    [SerializeField] protected bool isCovered = false;
     public bool IsCovered { get => isCovered; set {
             if (isCovered != value)
             {
@@ -24,8 +24,8 @@ public abstract class BaseStuff : SingleConditonActivator
         }
      }
 
-    protected bool isItemMatched = false;
-    protected bool isValidTime = false;
+    [SerializeField] protected bool isItemMatched = false;
+    [SerializeField] protected bool isValidTime = false;
 
 
 
@@ -70,6 +70,7 @@ public abstract class BaseStuff : SingleConditonActivator
     {
         if (!enabled) return;
         isItemMatched = Player.Instance.IsUsingItemTypeMatched(interactItem);
+        isValidTime = Player.Instance.IsSleeping ? sleepEnabled : wakeEnabled;
         inputComp.SetStatus(isItemMatched && !isCovered && isValidTime);
     }
 

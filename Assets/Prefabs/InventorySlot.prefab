@@ -90,6 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5088c71e1b66c2442935a36b78b662bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  closeSprite: {fileID: -1843197933104017171, guid: 0e176d55030632c4facb5f62570584ff, type: 3}
+  openSprite: {fileID: -6071528556854791905, guid: c56fad91d5f702d418d1c765360c2f6b, type: 3}
   slotItem: {fileID: 0}
   OnClicked:
     m_PersistentCalls:

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using static ControllerUtils;
+using static EtcUtils;
 
 public class Player : SceneSingleton<Player>, ITriggerEventSendable
 {
@@ -38,7 +38,7 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
 
     private void Start()
     {
-        RegisterDragScrollCondition(() => usingItemType == UsableItem.None);
+        //RegisterDragScrollCondition(() => usingItemType == UsableItem.None);
         UnselectItem();
     }
 
@@ -141,6 +141,7 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
     public void SelectItem(ItemData item)
     {
         itemInUse = item;
+        SetCursorTexture(itemInUse.Cursor, itemInUse.Cursor.GetCenter());
         ItemSelectEvent?.Invoke(item);
     }
 
@@ -151,6 +152,7 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
         if (itemInUse == null)
             return;
         itemInUse = null;
+        SetCursorTexture();
         ItemUnselectEvent?.Invoke(itemInUse);
     }
 

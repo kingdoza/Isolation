@@ -23,7 +23,8 @@ public class BackPlateClose : ConditionalActivator, ITriggerEventSendable
 
     protected virtual void Awake()
     {
-        InitTrigger(playerWakeTrigger, GlobalTriggerEvent.PlayerWakeup);
+        playerWakeTrigger = new(GlobalTriggerEvent.PlayerWakeup);
+        InitTrigger(playerWakeTrigger);
         InitTrigger(screwLooseTrigger);
         toggleStuff = GetComponent<ToggleStuff>();
         inactiveStuff = GetComponent<InactiveStuff>();
