@@ -6,6 +6,9 @@ public static class GameData
     private static StuffTypeData _noneStuffData;
     public static StuffTypeData NoneStuffData => LoadResource(ref _noneStuffData, "Stuffs/SO_None");
 
+    private static StuffTypeData _clickStuffData;
+    public static StuffTypeData ClickStuffData => LoadResource(ref _clickStuffData, "Stuffs/SO_Click");
+
     private static StuffTypeData _dragStuffData;
     public static StuffTypeData DragStuffData => LoadResource(ref _dragStuffData, "Stuffs/SO_Drag");
 

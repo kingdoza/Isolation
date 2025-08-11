@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class ClickableStuff : BaseStuff
 {
     [HideInInspector] public UnityEvent ClickEvent = new();
-    protected override StuffTypeData StuffData => GameData.ZoomStuffData;
+    protected override StuffTypeData StuffData => GameData.ClickStuffData;
 
 
 
@@ -19,10 +19,7 @@ public class ClickableStuff : BaseStuff
 
     protected virtual void OnClicked()
     {
-        if (GameManager.Instance.RoomController.IsFocusIn == false)
-        {
-            GameManager.Instance.TimeController.ProgressMinutes(StuffData.MinuteWaste);
-        }
+        GameManager.Instance.TimeController.ProgressMinutes(StuffData.MinuteWaste);
         ClickEvent?.Invoke();
     }
 }

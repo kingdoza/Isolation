@@ -4,8 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(CursorHover))]
 public class DialogueStuff : ClickableStuff
 {
-    [TextArea][SerializeField] private string[] dialogues;
-    private DialogueController dialogueController;
+    [TextArea][SerializeField] protected string[] dialogues;
+    protected DialogueController dialogueController;
     private int originSortingLayer;
     private bool isDialogueProcess = false;
     protected override StuffTypeData StuffData => GameData.DialogueStuffData;
@@ -31,9 +31,16 @@ public class DialogueStuff : ClickableStuff
         base.OnClicked();
         OnDiaglogueStart();
         dialogueController.DiagloueEndEvent.AddListener(OnDialogueClosed);
-        dialogueController.StartDialogueSequence(dialogues);
+        dialogueController.StartDialogueSequence(GetPrintTargetDialogues());
     }
 
+
+
+    protected virtual string[] GetPrintTargetDialogues()
+    {
+        return dialogues;
+    }
+ 
 
 
     public virtual void OnDiaglogueStart()
@@ -54,6 +61,7 @@ public class DialogueStuff : ClickableStuff
         GetComponent<SpriteRenderer>().sortingOrder = originSortingLayer;
         isDialogueProcess = false;
         dialogueController.DiagloueEndEvent.RemoveListener(OnDialogueClosed);
+        TimeController.Instance.CheckTimeChanged();
         //CanInteract = true;
     }
 }

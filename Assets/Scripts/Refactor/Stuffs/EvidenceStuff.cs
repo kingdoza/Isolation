@@ -4,9 +4,12 @@ public class EvidenceStuff : DialogueStuff
 {
     [SerializeField] private EndingType endingType;
     [SerializeField] private string evidenceName;
+    [SerializeField] private string[] collectBeforeDialogues;
+    [SerializeField] private string[] playerSleepDialogues;
+    protected override StuffTypeData StuffData => GameData.EvidenceStuffData;
     public EndingType EndingType => endingType;
     public string EvidenceName => evidenceName;
-    [SerializeField] private CollectStatus collectStatus = CollectStatus.Negative;
+    private CollectStatus collectStatus = CollectStatus.Negative;
     public CollectStatus CollectStatus
     {
         get => collectStatus; set
@@ -28,9 +31,33 @@ public class EvidenceStuff : DialogueStuff
 
 
 
+    protected override void ChangeInputStatus()
+    {
+        if (!enabled) return;
+        isItemMatched = Player.Instance.IsUsingItemTypeMatched(interactItem);
+        bool isUnfinished = Player.Instance.IsSleeping || collectStatus != CollectStatus.Finished;
+        inputComp.SetStatus(isItemMatched && !isCovered && isValidTime && isUnfinished);
+    }
+
+
+
+    protected override string[] GetPrintTargetDialogues()
+    {
+        if (Player.Instance.IsSleeping)
+            return playerSleepDialogues;
+        if (collectStatus == CollectStatus.Negative)
+            return collectBeforeDialogues;
+        if (collectStatus == CollectStatus.Positive)
+            return dialogues;
+        return null;
+    }
+
+
+
     private void OnPlayerCollectedEvidence(MotiveProgress motive, string name)
     {
         CollectStatus = Player.Instance.GetCollectStatus(this);
+        ChangeInputStatus();
     }
 
 

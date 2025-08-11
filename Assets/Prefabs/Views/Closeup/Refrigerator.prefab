@@ -187,6 +187,9 @@ GameObject:
   - component: {fileID: 456378336961820411}
   - component: {fileID: 1956006608944803015}
   - component: {fileID: 1056349256281151392}
+  - component: {fileID: 8400210686279335357}
+  - component: {fileID: 629143969895381397}
+  - component: {fileID: 7521439921993513271}
   m_Layer: 0
   m_Name: "(4) \uB9E5\uC8FC"
   m_TagString: Untagged
@@ -389,6 +392,65 @@ PolygonCollider2D:
       - {x: -14.338621, y: -15.856828}
       - {x: -14.001242, y: -15.384497}
   m_UseDelaunayMesh: 0
+--- !u!114 &8400210686279335357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6548405641728365337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a560c748ac2e94485adc69a147a316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &629143969895381397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6548405641728365337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1482c1e531da0e34cb65dc20842df8fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CursorEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CursorExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7521439921993513271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6548405641728365337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e771cc7258cac4086770e92097b20f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
+  interactItem: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  dialogues: []
+  endingType: 0
+  evidenceName: "\uC220"
+  collectBeforeDialogues: []
+  playerSleepDialogues: []
 --- !u!1 &6907309563162764960
 GameObject:
   m_ObjectHideFlags: 0

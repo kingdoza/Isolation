@@ -41,6 +41,8 @@ public class FrameFocus : MonoBehaviour
         else if (frameBackInstance) {
             ShowFront();
         }
+        TimeController.Instance.ProgressMinutes(GameData.FocusStuffData.MinuteWaste);
+        TimeController.Instance.CheckTimeChanged();
     }
 
 

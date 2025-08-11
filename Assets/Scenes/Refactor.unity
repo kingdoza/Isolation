@@ -4996,10 +4996,14 @@ MonoBehaviour:
     months: 7
     days: 1
     dayOfWeek: 0
-  limitDayGap: 2
+  limitDayGap: 7
   wakeupHour: 19
   sleepHour: 7
   isWakeupStart: 1
+  wakeupDialogue:
+  - "\uD604\uC900\uC774\uAC00 \uAE68\uC5B4\uB0AC\uB2E4."
+  sleepDialogue:
+  - "\uD604\uC900\uC774\uAC00 \uC7A0\uB4E4\uC5C8\uB2E4."
 --- !u!1 &874042126
 GameObject:
   m_ObjectHideFlags: 0
@@ -5063,10 +5067,6 @@ MonoBehaviour:
   ItemUnselectEvent:
     m_PersistentCalls:
       m_Calls: []
-  onWakeupDialogues:
-  - "\uB0AE\uC774 \uB418\uC5C8\uB2E4."
-  onSleepDialogues:
-  - "\uBC24\uC774 \uB418\uC5C8\uB2E4."
 --- !u!4 &874042128
 Transform:
   m_ObjectHideFlags: 0
@@ -5736,6 +5736,9 @@ MonoBehaviour:
   - {fileID: 706496036}
   - {fileID: 906094964}
   - {fileID: 659373964}
+  FadeCompleteEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &934147639
 GameObject:
   m_ObjectHideFlags: 0
@@ -11300,7 +11303,7 @@ MonoBehaviour:
   m_text: ...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3c3eee197edbe6c4fb58df8b24f01549, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1725447287718112264, guid: 3c3eee197edbe6c4fb58df8b24f01549, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12407,7 +12410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2036036570
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13001,7 +13004,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaff914e1642b54fb5d8430c1907532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
 --- !u!1 &2087457457
 GameObject:
   m_ObjectHideFlags: 0

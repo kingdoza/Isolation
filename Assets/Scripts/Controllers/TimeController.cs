@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.SceneManagement;
 
-public class TimeController : MonoBehaviour
+public class TimeController : SceneSingleton<TimeController>
 {
     [SerializeField] private List<MinuteProgression> minuteProgressions;
     [SerializeField] private GameDate startGameDate;
@@ -10,16 +11,20 @@ public class TimeController : MonoBehaviour
     [SerializeField] private int wakeupHour;
     [SerializeField] private int sleepHour;
     [SerializeField] private bool isWakeupStart;
+    [SerializeField] private string[] wakeupDialogue;
+    [SerializeField] private string[] sleepDialogue;
     private Dictionary<ProgressTimeType, int> progressionDict;
     private GameDate currentGameDate;
     private GameDate limitGameDate;
     private UIController uiController;
+    private bool isTimeChanged = false;
 
 
 
     public void InitGameTime()
     {
         uiController = GameManager.Instance.UIController;
+        uiController.FadeCompleteEvent.AddListener(CheckTimeChanged);
 
         currentGameDate = (GameDate)startGameDate.Clone();
         currentGameDate.AdvanceHours(isWakeupStart ? wakeupHour : sleepHour);
@@ -32,6 +37,7 @@ public class TimeController : MonoBehaviour
 
         uiController.ShowGameDateClock(currentGameDate);
         OnTimeStatusChanged(isWakeupStart);
+        isTimeChanged = false;
 
         progressionDict = new Dictionary<ProgressTimeType, int>();
         foreach (var prog in minuteProgressions)
@@ -96,6 +102,35 @@ public class TimeController : MonoBehaviour
         {
             OnSleepTime();
         }
+        isTimeChanged = true;
+    }
+
+
+
+    public void CheckTimeChanged()
+    {
+        if (!isTimeChanged) return;
+        isTimeChanged = false;
+        ShowWakeSleepDialogue();
+    }
+
+
+
+    private void ShowWakeSleepDialogue()
+    {
+        GameManager.Instance.UIController.DisableMoveButtons();
+        GameManager.Instance.DialogueController.DiagloueEndEvent.AddListener(OnDiaglogueClosed);
+        string[] dialogues = Player.Instance.IsSleeping ? sleepDialogue : wakeupDialogue;
+        GameManager.Instance.DialogueController.StartDialogueSequence(dialogues);
+    }
+
+
+
+    private void OnDiaglogueClosed()
+    {
+        GameManager.Instance.UIController.EnableMoveButtons();
+        GameManager.Instance.RoomController.ReturnToRoomView();
+        GameManager.Instance.DialogueController.DiagloueEndEvent.RemoveListener(OnDiaglogueClosed);
     }
 
 

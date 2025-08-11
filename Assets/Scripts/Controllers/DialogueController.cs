@@ -53,6 +53,8 @@ public class DialogueController : MonoBehaviour
         textBox.text = "";
         EnableDialoguePanel();
         targetTexts = sentences;
+        if (targetTexts == null || targetTexts.Length <= 0)
+            targetTexts = new string[1] { " " };
         targetSentence = targetTexts[textIndex = 0];
         StartCoroutine(TypeText_Co());
     }
@@ -115,12 +117,11 @@ public class DialogueController : MonoBehaviour
     {
         OnDialogueClosed?.Invoke();
         OnDialogueClosed.RemoveAllListeners();
-        DiagloueEndEvent?.Invoke();
-        DiagloueEndEvent.RemoveAllListeners();
         isTyping = false;
         //DragScroller.CanDrag = true;
         dialoguePanel.SetActive(false);
         dialogueTextUI.SetActive(false);
         textBox.text = "";
+        DiagloueEndEvent?.Invoke();
     }
 }

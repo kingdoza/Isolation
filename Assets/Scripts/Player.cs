@@ -19,9 +19,6 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
     [SerializeField] private UsableItem usingItemType = UsableItem.None;
     [HideInInspector] public UnityEvent<ItemData> ItemSelectEvent = new UnityEvent<ItemData>();
     [HideInInspector] public UnityEvent<ItemData> ItemUnselectEvent = new UnityEvent<ItemData>();
-
-    [SerializeField] private string[] onWakeupDialogues;
-    [SerializeField] private string[] onSleepDialogues;
     private ItemData itemInUse;
 
     public event Action TriggerChangeAction;
@@ -65,7 +62,6 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
             return;
         isSleeping = true;
         GameManager.Instance.FilterController.SetSleep();
-        ShowWakeSleepDialogues(onSleepDialogues);
         OnSleep?.Invoke();
         TriggerChangeAction?.Invoke();
     }
@@ -76,7 +72,6 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
     {
         isSleeping = false;
         GameManager.Instance.FilterController.SetWakeup();
-        ShowWakeSleepDialogues(onWakeupDialogues);
         OnWakeup?.Invoke();
         TriggerChangeAction?.Invoke();
     }

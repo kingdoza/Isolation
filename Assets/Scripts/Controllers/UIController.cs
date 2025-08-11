@@ -4,6 +4,7 @@ using System;
 using DG.Tweening;
 using TMPro;
 using static ControllerUtils;
+using UnityEngine.Events;
 
 public class UIController : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class UIController : MonoBehaviour
 
     [Header("좌측 UI 상호작용")] [Space]
     [SerializeField] private CanvasGroup[] leftUICanvases;
+
+    [HideInInspector] public UnityEvent FadeCompleteEvent = new();
 
     private bool isFading = false;
     public bool IsFading => isFading;
@@ -128,6 +131,7 @@ public class UIController : MonoBehaviour
                fadeCanvas.blocksRaycasts = false;
                fadeCanvas.gameObject.SetActive(false);
                isFading = false;
+               FadeCompleteEvent?.Invoke();
            });
     }
 

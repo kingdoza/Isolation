@@ -9,6 +9,7 @@ public class Drag : MouseInteraction
     public override bool IsPassDown => false;
     protected Vector2 offset;
     protected float dragDistance = 0;
+    [HideInInspector] public UnityEvent DragEndEvent = new();
 
 
 
@@ -55,6 +56,7 @@ public class Drag : MouseInteraction
     public override void OnInteractEnd()
     {
         dragDistance = 0;
+        DragEndEvent?.Invoke();
     }
 
 

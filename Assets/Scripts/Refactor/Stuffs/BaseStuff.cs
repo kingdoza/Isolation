@@ -14,7 +14,7 @@ public abstract class BaseStuff : SingleConditonActivator
     protected Collider2D colliderComp;
     protected Color originalColor;
 
-    private bool isCovered = false;
+    protected bool isCovered = false;
     public bool IsCovered { get => isCovered; set {
             if (isCovered != value)
             {
@@ -24,8 +24,8 @@ public abstract class BaseStuff : SingleConditonActivator
         }
      }
 
-    private bool isItemMatched = false;
-    private bool isValidTime = false;
+    protected bool isItemMatched = false;
+    protected bool isValidTime = false;
 
 
 

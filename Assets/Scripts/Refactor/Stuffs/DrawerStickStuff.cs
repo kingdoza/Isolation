@@ -23,5 +23,6 @@ public class DrawerStickStuff : ClickableStuff
         InventoryUI.Instance.DeleteTwoScrews();
         InventoryUI.Instance.DeleteSelectedSlot();
         (TriggerEventController.Instance.DrawerStick as TriggerWrapper).TriggerValue = true;
+        TimeController.Instance.CheckTimeChanged();
     }
 }

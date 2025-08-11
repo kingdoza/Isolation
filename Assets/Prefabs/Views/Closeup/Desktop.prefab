@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6824959249871105403}
   - component: {fileID: 7778625855441021367}
-  - component: {fileID: 8376888974117277278}
-  - component: {fileID: 5439188176665766383}
   - component: {fileID: 2438826248345945724}
+  - component: {fileID: 928158297121545242}
+  - component: {fileID: 6163080729506626918}
+  - component: {fileID: 2554125866871142793}
   m_Layer: 0
   m_Name: "(4) \uCEF4\uD4E8\uD130"
   m_TagString: Untagged
@@ -90,32 +91,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8376888974117277278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408760819132399183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01d8f4b59cd9ca84886c088b4e444ceb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: "\uCEF4\uD4E8\uD130"
-  focusViewPrefab: {fileID: 6907309563162764960, guid: 9f220199b487ec648bb748740c170af4, type: 3}
---- !u!114 &5439188176665766383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408760819132399183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d68ff95989f944e8cc1f46f1b5d475, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &2438826248345945724
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -256,6 +231,61 @@ PolygonCollider2D:
       - {x: -0.7558594, y: -14.88623}
       - {x: 0.7138672, y: -14.802246}
   m_UseDelaunayMesh: 0
+--- !u!114 &928158297121545242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408760819132399183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a560c748ac2e94485adc69a147a316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6163080729506626918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408760819132399183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1482c1e531da0e34cb65dc20842df8fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CursorEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CursorExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2554125866871142793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408760819132399183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a822cb98f2f0ea9408d2baf3ecec62a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
+  interactItem: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  focusPrefab: {fileID: 6907309563162764960, guid: 9f220199b487ec648bb748740c170af4, type: 3}
 --- !u!1 &757606574675725098
 GameObject:
   m_ObjectHideFlags: 0

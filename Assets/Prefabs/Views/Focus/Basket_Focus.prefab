@@ -264,6 +264,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1721c1e9894e75a42b2bea298aefc45f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
+  interactItem: 0
+  wakeEnabled: 0
+  sleepEnabled: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   itemData: {fileID: 11400000, guid: b4acb0b6f047106449ca64a77d57de8f, type: 2}
 --- !u!1 &5705789173840702027
 GameObject:
@@ -483,6 +492,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1721c1e9894e75a42b2bea298aefc45f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
+  interactItem: 0
+  wakeEnabled: 0
+  sleepEnabled: 1
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   itemData: {fileID: 11400000, guid: 510377e412d2fee44912b78ba7f562fe, type: 2}
 --- !u!1 &6907309563162764960
 GameObject:

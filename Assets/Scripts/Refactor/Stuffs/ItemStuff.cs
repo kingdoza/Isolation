@@ -14,6 +14,7 @@ public class ItemStuff : ClickableStuff
         if (!enabled) return;
         base.OnClicked();
         Acquire();
+        TimeController.Instance.CheckTimeChanged();
         //GameManager.Instance.RoomController.CollectedItemNames.Add(ItemName);
     }
 

@@ -355,8 +355,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b0e624e529a9e4da0f36bc384cde9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -547,8 +551,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70af8cbe66679164b8a02683a56f9fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 3
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 1
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1183,8 +1191,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b0e624e529a9e4da0f36bc384cde9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1596,8 +1608,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b0e624e529a9e4da0f36bc384cde9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1889,8 +1905,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b0e624e529a9e4da0f36bc384cde9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1928,5 +1948,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525fd3276ba668b489cc3e8a047e8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1

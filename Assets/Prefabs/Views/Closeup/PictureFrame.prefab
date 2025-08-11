@@ -657,7 +657,7 @@ MonoBehaviour:
     globalType: 0
     targetComponent: {fileID: 0}
   interactItem: 0
-  wakeEnabled: 1
+  wakeEnabled: 0
   sleepEnabled: 1
   ClickEvent:
     m_PersistentCalls:
@@ -1047,7 +1047,8 @@ MonoBehaviour:
   - "\uC624\uB798\uB41C \uAC00\uC871\uC0AC\uC9C4\uC774\uB2E4"
   endingType: 0
   evidenceName: "\uC624\uB798\uB41C \uAC00\uC871\uC0AC\uC9C4"
-  collectStatus: 1
+  collectBeforeDialogues: []
+  playerSleepDialogues: []
 --- !u!114 &2807709719543722317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1073,7 +1074,8 @@ MonoBehaviour:
   - "\uACE0\uB4F1\uD559\uAD50 \uC878\uC5C5\uC0AC\uC9C4\uC774\uB2E4"
   endingType: 1
   evidenceName: "\uACE0\uB4F1\uD559\uAD50 \uC878\uC5C5\uC0AC\uC9C4"
-  collectStatus: 1
+  collectBeforeDialogues: []
+  playerSleepDialogues: []
 --- !u!60 &6942142870369082522
 PolygonCollider2D:
   m_ObjectHideFlags: 0

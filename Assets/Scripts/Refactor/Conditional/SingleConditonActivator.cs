@@ -16,7 +16,6 @@ public abstract class SingleConditonActivator : ConditionalActivator
 
     protected override void SetConditionalComponent()
     {
-        Debug.Log($"{GetType().Name} ({name}), {triggerEvent.TargetSender}");
         if (triggerEvent.TargetSender.GetTriggerValue())
         {
             SetTrueComponent();

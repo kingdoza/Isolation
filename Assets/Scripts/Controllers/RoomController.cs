@@ -29,10 +29,23 @@ public class RoomController : MonoBehaviour {
 
 
 
+    private void Awake()
+    {
+    }
+
+
+
     private void Update()
     {
         if(uiController && !uiController.IsFading)
             HandleArrowKeyInput();
+    }
+
+
+
+    private void OnViewFadeCompleted()
+    {
+        
     }
 
 
@@ -77,6 +90,21 @@ public class RoomController : MonoBehaviour {
         //DragScroller.CanDrag = true;
         MoveRoom(rooms[0]);
         ShowRoomView(defaultRoom.CurrentView);
+    }
+
+
+
+    public void ReturnToRoomView()
+    {
+        if (isZoomIn == false && isFocusIn == false) return;
+
+        if (isFocusIn)
+        {
+            OutFocusItem();
+        }
+        isZoomIn = false;
+        zoomStack.Clear();
+        ChangeRoomView(currentRoom.CurrentView);
     }
 
 

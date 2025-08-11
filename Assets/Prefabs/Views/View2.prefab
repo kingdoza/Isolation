@@ -456,6 +456,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragDirection: 1
+  DragEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
   limitMarker1: {fileID: 3717622098807948657}
   limitMarker2: {fileID: 4113039342221580747}
 --- !u!114 &2067983670753676438
@@ -1755,8 +1758,8 @@ MonoBehaviour:
     globalType: 0
     targetComponent: {fileID: 0}
   interactItem: 0
-  wakeEnabled: 0
-  sleepEnabled: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []

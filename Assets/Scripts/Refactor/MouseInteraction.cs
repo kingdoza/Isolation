@@ -86,7 +86,6 @@ public abstract class MouseInteraction : MonoBehaviour
         BaseStuff[] baseStuffs = targetObject.GetComponentsInChildren<BaseStuff>();
         foreach (BaseStuff stuff in baseStuffs)
         {
-            Debug.Log(stuff.gameObject);
             stuff.IsCovered = true;
         }
         targetObject.GetComponentInChildren<CameraDragArea>()?.DisableInput();

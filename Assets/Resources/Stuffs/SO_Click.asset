@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9c09348ad2aba049b492d45feb204b5, type: 3}
-  m_Name: SO_Evidence
+  m_Name: SO_Click
   m_EditorClassIdentifier: 
   cursorTexture: {fileID: 2800000, guid: 5ef76e33ac2fe2f47a3e09cd0db1c24d, type: 3}
-  minuteWaste: 720
+  minuteWaste: 0

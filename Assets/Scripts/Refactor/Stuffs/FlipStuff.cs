@@ -22,6 +22,7 @@ public class FlipStuff : ClickableStuff
         if (!enabled) return;
         base.OnClicked();
         SwapZPosition();
+        TimeController.Instance.CheckTimeChanged();
     }
 
 

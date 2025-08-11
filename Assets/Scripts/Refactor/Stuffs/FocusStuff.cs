@@ -38,5 +38,6 @@ public class FocusStuff : ClickableStuff
         if (!enabled) return;
         base.OnClicked();
         GameManager.Instance.RoomController.FocusItem(focusView);
+        TimeController.Instance.CheckTimeChanged();
     }
 }
