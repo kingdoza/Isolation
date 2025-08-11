@@ -11,7 +11,7 @@ public abstract class BaseStuff : MonoBehaviour
     protected Collider2D colliderComp;
     protected Color originalColor;
 
-    [SerializeField] private bool isCovered = false;
+    private bool isCovered = false;
     public bool IsCovered { get => isCovered; set {
             if (isCovered != value)
             {

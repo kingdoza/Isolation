@@ -36,7 +36,7 @@ public class TriggerItem : DialogueItem
         if(CollectStatus == CollectStatus.Positive)
         {
             GameManager.Instance.Player.CollectItem(this);
-            GameManager.Instance.InteractController.SetTriggerItems();
+            //GameManager.Instance.InteractController.SetTriggerItems();
         }
     }
 }

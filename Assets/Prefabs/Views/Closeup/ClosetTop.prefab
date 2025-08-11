@@ -97,9 +97,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1737921991207649759}
   - component: {fileID: 8226167732950296183}
-  - component: {fileID: 3777884995382738886}
-  - component: {fileID: 746386684610847616}
   - component: {fileID: 4975111990560240585}
+  - component: {fileID: 4909748739146032451}
+  - component: {fileID: 8540530134516370768}
+  - component: {fileID: 8862957745001818836}
   m_Layer: 0
   m_Name: "(3) \uC54C\uBC14\uAD6C\uC9C1 \uD3EC\uC2A4\uD130"
   m_TagString: Untagged
@@ -177,36 +178,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3777884995382738886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2481667462822294791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eee369b908ea4049be6ccda4bbde3ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: "\uC54C\uBC14 \uAD6C\uC9C1\uD3EC\uC2A4\uD130"
-  wakeupDialogs:
-  - "\uC54C\uBC14 \uAD6C\uC9C1\uD3EC\uC2A4\uD130"
-  sleepDialogs:
-  - "\uC54C\uBC14 \uAD6C\uC9C1\uD3EC\uC2A4\uD130"
-  endingType: 1
---- !u!114 &746386684610847616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2481667462822294791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d68ff95989f944e8cc1f46f1b5d475, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &4975111990560240585
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -337,6 +308,59 @@ PolygonCollider2D:
       - {x: 0.06747586, y: -1.0121379}
       - {x: 0.23616552, y: -0.43859312}
   m_UseDelaunayMesh: 0
+--- !u!114 &4909748739146032451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2481667462822294791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a560c748ac2e94485adc69a147a316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8540530134516370768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2481667462822294791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1482c1e531da0e34cb65dc20842df8fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CursorEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CursorExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8862957745001818836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2481667462822294791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e771cc7258cac4086770e92097b20f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactItem: 0
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  dialogues: []
+  endingType: 1
+  evidenceName: "\uC54C\uBC14 \uAD6C\uC9C1\uD3EC\uC2A4\uD130"
+  collectStatus: 1
 --- !u!1 &2810211646784449829
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,8 +459,6 @@ GameObject:
   - component: {fileID: 3709768273753109374}
   - component: {fileID: 3724448022455298095}
   - component: {fileID: 772704144524466563}
-  - component: {fileID: 4133952236676078630}
-  - component: {fileID: 1212006830292108213}
   m_Layer: 0
   m_Name: "(5) \uD0DD\uBC30 \uBC15\uC2A4"
   m_TagString: Untagged
@@ -668,36 +690,6 @@ PolygonCollider2D:
       - {x: 20.748827, y: -2.5978208}
       - {x: 21.491062, y: -2.1254897}
   m_UseDelaunayMesh: 0
---- !u!114 &4133952236676078630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5381986524137887531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d68ff95989f944e8cc1f46f1b5d475, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1212006830292108213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5381986524137887531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eee369b908ea4049be6ccda4bbde3ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: "\uC5B4\uBA38\uB2C8\uC758 \uC790\uC601\uC5C5 \uD3EC\uC2A4\uD130"
-  wakeupDialogs:
-  - "\uC5B4\uBA38\uB2C8\uC758 \uC790\uC601\uC5C5 \uD3EC\uC2A4\uD130"
-  sleepDialogs:
-  - "\uC5B4\uBA38\uB2C8\uC758 \uC790\uC601\uC5C5 \uD3EC\uC2A4\uD130"
-  endingType: 1
 --- !u!1 &6654770454633190411
 GameObject:
   m_ObjectHideFlags: 0

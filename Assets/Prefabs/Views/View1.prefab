@@ -484,6 +484,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa6bf434218bd46b2eb6f8ca6da95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactItem: 0
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   zoomPrefab: {fileID: 6907309563162764960, guid: ed5513a226bc0bc4da9e5d3273c99b5e, type: 3}
 --- !u!61 &6787479755586641467
 BoxCollider2D:
@@ -754,6 +758,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa6bf434218bd46b2eb6f8ca6da95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactItem: 0
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   zoomPrefab: {fileID: 6907309563162764960, guid: ed55ccc768fcac841bd6eed7b43eb43a, type: 3}
 --- !u!61 &6997311792879423215
 BoxCollider2D:
@@ -937,6 +945,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa6bf434218bd46b2eb6f8ca6da95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactItem: 0
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   zoomPrefab: {fileID: 6907309563162764960, guid: c9cafc7bbd42b424d953674c2e42d543, type: 3}
 --- !u!61 &5722103152617510463
 BoxCollider2D:
@@ -1427,6 +1439,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa6bf434218bd46b2eb6f8ca6da95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactItem: 0
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   zoomPrefab: {fileID: 6907309563162764960, guid: aa33bd8915131bb42baef6557cb29bf9, type: 3}
 --- !u!1 &4768665747688822610
 GameObject:
@@ -1702,7 +1718,7 @@ GameObject:
   - component: {fileID: 4309730395355427071}
   - component: {fileID: 2776052667050475812}
   - component: {fileID: 121283287933902013}
-  - component: {fileID: 7836370339987703059}
+  - component: {fileID: 6391503989837357899}
   m_Layer: 0
   m_Name: "(7) \uCC45\uC7A5(\uCC45)"
   m_TagString: Untagged
@@ -1895,7 +1911,7 @@ MonoBehaviour:
   CursorExitEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7836370339987703059
+--- !u!114 &6391503989837357899
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1904,13 +1920,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7154178351829723340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b336ca803e9d17c4eb94d318206ed794, type: 3}
+  m_Script: {fileID: 11500000, guid: 59e771cc7258cac4086770e92097b20f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogues:
-  - "\uC2DC\uD5D8\uAD50\uC7AC1"
-  - "\uC2DC\uD5D8\uAD50\uC7AC2"
-  - "\uC2DC\uD5D8\uAD50\uC7AC3"
+  interactItem: 0
+  ClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  dialogues: []
+  endingType: 1
+  evidenceName: "\uACF5\uBB34\uC6D0 \uC2DC\uD5D8 \uAD50\uC7AC"
+  collectStatus: 1
 --- !u!1 &7154543789999426926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,8 +2066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec1743eb202a3c4295bdf3c2201ad14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 20
-  smoothTime: 0.05
+  dragDirection: 2
 --- !u!61 &7453233934681628803
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -35,7 +35,7 @@ public class MindTreeUI : MonoBehaviour
         ItemSlots = GetComponentsInChildren<CollectionSlot>(true).ToList();
         EvidenceSlots = GetComponentsInChildren<EvidenceSlot>(true).ToList();
         EndingSlots = GetComponentsInChildren<EndingSlot>(true).ToList();
-        GameManager.Instance.Player.OnItemCollect.AddListener(OnPlayerItemCollected);
+        GameManager.Instance.Player.EvidenceCollectEvent.AddListener(OnPlayerItemCollected);
         SetRouthUI(EndingType.Bad, false);
     }
 

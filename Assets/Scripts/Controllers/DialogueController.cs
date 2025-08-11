@@ -115,6 +115,8 @@ public class DialogueController : MonoBehaviour
     {
         OnDialogueClosed?.Invoke();
         OnDialogueClosed.RemoveAllListeners();
+        DiagloueEndEvent?.Invoke();
+        DiagloueEndEvent.RemoveAllListeners();
         isTyping = false;
         //DragScroller.CanDrag = true;
         dialoguePanel.SetActive(false);

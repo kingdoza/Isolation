@@ -15,6 +15,10 @@ public class DialogueStuff : ClickableStuff
     protected override void Awake()
     {
         base.Awake();
+        if (dialogues.Length <= 0)
+        {
+            dialogues = new string[] { "(흔적 스크립트)" };
+        }
         originSortingLayer = GetComponent<SpriteRenderer>().sortingOrder;
         dialogueController = GameManager.Instance.DialogueController;
     }
@@ -22,6 +26,7 @@ public class DialogueStuff : ClickableStuff
 
     protected override void OnClicked()
     {
+        if (dialogues.Length <= 0) return;
         base.OnClicked();
         OnDiaglogueStart();
         dialogueController.DiagloueEndEvent.AddListener(OnDialogueClosed);
