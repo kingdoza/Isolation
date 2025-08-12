@@ -40,7 +40,10 @@ public class TimeController : SceneSingleton<TimeController>
         limitGameDate.NormalizeTime();
 
         if (isTest)
-            ProgressMinutes(hours * 60 + minutes);
+        {
+            currentGameDate.AdvanceMinutes(hours * 60 + minutes);
+            OnTimeStatusChanged(!IsSleepingTime());
+        }
         else
         {
             currentGameDate.AdvanceHours(isWakeupStart ? wakeupHour : sleepHour);
@@ -105,6 +108,8 @@ public class TimeController : SceneSingleton<TimeController>
 
     private void OnTimeStatusChanged(bool isWakeup)
     {
+        if (GameManager.Instance.EndingType != EndingType.None)
+            return;
         if (isWakeup)
         {
             OnWakeupTime();
@@ -121,6 +126,11 @@ public class TimeController : SceneSingleton<TimeController>
     public void CheckTimeChanged()
     {
         if (!isTimeChanged) return;
+        if (GameManager.Instance.EndingType != EndingType.None)
+        {
+            OnWakeupTime();
+            return;
+        }
         isTimeChanged = false;
         ShowWakeSleepDialogue();
     }

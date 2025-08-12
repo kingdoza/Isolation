@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,6 +15,7 @@ public class MindTreeUI : MonoBehaviour
     [Header("UI 오브젝트")] [Space]
     [SerializeField] private EndingRouteUI[] routhUIs;
     [SerializeField] private TextMeshProUGUI subtitle;
+    
 
     private EndingType currentType;
 
@@ -23,7 +25,6 @@ public class MindTreeUI : MonoBehaviour
     public Color ItemSlotColor => itemSlotColor;
     public Color ClueSlotColor => clueSlotColor;
     public Color FinalSlotColor => finalSlotColor;
-    [HideInInspector] public UnityEvent<EndingType> MotiveCompleteEvent = new();
 
 
 
@@ -115,11 +116,20 @@ public class MindTreeUI : MonoBehaviour
                 if (endingSlot.name.Contains(typeString))
                 {
                     endingSlot.Collected(this);
-                    MotiveCompleteEvent?.Invoke(motiveProgress.Motive.type);
+                    OnFirstEndingCompleted(motiveProgress.Motive.type);
                     break;
                 }
             }
         }
+    }
+
+
+
+    private void OnFirstEndingCompleted(EndingType endingType)
+    {
+        GameManager.Instance.EndingType = endingType;
+        GameManager.Instance.RoomController.ReturnToRoomView();
+        GameManager.Instance.RoomController.DisableRoomViews();
     }
 }
 

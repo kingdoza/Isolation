@@ -443,11 +443,14 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
+  isCovered: 0
+  isItemMatched: 0
+  isValidTime: 0
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
   dialogues: []
-  endingType: 0
+  endingType: 1
   evidenceName: "\uC220"
   collectBeforeDialogues: []
   playerSleepDialogues: []

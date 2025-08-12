@@ -37,7 +37,7 @@ public class GameManager : PersistentSingleton<GameManager>
     public GameObject UIBlocker;
     //
     public RoomController RC;
-    public EndingType EndingType {  get; private set; } = EndingType.None;
+    public EndingType EndingType {  get; set; } = EndingType.None;
 
 
     void Update()
@@ -111,7 +111,6 @@ public class GameManager : PersistentSingleton<GameManager>
 
     private void StartStage()
     {
-        FindAnyObjectByType<MindTreeUI>().MotiveCompleteEvent.AddListener((EndingType completeType) => EndingType = completeType);
         //나중에 FindAnyObjectByType 는 전부 최적화 필요, 모든 컨트롤러들은 Controllers 안에 있으니
         roomController = FindAnyObjectByType<RoomController>();
         uiController = FindAnyObjectByType<UIController>();

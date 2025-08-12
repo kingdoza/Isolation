@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8ef522558e63549b88f5cff261e3bc, type: 3}
   m_Name: Bad_Motivation
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   title: "\uD574\uBC29"
   subtitle: "\uC790\uC720\uB97C \uD5A5\uD558\uC5EC"
   evidences:
   - title: "\uAC00\uC815\uBD88\uD654"
     itemNames:
-    - "\uC624\uB798\uB41C \uAC00\uC871\uC0AC\uC9C4"
+    - "\uACE0\uB4F1\uD559\uAD50 \uC878\uC5C5\uC0AC\uC9C4"
     - "\uC220"

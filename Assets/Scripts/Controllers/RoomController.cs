@@ -109,6 +109,24 @@ public class RoomController : MonoBehaviour {
 
 
 
+    public void DisableRoomViews()
+    {
+        foreach (GameObject roomView in currentRoom.Views)
+        {
+            BaseStuff[] roomStuffs = roomView.GetComponentsInChildren<BaseStuff>();
+            foreach (BaseStuff stuff in roomStuffs)
+            {
+                if (stuff is DoorStuff)
+                    stuff.GetComponent<MouseInteraction>().EnableInput();
+                else
+                    Destroy(stuff);
+                    //stuff.GetComponent<MouseInteraction>().DisableInput();
+            }
+        }
+    }
+
+
+
     public void FocusItem(GameObject focusView)
     {
         isFocusIn = true;

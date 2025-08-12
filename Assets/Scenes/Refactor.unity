@@ -336,7 +336,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5030242033438432127, guid: 143d0c87a58a2ed4bb0691fbbc522b02, type: 3}
       propertyPath: m_Name
-      value: "Item_\uACE0\uB4F1\uD559\uAD50 \uC878\uC5C5\uC0AC\uC9C4"
+      value: "Item_\uC624\uB798\uB41C \uAC00\uC871\uC0AC\uC9C4"
       objectReference: {fileID: 0}
     - target: {fileID: 8250859937705255218, guid: 143d0c87a58a2ed4bb0691fbbc522b02, type: 3}
       propertyPath: m_Pivot.x
@@ -4436,14 +4436,11 @@ MonoBehaviour:
   clueSlotColor: {r: 0.19607843, g: 0.78431374, b: 0.78431374, a: 1}
   finalSlotColor: {r: 0.78431374, g: 0.39215687, b: 0.78431374, a: 1}
   routhUIs:
-  - type: 0
-    slotPanel: {fileID: 1353301054}
   - type: 1
+    slotPanel: {fileID: 1353301054}
+  - type: 2
     slotPanel: {fileID: 374034115}
   subtitle: {fileID: 1622082314}
-  MotiveCompleteEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &799008607
 GameObject:
   m_ObjectHideFlags: 0
@@ -5075,9 +5072,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minuteProgressions:
   - type: 0
-    minutes: 360
+    minutes: 20
   - type: 1
-    minutes: 15
+    minutes: 360
   - type: 2
     minutes: 0
   - type: 3
@@ -5096,7 +5093,7 @@ MonoBehaviour:
   sleepDialogue:
   - "\uD604\uC900\uC774\uAC00 \uC7A0\uB4E4\uC5C8\uB2E4."
   isTest: 1
-  hours: 15
+  hours: 6
   minutes: 0
 --- !u!1 &874042126
 GameObject:
@@ -9091,7 +9088,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5030242033438432127, guid: 143d0c87a58a2ed4bb0691fbbc522b02, type: 3}
       propertyPath: m_Name
-      value: "Item_\uC624\uB798\uB41C \uAC00\uC871 \uC0AC\uC9C4"
+      value: "Item_\uACE0\uB4F1\uD559\uAD50 \uC878\uC5C5\uC0AC\uC9C4"
       objectReference: {fileID: 0}
     - target: {fileID: 8250859937705255218, guid: 143d0c87a58a2ed4bb0691fbbc522b02, type: 3}
       propertyPath: m_Pivot.x

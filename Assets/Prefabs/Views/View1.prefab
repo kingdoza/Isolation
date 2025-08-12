@@ -490,6 +490,9 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
+  isCovered: 0
+  isItemMatched: 0
+  isValidTime: 0
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -769,6 +772,9 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
+  isCovered: 0
+  isItemMatched: 0
+  isValidTime: 0
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -961,6 +967,9 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
+  isCovered: 0
+  isItemMatched: 0
+  isValidTime: 0
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1460,6 +1469,9 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
+  isCovered: 0
+  isItemMatched: 0
+  isValidTime: 0
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1949,12 +1961,15 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
+  isCovered: 0
+  isItemMatched: 0
+  isValidTime: 0
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
   dialogues:
   - "\uADF8\uB54C \uC0DD\uAC01\uC774 \uB098\uB294\uAD70."
-  endingType: 1
+  endingType: 2
   evidenceName: "\uACF5\uBB34\uC6D0 \uC2DC\uD5D8 \uAD50\uC7AC"
   collectBeforeDialogues:
   - "\uACF5\uBB34\uC6D0 \uC2DC\uD5D8 \uAD50\uC7B0\uB370 \uBB54\uC9C0 \uC798 \uBAA8\uB974\uACA0\uB2E4."

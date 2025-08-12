@@ -65,11 +65,12 @@ public class EvidenceStuff : DialogueStuff
 
     public override void OnDialogueClosed()
     {
-        base.OnDialogueClosed();
+        //base.OnDialogueClosed();
         if (CollectStatus == CollectStatus.Positive)
         {
             Debug.Log("Collect");
             GameManager.Instance.Player.CollectItem(this);
         }
+        base.OnDialogueClosed();
     }
 }
