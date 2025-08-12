@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static EtcUtils;
+using static ControllerUtils;
 
 public class GameManager : PersistentSingleton<GameManager>
 {
@@ -71,6 +72,7 @@ public class GameManager : PersistentSingleton<GameManager>
     protected override void Awake()
     {
         base.Awake();
+        soundController = GetComponentInChildren<SoundController>();
 
         if (Instance == this)
         {
@@ -83,8 +85,7 @@ public class GameManager : PersistentSingleton<GameManager>
 
     private void Start()
     {
-        soundController = GetComponentInChildren<SoundController>();
-        soundController.PlayBGM();
+        //soundController.PlayBGM();
     }
 
 
@@ -92,6 +93,10 @@ public class GameManager : PersistentSingleton<GameManager>
     {
         SetCursorTexture();
         Debug.Log($"[GameManager] Scene loaded: {scene.name}"); //게임 씬 재로딩할때 스타트 스테이지 로딩 
+        if (scene.name == "MainScene")
+        {
+            PlayBGM(BGMClips.main, true);
+        }
         if (scene.name == "Clock")
         {
             StartStage();
@@ -100,12 +105,14 @@ public class GameManager : PersistentSingleton<GameManager>
         if (scene.name == "Refactor")
         {
             StartStage();
+            PlayBGM(BGMClips.inGame, true);
         }
 
         if (scene.name == "Ending")
         {
             dialogueController = FindAnyObjectByType<DialogueController>();
             FindAnyObjectByType<EndingDialogue>().ShowEndingDialogues(EndingType);
+            PlayBGM(null, true);
         }
 
     }

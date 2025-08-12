@@ -73,6 +73,16 @@ public static class ControllerUtils
 
 
 
+    public static void PlayBGM(AudioClip clip, bool isFade = false)
+    {
+        if (!isFade)
+            GameManager.Instance.SoundController.PlaySFX(clip);
+        else
+            GameManager.Instance.SoundController.CrossFadeBGM(clip);
+    }
+
+
+
     public static void SetCursorTexture(Texture2D texture)
     {
         SetCursorTexture(texture, Vector2.zero);

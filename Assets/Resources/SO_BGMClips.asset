@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50efa94da8c6730438d585932a5903ad, type: 3}
   m_Name: SO_BGMClips
   m_EditorClassIdentifier: 
-  main: {fileID: 8300000, guid: 9dc0a57cd797ff54ca77f6359ca72515, type: 3}
-  inGame: {fileID: 0}
+  main: {fileID: 8300000, guid: 6bb388d86a79ccf4387bdfa89a09bf97, type: 3}
+  inGame: {fileID: 8300000, guid: 60f4ad78bdc6afb4988e879e6486202b, type: 3}
