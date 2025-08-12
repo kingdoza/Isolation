@@ -194,8 +194,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525fd3276ba668b489cc3e8a047e8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 0
+  sfxClip: {fileID: 0}
 --- !u!114 &4974939454365499792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,8 +228,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b0e624e529a9e4da0f36bc384cde9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 1
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  sfxClip: {fileID: 8300000, guid: 610fea6cb6d286242b05ce144c2e2039, type: 3}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -358,8 +368,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92298281f1e372b47aaafe8c01f99b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  sfxClip: {fileID: 0}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -539,8 +554,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525fd3276ba668b489cc3e8a047e8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 0
+  sfxClip: {fileID: 0}
 --- !u!1 &1511688777539172815
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,8 +765,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525fd3276ba668b489cc3e8a047e8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 0
+  sfxClip: {fileID: 0}
 --- !u!114 &7750893902111024456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,8 +799,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b0e624e529a9e4da0f36bc384cde9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 1
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  sfxClip: {fileID: 8300000, guid: 610fea6cb6d286242b05ce144c2e2039, type: 3}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1076,8 +1106,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525fd3276ba668b489cc3e8a047e8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 0
+  sfxClip: {fileID: 0}
 --- !u!114 &1577726162821802670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1105,8 +1140,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b0e624e529a9e4da0f36bc384cde9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 1
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  sfxClip: {fileID: 8300000, guid: 610fea6cb6d286242b05ce144c2e2039, type: 3}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1309,8 +1349,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525fd3276ba668b489cc3e8a047e8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 0
+  sfxClip: {fileID: 0}
 --- !u!114 &973407271552325484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,8 +1383,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b0e624e529a9e4da0f36bc384cde9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 1
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  sfxClip: {fileID: 8300000, guid: 610fea6cb6d286242b05ce144c2e2039, type: 3}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1544,8 +1594,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525fd3276ba668b489cc3e8a047e8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 0
+  sfxClip: {fileID: 0}
 --- !u!114 &7208860004258456758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1573,8 +1628,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b0e624e529a9e4da0f36bc384cde9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 1
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  sfxClip: {fileID: 8300000, guid: 610fea6cb6d286242b05ce144c2e2039, type: 3}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1767,8 +1827,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92298281f1e372b47aaafe8c01f99b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  sfxClip: {fileID: 0}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1915,8 +1980,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525fd3276ba668b489cc3e8a047e8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 0
+  sfxClip: {fileID: 0}
 --- !u!1 &3716315587047798207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,8 +2192,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525fd3276ba668b489cc3e8a047e8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 0
+  sfxClip: {fileID: 0}
 --- !u!114 &1448951330257057663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2151,8 +2226,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b0e624e529a9e4da0f36bc384cde9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 1
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  sfxClip: {fileID: 8300000, guid: 610fea6cb6d286242b05ce144c2e2039, type: 3}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2364,8 +2444,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525fd3276ba668b489cc3e8a047e8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 0
+  sfxClip: {fileID: 0}
 --- !u!114 &2137220489139462065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2393,8 +2478,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b0e624e529a9e4da0f36bc384cde9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 1
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  sfxClip: {fileID: 8300000, guid: 610fea6cb6d286242b05ce144c2e2039, type: 3}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2548,8 +2638,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525fd3276ba668b489cc3e8a047e8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 0
+  sfxClip: {fileID: 0}
 --- !u!114 &7783549509975817449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2584,8 +2679,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4cab205013602c43b851ccb32b66090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  sfxClip: {fileID: 0}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3384,8 +3484,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b0e624e529a9e4da0f36bc384cde9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  sfxClip: {fileID: 0}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3604,8 +3709,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b0e624e529a9e4da0f36bc384cde9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  sfxClip: {fileID: 0}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3626,8 +3736,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525fd3276ba668b489cc3e8a047e8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 0
+  sfxClip: {fileID: 0}
 --- !u!60 &7433391244188938386
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3965,8 +4080,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525fd3276ba668b489cc3e8a047e8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 0
-  isCovered: 0
+  wakeEnabled: 0
+  sleepEnabled: 0
+  sfxClip: {fileID: 0}
 --- !u!114 &3910021243630778962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3994,8 +4114,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b0e624e529a9e4da0f36bc384cde9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 0
+    targetComponent: {fileID: 0}
   interactItem: 1
-  isCovered: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  sfxClip: {fileID: 8300000, guid: 610fea6cb6d286242b05ce144c2e2039, type: 3}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []

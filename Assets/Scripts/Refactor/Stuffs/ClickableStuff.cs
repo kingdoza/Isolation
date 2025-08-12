@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using static ControllerUtils;
 
 [RequireComponent(typeof(Click))]
 public class ClickableStuff : BaseStuff
@@ -20,6 +21,7 @@ public class ClickableStuff : BaseStuff
     protected virtual void OnClicked()
     {
         GameManager.Instance.TimeController.ProgressMinutes(StuffData.MinuteWaste);
+        PlaySFX(sfxClip);
         ClickEvent?.Invoke();
     }
 }

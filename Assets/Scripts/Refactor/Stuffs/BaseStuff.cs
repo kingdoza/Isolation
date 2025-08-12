@@ -8,13 +8,14 @@ public abstract class BaseStuff : SingleConditonActivator
     [SerializeField] protected ItemType interactItem = ItemType.None;
     [SerializeField] protected bool wakeEnabled;
     [SerializeField] protected bool sleepEnabled;
+    [SerializeField] protected AudioClip sfxClip;
     protected abstract StuffTypeData StuffData { get; }
     protected MouseInteraction inputComp;
     protected CursorHover hoverComp;
     protected Collider2D colliderComp;
     protected Color originalColor;
 
-    [SerializeField] protected bool isCovered = false;
+    protected bool isCovered = false;
     public bool IsCovered { get => isCovered; set {
             if (isCovered != value)
             {
@@ -24,8 +25,8 @@ public abstract class BaseStuff : SingleConditonActivator
         }
      }
 
-    [SerializeField] protected bool isItemMatched = false;
-    [SerializeField] protected bool isValidTime = false;
+    protected bool isItemMatched = false;
+    protected bool isValidTime = false;
 
 
 

@@ -357,11 +357,9 @@ MonoBehaviour:
     globalType: 0
     targetComponent: {fileID: 0}
   interactItem: 0
-  wakeEnabled: 0
-  sleepEnabled: 0
-  isCovered: 0
-  isItemMatched: 0
-  isValidTime: 0
+  wakeEnabled: 1
+  sleepEnabled: 1
+  sfxClip: {fileID: 0}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []

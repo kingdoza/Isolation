@@ -491,6 +491,7 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 0
+  sfxClip: {fileID: 8300000, guid: aabc65f48bfd7a14e95b86391914c2ea, type: 3}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []

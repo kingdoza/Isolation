@@ -5093,7 +5093,7 @@ MonoBehaviour:
   sleepDialogue:
   - "\uD604\uC900\uC774\uAC00 \uC7A0\uB4E4\uC5C8\uB2E4."
   isTest: 1
-  hours: 6
+  hours: 1
   minutes: 0
 --- !u!1 &874042126
 GameObject:
@@ -13102,9 +13102,7 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  isCovered: 0
-  isItemMatched: 0
-  isValidTime: 0
+  sfxClip: {fileID: 0}
 --- !u!1 &2087457457
 GameObject:
   m_ObjectHideFlags: 0

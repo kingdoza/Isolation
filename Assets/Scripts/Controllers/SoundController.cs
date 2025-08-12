@@ -24,6 +24,7 @@ public class SoundController : MonoBehaviour
 
     public void PlaySFX(AudioClip sfxClip)
     {
+        if (sfxClip == null) return;
         sfxSource.volume = SFX_Volume;
         sfxSource.PlayOneShot(sfxClip);
     }
