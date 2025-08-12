@@ -29,8 +29,8 @@ public class DialogueController : MonoBehaviour
 
     private void Start()
     {
-        RegisterDragScrollCondition(() => !dialoguePanel.activeSelf);
-        RegisterDragScrollCondition(() => !dialogueTextUI.activeSelf);
+        //RegisterDragScrollCondition(() => !dialoguePanel.activeSelf);
+        //RegisterDragScrollCondition(() => !dialogueTextUI.activeSelf);
     }
 
 
@@ -107,8 +107,12 @@ public class DialogueController : MonoBehaviour
     {
         //DragScroller.CanDrag = false;
         textBox.text = "";
-        string dialoguePanelLayer = GameManager.Instance.RoomController.IsFocusIn ? "Focus" : "Default";
-        dialoguePanel.GetComponent<SpriteRenderer>().sortingLayerName = dialoguePanelLayer;
+        RoomController roomController = GameManager.Instance.RoomController;
+        if (roomController)
+        {
+            string dialoguePanelLayer = GameManager.Instance.RoomController.IsFocusIn ? "Focus" : "Default";
+            dialoguePanel.GetComponent<SpriteRenderer>().sortingLayerName = dialoguePanelLayer;
+        }
         dialoguePanel.SetActive(true);
         dialogueTextUI.SetActive(true);
     }

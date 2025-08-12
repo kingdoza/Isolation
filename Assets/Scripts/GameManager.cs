@@ -94,14 +94,18 @@ public class GameManager : PersistentSingleton<GameManager>
         Debug.Log($"[GameManager] Scene loaded: {scene.name}"); //게임 씬 재로딩할때 스타트 스테이지 로딩 
         if (scene.name == "Clock")
         {
-            //RegisterDragScrollCondition(() => !BackGround.activeSelf);
             StartStage();
         }
 
         if (scene.name == "Refactor")
         {
-            //RegisterDragScrollCondition(() => !BackGround.activeSelf);
             StartStage();
+        }
+
+        if (scene.name == "Ending")
+        {
+            dialogueController = FindAnyObjectByType<DialogueController>();
+            FindAnyObjectByType<EndingDialogue>().ShowEndingDialogues(EndingType);
         }
 
     }
