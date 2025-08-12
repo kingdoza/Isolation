@@ -33,6 +33,17 @@ public class InventoryUI : MonoBehaviour
 
 
 
+    private void Update()
+    {
+        if (Time.timeScale >= 0.99 && Input.GetMouseButtonUp(1) && slotSelected)
+        {
+            slotSelected.Unselect();
+            slotSelected = null;
+        }
+    }
+
+
+
     public void AddItem(CollectibleItem item)
     {
         GameObject slot = Instantiate(slotPrefab, slotParent);
