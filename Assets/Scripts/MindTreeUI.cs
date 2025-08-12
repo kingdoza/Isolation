@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MindTreeUI : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class MindTreeUI : MonoBehaviour
     public Color ItemSlotColor => itemSlotColor;
     public Color ClueSlotColor => clueSlotColor;
     public Color FinalSlotColor => finalSlotColor;
+    [HideInInspector] public UnityEvent<EndingType> MotiveCompleteEvent = new();
 
 
 
@@ -113,6 +115,7 @@ public class MindTreeUI : MonoBehaviour
                 if (endingSlot.name.Contains(typeString))
                 {
                     endingSlot.Collected(this);
+                    MotiveCompleteEvent?.Invoke(motiveProgress.Motive.type);
                     break;
                 }
             }

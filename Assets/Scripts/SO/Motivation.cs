@@ -25,5 +25,5 @@ public class Evidence
 
 public enum EndingType
 {
-    Bad, Happy
+    None, Bad, Happy
 }

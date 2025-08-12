@@ -132,7 +132,7 @@ public class InventoryUI : MonoBehaviour
         canSelect = true;
         foreach (InventorySlot slot in slots)
         {
-            slot.Close();
+            slot.Open();
         }
     }
 

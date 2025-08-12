@@ -141,7 +141,8 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
     public void SelectItem(ItemData item)
     {
         itemInUse = item;
-        SetCursorTexture(itemInUse.Cursor, itemInUse.Cursor.GetCenter());
+        ItemCursor.Instance.Enable(item);
+        //SetCursorTexture(item.Cursor, item.Cursor.GetCenter());
         ItemSelectEvent?.Invoke(item);
     }
 
@@ -152,7 +153,7 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
         if (itemInUse == null)
             return;
         itemInUse = null;
-        SetCursorTexture();
+        ItemCursor.Instance.Disable();
         ItemUnselectEvent?.Invoke(itemInUse);
     }
 

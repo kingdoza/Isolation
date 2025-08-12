@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static ControllerUtils;
+using static EtcUtils;
 
 public class GameManager : PersistentSingleton<GameManager>
 {
@@ -37,6 +37,9 @@ public class GameManager : PersistentSingleton<GameManager>
     public GameObject UIBlocker;
     //
     public RoomController RC;
+    public EndingType EndingType {  get; private set; } = EndingType.None;
+
+
     void Update()
     {
         if (Input.GetButtonDown("Cancel"))
@@ -49,13 +52,15 @@ public class GameManager : PersistentSingleton<GameManager>
             {
                 Time.timeScale = 0f;
                 roomController.enabled = false;
-                //DragScroller.CanDrag = false;
+                if (!Player.Instance.IsUsingItemTypeMatched(ItemType.None))
+                    ItemCursor.Instance.Disable();
             }
             else
             {
                 Time.timeScale = 1f;
                 roomController.enabled = true;
-                //DragScroller.CanDrag = true;
+                if (!Player.Instance.IsUsingItemTypeMatched(ItemType.None))
+                    ItemCursor.Instance.Enable(Player.Instance.ItemInUse);
             }
         }
     }
@@ -80,22 +85,22 @@ public class GameManager : PersistentSingleton<GameManager>
     {
         soundController = GetComponentInChildren<SoundController>();
         soundController.PlayBGM();
-        SetCursorTexture(CursorTextures.Normal);
     }
 
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        SetCursorTexture();
         Debug.Log($"[GameManager] Scene loaded: {scene.name}"); //게임 씬 재로딩할때 스타트 스테이지 로딩 
         if (scene.name == "Clock")
         {
-            RegisterDragScrollCondition(() => !BackGround.activeSelf);
+            //RegisterDragScrollCondition(() => !BackGround.activeSelf);
             StartStage();
         }
 
         if (scene.name == "Refactor")
         {
-            RegisterDragScrollCondition(() => !BackGround.activeSelf);
+            //RegisterDragScrollCondition(() => !BackGround.activeSelf);
             StartStage();
         }
 
@@ -106,6 +111,7 @@ public class GameManager : PersistentSingleton<GameManager>
 
     private void StartStage()
     {
+        FindAnyObjectByType<MindTreeUI>().MotiveCompleteEvent.AddListener((EndingType completeType) => EndingType = completeType);
         //나중에 FindAnyObjectByType 는 전부 최적화 필요, 모든 컨트롤러들은 Controllers 안에 있으니
         roomController = FindAnyObjectByType<RoomController>();
         uiController = FindAnyObjectByType<UIController>();

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.SceneManagement;
+using static EtcUtils;
 
 public class TimeController : SceneSingleton<TimeController>
 {
@@ -162,8 +163,8 @@ public class TimeController : SceneSingleton<TimeController>
     private void TimeOver()
     {
         Debug.Log("Time Over!!!");
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-        SceneManager.LoadScene("TimeOver");
+        SetCursorTexture();
+        SceneManager.LoadScene("Ending");
     }
 
 
