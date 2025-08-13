@@ -4,7 +4,7 @@ using static EtcUtils;
 
 public class Drag : MouseInteraction
 {
-    [SerializeField] private DragDirection dragDirection;
+    [SerializeField] protected DragDirection dragDirection;
     protected override string InputLayerName => "Draggable";
     public override bool IsPassDown => false;
     protected Vector2 offset;

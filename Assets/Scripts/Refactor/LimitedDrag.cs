@@ -25,6 +25,17 @@ public class LimitedDrag : Drag
         float higherX = Mathf.Max(limitMarker1.position.x, limitMarker2.position.x);
         float higherY = Mathf.Max(limitMarker1.position.y, limitMarker2.position.y);
 
+        if (dragDirection == DragDirection.Vertical)
+        {
+            lowerX = transform.position.x;
+            higherX = transform.position.x;
+        }
+        else if (dragDirection == DragDirection.Horizontal)
+        {
+            lowerY = transform.position.y;
+            higherY = transform.position.y;
+        }
+
         lowerLimitPos = new Vector2(lowerX, lowerY);
         higherLimitPos = new Vector2(higherX, higherY);
 
