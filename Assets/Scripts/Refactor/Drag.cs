@@ -10,6 +10,7 @@ public class Drag : MouseInteraction
     protected Vector2 offset;
     protected float dragDistance = 0;
     [HideInInspector] public UnityEvent DragEndEvent = new();
+    [HideInInspector] public UnityEvent DragStartEvent = new();
 
 
 
@@ -40,6 +41,7 @@ public class Drag : MouseInteraction
     {
         offset = transform.position - GetMouseWorldPosition();
         dragDistance = 0;
+        DragStartEvent?.Invoke();
     }
 
 
