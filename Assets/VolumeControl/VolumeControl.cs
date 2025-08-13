@@ -4,26 +4,37 @@ using UnityEngine.Audio;
 
 public class SettingsController : MonoBehaviour
 {
+    public static SettingsController Instance;//
     public AudioMixer gameAudioMixer;
     public Slider masterSlider;
     public Slider bgmSlider;
     public Slider sfxSlider;
 
     private const float MinVolume = 0.0001f; 
-    private const float MaxVolume = 1.4125f; 
-    private const float DefaultVolume = 0.8913f; 
-
-    void Start()
+    private const float MaxVolume = 1.0f; 
+    private const float DefaultVolume = 0.75f; 
+    //
+    void Awake()
     {
         
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+//
+    void Start()
+    {
+        // PlayerPrefs.SetFloat("MasterVolume", DefaultVolume);
+        // PlayerPrefs.SetFloat("BGMVolume", DefaultVolume);
+        // PlayerPrefs.SetFloat("SFXVolume", DefaultVolume);
+        DontDestroyOnLoad(gameObject);
         SetSliderRanges();
-
-        
-        PlayerPrefs.SetFloat("MasterVolume", DefaultVolume);
-        PlayerPrefs.SetFloat("BGMVolume", DefaultVolume);
-        PlayerPrefs.SetFloat("SFXVolume", DefaultVolume);
-        
-
         LoadVolumeSettings();
     }
 

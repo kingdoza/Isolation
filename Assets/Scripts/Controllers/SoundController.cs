@@ -10,6 +10,8 @@ public class SoundController : MonoBehaviour
     private const float BGM_Volume = 0.5f;
     private const float SFX_Volume = 0.6f;
     private const float FadeDuration = 2f;
+    public static SoundController instance;
+    public static SoundController Instance => instance;
 
     private Tween fadeTween;
 
@@ -17,7 +19,33 @@ public class SoundController : MonoBehaviour
 
     private void Awake()
     {
+        if (instance == null)
+        {
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+        Destroy(gameObject);
+        return;
+        }
+
+        // bgmSource.loop = true; 
+        if (bgmSource != null)
+        {
         bgmSource.loop = true;
+        bgmSource.playOnAwake = false; 
+        }
+        if (sfxSource != null)
+        {
+        sfxSource.playOnAwake = false;
+        }
+
+        
+        if (bgmClips != null && bgmClips.main!= null && !bgmSource.isPlaying)
+        {
+        PlayBGM(bgmClips.main);
+        }
     }
 
 
@@ -51,7 +79,7 @@ public class SoundController : MonoBehaviour
 
         if (bgmClip == null)
         {
-            // Å¬¸³ÀÌ nullÀÌ¸é ÆäÀÌµå¾Æ¿ô¸¸ (Àç»ýÁßÀÏ ¶§¸¸)
+            // Å¬ï¿½ï¿½ï¿½ï¿½ nullï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½Ìµï¿½Æ¿ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
             if (bgmSource.isPlaying)
             {
                 fadeTween = bgmSource.DOFade(0f, FadeDuration)
@@ -60,7 +88,7 @@ public class SoundController : MonoBehaviour
             }
             else
             {
-                // Àç»ýÁß ¾Æ´Ï¸é ±×³É Á¤Áö
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¸ï¿½ ï¿½×³ï¿½ ï¿½ï¿½ï¿½ï¿½
                 bgmSource.Stop();
                 bgmSource.volume = 0f;
             }
@@ -69,7 +97,7 @@ public class SoundController : MonoBehaviour
 
         if (bgmSource.isPlaying)
         {
-            // Àç»ý ÁßÀÌ¸é ÆäÀÌµå¾Æ¿ô ¡æ ÆäÀÌµåÀÎ
+            // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½Ìµï¿½Æ¿ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½
             fadeTween = DOTween.Sequence()
                 .Append(bgmSource.DOFade(0f, FadeDuration).SetUpdate(true))
                 .AppendCallback(() =>
@@ -83,7 +111,7 @@ public class SoundController : MonoBehaviour
         }
         else
         {
-            // Àç»ýÁßÀÌ ¾Æ´Ï¸é ¹Ù·Î ÆäÀÌµåÀÎ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¸ï¿½ ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½
             bgmSource.Stop();
             bgmSource.clip = bgmClip;
             bgmSource.volume = 0f;
@@ -129,3 +157,5 @@ public class SoundController : MonoBehaviour
 
     
 }
+
+
