@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 6932477881012681277}
   - component: {fileID: 1061947291535722359}
   - component: {fileID: 2489931999588927240}
-  - component: {fileID: 6997311792879423215}
+  - component: {fileID: 4632739167068591774}
   m_Layer: 0
   m_Name: Zoom_Desktop
   m_TagString: Untagged
@@ -659,8 +659,8 @@ Transform:
   m_GameObject: {fileID: 2218292964639254511}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.949, y: 1.444, z: 0}
-  m_LocalScale: {x: 14.471975, y: 8.504434, z: 1}
+  m_LocalPosition: {x: 7.357, y: 0.882, z: 0}
+  m_LocalScale: {x: 13.661545, y: 9.627019, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5508581666158033084}
@@ -777,8 +777,8 @@ MonoBehaviour:
       m_Calls: []
   isItemOnce: 0
   zoomPrefab: {fileID: 6907309563162764960, guid: ed55ccc768fcac841bd6eed7b43eb43a, type: 3}
---- !u!61 &6997311792879423215
-BoxCollider2D:
+--- !u!60 &4632739167068591774
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -821,8 +821,16 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.5, y: 0.5}
+      - {x: -0.49999997, y: -0.3556746}
+      - {x: -0.8969274, y: -0.3602541}
+      - {x: -0.8990013, y: -0.49757868}
+      - {x: -0.5, y: -0.5}
+      - {x: 0.5, y: -0.5}
+      - {x: 0.5, y: 0.5}
+  m_UseDelaunayMesh: 0
 --- !u!1 &2444317976511818782
 GameObject:
   m_ObjectHideFlags: 0
