@@ -5278,7 +5278,7 @@ MonoBehaviour:
   - "\uD604\uC900\uC774\uAC00 \uAE68\uC5B4\uB0AC\uB2E4."
   sleepDialogue:
   - "\uD604\uC900\uC774\uAC00 \uC7A0\uB4E4\uC5C8\uB2E4."
-  isTest: 1
+  isTest: 0
   hours: 7
   minutes: 0
 --- !u!1 &874042126
