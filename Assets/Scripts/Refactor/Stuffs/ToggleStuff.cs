@@ -22,7 +22,8 @@ public class ToggleStuff : ClickableStuff
     {
         if (!enabled) return;
         base.OnClicked();
-        toggleObject.SetActive(true);
+        if (toggleObject != null)
+            toggleObject.SetActive(true);
         gameObject.SetActive(false);
         ToggleEvent?.Invoke(toggleObject);
         TimeController.Instance.CheckTimeChanged();

@@ -104,6 +104,12 @@ public class TriggerEvent
             case GlobalTriggerEvent.DrawerStick:
                 targetSender = TriggerEventController.Instance.DrawerStick;
                 break;
+            case GlobalTriggerEvent.DiaryUnlock:
+                targetSender = TriggerEventController.Instance.DiaryUnlock;
+                break;
+            case GlobalTriggerEvent.DiaryRelocate:
+                targetSender = TriggerEventController.Instance.DiaryRelocate;
+                break;
             default:
                 Debug.LogError("Invalid GlobalType");
                 break;

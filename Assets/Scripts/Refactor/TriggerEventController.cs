@@ -10,6 +10,8 @@ public class TriggerEventController : SceneSingleton<TriggerEventController>
     public ITriggerEventSendable FirstScrewsLoose { get; set; } = new TriggerWrapper();
     public ITriggerEventSendable FramePhotoFlip { get; set; } = new TriggerWrapper();
     public ITriggerEventSendable DrawerStick { get; set; } = new TriggerWrapper();
+    public ITriggerEventSendable DiaryUnlock { get; set; } = new TriggerWrapper();
+    public ITriggerEventSendable DiaryRelocate { get; set; } = new TriggerWrapper();
 
 
 
@@ -51,5 +53,5 @@ public class TriggerWrapper : ITriggerEventSendable
 
 public enum GlobalTriggerEvent
 {
-    None, PlayerWakeup, ChairRightReach, FirstScrewsLoose, FramePhotoFlip, DrawerStick
+    None, PlayerWakeup, ChairRightReach, FirstScrewsLoose, FramePhotoFlip, DrawerStick, DiaryUnlock, DiaryRelocate
 }

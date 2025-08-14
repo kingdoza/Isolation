@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemStuff : ClickableStuff
 {
     [SerializeField] private ItemData itemData;
+    [SerializeField] private ItemData itemData2;
     protected override StuffTypeData StuffData => GameData.ItemStuffData;
 
 
@@ -23,6 +24,8 @@ public class ItemStuff : ClickableStuff
     public void Acquire()
     {
         InventoryUI.Instance.AddItem(itemData);
+        if (itemData2 != null )
+            InventoryUI.Instance.AddItem(itemData2);
         Destroy(gameObject);
         //gameObject.SetActive(false);
     }

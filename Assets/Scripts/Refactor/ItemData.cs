@@ -69,5 +69,5 @@ public class ItemData : ScriptableObject
 
 public enum ItemType
 {
-    None, ScrewDriver, Screw, DrawerHandle
+    None, ScrewDriver, Screw, DrawerHandle, DiaryKey, DiaryLock
 }

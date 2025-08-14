@@ -6,6 +6,7 @@ using static ControllerUtils;
 public class ClickableStuff : BaseStuff
 {
     [HideInInspector] public UnityEvent ClickEvent = new();
+    [SerializeField] private bool isItemOnce;
     protected override StuffTypeData StuffData => GameData.ClickStuffData;
 
 
@@ -20,6 +21,8 @@ public class ClickableStuff : BaseStuff
 
     protected virtual void OnClicked()
     {
+        if (isItemOnce && interactItem != ItemType.None)
+            InventoryUI.Instance.DeleteSelectedSlot();
         GameManager.Instance.TimeController.ProgressMinutes(StuffData.MinuteWaste);
         PlaySFX(sfxClip);
         ClickEvent?.Invoke();
