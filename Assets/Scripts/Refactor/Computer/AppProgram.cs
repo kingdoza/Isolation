@@ -6,16 +6,20 @@ using System.Linq;
 
 public class AppProgram : MonoBehaviour, IPointerClickHandler
 {
+    [SerializeField] private GameObject appPanelObject;
     private readonly Color HighlightColor = new Color(1, 1, 1, 0.5f);
-    private readonly float DoubleClickTime = 0.2f;
+    private readonly float DoubleClickTime = 0.3f;
     private List<AppProgram> otherApps;
     private float lastClickTime = 0f;
     private Image image;
+    private bool isAppOpen;
 
 
 
     private void Awake()
     {
+        if (appPanelObject != null)
+            Close();
         image = GetComponent<Image>();
         otherApps = transform.parent.GetComponentsInChildren<AppProgram>().ToList();
         otherApps.Remove(this);
@@ -58,6 +62,23 @@ public class AppProgram : MonoBehaviour, IPointerClickHandler
 
     private void OnDoubleClick()
     {
-        Debug.Log("더블클릭 감지!");
+        if (isAppOpen) return;
+        Open();
+    }
+
+
+
+    public void Open()
+    {
+        isAppOpen = true;
+        appPanelObject.SetActive(true);
+    }
+
+
+
+    public void Close()
+    {
+        isAppOpen = false;
+        appPanelObject.SetActive(false);
     }
 }
