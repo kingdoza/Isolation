@@ -3,9 +3,11 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 public class AppProgram : MonoBehaviour, IPointerClickHandler
 {
+    [SerializeField] private GameObject iconPanelObject;
     [SerializeField] private GameObject appPanelObject;
     private readonly Color HighlightColor = new Color(1, 1, 1, 0.5f);
     private readonly float DoubleClickTime = 0.3f;
@@ -13,16 +15,26 @@ public class AppProgram : MonoBehaviour, IPointerClickHandler
     private float lastClickTime = 0f;
     private Image image;
     private bool isAppOpen;
+    private TriggerWrapper appOpenTrigger;
 
 
 
     private void Awake()
     {
+        if (name.Equals("Expulsion"))
+            appOpenTrigger = TriggerEventController.Instance.ExpulsionOpen as TriggerWrapper;
         if (appPanelObject != null)
-            Close();
+            appPanelObject.SetActive(false);
         image = GetComponent<Image>();
         otherApps = transform.parent.GetComponentsInChildren<AppProgram>().ToList();
         otherApps.Remove(this);
+        Unhighlight();
+    }
+
+
+
+    private void OnEnable()
+    {
         Unhighlight();
     }
 
@@ -70,15 +82,43 @@ public class AppProgram : MonoBehaviour, IPointerClickHandler
 
     public void Open()
     {
+        if (appPanelObject == null) return;
         isAppOpen = true;
         appPanelObject.SetActive(true);
+        DisableMainPanel();
+        TimeController.Instance.ProgressMinutes(GameData.AppOpenCloseMinutes);
+        TimeController.Instance.CheckTimeChanged();
+        if (appOpenTrigger != null)
+            appOpenTrigger.TriggerValue = true;
     }
 
 
 
     public void Close()
     {
+        if (appPanelObject == null) return;
         isAppOpen = false;
         appPanelObject.SetActive(false);
+        EnableMainPanel();
+        TimeController.Instance.ProgressMinutes(GameData.AppOpenCloseMinutes);
+        TimeController.Instance.CheckTimeChanged();
+        if (appOpenTrigger != null)
+            appOpenTrigger.TriggerValue = false;
+    }
+
+
+
+    private void EnableMainPanel()
+    {
+        if (iconPanelObject == null) return;
+        iconPanelObject.SetActive(true);
+    }
+
+
+
+    private void DisableMainPanel()
+    {
+        if (iconPanelObject == null) return;
+        iconPanelObject.SetActive(false);
     }
 }

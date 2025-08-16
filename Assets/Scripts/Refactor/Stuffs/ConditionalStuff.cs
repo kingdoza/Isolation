@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ConditonalStuff : SingleConditonActivator
+public class ConditionalStuff : SingleConditonActivator
 {
     [SerializeField] private BaseStuff trueConditonStuff;
     [SerializeField] private BaseStuff falseConditonStuff;

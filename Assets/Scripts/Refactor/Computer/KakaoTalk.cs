@@ -1,4 +1,6 @@
+using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class KakaoTalk : MonoBehaviour
@@ -10,6 +12,15 @@ public class KakaoTalk : MonoBehaviour
     [SerializeField] private GameObject lockCanvas;
     [SerializeField] private GameObject talkCanvas;
     private bool isLocked = true;
+    private TriggerWrapper talkOpenTrigger;
+
+
+
+    private void Awake()
+    {
+        talkOpenTrigger = TriggerEventController.Instance.MomTalkOpen as TriggerWrapper;
+    }
+
 
 
 
@@ -18,6 +29,14 @@ public class KakaoTalk : MonoBehaviour
         talkCanvas.SetActive(!isLocked);
         lockCanvas.SetActive(isLocked);
         wrongPinPhrase.SetActive(false);
+        talkOpenTrigger.TriggerValue = !isLocked;
+    }
+
+
+
+    private void OnDisable()
+    {
+        talkOpenTrigger.TriggerValue = false;
     }
 
 
@@ -36,6 +55,8 @@ public class KakaoTalk : MonoBehaviour
     public void CheckPin()
     {
         if (!isLocked) return;
+        TimeController.Instance.ProgressMinutes(GameData.PasswordCheckMinutes);
+        TimeController.Instance.CheckTimeChanged();
         if (!pinInputField.text.Equals(pin))
         {
             pinInputField.text = "";
@@ -45,5 +66,6 @@ public class KakaoTalk : MonoBehaviour
         isLocked = false;
         talkCanvas.SetActive(true);
         lockCanvas.SetActive(false);
+        talkOpenTrigger.TriggerValue = true;
     }
 }

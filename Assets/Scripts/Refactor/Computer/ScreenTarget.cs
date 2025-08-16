@@ -13,11 +13,32 @@ public class ScreenTarget : MonoBehaviour
     [SerializeField] private MeshCollider targetMesh;  // RenderTexture가 뿌려진 MeshCollider 오브젝트
     [SerializeField] private Camera mainCamera;        // 클릭 입력을 받는 메인 카메라
 
-    private void Update()
+
+
+    private void Awake()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (uiCanvas == null)
         {
-            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            uiCanvas = GameObject.FindWithTag("ScreenCanvas").GetComponent<Canvas>();
+        }
+        if (uiCamera == null)
+        {
+            uiCamera = GameObject.FindWithTag("ScreenCamera").GetComponent<Camera>();
+        }
+        if (mainCamera == null)
+        {
+            mainCamera = Camera.main;
+        }
+    }
+
+
+
+    public void ClickCanvas()
+    {
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        targetMesh.enabled = true;
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
             if (targetMesh.Raycast(ray, out RaycastHit hit, 100f))
             {
@@ -51,6 +72,7 @@ public class ScreenTarget : MonoBehaviour
                     ExecuteEvents.Execute(result.gameObject, eventData, ExecuteEvents.pointerClickHandler);
                 }
             }
-        }
+        targetMesh.enabled = false;
+        //}
     }
 }

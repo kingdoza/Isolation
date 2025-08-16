@@ -9,6 +9,7 @@ public abstract class BaseStuff : SingleConditonActivator
     [SerializeField] protected bool wakeEnabled;
     [SerializeField] protected bool sleepEnabled;
     [SerializeField] protected AudioClip sfxClip;
+    [SerializeField] protected Color hoverColor = Color.gray;
     protected abstract StuffTypeData StuffData { get; }
     protected MouseInteraction inputComp;
     protected CursorHover hoverComp;
@@ -38,7 +39,8 @@ public abstract class BaseStuff : SingleConditonActivator
         inputComp = GetComponent<MouseInteraction>();
         hoverComp = GetComponent<CursorHover>();
         colliderComp = GetComponent<Collider2D>();
-        originalColor = GetComponent<SpriteRenderer>().color;
+        if (GetComponent<SpriteRenderer>())
+            originalColor = GetComponent<SpriteRenderer>().color;
 
         if (!inputComp || !hoverComp || !colliderComp)
         {
@@ -80,7 +82,8 @@ public abstract class BaseStuff : SingleConditonActivator
     protected virtual void OnCursorEntered()
     {
         if (!enabled) return;
-        GetComponent<SpriteRenderer>().color = Color.gray;
+        if (GetComponent<SpriteRenderer>())
+            GetComponent<SpriteRenderer>().color = hoverColor;
         SetCursorTexture(StuffData.CursorTexture);
     }
 
@@ -89,7 +92,8 @@ public abstract class BaseStuff : SingleConditonActivator
     protected virtual void OnCursorExited()
     {
         if (!enabled) return;
-        GetComponent<SpriteRenderer>().color = originalColor;
+        if (GetComponent<SpriteRenderer>())
+            GetComponent<SpriteRenderer>().color = originalColor;
         SetCursorTexture();
     }
 

@@ -39,8 +39,8 @@ public class ProfileLock : MonoBehaviour
 
     public void CheckPin()
     {
-        Debug.Log(pinInputField.text);
-        Debug.Log(pin);
+        TimeController.Instance.ProgressMinutes(GameData.PasswordCheckMinutes);
+        TimeController.Instance.CheckTimeChanged();
         if (!pinInputField.text.Equals(pin))
         {
             pinInputField.text = "";

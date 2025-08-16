@@ -16,6 +16,8 @@ public abstract class SingleConditonActivator : ConditionalActivator
 
     protected override void SetConditionalComponent()
     {
+        if (name.Equals("KakaoTalk"))
+            Debug.Log("KakaoTalk : " + triggerEvent.GetValue());
         if (triggerEvent.TargetSender.GetTriggerValue())
         {
             SetTrueComponent();

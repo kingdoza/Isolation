@@ -75,6 +75,13 @@ public class TriggerEvent
 
 
 
+    public TriggerEvent(MonoBehaviour targetComponent)
+    {
+        this.targetComponent = targetComponent;
+    }
+
+
+
     public TriggerEvent(GlobalTriggerEvent globalType)
     {
         SetTargetSender(globalType);
@@ -109,6 +116,12 @@ public class TriggerEvent
                 break;
             case GlobalTriggerEvent.DiaryRelocate:
                 targetSender = TriggerEventController.Instance.DiaryRelocate;
+                break;
+            case GlobalTriggerEvent.MomTalkOpen:
+                targetSender = TriggerEventController.Instance.MomTalkOpen;
+                break;
+            case GlobalTriggerEvent.ExpulsionOpen:
+                targetSender = TriggerEventController.Instance.ExpulsionOpen;
                 break;
             default:
                 Debug.LogError("Invalid GlobalType");

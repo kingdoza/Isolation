@@ -29,4 +29,11 @@ public static class GameData
 
     private static StuffTypeData _lightSwitchStuffData;
     public static StuffTypeData LightSwitchStuffData => LoadResource(ref _lightSwitchStuffData, "Stuffs/SO_LightSwitch");
+
+    private static StuffTypeData _screenStuffData;
+    public static StuffTypeData ScreenStuffData => LoadResource(ref _screenStuffData, "Stuffs/SO_Screen");
+
+
+    public static readonly int PasswordCheckMinutes = 360;
+    public static readonly int AppOpenCloseMinutes = 360;
 }
