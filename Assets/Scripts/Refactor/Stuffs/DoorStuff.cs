@@ -20,6 +20,7 @@ public class DoorStuff : ClickableStuff
     {
         if (!enabled) return;
         base.OnClicked();
-        SceneManager.LoadScene("Ending");
+        GameManager.Instance.LoadSceneWithFade("Ending");
+        //SceneManager.LoadScene("Ending");
     }
 }

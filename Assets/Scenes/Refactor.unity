@@ -7990,7 +7990,7 @@ MonoBehaviour:
   - "\uD604\uC900\uC774\uAC00 \uAE68\uC5B4\uB0AC\uB2E4."
   sleepDialogue:
   - "\uD604\uC900\uC774\uAC00 \uC7A0\uB4E4\uC5C8\uB2E4."
-  isTest: 1
+  isTest: 0
   hours: 7
   minutes: 0
 --- !u!1 &874042126
@@ -9752,7 +9752,7 @@ GameObject:
   - component: {fileID: 1033713755}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: MainCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

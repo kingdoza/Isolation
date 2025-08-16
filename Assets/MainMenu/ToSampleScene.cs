@@ -7,7 +7,8 @@ public class ToSampleScene : MonoBehaviour
     public void StartGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Refactor");
+        GameManager.Instance.LoadSceneWithFade("Refactor");
+        //SceneManager.LoadScene("Refactor");
     }
     
     

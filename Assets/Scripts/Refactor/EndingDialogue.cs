@@ -32,7 +32,8 @@ public class EndingDialogue : MonoBehaviour
 
     private void OnEndingTextEnd()
     {
-        SceneManager.LoadScene("MainScene");
+        GameManager.Instance.LoadSceneWithFade("MainScene");
+        //SceneManager.LoadScene("MainScene");
     }
 
 

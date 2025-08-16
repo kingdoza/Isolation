@@ -1,8 +1,10 @@
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static EtcUtils;
+using UnityEngine.UI;
 using static ControllerUtils;
+using static EtcUtils;
 
 public class GameManager : PersistentSingleton<GameManager>
 {
@@ -39,6 +41,8 @@ public class GameManager : PersistentSingleton<GameManager>
     //
     public RoomController RC;
     public EndingType EndingType {  get; set; } = EndingType.None;
+    private const float DadeDuration = 0.8f;
+    private GameObject sceneFadePanel;
 
 
     void Update()
@@ -89,8 +93,71 @@ public class GameManager : PersistentSingleton<GameManager>
     }
 
 
+
+    private GameObject CreateFadePanel()
+    {
+        Canvas canvas = GameObject.FindWithTag("MainCanvas").GetComponent<Canvas>();
+        GameObject blackImageObj = new GameObject("SceneFadePanel");
+        blackImageObj.transform.SetParent(canvas.transform, false);
+
+        Image img = blackImageObj.AddComponent<Image>();
+        img.color = Color.black;
+
+        RectTransform rt = blackImageObj.GetComponent<RectTransform>();
+        rt.anchorMin = Vector2.zero;
+        rt.anchorMax = Vector2.one;
+        rt.offsetMin = Vector2.zero;
+        rt.offsetMax = Vector2.zero;
+
+        return blackImageObj;
+    }
+
+
+
+    public void LoadSceneWithFade(string sceneName)
+    {
+        if (sceneFadePanel == null)
+            sceneFadePanel = CreateFadePanel();
+        sceneFadePanel.SetActive(true);
+        Image image = sceneFadePanel.GetComponent<Image>();
+        image.color = new Color(0, 0, 0, 0);
+        image.DOFade(1f, DadeDuration) // 1.5초 동안 페이드아웃
+            .SetEase(Ease.InOutQuad) // 부드럽게
+            .OnComplete(() =>
+            {
+                SceneManager.LoadScene(sceneName);
+            });
+    }
+
+
+
+    private void FadeInPanel()
+    {
+        sceneFadePanel.SetActive(true);
+        Image image = sceneFadePanel.GetComponent<Image>();
+        image.DOFade(0f, DadeDuration) // 1.5초 동안 페이드아웃
+            .SetEase(Ease.InOutQuad); // 부드럽게
+    }
+
+
+
+    private void FadeoutPanel()
+    {
+        Image image = sceneFadePanel.GetComponent<Image>();
+        image.DOFade(0f, DadeDuration) // 1.5초 동안 페이드아웃
+            .SetEase(Ease.InOutQuad) // 부드럽게
+            .OnComplete(() =>
+            {
+                sceneFadePanel.SetActive(false);
+            });
+    }
+
+
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        sceneFadePanel = CreateFadePanel();
+        FadeoutPanel();
         SetCursorTexture();
         Debug.Log($"[GameManager] Scene loaded: {scene.name}"); //게임 씬 재로딩할때 스타트 스테이지 로딩 
         if (scene.name == "MainScene")
