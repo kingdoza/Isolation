@@ -10,6 +10,7 @@ public class EvidenceWindow : MonoBehaviour
     [SerializeField] private TextMeshProUGUI memory;
     [SerializeField] private Image icon;
     [SerializeField] private GameObject sentenceParent;
+    [SerializeField] private TextMeshProUGUI textArea;
 
 
 
@@ -26,13 +27,19 @@ public class EvidenceWindow : MonoBehaviour
         title.text = evidenceInfo.name;
         memory.text = evidenceInfo.description;
         icon.sprite = evidenceInfo.sprite;
+        textArea.text = "  ";
 
-        int dialogueIdx = 0;
-        foreach (Transform child in sentenceParent.transform) 
+        foreach (string text in evidenceInfo.texts)
         {
-            TextMeshProUGUI sentenceBox = child.GetComponent<TextMeshProUGUI>();
-            sentenceBox.text = dialogueIdx >= evidenceInfo.texts.Length ? "" : evidenceInfo.texts[dialogueIdx++];
+            textArea.text += text + " ";
         }
+
+        //int dialogueIdx = 0;
+        //foreach (Transform child in sentenceParent.transform) 
+        //{
+        //    TextMeshProUGUI sentenceBox = child.GetComponent<TextMeshProUGUI>();
+        //    sentenceBox.text = dialogueIdx >= evidenceInfo.texts.Length ? "" : evidenceInfo.texts[dialogueIdx++];
+        //}
     }
 
 
@@ -42,7 +49,8 @@ public class EvidenceWindow : MonoBehaviour
         if (canvasGroup == null)
             canvasGroup = GetComponent<CanvasGroup>();
         InsertBasicInfo(evidenceInfo);
-        sentenceParent.SetActive(false);
+        //sentenceParent.SetActive(false);
+        textArea.gameObject.SetActive(false);
         rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, 120f);
         canvasGroup.alpha = 1;
     }
@@ -54,8 +62,9 @@ public class EvidenceWindow : MonoBehaviour
         if (canvasGroup == null)
             canvasGroup = GetComponent<CanvasGroup>();
         InsertBasicInfo(evidenceInfo);
-        sentenceParent.SetActive(true);
-        rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, 500f);
+        //sentenceParent.SetActive(true);
+        textArea.gameObject.SetActive(true);
+        rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, 700f);
         canvasGroup.alpha = 1;
     }
 

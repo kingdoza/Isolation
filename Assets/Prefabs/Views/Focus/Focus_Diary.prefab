@@ -1601,7 +1601,7 @@ GameObject:
   - component: {fileID: 6674036258317599346}
   - component: {fileID: 9206599890811355017}
   m_Layer: 0
-  m_Name: Diary
+  m_Name: Focus_Diary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

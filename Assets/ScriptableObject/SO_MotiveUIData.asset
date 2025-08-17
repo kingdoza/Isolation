@@ -15,7 +15,7 @@ MonoBehaviour:
   slotPrefab: {fileID: 5030242033438432127, guid: 143d0c87a58a2ed4bb0691fbbc522b02, type: 3}
   lineSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   lineThickness: 8
-  itemSlotSize: 60
+  itemSlotSize: 50
   clueSlotSize: 80
-  finalSlotSize: 100
+  finalSlotSize: 120
   finalSlotPosition: {x: 0, y: 300}

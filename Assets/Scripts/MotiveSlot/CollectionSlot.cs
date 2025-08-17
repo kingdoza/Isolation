@@ -2,7 +2,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using System.Linq;
 using static UnityEngine.GraphicsBuffer;
+using System.Collections.Generic;
 
 
 public class CollectionSlot : MotiveSlot, IPointerEnterHandler, IPointerExitHandler
@@ -37,7 +39,15 @@ public class CollectionSlot : MotiveSlot, IPointerEnterHandler, IPointerExitHand
         }
         evidenceInfo.description = string.Format("È¸°í{0}. {1}", memoryNum, memoryName);
 
-        EvidenceStuff[] evidenceStuffs = FindObjectsOfType<EvidenceStuff>(true);
+        List<EvidenceStuff> evidenceStuffs = FindObjectsOfType<EvidenceStuff>(true).ToList();
+        foreach (GameObject evidencePrefab in mindTreeUI.AdditionalEvidences)
+        {
+            EvidenceStuff[] prefabEvidences = evidencePrefab.GetComponentsInChildren<EvidenceStuff>(true);
+            foreach (EvidenceStuff prefabEvidence in prefabEvidences)
+            {
+                evidenceStuffs.Add(prefabEvidence);
+            }
+        }
         foreach (EvidenceStuff stuff in evidenceStuffs)
         {
             if (stuff.EvidenceName.Equals(evidenceInfo.name))

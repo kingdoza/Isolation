@@ -101,7 +101,6 @@ GameObject:
   - component: {fileID: 2944747730879295780}
   - component: {fileID: 1775057079287581522}
   - component: {fileID: 910549594005882665}
-  - component: {fileID: 7627644641694145799}
   m_Layer: 0
   m_Name: "(4) \uC561\uC790 \uD504\uB808\uC784"
   m_TagString: Untagged
@@ -666,117 +665,6 @@ MonoBehaviour:
       m_Calls: []
   isItemOnce: 0
   focusPrefab: {fileID: 6907309563162764960, guid: 4475a64b556846e4ead58ae739e0b6ea, type: 3}
---- !u!60 &7627644641694145799
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502494579317787351}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 71.76935, y: 60.24}
-    newSize: {x: 71.76935, y: 60.24}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 12.6157055, y: -4.8535423}
-      - {x: 12.790924, y: -4.222757}
-      - {x: 12.896055, y: -3.8372772}
-      - {x: 12.931098, y: -3.662059}
-      - {x: 12.966142, y: -3.4167535}
-      - {x: 13.176404, y: -2.8560555}
-      - {x: 13.4917965, y: -1.7346596}
-      - {x: 13.702058, y: -1.3842232}
-      - {x: 13.91232, y: -0.6483071}
-      - {x: 13.947364, y: -0.19273995}
-      - {x: 14.087538, y: 0.08760907}
-      - {x: 14.40293, y: 1.033787}
-      - {x: 14.648236, y: 2.1201394}
-      - {x: 14.928585, y: 2.9611864}
-      - {x: 14.963629, y: 3.2415354}
-      - {x: 15.17389, y: 3.6971025}
-      - {x: 15.208934, y: 4.0475388}
-      - {x: 15.349109, y: 4.3629317}
-      - {x: 15.45424, y: 4.8184986}
-      - {x: 15.45424, y: 5.0287604}
-      - {x: 15.314065, y: 5.168935}
-      - {x: 14.823454, y: 5.2390223}
-      - {x: 14.473018, y: 5.274066}
-      - {x: 13.4917965, y: 5.344153}
-      - {x: 12.825968, y: 5.3791966}
-      - {x: 11.564397, y: 5.4142404}
-      - {x: 11.284048, y: 5.449284}
-      - {x: 10.688306, y: 5.484328}
-      - {x: 9.111343, y: 5.484328}
-      - {x: 9.0763, y: 5.519371}
-      - {x: 8.760907, y: 5.5544147}
-      - {x: 8.340384, y: 5.5544147}
-      - {x: 8.235252, y: 5.449284}
-      - {x: 7.8497725, y: 4.713368}
-      - {x: 7.884816, y: 4.15267}
-      - {x: 7.8147287, y: 3.942408}
-      - {x: 7.709598, y: 3.4167535}
-      - {x: 7.2540307, y: 1.8748341}
-      - {x: 7.0788126, y: 1.2440487}
-      - {x: 6.833507, y: 0.33291447}
-      - {x: 6.483071, y: -0.68335074}
-      - {x: 6.272809, y: -1.3842232}
-      - {x: 6.097591, y: -2.0500522}
-      - {x: 6.0625477, y: -2.5056193}
-      - {x: 5.9574165, y: -2.8910992}
-      - {x: 5.3967185, y: -4.888586}
-      - {x: 5.3967185, y: -5.4142404}
-      - {x: 5.431762, y: -5.519371}
-      - {x: 5.712111, y: -5.519371}
-      - {x: 6.588202, y: -5.624502}
-      - {x: 7.1138563, y: -5.729633}
-      - {x: 7.6395106, y: -5.904851}
-      - {x: 8.515601, y: -6.115113}
-      - {x: 8.620732, y: -6.115113}
-      - {x: 9.18143, y: -6.1501565}
-      - {x: 9.636997, y: -6.290331}
-      - {x: 10.232739, y: -6.290331}
-      - {x: 10.443001, y: -6.395462}
-      - {x: 11.038742, y: -6.5005927}
-      - {x: 11.389179, y: -6.57068}
-      - {x: 12.019964, y: -6.57068}
-      - {x: 12.125095, y: -6.465549}
-      - {x: 12.300313, y: -6.115113}
-      - {x: 12.405444, y: -5.4142404}
-  m_UseDelaunayMesh: 0
 --- !u!1 &2118793972603487200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,7 +912,7 @@ MonoBehaviour:
     targetComponent: {fileID: 0}
   interactItem: 0
   wakeEnabled: 1
-  sleepEnabled: 0
+  sleepEnabled: 1
   sfxClip: {fileID: 0}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
@@ -1032,11 +920,28 @@ MonoBehaviour:
       m_Calls: []
   isItemOnce: 0
   dialogues:
-  - "\uC624\uB798\uB41C \uAC00\uC871\uC0AC\uC9C4\uC774\uB2E4"
-  endingType: 2
+  - '!!'
+  - ...
+  - "\uBCF4\uAE30 \uB4DC\uBB3C\uAC8C, 4\uBA85\uC774 \uD568\uAED8 \uCC0D\uD78C \uB0A1\uC740
+    \uC0AC\uC9C4\uC774\uB2E4."
+  - "\uD654\uBAA9\uD55C \uAC00\uC871\uC744 \uC5F0\uCD9C\uD558\uACE0 \uC788\uC9C0\uB9CC,
+    \uC790\uC138\uD788 \uBCF4\uBA74 \uBAA8\uB450\uC758 \uD45C\uC815 \uD55C\uCF20\uC5D0
+    \uADF8\uB298\uC774 \uC838\uC788\uB2E4."
+  - "4\uC0B4 \uB0A8\uC9D3\uD55C \uC5B4\uB9B0 \uB0B4 \uBAA8\uC2B5\uC5D0\uC11C\uB3C4
+    \uADF8 \uB098\uC774\uB300\uC758 \uD65C\uAE30\uB97C \uCC3E\uC544\uBCFC \uC218
+    \uC5C6\uB2E4."
+  - "\uADF8\uB798\u2026 \uC774 \uC0AC\uC9C4\uC744 \uCC0D\uACE0 \uC624\uB798 \uC9C0\uB098\uC9C0
+    \uC54A\uC544 \uADF8 \uC0AC\uAC74\uC774 \uBC1C\uC0DD\uD588\uC9C0."
+  - "\uADF8\uB0A0 \uC774\uD6C4\uB85C\uB294 \uC774\uB7F0 \uC5B4\uC218\uC120\uD55C
+    \uAC00\uC871\uC0AC\uC9C4\uC870\uCC28 \uCC0D\uC744 \uC77C\uC774 \uC5C6\uC5B4\uC84C\uB2E4."
+  - "\u2026 \uADF8\uB7F0\uB370 \uC5B4\uC9F8\uC11C \uC774 \uC0AC\uC9C4\uC774 \uC5EC\uAE30
+    \uC788\uB294\uAC78\uAE4C."
+  - "\uBD84\uBA85 \uB0B4 \uC815\uC2E0\uC774 \uC628\uC804\uCE58 \uC54A\uC740 \uD0D3\uC774\uB2E4."
+  - "\uC774 \uC881\uC740 \uBC29 \uC548\uC5D0 \uCE69\uAC70\uD558\uBA70 \uC774\uC81C\uB294
+    \uAFC8\uACFC \uD604\uC2E4\uC870\uCC28 \uAD6C\uBD84\uD558\uAE30 \uC5B4\uB835\uB2E4."
+  - "\u2026 \uADF8\uB7EC\uB2C8 \uC2E0\uACBD\uC4F0\uC9C0 \uB9D0\uC790."
+  endingType: 1
   evidenceName: "\uC624\uB798\uB41C \uAC00\uC871\uC0AC\uC9C4"
-  collectBeforeDialogues: []
-  playerSleepDialogues: []
 --- !u!114 &2807709719543722317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,7 +959,7 @@ MonoBehaviour:
     targetComponent: {fileID: 0}
   interactItem: 0
   wakeEnabled: 1
-  sleepEnabled: 0
+  sleepEnabled: 1
   sfxClip: {fileID: 0}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
@@ -1062,11 +967,11 @@ MonoBehaviour:
       m_Calls: []
   isItemOnce: 0
   dialogues:
-  - "\uACE0\uB4F1\uD559\uAD50 \uC878\uC5C5\uC0AC\uC9C4\uC774\uB2E4"
-  endingType: 1
+  - "\uADF8\uB798\uB3C4 \uC5B4\uBA38\uB2C8\uAC00 \uB098\uB97C \uC0AC\uB791\uD558\uB294
+    \uADF8 \uB9C8\uC74C\uB9CC\uC740 \uC9C4\uC2E4\uC774\uC5C8\uB2E4\uB294 \uC0AC\uC2E4\uC5D0
+    \uC548\uC2EC\uACFC \uC124\uC6C0\uC758 \uBCF5\uC7A1\uD55C \uAC10\uC815\uC774 \uB4A4\uC5C9\uD0A8\uB2E4."
+  endingType: 2
   evidenceName: "\uACE0\uB4F1\uD559\uAD50 \uC878\uC5C5\uC0AC\uC9C4"
-  collectBeforeDialogues: []
-  playerSleepDialogues: []
 --- !u!60 &6942142870369082522
 PolygonCollider2D:
   m_ObjectHideFlags: 0

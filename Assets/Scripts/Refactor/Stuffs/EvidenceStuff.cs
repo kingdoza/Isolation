@@ -4,8 +4,8 @@ public class EvidenceStuff : DialogueStuff
 {
     [SerializeField] private EndingType endingType;
     [SerializeField] private string evidenceName;
-    [SerializeField] private string[] collectBeforeDialogues;
-    [SerializeField] private string[] playerSleepDialogues;
+    private string[] collectBeforeDialogues;
+    private string[] playerSleepDialogues;
     public string EvidenceName => evidenceName;
     public string[] Dialogues => dialogues;
     protected override StuffTypeData StuffData => GameData.EvidenceStuffData;
@@ -26,6 +26,8 @@ public class EvidenceStuff : DialogueStuff
     protected override void Awake()
     {
         base.Awake();
+        collectBeforeDialogues = new string[] { string.Format("'{0}'인데 아직 잘 모르겠다.", evidenceName) };
+        playerSleepDialogues = new string[] { string.Format("'{0}'(이)다.", evidenceName) };
         Player.Instance.EvidenceCollectEvent.AddListener(OnPlayerCollectedEvidence);
         CollectStatus = Player.Instance.GetCollectStatus(this);
     }

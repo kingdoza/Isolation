@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 3381131416491178771}
   - component: {fileID: 7668307796563094324}
   - component: {fileID: 8372066283184712391}
-  - component: {fileID: 1856176029488992028}
+  - component: {fileID: 3635621813097326546}
   m_Layer: 0
   m_Name: "(5) \uACFC\uC678\uB178\uD2B8"
   m_TagString: Untagged
@@ -611,7 +611,7 @@ MonoBehaviour:
   CursorExitEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1856176029488992028
+--- !u!114 &3635621813097326546
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -620,7 +620,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6573610412861938111}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b336ca803e9d17c4eb94d318206ed794, type: 3}
+  m_Script: {fileID: 11500000, guid: 59e771cc7258cac4086770e92097b20f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   triggerEvent:
@@ -636,8 +636,16 @@ MonoBehaviour:
       m_Calls: []
   isItemOnce: 0
   dialogues:
-  - erterg
-  - rdfgbg
+  - "\uC9C0\uAE08 \uC640\uC11C \uC0DD\uAC01\uD574\uBCF4\uBA74 \uB09C \uC5B8\uC81C\uB098
+    \uB204\uAD70\uAC00\uC758 \uB3C4\uC6C0\uC774 \uB418\uACE0 \uC2F6\uC5C8\uB2E4."
+  - "\uB0A8\uC744 \uC704\uD574\uC11C\uB294 \uC544\uB2C8\uC5C8\uACE0, \uC2A4\uC2A4\uB85C\uAC00
+    \uBB34\uB2A5\uD55C \uC778\uAC04\uC774 \uC544\uB2C8\uB77C\uB294 \uAC10\uC815\uC744
+    \uB290\uB07C\uACE0 \uC2F6\uC5B4\uC11C\uC600\uB2E4."
+  - "\uADF8\uB7F0 \uCC28\uC6D0\uC5D0\uC11C \uC0DD\uAC01\uD574\uBD24\uC744 \uB54C,
+    \uB204\uAD70\uAC00\uB97C \uAC00\uB974\uCE58\uB294 \uC77C\uC740 \uAF64 \uC990\uAC70\uC6E0\uB358
+    \uAE30\uC5B5\uC774\uC5C8\uB2E4."
+  endingType: 2
+  evidenceName: "\uACFC\uC678 \uB178\uD2B8"
 --- !u!1 &6907309563162764960
 GameObject:
   m_ObjectHideFlags: 0

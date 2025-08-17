@@ -16,6 +16,9 @@ public class MindTreeUI : MonoBehaviour
     [SerializeField] private EndingRouteUI[] routhUIs;
     [SerializeField] private TextMeshProUGUI subtitle;
     [SerializeField] private EvidenceWindow evidenceWindow;
+    [Header("UI 오브젝트")] [Space]
+    [SerializeField] private GameObject[] additionalEvidences;
+    public GameObject[] AdditionalEvidences => additionalEvidences;
 
 
     private EndingType currentType;
@@ -145,14 +148,16 @@ public class MindTreeUI : MonoBehaviour
 
     public void ShowEvidenceInfo(CollectionSlot collectionSlot)
     {
-        if (collectionSlot.IsCollected) 
-        {
-            evidenceWindow.ShowDetail(collectionSlot.EvidenceInfo);
-        }
-        else
-        {
-            evidenceWindow.ShowSimple(collectionSlot.EvidenceInfo);
-        }
+        //if (collectionSlot.IsCollected) 
+        //{
+        //    evidenceWindow.ShowDetail(collectionSlot.EvidenceInfo);
+        //}
+        //else
+        //{
+        //    evidenceWindow.ShowSimple(collectionSlot.EvidenceInfo);
+        //}
+
+        evidenceWindow.ShowDetail(collectionSlot.EvidenceInfo);
     }
 
 

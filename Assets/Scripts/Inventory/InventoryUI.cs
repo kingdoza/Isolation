@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UI;
 using static ControllerUtils;
@@ -123,6 +124,7 @@ public class InventoryUI : MonoBehaviour
     public void DeleteSlot(InventorySlot targetSlot)
     {
         targetSlot.Unselect();
+        slots.Remove(targetSlot);
         Destroy(targetSlot.gameObject);
     }
 

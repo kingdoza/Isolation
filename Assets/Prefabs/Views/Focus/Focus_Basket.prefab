@@ -479,7 +479,7 @@ MonoBehaviour:
     globalType: 0
     targetComponent: {fileID: 0}
   interactItem: 0
-  wakeEnabled: 0
+  wakeEnabled: 1
   sleepEnabled: 1
   sfxClip: {fileID: 0}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
@@ -488,13 +488,18 @@ MonoBehaviour:
       m_Calls: []
   isItemOnce: 0
   dialogues:
-  - "\u3147\u3142\u3148\u3147"
-  endingType: 2
+  - "\uACE0\uB4F1\uD559\uAD50 \uB54C \uB9E4\uC8FC \uC6D4\uC694\uC77C\uC5D0 \uC2A4\uD130\uB514\uD50C\uB798\uB108\uB97C
+    \uAC80\uC0AC\uBC1B\uC544\uC57C \uD588\uB2E4."
+  - "\uC911\uD559\uAD50\uC5D0 \uC62C\uB77C\uAC00\uBA74\uC11C\uBD80\uD130 \uBCF8\uACA9\uC801\uC778
+    \uACF5\uBD80\uAC00 \uC2DC\uC791\uB418\uACE0 \uC5B4\uBA38\uB2C8\uAC00 \uC785\uD559\uC2DD
+    \uB0A0 \uC0AC\uC900 \uC2E0 \uAC78 \uACE0\uB4F1\uD559\uAD50\uC5D0 \uAC00\uC11C
+    \uCC98\uC74C\uC73C\uB85C \uC0AC\uC6A9\uD574\uBD24\uB2E4."
+  - "\uAE30\uBB18\uD55C \uAC10\uAC01\uC774\uC5C8\uB2E4. "
+  - "\uC2A4\uD130\uB514\uD50C\uB798\uB108\uB97C \uC0AC\uC6A9\uD558\uBA74 \uADF8\uB0A0\uC758
+    \uACF5\uBD80 \uD560\uB2F9\uB7C9\uC744 \uCC44\uC6B0\uB294 \uAC83 \uC774\uC678\uC5D0\uB294
+    \uC544\uBB34\uAC83\uB3C4 \uC2E0\uACBD \uC4F8 \uC218 \uC5C6\uC5C8\uC73C\uB2C8\uAE4C."
+  endingType: 1
   evidenceName: "\uC2A4\uD130\uB514 \uD50C\uB798\uB108"
-  collectBeforeDialogues:
-  - "\u3147\u313B\u3134"
-  playerSleepDialogues:
-  - "\u3142\u3148\u3147\u3142\u3148"
 --- !u!114 &5313576660143353359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2680,7 +2685,7 @@ GameObject:
   - component: {fileID: 8434558739374012123}
   - component: {fileID: 6674036258317599346}
   m_Layer: 0
-  m_Name: Basket_Focus
+  m_Name: Focus_Basket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
