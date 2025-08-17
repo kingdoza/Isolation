@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 8434558739374012123}
   - component: {fileID: 6674036258317599346}
   m_Layer: 0
-  m_Name: Refrigerator
+  m_Name: Zoom_Refrigerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

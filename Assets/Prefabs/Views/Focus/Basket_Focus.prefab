@@ -246,7 +246,7 @@ SpriteRenderer:
   m_SortingLayerID: 197153367
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c66ad7550f8fbd94fbbb0b466104f874, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 30b9502bfbb56b64aa80f768b6e3212d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -482,9 +482,11 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   dialogues:
   - "\u3147\u3142\u3148\u3147"
   endingType: 2
@@ -512,6 +514,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 0
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!114 &9174938614462052528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -833,6 +836,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highestSortLayer: {fileID: 8085795009795336433}
 --- !u!1 &1593021078440222573
 GameObject:
@@ -1232,6 +1236,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highestSortLayer: {fileID: 8085795009795336433}
 --- !u!60 &5338755400021921042
 PolygonCollider2D:
@@ -1610,6 +1615,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highestSortLayer: {fileID: 8085795009795336433}
 --- !u!1 &3419108795454361022
 GameObject:
@@ -1695,7 +1701,7 @@ SpriteRenderer:
   m_SortingLayerID: 197153367
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: a6156aa172be7e84dabff8e29250a12c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 85f038eaad36bc84599d74f618a82873, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1886,10 +1892,13 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   itemData: {fileID: 11400000, guid: b4acb0b6f047106449ca64a77d57de8f, type: 2}
+  itemData2: {fileID: 0}
 --- !u!114 &7150792870896271109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1909,6 +1918,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 0
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!114 &2314476858174638213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2402,10 +2412,13 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   itemData: {fileID: 11400000, guid: 510377e412d2fee44912b78ba7f562fe, type: 2}
+  itemData2: {fileID: 0}
 --- !u!1 &6264051869438177450
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,7 +2755,7 @@ SpriteRenderer:
   m_SortingLayerID: 197153367
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1755eb22ae6b7094e8d60d7e74629602, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 26432a35587104e4aa4f93739911fab7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

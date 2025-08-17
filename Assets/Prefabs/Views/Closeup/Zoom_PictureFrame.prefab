@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b60a6717b89989442b255dbb475d9fc8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 044a0ec4ef22421439976b1802b337a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -169,7 +169,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 4c80d0d36bceb9a4c94feecc38be5174, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 810efd9629400a34998cbd0e94e81af7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -659,12 +659,12 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 0
   sleepEnabled: 1
-  isCovered: 0
-  isItemMatched: 0
-  isValidTime: 0
+  sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   focusPrefab: {fileID: 6907309563162764960, guid: 4475a64b556846e4ead58ae739e0b6ea, type: 3}
 --- !u!60 &7627644641694145799
 PolygonCollider2D:
@@ -853,7 +853,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 21300000, guid: c34a07836667393429a509c61594370f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2c102a975f2e18a4db7e0a9c04c30e73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -875,7 +875,6 @@ GameObject:
   - component: {fileID: 8464934658959395551}
   - component: {fileID: 8192636777692965910}
   - component: {fileID: 3103563713021926099}
-  - component: {fileID: 7191213498840373435}
   - component: {fileID: 6474412642980071263}
   - component: {fileID: 5385945964518190868}
   - component: {fileID: 1052841690591954307}
@@ -947,7 +946,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 0c07f9a47cffe4b498f6f93ab40dc3d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cfae331b2c33e034e8a50e1f2d9492c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -975,23 +974,6 @@ MonoBehaviour:
     targetComponent: {fileID: 0}
   trueConditonSprite: {fileID: -6231044458718751821, guid: 95cab5d18cba7db4b985f37a7c07132d, type: 3}
   falseConditonSprite: {fileID: 21300000, guid: 0c07f9a47cffe4b498f6f93ab40dc3d3, type: 3}
---- !u!114 &7191213498840373435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2476455013326314084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3537679be75f424ba61d440b92123d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerEvent:
-    globalType: 4
-    targetComponent: {fileID: 0}
-  trueConditonStuff: {fileID: 1052841690591954307}
-  falseConditonStuff: {fileID: 2807709719543722317}
 --- !u!114 &6474412642980071263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,12 +1025,12 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 0
-  isCovered: 0
-  isItemMatched: 0
-  isValidTime: 0
+  sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   dialogues:
   - "\uC624\uB798\uB41C \uAC00\uC871\uC0AC\uC9C4\uC774\uB2E4"
   endingType: 2
@@ -1073,12 +1055,12 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 0
-  isCovered: 0
-  isItemMatched: 0
-  isValidTime: 0
+  sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   dialogues:
   - "\uACE0\uB4F1\uD559\uAD50 \uC878\uC5C5\uC0AC\uC9C4\uC774\uB2E4"
   endingType: 1
@@ -1272,7 +1254,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 21300000, guid: 2509240c4b5a13d48bd8b02daf4223df, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 834260a3bcd749447911f3160673cb62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1359,7 +1341,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: b749e9ba1af90da48aea63a761c9b59f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 170daa2c399292748931b030269530f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1446,7 +1428,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: bac280c04c3a48d4c93346a239f7d4c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cfebd3d68371e354cbfa7270873509c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1533,7 +1515,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: c15f8a9d22e7b5445a69c13f29a5ca49, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 11c6ad9dbfd634549a4bc3052c1f2013, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1556,7 +1538,7 @@ GameObject:
   - component: {fileID: 8434558739374012123}
   - component: {fileID: 6674036258317599346}
   m_Layer: 0
-  m_Name: PictureFrame
+  m_Name: Zoom_PictureFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1628,7 +1610,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2997880600242110790, guid: 53f9e7f391f5f5b4e8c1c2adb81f4002, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7253680dc8983e9478c70e1cc2478870, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 6e385a1677c9315438534087b712a1c0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9093e2b905692884b8357ab18457d124, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -167,7 +167,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 32ff20405f7669a4b85f40edea1b87cd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 23b17ff16f23727469d09990b4b8a2e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -360,6 +360,7 @@ MonoBehaviour:
   wakeEnabled: 1
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -445,7 +446,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 47d8915c3a4ebf942ba2bfb977341d75, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9cbd2cc7ba1a8f439d9a7617d1ffdf9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -536,7 +537,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 147d083350e83c749b95254e686cbe8c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b19eff7469f12814fa9d94a791ebbd4c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -753,6 +754,7 @@ MonoBehaviour:
   wakeEnabled: 1
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -834,7 +836,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: e4d22285599a48642b58603363db6c74, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7eae229fd00c8d0409416d596ba99c02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -857,7 +859,7 @@ GameObject:
   - component: {fileID: 8434558739374012123}
   - component: {fileID: 6674036258317599346}
   m_Layer: 0
-  m_Name: ClosetTop
+  m_Name: Zoom_ClosetTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -927,7 +929,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a0fa397a8d1015a4e8e233e4f72c1f0f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4653d8094d1172c44b125d83f97addbc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
