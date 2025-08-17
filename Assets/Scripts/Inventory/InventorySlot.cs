@@ -7,6 +7,7 @@ using static ControllerUtils;
 
 public class InventorySlot : MonoBehaviour, IPointerClickHandler
 {
+    [SerializeField] private GameObject closePanel;
     [SerializeField] private Sprite closeSprite;
     [SerializeField] private Sprite openSprite;
     [SerializeField] private CollectibleItem slotItem;
@@ -100,15 +101,17 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
 
     public void Open()
     {
-        itemIconObject.SetActive(true);
-        GetComponent<Image>().sprite = openSprite;
+        //itemIconObject.SetActive(true);
+        //GetComponent<Image>().sprite = openSprite;
+        closePanel.SetActive(false);
     }
 
 
 
     public void Close()
     {
-        itemIconObject.SetActive(false);
-        GetComponent<Image>().sprite = closeSprite;
+        //itemIconObject.SetActive(false);
+        //GetComponent<Image>().sprite = closeSprite;
+        closePanel.SetActive(true);
     }
 }
