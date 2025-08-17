@@ -6,9 +6,10 @@ public class EvidenceStuff : DialogueStuff
     [SerializeField] private string evidenceName;
     [SerializeField] private string[] collectBeforeDialogues;
     [SerializeField] private string[] playerSleepDialogues;
+    public string EvidenceName => evidenceName;
+    public string[] Dialogues => dialogues;
     protected override StuffTypeData StuffData => GameData.EvidenceStuffData;
     public EndingType EndingType => endingType;
-    public string EvidenceName => evidenceName;
     private CollectStatus collectStatus = CollectStatus.Negative;
     public CollectStatus CollectStatus
     {

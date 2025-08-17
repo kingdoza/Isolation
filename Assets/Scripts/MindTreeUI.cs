@@ -15,7 +15,8 @@ public class MindTreeUI : MonoBehaviour
     [Header("UI 오브젝트")] [Space]
     [SerializeField] private EndingRouteUI[] routhUIs;
     [SerializeField] private TextMeshProUGUI subtitle;
-    
+    [SerializeField] private EvidenceWindow evidenceWindow;
+
 
     private EndingType currentType;
 
@@ -48,9 +49,17 @@ public class MindTreeUI : MonoBehaviour
     {
         if (checkType && currentType == endingType)
             return;
+        HideEvidenceInfo();
         currentType = endingType;
         ShowSlotPanel();
         ShowSubtitle();
+    }
+
+
+
+    private void OnEnable()
+    {
+        HideEvidenceInfo();
     }
 
 
@@ -130,6 +139,27 @@ public class MindTreeUI : MonoBehaviour
         GameManager.Instance.EndingType = endingType;
         GameManager.Instance.RoomController.ReturnToRoomView();
         GameManager.Instance.RoomController.DisableRoomViews();
+    }
+
+
+
+    public void ShowEvidenceInfo(CollectionSlot collectionSlot)
+    {
+        if (collectionSlot.IsCollected) 
+        {
+            evidenceWindow.ShowDetail(collectionSlot.EvidenceInfo);
+        }
+        else
+        {
+            evidenceWindow.ShowSimple(collectionSlot.EvidenceInfo);
+        }
+    }
+
+
+
+    public void HideEvidenceInfo()
+    {
+        evidenceWindow.Hide();
     }
 }
 
