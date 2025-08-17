@@ -148,16 +148,16 @@ public class MindTreeUI : MonoBehaviour
 
     public void ShowEvidenceInfo(CollectionSlot collectionSlot)
     {
-        //if (collectionSlot.IsCollected) 
-        //{
-        //    evidenceWindow.ShowDetail(collectionSlot.EvidenceInfo);
-        //}
-        //else
-        //{
-        //    evidenceWindow.ShowSimple(collectionSlot.EvidenceInfo);
-        //}
+        if (collectionSlot.IsCollected)
+        {
+            evidenceWindow.ShowDetail(collectionSlot.EvidenceInfo);
+        }
+        else
+        {
+            evidenceWindow.ShowSimple(collectionSlot.EvidenceInfo);
+        }
 
-        evidenceWindow.ShowDetail(collectionSlot.EvidenceInfo);
+        //evidenceWindow.ShowDetail(collectionSlot.EvidenceInfo);
     }
 
 
