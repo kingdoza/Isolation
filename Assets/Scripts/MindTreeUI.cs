@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class MindTreeUI : MonoBehaviour
@@ -16,8 +17,11 @@ public class MindTreeUI : MonoBehaviour
     [SerializeField] private EndingRouteUI[] routhUIs;
     [SerializeField] private TextMeshProUGUI subtitle;
     [SerializeField] private EvidenceWindow evidenceWindow;
-    [Header("UI 오브젝트")] [Space]
+    [Header("추가 흔적 프리팹")] [Space]
     [SerializeField] private GameObject[] additionalEvidences;
+    [Header("기타")] [Space]
+    [SerializeField] private Image badButtonFill;
+    [SerializeField] private Image happyButtonFill;
     public GameObject[] AdditionalEvidences => additionalEvidences;
 
 
@@ -56,6 +60,17 @@ public class MindTreeUI : MonoBehaviour
         currentType = endingType;
         ShowSlotPanel();
         ShowSubtitle();
+
+        if (currentType == EndingType.Bad)
+        {
+            badButtonFill.enabled = false;
+            happyButtonFill.enabled = true;
+        }
+        else if (currentType == EndingType.Happy)
+        {
+            badButtonFill.enabled = true;
+            happyButtonFill.enabled = false;
+        }
     }
 
 

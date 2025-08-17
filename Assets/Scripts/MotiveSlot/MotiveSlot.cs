@@ -35,9 +35,17 @@ public abstract class MotiveSlot : MonoBehaviour
 
     private RectTransform CreateSlotLine(MotiveUIData generationFormat)
     {
+        foreach (Transform child in transform)
+        {
+            if (child.name.Equals("SlotLine"))
+                DestroyImmediate(child.gameObject);
+        }
         GameObject lineObj = new GameObject("SlotLine", typeof(RectTransform), typeof(Image));
         lineObj.transform.SetParent(transform, false);
         lineObj.transform.SetAsFirstSibling();
+        lineObj.AddComponent<CanvasGroup>();
+        lineObj.GetComponent<CanvasGroup>().interactable = false;
+        lineObj.GetComponent<CanvasGroup>().blocksRaycasts = false;
 
         slotLine = lineObj.GetComponent<RectTransform>();
         Image image = lineObj.GetComponent<Image>();
