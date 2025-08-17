@@ -39,6 +39,8 @@ public class EvidenceWindow : MonoBehaviour
 
     public void ShowSimple(EvidenceInfo evidenceInfo)
     {
+        if (canvasGroup == null)
+            canvasGroup = GetComponent<CanvasGroup>();
         InsertBasicInfo(evidenceInfo);
         sentenceParent.SetActive(false);
         rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, 120f);
@@ -49,6 +51,8 @@ public class EvidenceWindow : MonoBehaviour
 
     public void ShowDetail(EvidenceInfo evidenceInfo)
     {
+        if (canvasGroup == null)
+            canvasGroup = GetComponent<CanvasGroup>();
         InsertBasicInfo(evidenceInfo);
         sentenceParent.SetActive(true);
         rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, 500f);
@@ -59,6 +63,8 @@ public class EvidenceWindow : MonoBehaviour
 
     public void Hide()
     {
+        if (canvasGroup == null)
+            canvasGroup = GetComponent<CanvasGroup>();
         canvasGroup.alpha = 0;
     }
 }
