@@ -705,11 +705,13 @@ MonoBehaviour:
     targetComponent: {fileID: 0}
   interactItem: 0
   wakeEnabled: 1
-  sleepEnabled: 0
+  sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   zoomPrefab: {fileID: 6907309563162764960, guid: e3fb2f752020fc24fbcf392b668b0a77, type: 3}
 --- !u!114 &4603091989742008111
 MonoBehaviour:
@@ -917,9 +919,11 @@ MonoBehaviour:
   wakeEnabled: 1
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   zoomPrefab: {fileID: 6907309563162764960, guid: d611d53a67cf6714aa4f69a585e51d17, type: 3}
 --- !u!1 &6031501034971675352
 GameObject:

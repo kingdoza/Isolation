@@ -107,6 +107,15 @@ public class GameDate : ICloneable
     }
 
 
+
+    public void ResetTime()
+    {
+        hours = 0;
+        minutes = 0;
+    }
+
+
+
     public int GetTotalMinutes()
     {
         int totalDays = 0;

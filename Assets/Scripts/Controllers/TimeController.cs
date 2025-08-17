@@ -86,6 +86,27 @@ public class TimeController : SceneSingleton<TimeController>
 
 
 
+    public void ProgressToNextWakeup()
+    {
+        GameDate nextWakeDate = (GameDate)currentGameDate.Clone();
+        nextWakeDate.ResetTime();
+        if (currentGameDate.Hours >= wakeupHour)
+            nextWakeDate.AdvanceDays();
+        nextWakeDate.AdvanceHours(wakeupHour);
+        int minutes = nextWakeDate.GetTotalMinutes() - currentGameDate.GetTotalMinutes();
+        //ProgressMinutes(minutes);
+        currentGameDate.AdvanceMinutes(minutes);
+
+        OnTimeStatusChanged(true);
+        uiController.ShowGameDateClock(currentGameDate);
+        if (currentGameDate >= limitGameDate)
+        {
+            TimeOver();
+        }
+    }
+
+
+
     public void ProgressMinutes(int minutes)
     {
         GameDate prevGameDate = (GameDate)currentGameDate.Clone();
@@ -174,7 +195,8 @@ public class TimeController : SceneSingleton<TimeController>
     {
         Debug.Log("Time Over!!!");
         SetCursorTexture();
-        SceneManager.LoadScene("Ending");
+        GameManager.Instance.LoadSceneWithFade("Ending");
+        //SceneManager.LoadScene("Ending");
     }
 
 

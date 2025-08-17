@@ -490,11 +490,13 @@ MonoBehaviour:
     targetComponent: {fileID: 0}
   interactItem: 0
   wakeEnabled: 1
-  sleepEnabled: 0
+  sleepEnabled: 1
   sfxClip: {fileID: 8300000, guid: aabc65f48bfd7a14e95b86391914c2ea, type: 3}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
 --- !u!114 &2950894760025743814
 MonoBehaviour:
   m_ObjectHideFlags: 0
