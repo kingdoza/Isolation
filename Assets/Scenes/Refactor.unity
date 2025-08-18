@@ -4699,6 +4699,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388514554}
   m_CullTransparentMesh: 1
+--- !u!1 &389345747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 389345748}
+  - component: {fileID: 389345749}
+  m_Layer: 5
+  m_Name: UIColorController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &389345748
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389345747}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 906094963}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &389345749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389345747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01dc6d01192f8b449a37710b5d4f4727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MindUI: {fileID: 941733935}
 --- !u!1001 &391171314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5370,6 +5419,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65c54b0b2c1256648b059f42cc93ea29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  evidencePopup: {fileID: 804223342}
+  popupText: {fileID: 1973840845}
+  evidenceMessage: "\uC774\uC81C \uB098\uAC08 \uC218 \uC788\uC744 \uAC83 \uAC19\uB2E4."
 --- !u!1 &427838554
 GameObject:
   m_ObjectHideFlags: 0
@@ -9788,9 +9840,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b0878dbd85a2f43a2342dc3e0d88f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidencePopup: {fileID: 0}
-  popupText: {fileID: 0}
-  evidenceMessage: 
 --- !u!1 &713621140
 GameObject:
   m_ObjectHideFlags: 0
@@ -12400,6 +12449,7 @@ RectTransform:
   - {fileID: 941733936}
   - {fileID: 922823891}
   - {fileID: 246644442}
+  - {fileID: 389345748}
   m_Father: {fileID: 1033713758}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -13848,9 +13898,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b0878dbd85a2f43a2342dc3e0d88f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidencePopup: {fileID: 0}
-  popupText: {fileID: 0}
-  evidenceMessage: 
 --- !u!1 &1003023168
 GameObject:
   m_ObjectHideFlags: 0
@@ -18566,9 +18613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b0878dbd85a2f43a2342dc3e0d88f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidencePopup: {fileID: 0}
-  popupText: {fileID: 0}
-  evidenceMessage: 
 --- !u!1 &1412017000
 GameObject:
   m_ObjectHideFlags: 0
@@ -21416,9 +21460,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b0878dbd85a2f43a2342dc3e0d88f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidencePopup: {fileID: 0}
-  popupText: {fileID: 0}
-  evidenceMessage: 
 --- !u!1 &1533016305
 GameObject:
   m_ObjectHideFlags: 0
@@ -27264,6 +27305,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65c54b0b2c1256648b059f42cc93ea29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  evidencePopup: {fileID: 804223342}
+  popupText: {fileID: 1973840845}
+  evidenceMessage: "\uB2E4\uC2DC \uB098\uAC00\uBCFC\uAE4C."
 --- !u!1 &2021270016
 GameObject:
   m_ObjectHideFlags: 0
