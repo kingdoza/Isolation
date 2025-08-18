@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -22,15 +23,23 @@ public class FilterController : MonoBehaviour
     {
         float happyProgress = Player.Instance.GetMotivePercentage(EndingType.Happy);
         float badProgress = Player.Instance.GetMotivePercentage(EndingType.Bad);
-        float maxProgress = Mathf.Max(happyProgress, badProgress);
-        int minus = badProgress > happyProgress ? -1 : 1;
-        float saturationDiff = Mathf.Lerp(0, 50, maxProgress);
+        float targetSaturation = 0f;
 
-        Debug.Log(happyProgress);
-        Debug.Log(badProgress);
-        Debug.Log(saturationDiff);
-        colorAdjustments.saturation.value += saturationDiff * minus;
-        Debug.Log(colorAdjustments.saturation.value);
+        if (happyProgress >= badProgress)
+        {
+            targetSaturation = Mathf.Lerp(-50f, 0f, happyProgress);
+        }
+        else
+        {
+            targetSaturation = Mathf.Lerp(-50f, -100f, badProgress);
+        }
+
+        DOTween.To(
+            () => colorAdjustments.saturation.value,
+            x => colorAdjustments.saturation.value = x,
+            targetSaturation,
+            1f
+        ).SetEase(Ease.Linear);
     }
 
 

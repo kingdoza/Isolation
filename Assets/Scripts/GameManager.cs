@@ -43,6 +43,7 @@ public class GameManager : PersistentSingleton<GameManager>
     public EndingType EndingType {  get; set; } = EndingType.None;
     private const float DadeDuration = 0.8f;
     private GameObject sceneFadePanel;
+    [SerializeField] private bool isIntroStart;
 
 
     void Update()
@@ -76,6 +77,7 @@ public class GameManager : PersistentSingleton<GameManager>
     protected override void Awake()
     {
         base.Awake();
+        isIntroStart = false;
         soundController = GetComponentInChildren<SoundController>();
 
         if (Instance == this)
@@ -158,13 +160,22 @@ public class GameManager : PersistentSingleton<GameManager>
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        sceneFadePanel = CreateFadePanel();
-        FadeoutPanel();
+        if (scene.name.Equals("Intro") == false)
+        {
+            sceneFadePanel = CreateFadePanel();
+            FadeoutPanel();
+        }
         SetCursorTexture();
         Debug.Log($"[GameManager] Scene loaded: {scene.name}"); //게임 씬 재로딩할때 스타트 스테이지 로딩 
+        if (scene.name == "Intro")
+        {
+            isIntroStart = true;
+            //PlayBGM(BGMClips.main, true);
+        }
         if (scene.name == "MainScene")
         {
-            PlayBGM(BGMClips.main, true);
+            //if (isIntroStart == false)
+                PlayBGM(BGMClips.main, true);
         }
         if (scene.name == "Clock")
         {

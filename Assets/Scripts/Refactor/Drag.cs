@@ -11,6 +11,9 @@ public class Drag : MouseInteraction
     protected float dragDistance = 0;
     [HideInInspector] public UnityEvent DragEndEvent = new();
     [HideInInspector] public UnityEvent DragStartEvent = new();
+    [HideInInspector] public UnityEvent DragStopEvent = new();
+    [HideInInspector] public UnityEvent DragResumeEvent = new();
+    protected bool isStop = true;
 
 
 
@@ -49,8 +52,37 @@ public class Drag : MouseInteraction
     public override void OnInteracting()
     {
         Vector3 newPosition = CalculateNewPosition();
-        dragDistance += Vector2.Distance(transform.position, newPosition);
+        float moveDistance = Vector2.Distance(transform.position, newPosition);
+        //WatchDragStopResume(newPosition);
+        dragDistance += moveDistance;
         transform.position = newPosition;
+    }
+
+
+
+    protected virtual void WatchDragStopResume(Vector3 targetPosition)
+    {
+        //float moveDistance = Vector2.Distance(targetPosition, transform.position);
+        //Debug.Log(moveDistance);
+        //if (moveDistance <= 0f)
+        if (targetPosition == transform.position)
+        {
+            if (isStop == false)
+            {
+                isStop = true;
+                Debug.Log("DragStopEvent");
+                DragStopEvent?.Invoke();
+            }
+        }
+        else
+        {
+            if (isStop)
+            {
+                isStop = false;
+                Debug.Log("DragResumeEvent");
+                DragResumeEvent?.Invoke();
+            }
+        }
     }
 
 

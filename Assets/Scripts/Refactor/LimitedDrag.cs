@@ -55,6 +55,7 @@ public class LimitedDrag : Drag
         float clampedY = Mathf.Clamp(newPosition.y, lowerLimitPos.y, higherLimitPos.y);
         Vector3 clampedPosition = new Vector3(clampedX, clampedY, transform.position.z);
         dragDistance += Vector2.Distance(transform.position, clampedPosition);
+        //WatchDragStopResume(clampedPosition);
         transform.position = clampedPosition;
     }
 }

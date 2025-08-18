@@ -706,6 +706,12 @@ MonoBehaviour:
   DragStartEvent:
     m_PersistentCalls:
       m_Calls: []
+  DragStopEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DragResumeEvent:
+    m_PersistentCalls:
+      m_Calls: []
   limitMarker1: {fileID: 3508297267375091436}
   limitMarker2: {fileID: 5315665105448157874}
 --- !u!60 &8603108230011312698
@@ -1220,6 +1226,12 @@ MonoBehaviour:
   DragStartEvent:
     m_PersistentCalls:
       m_Calls: []
+  DragStopEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DragResumeEvent:
+    m_PersistentCalls:
+      m_Calls: []
   limitMarker1: {fileID: 3508297267375091436}
   limitMarker2: {fileID: 5315665105448157874}
 --- !u!114 &7398400295855412034
@@ -1425,6 +1437,12 @@ MonoBehaviour:
   DragStartEvent:
     m_PersistentCalls:
       m_Calls: []
+  DragStopEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DragResumeEvent:
+    m_PersistentCalls:
+      m_Calls: []
   limitMarker1: {fileID: 3508297267375091436}
   limitMarker2: {fileID: 5315665105448157874}
 --- !u!60 &2013342323405785124
@@ -1619,7 +1637,7 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 0
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: 60f4ad78bdc6afb4988e879e6486202b, type: 3}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   highestSortLayer: {fileID: 8085795009795336433}
 --- !u!1 &3419108795454361022
