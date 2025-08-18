@@ -5,4 +5,6 @@ public class BGMLibrary : ScriptableObject
 {
     public AudioClip main;
     public AudioClip inGame;
+    public AudioClip trueEnding;
+    public AudioClip badEnding;
 }

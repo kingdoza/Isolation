@@ -69,7 +69,7 @@ public class EvidenceStuff : DialogueStuff
     public override void OnDialogueClosed()
     {
         //base.OnDialogueClosed();
-        if (CollectStatus == CollectStatus.Positive)
+        if (CollectStatus == CollectStatus.Positive && Player.Instance.IsSleeping == false)
         {
             Debug.Log("Collect");
             GameManager.Instance.Player.CollectItem(this);

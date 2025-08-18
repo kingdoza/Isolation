@@ -31,6 +31,6 @@ public class Closet : MonoBehaviour
     private void SelectClosetHandle()
     {
         bool isHandleAttached = GameManager.Instance.PuzzleController.DrawerInfo.isHandleAttached;
-        handleAttached.SetActive(isHandleAttached);
+        //handleAttached.SetActive(isHandleAttached);
     }
 }

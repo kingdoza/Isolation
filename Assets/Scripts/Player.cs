@@ -172,6 +172,13 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
     {
         return !IsSleeping;
     }
+
+
+
+    public float GetMotivePercentage(EndingType endingType)
+    {
+        return MotiveProgresses[endingType].Percantage;
+    }
 }
 
 
@@ -180,6 +187,9 @@ public class MotiveProgress
 {
     public Motivation Motive {  get; private set; }
     public int[] ClearedItemIdx { get; private set; }
+    private int collectCount = 0;
+    private int totalCount = 0;
+    public float Percantage => (float)collectCount / totalCount;
 
 
 
@@ -187,6 +197,10 @@ public class MotiveProgress
     {
         Motive = motive;
         ClearedItemIdx = new int[Motive.evidences.Count];
+        foreach (Evidence evidence in Motive.evidences)
+        {
+            totalCount += evidence.itemNames.Count;
+        }
     }
 
 
@@ -275,6 +289,7 @@ public class MotiveProgress
             if (evidence.EvidenceName == collectibleItemName)
             {
                 evidence.CollectStatus = CollectStatus.Finished;
+                ++collectCount;
                 ++ClearedItemIdx[i];
                 return;
             }

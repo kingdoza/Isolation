@@ -195,6 +195,7 @@ public class TimeController : SceneSingleton<TimeController>
     {
         Debug.Log("Time Over!!!");
         SetCursorTexture();
+        Time.timeScale = 0f;
         GameManager.Instance.LoadSceneWithFade("Ending");
         //SceneManager.LoadScene("Ending");
     }

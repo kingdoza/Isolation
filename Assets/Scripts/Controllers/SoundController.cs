@@ -9,7 +9,7 @@ public class SoundController : MonoBehaviour
     [SerializeField] private BGMLibrary bgmClips;
     private const float BGM_Volume = 0.5f;
     private const float SFX_Volume = 0.6f;
-    private const float FadeDuration = 2f;
+    private const float FadeDuration = 1.5f;
     public static SoundController instance;
     public static SoundController Instance => instance;
 

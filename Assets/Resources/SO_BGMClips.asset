@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 8300000, guid: 3893187265d16864ca6e99ba5553cd6c, type: 3}
   inGame: {fileID: 8300000, guid: b4b72fc7784cbb448928eefd64bdf0a8, type: 3}
+  trueEnding: {fileID: 8300000, guid: 60f4ad78bdc6afb4988e879e6486202b, type: 3}
+  badEnding: {fileID: 8300000, guid: 6bb388d86a79ccf4387bdfa89a09bf97, type: 3}

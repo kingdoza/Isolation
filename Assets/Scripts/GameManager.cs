@@ -123,8 +123,10 @@ public class GameManager : PersistentSingleton<GameManager>
         image.color = new Color(0, 0, 0, 0);
         image.DOFade(1f, DadeDuration) // 1.5초 동안 페이드아웃
             .SetEase(Ease.InOutQuad) // 부드럽게
+            .SetUpdate(true)
             .OnComplete(() =>
             {
+                Time.timeScale = 1f;
                 SceneManager.LoadScene(sceneName);
             });
     }
@@ -179,7 +181,15 @@ public class GameManager : PersistentSingleton<GameManager>
         {
             dialogueController = FindAnyObjectByType<DialogueController>();
             FindAnyObjectByType<EndingDialogue>().ShowEndingDialogues(EndingType);
-            PlayBGM(null, true);
+            if (EndingType == EndingType.Bad)
+            {
+                PlayBGM(BGMClips.badEnding, true);
+            }
+            else if (EndingType == EndingType.Happy)
+            {
+                PlayBGM(BGMClips.trueEnding, true);
+            }
+            //PlayBGM(null, true);
         }
 
     }

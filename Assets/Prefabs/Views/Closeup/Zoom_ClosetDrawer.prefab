@@ -363,6 +363,7 @@ MonoBehaviour:
   wakeEnabled: 1
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -561,6 +562,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1203,6 +1205,7 @@ MonoBehaviour:
   wakeEnabled: 1
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1622,6 +1625,7 @@ MonoBehaviour:
   wakeEnabled: 1
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1774,6 +1778,7 @@ MonoBehaviour:
   wakeEnabled: 1
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1889,8 +1894,8 @@ GameObject:
   - component: {fileID: 5860001129619994912}
   - component: {fileID: 9193377173910462798}
   - component: {fileID: 555459671332548687}
-  - component: {fileID: 3798513386513843815}
   - component: {fileID: 3722976426372939043}
+  - component: {fileID: 7437779553943666605}
   m_Layer: 0
   m_Name: "(2)(1) \uB450\uBC88\uC9F8 \uC11C\uB78D(\uB2EB\uD798)"
   m_TagString: Untagged
@@ -2165,6 +2170,7 @@ MonoBehaviour:
   wakeEnabled: 1
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2174,23 +2180,6 @@ MonoBehaviour:
   ToggleEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3798513386513843815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9125255204377559136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3537679be75f424ba61d440b92123d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerEvent:
-    globalType: 5
-    targetComponent: {fileID: 0}
-  trueConditonStuff: {fileID: 555459671332548687}
-  falseConditonStuff: {fileID: 3722976426372939043}
 --- !u!114 &3722976426372939043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2210,3 +2199,21 @@ MonoBehaviour:
   wakeEnabled: 1
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+--- !u!114 &7437779553943666605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9125255204377559136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e8a11430575e34192775559f474c33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 5
+    targetComponent: {fileID: 0}
+  trueConditonStuff: {fileID: 555459671332548687}
+  falseConditonStuff: {fileID: 3722976426372939043}
