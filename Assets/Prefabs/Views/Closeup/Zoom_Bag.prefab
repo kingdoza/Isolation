@@ -212,7 +212,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isItemOnce: 0
-  focusPrefab: {fileID: 6907309563162764960, guid: 50610526fa7d9dc46906e46ae56a3d77, type: 3}
+  focusPrefab: {fileID: 6907309563162764960, guid: bc41235184956104d99bab66a5c46905, type: 3}
 --- !u!1 &3986073243150926656
 GameObject:
   m_ObjectHideFlags: 0

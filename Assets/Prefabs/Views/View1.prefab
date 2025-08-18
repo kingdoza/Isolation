@@ -1305,7 +1305,7 @@ MonoBehaviour:
   triggerEvent:
     globalType: 4
     targetComponent: {fileID: 0}
-  trueConditonSprite: {fileID: 21300000, guid: 210c578d59f28c7419ed87b7d3bbe453, type: 3}
+  trueConditonSprite: {fileID: 21300000, guid: 0590aa255a92c7d498acee2de4e10b92, type: 3}
   falseConditonSprite: {fileID: 21300000, guid: fcd3035bbeb3fb945b5d6cd9b1eb32cf, type: 3}
 --- !u!1 &3802022935765665453
 GameObject:

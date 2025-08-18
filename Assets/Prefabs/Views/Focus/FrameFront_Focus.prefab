@@ -82,12 +82,12 @@ SpriteRenderer:
   m_SortingLayerID: 197153367
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c5c693e25a5857c41880d0298d654f4e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 014df791839120d4a83ded001f2db7f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 69.09528, y: 48.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -165,7 +165,7 @@ PolygonCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 69.09528, y: 48.92}
-    newSize: {x: 5.12, y: 5.12}
+    newSize: {x: 69.09528, y: 48.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -361,9 +361,12 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
+  sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
 --- !u!114 &8103905750706398392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,7 +382,7 @@ MonoBehaviour:
   triggerEvent:
     globalType: 4
     targetComponent: {fileID: 0}
-  trueConditonSprite: {fileID: -6231044458718751821, guid: 95cab5d18cba7db4b985f37a7c07132d, type: 3}
+  trueConditonSprite: {fileID: 21300000, guid: 014df791839120d4a83ded001f2db7f3, type: 3}
   falseConditonSprite: {fileID: 21300000, guid: c5c693e25a5857c41880d0298d654f4e, type: 3}
 --- !u!1 &6157905568324703876
 GameObject:

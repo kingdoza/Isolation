@@ -860,7 +860,7 @@ MonoBehaviour:
   triggerEvent:
     globalType: 4
     targetComponent: {fileID: 0}
-  trueConditonSprite: {fileID: -6231044458718751821, guid: 95cab5d18cba7db4b985f37a7c07132d, type: 3}
+  trueConditonSprite: {fileID: 21300000, guid: 8e29010ccaa8a124fb388cf7e38ccce5, type: 3}
   falseConditonSprite: {fileID: 21300000, guid: 0c07f9a47cffe4b498f6f93ab40dc3d3, type: 3}
 --- !u!114 &6474412642980071263
 MonoBehaviour:

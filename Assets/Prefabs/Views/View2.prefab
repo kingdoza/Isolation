@@ -3903,5 +3903,5 @@ MonoBehaviour:
   triggerEvent:
     globalType: 4
     targetComponent: {fileID: 0}
-  trueConditonSprite: {fileID: 21300000, guid: 0d8ea99259b88004cbc4dfdb09bf23f4, type: 3}
+  trueConditonSprite: {fileID: 21300000, guid: 5f069b6e4e108bd478a34351a0bf7e44, type: 3}
   falseConditonSprite: {fileID: 21300000, guid: 9e21d7358b9acd542bcbfc51f1bb4368, type: 3}
