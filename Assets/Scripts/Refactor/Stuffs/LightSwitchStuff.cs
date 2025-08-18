@@ -13,7 +13,9 @@ public class LightSwitchStuff : ClickableStuff
         if (!enabled) return;
         base.OnClicked();
         if (Player.Instance.IsSleeping == false)
+        {
             Player.Instance.Sleep();
+        }
         else
         {
             TimeController.Instance.ProgressToNextWakeup();
