@@ -9,7 +9,7 @@ public class SoundController : MonoBehaviour
     [SerializeField] private BGMLibrary bgmClips;
     private const float BGM_Volume = 0.5f;
     private const float SFX_Volume = 0.6f;
-    private const float FadeDuration = 1.5f;
+    private const float FadeDuration = 1.8f;
     public static SoundController instance;
     public static SoundController Instance => instance;
 
@@ -17,36 +17,36 @@ public class SoundController : MonoBehaviour
 
 
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-        Destroy(gameObject);
-        return;
-        }
+    //private void Awake()
+    //{
+    //    if (instance == null)
+    //    {
+    //    instance = this;
+    //    DontDestroyOnLoad(gameObject);
+    //    }
+    //    else
+    //    {
+    //    Destroy(gameObject);
+    //    return;
+    //    }
 
-        // bgmSource.loop = true; 
-        if (bgmSource != null)
-        {
-        bgmSource.loop = true;
-        bgmSource.playOnAwake = false; 
-        }
-        if (sfxSource != null)
-        {
-        sfxSource.playOnAwake = false;
-        }
+    //    // bgmSource.loop = true; 
+    //    if (bgmSource != null)
+    //    {
+    //    bgmSource.loop = true;
+    //    bgmSource.playOnAwake = false; 
+    //    }
+    //    if (sfxSource != null)
+    //    {
+    //    sfxSource.playOnAwake = false;
+    //    }
 
         
-        if (bgmClips != null && bgmClips.main!= null && !bgmSource.isPlaying)
-        {
-        PlayBGM(bgmClips.main);
-        }
-    }
+    //    if (bgmClips != null && bgmClips.main!= null && !bgmSource.isPlaying)
+    //    {
+    //    PlayBGM(bgmClips.main);
+    //    }
+    //}
 
 
 

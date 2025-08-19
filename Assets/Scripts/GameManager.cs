@@ -44,11 +44,12 @@ public class GameManager : PersistentSingleton<GameManager>
     private const float DadeDuration = 0.8f;
     private GameObject sceneFadePanel;
     [SerializeField] private bool isIntroStart;
+    public bool IsIntroStart => isIntroStart;
 
 
     void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (SceneManager.GetActiveScene().name.Equals("Refactor") && Input.GetButtonDown("Cancel"))
         {
             bool isActive = BackGround.activeSelf;
             BackGround.SetActive(!isActive);
@@ -77,7 +78,6 @@ public class GameManager : PersistentSingleton<GameManager>
     protected override void Awake()
     {
         base.Awake();
-        isIntroStart = false;
         soundController = GetComponentInChildren<SoundController>();
 
         if (Instance == this)
@@ -160,16 +160,25 @@ public class GameManager : PersistentSingleton<GameManager>
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name.Equals("Intro") == false)
+        if (!(scene.name.Equals("Intro") || (scene.name.Equals("Refactor") && isIntroStart)))
         {
             sceneFadePanel = CreateFadePanel();
             FadeoutPanel();
         }
-        SetCursorTexture();
+        if (scene.name == "Intro")
+        {
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.visible = true;
+            SetCursorTexture();
+        }
         Debug.Log($"[GameManager] Scene loaded: {scene.name}"); //게임 씬 재로딩할때 스타트 스테이지 로딩 
         if (scene.name == "Intro")
         {
-            isIntroStart = true;
+            isIntroStart = false;
+            //isIntroStart = true;
             //PlayBGM(BGMClips.main, true);
         }
         if (scene.name == "MainScene")

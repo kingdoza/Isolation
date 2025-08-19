@@ -15,6 +15,8 @@ public class Intro : MonoBehaviour
     [SerializeField] private float playDuration;
     private int currentPhraseIdx = 0;
 
+    //2.5, 1.5, 1.3, 1.7, 1
+
 
 
     private void Start()
@@ -35,7 +37,9 @@ public class Intro : MonoBehaviour
             FinishSequence();
             return;
         }
-        PlayPhraseSequence();
+        DG.Tweening.Sequence seq = DOTween.Sequence();
+        seq.AppendInterval(playDuration);
+        seq.OnComplete(PlayPhraseSequence);
     }
 
 
@@ -51,7 +55,6 @@ public class Intro : MonoBehaviour
         seq.Append(phrasePanel.DOFade(1f, fadeinDuration));
         seq.AppendInterval(holdDuration);
         seq.Append(phrasePanel.DOFade(0f, fadeoutDuration));
-        seq.AppendInterval(playDuration);
         seq.OnComplete(SkipNextPhrase);
         seq.Play();
     }
@@ -92,11 +95,11 @@ public class Intro : MonoBehaviour
 
         if (currentPhraseIdx == phrases.Length - 1)
         {
-            phraseBox.fontSize = 60;
+            phraseBox.fontSize = 70;
             DOTween.To(
                 () => phraseBox.fontSize,
                 x => phraseBox.fontSize = x,
-                65,
+                75,
                 fadeoutDuration + fadeinDuration + holdDuration
             ).SetEase(Ease.Linear);
         }
@@ -106,7 +109,6 @@ public class Intro : MonoBehaviour
 
     private void FinishSequence()
     {
-        Debug.Log("wewe");
         //SceneManager.LoadScene("MainScene");
         SceneManager.LoadScene("Refactor");
     }
