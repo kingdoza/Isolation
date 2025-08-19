@@ -1,9 +1,11 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DoorStuff : ClickableStuff
 {
-    public bool canOpen = false;
+    [SerializeField] private float dialogueDelay;
+    [HideInInspector] public bool canOpen = false;
 
 
     protected override void Awake()
@@ -28,7 +30,7 @@ public class DoorStuff : ClickableStuff
         }
         else
         {
-            GameManager.Instance.DialogueController.StartDialogueSequence(new string[] { "문은 잠겨있다." });
+            GameManager.Instance.DialogueController.StartDialogueSequence(new string[] { "문은 잠겨있다." }, dialogueDelay);
         }
         //SceneManager.LoadScene("Ending");
     }

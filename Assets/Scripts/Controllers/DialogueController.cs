@@ -1,3 +1,4 @@
+using DG.Tweening;
 using DG.Tweening.Core.Easing;
 using System.Collections;
 using System.Runtime.CompilerServices;
@@ -56,13 +57,27 @@ public class DialogueController : MonoBehaviour
         if (targetTexts == null || targetTexts.Length <= 0)
             targetTexts = new string[1] { " " };
         targetSentence = targetTexts[textIndex = 0];
-        StartCoroutine(TypeText_Co());
+        StartCoroutine(TypeText_Co(0));
     }
 
 
 
-    private IEnumerator TypeText_Co()
+    public void StartDialogueSequence(string[] sentences, float delay)
     {
+        textBox.text = "";
+        EnableDialoguePanel();
+        targetTexts = sentences;
+        if (targetTexts == null || targetTexts.Length <= 0)
+            targetTexts = new string[1] { " " };
+        targetSentence = targetTexts[textIndex = 0];
+        StartCoroutine(TypeText_Co(delay));
+    }
+
+
+
+    private IEnumerator TypeText_Co(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         isTyping = true;
         textBox.text = "";
         foreach (char letter in targetSentence)
@@ -97,7 +112,7 @@ public class DialogueController : MonoBehaviour
         else
         {
             targetSentence = targetTexts[textIndex];
-            StartCoroutine(TypeText_Co());
+            StartCoroutine(TypeText_Co(0));
         }
     }
 
