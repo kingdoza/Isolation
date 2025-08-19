@@ -10,7 +10,7 @@ public abstract class ConditionalActivator : MonoBehaviour
 {
     private UnityEvent DestroyEvent = new();
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         SetConditionalComponent();
     }

@@ -7,7 +7,7 @@ public class Hidden : ConditionalActivator
     private InactiveStuff inactiveStuff;
     private ClickableStuff clickableStuff;
     private ColliderDetector ColliderDetectorComp;
-    private int overlayCount = 0;
+    [SerializeField] private int overlayCount = 0;
 
 
 
@@ -18,6 +18,14 @@ public class Hidden : ConditionalActivator
         inactiveStuff = GetComponent<InactiveStuff>();
         ColliderDetectorComp.TriggerEnterEvent.AddListener(Triggered);
         ColliderDetectorComp.TriggerExitEvent.AddListener(Untriggered);
+    }
+
+
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        overlayCount = 0;
     }
 
 
