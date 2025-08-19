@@ -3,16 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class DoorStuff : ClickableStuff
 {
+    public bool canOpen = false;
+
+
     protected override void Awake()
     {
         base.Awake();
-        //enabled = false;
-        inputComp.DisableInput();
+        //inputComp.DisableInput()
     }
 
 
 
-    protected override void ChangeInputStatus() { }
+    //protected override void ChangeInputStatus() { }
 
 
 
@@ -20,7 +22,14 @@ public class DoorStuff : ClickableStuff
     {
         if (!enabled) return;
         base.OnClicked();
-        GameManager.Instance.LoadSceneWithFade("Ending");
+        if (canOpen)
+        {
+            GameManager.Instance.LoadSceneWithFade("Ending");
+        }
+        else
+        {
+            GameManager.Instance.DialogueController.StartDialogueSequence(new string[] { "문은 잠겨있다." });
+        }
         //SceneManager.LoadScene("Ending");
     }
 }

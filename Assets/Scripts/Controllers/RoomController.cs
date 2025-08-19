@@ -117,7 +117,8 @@ public class RoomController : MonoBehaviour {
             foreach (BaseStuff stuff in roomStuffs)
             {
                 if (stuff is DoorStuff)
-                    stuff.GetComponent<MouseInteraction>().EnableInput();
+                    (stuff as DoorStuff).canOpen = true;
+                    //stuff.GetComponent<MouseInteraction>().EnableInput();
                 else
                     Destroy(stuff);
                     //stuff.GetComponent<MouseInteraction>().DisableInput();

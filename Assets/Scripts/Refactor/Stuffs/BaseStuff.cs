@@ -62,8 +62,9 @@ public abstract class BaseStuff : SingleConditonActivator
 
 
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
+        //base.OnEnable();
         ChangeInputStatus();
     }
 

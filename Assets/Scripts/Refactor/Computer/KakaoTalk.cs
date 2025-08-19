@@ -43,7 +43,7 @@ public class KakaoTalk : MonoBehaviour
 
     private void Update()
     {
-        if (isLocked && Input.GetKeyDown(KeyCode.Return))
+        if (isLocked && Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             CheckPin();
         }

@@ -1274,13 +1274,14 @@ MonoBehaviour:
     targetComponent: {fileID: 0}
   interactItem: 0
   wakeEnabled: 1
-  sleepEnabled: 1
+  sleepEnabled: 0
   sfxClip: {fileID: 0}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
   isItemOnce: 0
+  canOpen: 0
 --- !u!60 &7679339476673939422
 PolygonCollider2D:
   m_ObjectHideFlags: 0
