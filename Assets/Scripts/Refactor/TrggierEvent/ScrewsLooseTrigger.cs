@@ -21,6 +21,7 @@ public class ScrewsLooseTrigger : ConditionalActivator, ITriggerEventSendable
         {
             InitTrigger(screw);
         }
+        OnTriggerStatusChanged();
     }
 
 
