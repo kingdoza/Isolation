@@ -45,6 +45,7 @@ public class GameManager : PersistentSingleton<GameManager>
     private GameObject sceneFadePanel;
     [SerializeField] private bool isIntroStart;
     public bool IsIntroStart => isIntroStart;
+    public bool isTutorial;
 
 
     void Update()
