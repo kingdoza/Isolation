@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static ControllerUtils;
 
 public class ExitButton : MonoBehaviour
 {
     public GameObject Background;
     public void ClickExit()
     {
+        PlaySFX(SFXClips.click1);
         Time.timeScale = 1;
         SceneManager.LoadScene("MainScene");
 

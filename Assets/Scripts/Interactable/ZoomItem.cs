@@ -29,9 +29,9 @@ public class ZoomItem : Item
     public override void Interact()
     {
         base.Interact();
-        GameManager.Instance.RoomController.ZoomInView(zoomViewPrefab);
+        //GameManager.Instance.RoomController.ZoomInView(zoomViewPrefab);
 
         SoundController soundPlayer = GameManager.Instance.SoundController;
-        PlaySFX(SFXClips.click);
+        //PlaySFX(SFXClips.click);
     }
 }

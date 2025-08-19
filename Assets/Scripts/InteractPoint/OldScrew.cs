@@ -11,6 +11,6 @@ public class OldScrew : StatusSwitcher
     public override void Interact()
     {
         base.Interact();
-        PlaySFX(SFXClips.familiyPhoto_Screwing);
+        //PlaySFX(SFXClips.familiyPhoto_Screwing);
     }
 }

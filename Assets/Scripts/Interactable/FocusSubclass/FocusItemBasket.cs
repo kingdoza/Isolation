@@ -6,6 +6,6 @@ using static ControllerUtils;
 
 public class FocusItemBasket : FocusItem
 {
-    protected override AudioClip ClikBase => SFXClips.familiyPhoto_BasketFocus;
+    //protected override AudioClip ClikBase => SFXClips.familiyPhoto_BasketFocus;
 }
 

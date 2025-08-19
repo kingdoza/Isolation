@@ -147,12 +147,28 @@ public class UIController : MonoBehaviour
 
 
 
+    public void EnableMindTree_Button()
+    {
+        PlaySFX(SFXClips.click2);
+        EnableMindTree();
+    }
+
+
+
     public void EnableMindTree()
     {
         toMindButton.SetActive(false);
         toRoomButton.SetActive(true);
         //DragScroller.CanDrag = false;
         mindTreeUI.gameObject.SetActive(true);
+    }
+
+
+
+    public void DisableMindTree_Button()
+    {
+        PlaySFX(SFXClips.click2);
+        DisableMindTree();
     }
 
 

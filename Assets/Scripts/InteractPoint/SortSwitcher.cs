@@ -14,6 +14,6 @@ public class SortSwitcher : ItemUsePoint
         renderder1.sortingOrder = renderder2.sortingOrder;
         renderder2.sortingOrder = sortingOrder1;
 
-        PlaySFX(SFXClips.familiyPhoto_PhotoSwitch);
+        //PlaySFX(SFXClips.familiyPhoto_PhotoSwitch);
     }
 }

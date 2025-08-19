@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundController : MonoBehaviour
 {
@@ -7,13 +8,15 @@ public class SoundController : MonoBehaviour
     [SerializeField] private AudioSource bgmSource;
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private BGMLibrary bgmClips;
-    private const float BGM_Volume = 0.5f;
-    private const float SFX_Volume = 0.6f;
+    public static float BGM_Volume = 0.5f;
+    public static float SFX_Volume = 0.6f;
     private const float FadeDuration = 1.8f;
     public static SoundController instance;
     public static SoundController Instance => instance;
 
     private Tween fadeTween;
+    [SerializeField] private AudioMixerGroup sfxMixerGroup;
+    public AudioMixerGroup SFX_MixerGroup => sfxMixerGroup;
 
 
 
@@ -41,7 +44,7 @@ public class SoundController : MonoBehaviour
     //    sfxSource.playOnAwake = false;
     //    }
 
-        
+
     //    if (bgmClips != null && bgmClips.main!= null && !bgmSource.isPlaying)
     //    {
     //    PlayBGM(bgmClips.main);
@@ -54,7 +57,7 @@ public class SoundController : MonoBehaviour
     {
         if (sfxClip == null)
         {
-            sfxSource.Stop();
+            //sfxSource.Stop();
             return;
         }
         sfxSource.volume = SFX_Volume;

@@ -6,6 +6,6 @@ public class CollectDriver : CollectibleItem
     public override void Interact()
     {
         base.Interact();
-        PlaySFX(SFXClips.familiyPhoto_DriverSave);
+        //PlaySFX(SFXClips.familiyPhoto_DriverSave);
     }
 }

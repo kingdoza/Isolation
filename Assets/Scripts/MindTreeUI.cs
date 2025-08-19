@@ -6,20 +6,21 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using static ControllerUtils;
 
 public class MindTreeUI : MonoBehaviour
 {
-    [Header("½½·Ô Ã¤¿ò »ö±ò")] [Space]
+    [Header("½½·Ô Ã¤¿ò »ö±ò")][Space]
     [SerializeField] private Color itemSlotColor;
     [SerializeField] private Color clueSlotColor;
     [SerializeField] private Color finalSlotColor;
-    [Header("UI ¿ÀºêÁ§Æ®")] [Space]
+    [Header("UI ¿ÀºêÁ§Æ®")][Space]
     [SerializeField] private EndingRouteUI[] routhUIs;
     [SerializeField] private TextMeshProUGUI subtitle;
     [SerializeField] private EvidenceWindow evidenceWindow;
-    [Header("Ãß°¡ ÈçÀû ÇÁ¸®ÆÕ")] [Space]
+    [Header("Ãß°¡ ÈçÀû ÇÁ¸®ÆÕ")][Space]
     [SerializeField] private GameObject[] additionalEvidences;
-    [Header("±âÅ¸")] [Space]
+    [Header("±âÅ¸")][Space]
     [SerializeField] private Image badButtonFill;
     [SerializeField] private Image happyButtonFill;
     public GameObject[] AdditionalEvidences => additionalEvidences;
@@ -36,8 +37,17 @@ public class MindTreeUI : MonoBehaviour
 
 
 
-    public void SetRouthUI_Bad() => SetRouthUI(EndingType.Bad);
-    public void SetRouthUI_Happy() => SetRouthUI(EndingType.Happy);
+    public void SetRouthUI_Bad()
+    {
+        PlaySFX(SFXClips.click2);
+        SetRouthUI(EndingType.Bad);
+    }
+
+    public void SetRouthUI_Happy()
+    {
+        PlaySFX(SFXClips.click2);
+        SetRouthUI(EndingType.Happy);
+    }
 
 
 

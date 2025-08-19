@@ -25,7 +25,10 @@ public class RoomController : MonoBehaviour {
     public GameObject CurrentView => currentView;
 
     public UnityEvent OnFocusOut = new UnityEvent();
+    // Stack<GameObject> zoomStack = new Stack<GameObject>();
     private Stack<GameObject> zoomStack = new Stack<GameObject>();
+    private AudioClip focusInClip;
+    private Stack<AudioClip> zoomClipStack = new Stack<AudioClip>();
 
 
 
@@ -37,8 +40,8 @@ public class RoomController : MonoBehaviour {
 
     private void Update()
     {
-        if(uiController && !uiController.IsFading)
-            HandleArrowKeyInput();
+        //if(uiController && !uiController.IsFading)
+        //    HandleArrowKeyInput();
     }
 
 
@@ -50,24 +53,24 @@ public class RoomController : MonoBehaviour {
 
 
 
-    private void HandleArrowKeyInput()
-    {
-        if (Input.GetKeyUp(KeyCode.LeftArrow) && !isZoomIn)
-        {
-            PlaySFX(SFXClips.click);
-            MoveLeft();
-        }
-        if (Input.GetKeyUp(KeyCode.RightArrow) && !isZoomIn)
-        {
-            PlaySFX(SFXClips.click);
-            MoveRight();
-        }
-        if (Input.GetKeyUp(KeyCode.DownArrow) && isZoomIn)
-        {
-            PlaySFX(SFXClips.click);
-            ZoomOutView();
-        }
-    }
+    //private void HandleArrowKeyInput()
+    //{
+    //    if (Input.GetKeyUp(KeyCode.LeftArrow) && !isZoomIn)
+    //    {
+    //        PlaySFX(SFXClips.click);
+    //        MoveLeft();
+    //    }
+    //    if (Input.GetKeyUp(KeyCode.RightArrow) && !isZoomIn)
+    //    {
+    //        PlaySFX(SFXClips.click);
+    //        MoveRight();
+    //    }
+    //    if (Input.GetKeyUp(KeyCode.DownArrow) && isZoomIn)
+    //    {
+    //        PlaySFX(SFXClips.click);
+    //        ZoomOutView();
+    //    }
+    //}
 
 
 
@@ -128,9 +131,10 @@ public class RoomController : MonoBehaviour {
 
 
 
-    public void FocusItem(GameObject focusView)
+    public void FocusItem(GameObject focusView, AudioClip focusClip)
     {
         isFocusIn = true;
+        focusInClip = focusClip; //
         if (itemFocusedView)
         {
             OutFocusItem();
@@ -149,6 +153,7 @@ public class RoomController : MonoBehaviour {
     private void OutFocusItem()
     {
         isFocusIn = false;
+        PlaySFX(focusInClip);
         itemFocusedView.SetActive(false);
         MouseInteraction.EnableSubObjectInputs(currentView);
         itemFocusedView = null;
@@ -169,6 +174,7 @@ public class RoomController : MonoBehaviour {
             OutFocusItem();
             return;
         }
+        PlaySFX(zoomClipStack.Pop());
         if (zoomStack.Count != 0)
         {
             isZoomIn = true;
@@ -186,12 +192,13 @@ public class RoomController : MonoBehaviour {
 
 
 
-    public void ZoomInView(GameObject newView)
+    public void ZoomInView(GameObject newView, AudioClip zoomClip)
     {
         if (isZoomIn)
         {
             zoomStack.Push(currentView);
         }
+        zoomClipStack.Push(zoomClip);
         isZoomIn = true;
         //DragScroller.CanDrag = false;
         ChangeRoomView(newView);
@@ -229,6 +236,7 @@ public class RoomController : MonoBehaviour {
 
     public void MoveLeft()
     {
+        PlaySFX(SFXClips.tutorial);
         --currentRoom.ViewIndex;
         ChangeRoomView(currentRoom.CurrentView);
         //timeController.ProgressMinutes(ProgressTimeType.Move);
@@ -239,6 +247,7 @@ public class RoomController : MonoBehaviour {
 
     public void MoveRight()
     {
+        PlaySFX(SFXClips.tutorial);
         ++currentRoom.ViewIndex;
         ChangeRoomView(currentRoom.CurrentView);
         //timeController.ProgressMinutes(ProgressTimeType.Move);

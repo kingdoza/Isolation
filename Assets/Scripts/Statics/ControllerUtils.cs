@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Specialized;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public static class ControllerUtils
 {
@@ -54,6 +55,22 @@ public static class ControllerUtils
 
             return cursorTextures;
         }
+    }
+
+
+
+    public static AudioMixerGroup SFX_MixerGroup => GameManager.Instance.SoundController.SFX_MixerGroup;
+
+
+
+    public static void SetLoopSFXAudioSource(ref AudioSource audioSource, AudioClip audioClip)
+    {
+        audioSource.playOnAwake = false;
+        audioSource.loop = true;
+        audioSource.volume = SoundController.SFX_Volume;
+        audioSource.outputAudioMixerGroup = SFX_MixerGroup;
+        audioSource.clip = audioClip;
+        audioSource.Stop();
     }
 
 

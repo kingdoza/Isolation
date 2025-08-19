@@ -551,6 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 035e47df88649d74e954180be6073e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  overlayCount: 0
 --- !u!50 &593073078439824120
 Rigidbody2D:
   serializedVersion: 5
@@ -848,6 +849,10 @@ MonoBehaviour:
   sleepEnabled: 1
   sfxClip: {fileID: 0}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  sfxGroup: {fileID: 0}
+  pickClip: {fileID: 0}
+  dragClip: {fileID: 0}
+  putClip: {fileID: 0}
   highestSortLayer: {fileID: 8085795009795336433}
 --- !u!1 &1593021078440222573
 GameObject:
@@ -1254,6 +1259,10 @@ MonoBehaviour:
   sleepEnabled: 1
   sfxClip: {fileID: 0}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  sfxGroup: {fileID: 0}
+  pickClip: {fileID: 0}
+  dragClip: {fileID: 0}
+  putClip: {fileID: 0}
   highestSortLayer: {fileID: 8085795009795336433}
 --- !u!60 &5338755400021921042
 PolygonCollider2D:
@@ -1637,8 +1646,12 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 0
   sleepEnabled: 1
-  sfxClip: {fileID: 8300000, guid: 60f4ad78bdc6afb4988e879e6486202b, type: 3}
+  sfxClip: {fileID: 0}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  sfxGroup: {fileID: 3502625212533667248, guid: 75afad810915c6f4aa65662ab3fc4061, type: 2}
+  pickClip: {fileID: 8300000, guid: b78568a9a53107f49841385fa7a3b27d, type: 3}
+  dragClip: {fileID: 8300000, guid: 40aea8faf7fa8e94d930f5b3c9ae6da0, type: 3}
+  putClip: {fileID: 8300000, guid: 1ad92b53c963da6489898648410a3829, type: 3}
   highestSortLayer: {fileID: 8085795009795336433}
 --- !u!1 &3419108795454361022
 GameObject:
@@ -1973,6 +1986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 035e47df88649d74e954180be6073e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  overlayCount: 0
 --- !u!50 &2224635866586143216
 Rigidbody2D:
   serializedVersion: 5

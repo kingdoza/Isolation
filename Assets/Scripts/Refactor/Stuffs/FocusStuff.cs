@@ -7,6 +7,7 @@ public class FocusStuff : ClickableStuff
 {
     private static Dictionary<GameObject, GameObject> _instantiatedMap = new();
     [SerializeField] private GameObject focusPrefab;
+    [SerializeField] private AudioClip outClip;
     private GameObject focusView;
     public GameObject FocusView => focusView;
     protected override StuffTypeData StuffData => GameData.FocusStuffData;
@@ -16,6 +17,10 @@ public class FocusStuff : ClickableStuff
     protected override void Awake()
     {
         base.Awake();
+        if (sfxClip == null)
+            sfxClip = ControllerUtils.SFXClips.click1;
+        if (outClip == null)
+            outClip = sfxClip;
         //focusView = Instantiate(focusPrefab);
         //focusView.SetActive(false);
 
@@ -37,7 +42,7 @@ public class FocusStuff : ClickableStuff
     {
         if (!enabled) return;
         base.OnClicked();
-        GameManager.Instance.RoomController.FocusItem(focusView);
+        GameManager.Instance.RoomController.FocusItem(focusView, outClip);
         TimeController.Instance.CheckTimeChanged();
     }
 }

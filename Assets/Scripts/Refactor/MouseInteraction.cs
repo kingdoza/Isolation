@@ -5,6 +5,7 @@ public abstract class MouseInteraction : MonoBehaviour
 {
     protected abstract string InputLayerName { get; }
     public abstract bool IsPassDown { get; }
+    public bool IsEnabled { get; protected set; }
 
 
 
@@ -24,6 +25,7 @@ public abstract class MouseInteraction : MonoBehaviour
 
     public virtual void EnableInput()
     {
+        IsEnabled = true;
         SetLayer();
     }
 
@@ -31,6 +33,7 @@ public abstract class MouseInteraction : MonoBehaviour
 
     public virtual void DisableInput()
     {
+        IsEnabled = false;
         gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
     }
 

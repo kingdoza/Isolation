@@ -8,7 +8,7 @@ public class FramePlate : StatusSwitcher
     public override void Interact()
     {
         base.Interact();
-        PlaySFX(SFXClips.familiyPhoto_Hover);
+        //PlaySFX(SFXClips.familiyPhoto_Hover);
     }
 
 }

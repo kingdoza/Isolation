@@ -1,4 +1,5 @@
 using UnityEngine;
+using static ControllerUtils;
 
 public class ContinueButton : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class ContinueButton : MonoBehaviour
 
     public void ClickContinue()
     {
+        PlaySFX(SFXClips.click2);
         Background.SetActive(false);
         UIBlocker.SetActive(false);
         Time.timeScale = 1f;

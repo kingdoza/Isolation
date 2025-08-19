@@ -1,4 +1,5 @@
 using UnityEngine;
+using static ControllerUtils;
 
 public class Tutorial : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class Tutorial : MonoBehaviour
 
     public void SkipNextPanel()
     {
+        PlaySFX(SFXClips.tutorial);
         infoPanels[currentIdx++].SetActive(false);
         if (currentIdx >= infoPanels.Length)
         {

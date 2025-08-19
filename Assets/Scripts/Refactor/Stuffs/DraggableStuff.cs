@@ -1,10 +1,16 @@
 using System;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Audio;
 using static ControllerUtils;
 
 [RequireComponent(typeof(CursorHover))]
 public class DraggableStuff : BaseStuff
 {
+    [SerializeField] private AudioClip pickClip;
+    [SerializeField] private AudioClip dragClip;
+    [SerializeField] private AudioClip putClip;
+    private AudioSource draggingSource;
     protected override StuffTypeData StuffData => GameData.DragStuffData;
     private bool isDragging = false;
     private bool isDragStop = true;
@@ -15,18 +21,11 @@ public class DraggableStuff : BaseStuff
     protected override void Awake()
     {
         base.Awake();
+        draggingSource = gameObject.AddComponent<AudioSource>();
+        SetLoopSFXAudioSource(ref draggingSource, dragClip);
         lastPosition = transform.position;
-        (inputComp as Drag).DragEndEvent.AddListener(OnDragCompleted);
-        (inputComp as Drag).DragStartEvent.AddListener(() => 
-        {
-            isDragging = true;
-            isDragStop = true;
-        });
-        (inputComp as Drag).DragEndEvent.AddListener(() =>
-        {
-            isDragging = false;
-            OnDragStop();
-        });
+        (inputComp as Drag).DragEndEvent.AddListener(OnDragEnd);
+        (inputComp as Drag).DragStartEvent.AddListener(OnDragStart);
     }
 
 
@@ -62,20 +61,32 @@ public class DraggableStuff : BaseStuff
 
     private void OnDragStop()
     {
-        PlaySFX(null);
+        draggingSource.Pause();
     }
 
 
 
     private void OnDragResume()
     {
-        PlaySFX(sfxClip);
+        draggingSource.Play();
     }
 
 
 
-    private void OnDragCompleted()
+    private void OnDragStart()
     {
+        isDragging = true;
+        isDragStop = true;
+        PlaySFX(pickClip);
+    }
+
+
+
+    private void OnDragEnd()
+    {
+        isDragging = false;
+        OnDragStop();
+        PlaySFX(putClip);
         TimeController.Instance.ProgressMinutes(StuffData.MinuteWaste);
         TimeController.Instance.CheckTimeChanged();
     }

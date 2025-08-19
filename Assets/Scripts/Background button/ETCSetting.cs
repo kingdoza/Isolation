@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using static ControllerUtils;
 
 public class ETCSetting : MonoBehaviour
 {
@@ -7,6 +9,14 @@ public class ETCSetting : MonoBehaviour
     public GameObject UIBlocker;
     public void OpenBackGround()
     {
+        if (SceneManager.GetActiveScene().name.Equals("Refactor"))
+        {
+            PlaySFX(SFXClips.click1);
+        }
+        else
+        {
+            PlaySFX(SFXClips.click2);
+        }
         BackGround.SetActive(true);
         UIBlocker.SetActive(true);
 

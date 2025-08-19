@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Linq;
 using static UnityEngine.GraphicsBuffer;
 using System.Collections.Generic;
+using static ControllerUtils;
 
 
 public class CollectionSlot : MotiveSlot, IPointerEnterHandler, IPointerExitHandler
@@ -73,6 +74,7 @@ public class CollectionSlot : MotiveSlot, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        PlaySFX(SFXClips.click2);
         GetComponent<Image>().color = Color.yellow;
         mindTreeUI.ShowEvidenceInfo(this);
     }

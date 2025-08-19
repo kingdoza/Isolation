@@ -7,7 +7,7 @@ using static ControllerUtils;
 public class FocusItem : Item
 {
     [SerializeField] private GameObject focusViewPrefab;
-    protected virtual AudioClip ClikBase => SFXClips.click; //
+    //protected virtual AudioClip ClikBase => SFXClips.click; //
 
 
 
@@ -24,9 +24,9 @@ public class FocusItem : Item
 
     public override void Interact()
     {
-        GameManager.Instance.RoomController.FocusItem(focusViewPrefab);
+        //GameManager.Instance.RoomController.FocusItem(focusViewPrefab);
 
         SoundController soundPlayer = GameManager.Instance.SoundController;
-        PlaySFX(ClikBase);
+        //PlaySFX(ClikBase);
     }
 }

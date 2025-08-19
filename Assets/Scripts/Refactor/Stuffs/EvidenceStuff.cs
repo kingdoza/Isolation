@@ -1,4 +1,5 @@
 using UnityEngine;
+using static ControllerUtils;
 
 public class EvidenceStuff : DialogueStuff
 {
@@ -72,6 +73,7 @@ public class EvidenceStuff : DialogueStuff
         if (CollectStatus == CollectStatus.Positive && Player.Instance.IsSleeping == false)
         {
             Debug.Log("Collect");
+            PlaySFX(SFXClips.evidence_Collect);
             GameManager.Instance.Player.CollectItem(this);
         }
         base.OnDialogueClosed();

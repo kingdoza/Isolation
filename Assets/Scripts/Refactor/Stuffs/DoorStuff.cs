@@ -1,6 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static ControllerUtils;
 
 public class DoorStuff : ClickableStuff
 {
@@ -26,10 +27,12 @@ public class DoorStuff : ClickableStuff
         base.OnClicked();
         if (canOpen)
         {
+            PlaySFX(SFXClips.door_Handle);
             GameManager.Instance.LoadSceneWithFade("Ending");
         }
         else
         {
+            PlaySFX(SFXClips.door_Lock);
             GameManager.Instance.DialogueController.StartDialogueSequence(new string[] { "문은 잠겨있다." }, dialogueDelay);
         }
         //SceneManager.LoadScene("Ending");

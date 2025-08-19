@@ -55,6 +55,7 @@ public class GameManager : PersistentSingleton<GameManager>
             bool isActive = BackGround.activeSelf;
             BackGround.SetActive(!isActive);
             //UIBlocker.SetActive(!isActive);
+            PlaySFX(SFXClips.click2);
 
             if (!isActive)
             {
@@ -209,6 +210,10 @@ public class GameManager : PersistentSingleton<GameManager>
             else if (EndingType == EndingType.Happy)
             {
                 PlayBGM(BGMClips.trueEnding, true);
+            }
+            else
+            {
+                PlayBGM(BGMClips.timeoutEnding, true);
             }
             //PlayBGM(null, true);
         }

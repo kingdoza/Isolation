@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static ControllerUtils;
 
@@ -23,16 +24,34 @@ public class DialogueController : MonoBehaviour
     private bool isTyping = false;
     private UnityEvent OnDialogueClosed = new UnityEvent();
     [HideInInspector] public UnityEvent DiagloueEndEvent = new UnityEvent();
+    private AudioSource typeAudioSource;
+    private AudioClip clickClip;
 
     public Color DarkenColor => darkenColor;
 
 
 
-    private void Start()
+    private void Awake()
     {
-        //RegisterDragScrollCondition(() => !dialoguePanel.activeSelf);
-        //RegisterDragScrollCondition(() => !dialogueTextUI.activeSelf);
+        if (SceneManager.GetActiveScene().name.Equals("Refactor"))
+        {
+            clickClip = SFXClips.click1;
+        }
+        else
+        {
+            clickClip = SFXClips.click2;
+        }
+        typeAudioSource = gameObject.AddComponent<AudioSource>();
+        SetLoopSFXAudioSource(ref typeAudioSource, SFXClips.narration);
     }
+
+
+
+    //private void Start()
+    //{
+    //    typeAudioSource = gameObject.AddComponent<AudioSource>();
+    //    SetLoopSFXAudioSource(ref typeAudioSource, SFXClips.narration);
+    //}
 
 
 
@@ -80,11 +99,13 @@ public class DialogueController : MonoBehaviour
         yield return new WaitForSeconds(delay);
         isTyping = true;
         textBox.text = "";
+        typeAudioSource.Play();
         foreach (char letter in targetSentence)
         {
             textBox.text += letter;
             yield return new WaitForSeconds(typeDelay);
         }
+        typeAudioSource.Stop();
         isTyping = false;
     }
 
@@ -92,6 +113,7 @@ public class DialogueController : MonoBehaviour
 
     private void CompleteDialogue()
     {
+        typeAudioSource.Stop();
         isTyping = false;
         StopAllCoroutines();
         textBox.text = targetSentence;
@@ -101,6 +123,7 @@ public class DialogueController : MonoBehaviour
 
     public void OnDialogueBoxClicked()
     {
+        PlaySFX(clickClip);
         if (isTyping)
         {
             CompleteDialogue();
