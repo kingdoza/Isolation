@@ -849,10 +849,9 @@ MonoBehaviour:
   sleepEnabled: 1
   sfxClip: {fileID: 0}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  sfxGroup: {fileID: 0}
-  pickClip: {fileID: 0}
-  dragClip: {fileID: 0}
-  putClip: {fileID: 0}
+  pickClip: {fileID: 8300000, guid: d51b359bcc98ae5449e607504cc32abd, type: 3}
+  dragClip: {fileID: 8300000, guid: 0e22d64712712e24098555d0b7e4b19e, type: 3}
+  putClip: {fileID: 8300000, guid: b22eba2c49b091e468258b127e734330, type: 3}
   highestSortLayer: {fileID: 8085795009795336433}
 --- !u!1 &1593021078440222573
 GameObject:
@@ -1259,10 +1258,9 @@ MonoBehaviour:
   sleepEnabled: 1
   sfxClip: {fileID: 0}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  sfxGroup: {fileID: 0}
-  pickClip: {fileID: 0}
-  dragClip: {fileID: 0}
-  putClip: {fileID: 0}
+  pickClip: {fileID: 8300000, guid: aa9546ed4b2bad242ab4673d487e48f6, type: 3}
+  dragClip: {fileID: 8300000, guid: 8cc21493202e3e24da76d036e53cc51a, type: 3}
+  putClip: {fileID: 8300000, guid: 0da092b7e10857c49bb95735900dc492, type: 3}
   highestSortLayer: {fileID: 8085795009795336433}
 --- !u!60 &5338755400021921042
 PolygonCollider2D:
@@ -1648,10 +1646,9 @@ MonoBehaviour:
   sleepEnabled: 1
   sfxClip: {fileID: 0}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  sfxGroup: {fileID: 3502625212533667248, guid: 75afad810915c6f4aa65662ab3fc4061, type: 2}
-  pickClip: {fileID: 8300000, guid: b78568a9a53107f49841385fa7a3b27d, type: 3}
-  dragClip: {fileID: 8300000, guid: 40aea8faf7fa8e94d930f5b3c9ae6da0, type: 3}
-  putClip: {fileID: 8300000, guid: 1ad92b53c963da6489898648410a3829, type: 3}
+  pickClip: {fileID: 8300000, guid: 549d27788aac1414888e9f308e0931f4, type: 3}
+  dragClip: {fileID: 8300000, guid: 377e4f792aa29b74ba4447087cd1f77e, type: 3}
+  putClip: {fileID: 8300000, guid: 134b56037cd2ae74e88d99301e82085b, type: 3}
   highestSortLayer: {fileID: 8085795009795336433}
 --- !u!1 &3419108795454361022
 GameObject:
@@ -1927,7 +1924,7 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 0
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: fdb88dba72462004e958927fa03fb563, type: 3}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:

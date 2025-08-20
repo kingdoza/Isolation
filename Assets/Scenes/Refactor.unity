@@ -13558,7 +13558,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 923296011}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: DisableMindTree
+        m_MethodName: DisableMindTree_Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13970,7 +13970,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 923296011}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: EnableMindTree
+        m_MethodName: EnableMindTree_Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

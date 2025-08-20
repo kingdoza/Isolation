@@ -114,6 +114,7 @@ public class TimeController : SceneSingleton<TimeController>
 
         bool isCurrentTimeSleep = IsSleepingTime();
         if (IsSleepingTime(prevGameDate) != isCurrentTimeSleep)
+        //if (IsSleepingTime(prevGameDate) != Player.Instance.IsSleeping)
         {
             OnTimeStatusChanged(!isCurrentTimeSleep);
         }

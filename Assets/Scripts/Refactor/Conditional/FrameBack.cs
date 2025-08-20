@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using static ControllerUtils;
 
 [RequireComponent(typeof(InactiveStuff))]
 [RequireComponent(typeof(ClickableStuff))]
@@ -63,6 +64,7 @@ public class FrameBack : ConditionalActivator
 
     private void AquireScrews()
     {
+        PlaySFX(SFXClips.screw_Item);
         InventoryUI.Instance.AddItem(screwItem);
         InventoryUI.Instance.AddItem(screwItem);
     }
