@@ -307,6 +307,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 0
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!114 &7581201352773203102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 035e47df88649d74e954180be6073e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  overlayCount: 0
 --- !u!114 &8388647861559965510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,7 +476,8 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 0
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: 535b560be5641774898f073d3dab6034, type: 3}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -833,6 +836,10 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  pickClip: {fileID: 8300000, guid: cf87aab0dd86f7245bff12ee2e0375fb, type: 3}
+  dragClip: {fileID: 8300000, guid: ca3d9d7ddabcb814886fe6044a3dd5fb, type: 3}
+  putClip: {fileID: 8300000, guid: ca05551071c3dde4889d2efc72612e46, type: 3}
   highestSortLayer: {fileID: 4755401365190398583}
 --- !u!60 &4776742067436612043
 PolygonCollider2D:
@@ -919,6 +926,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DragStartEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DragStopEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DragResumeEvent:
     m_PersistentCalls:
       m_Calls: []
   limitMarker1: {fileID: 4197972176357472398}
@@ -1324,6 +1337,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1809,6 +1823,10 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 1
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  pickClip: {fileID: 8300000, guid: e8f6dcb2b8960aa4f96f6b46c66d9c5c, type: 3}
+  dragClip: {fileID: 8300000, guid: 524eefa66ecd8944688502af3dbd55e4, type: 3}
+  putClip: {fileID: 8300000, guid: 94dfe0fb893eff144801fda1cd0efb97, type: 3}
   highestSortLayer: {fileID: 4755401365190398583}
 --- !u!114 &803995512581489957
 MonoBehaviour:
@@ -1827,6 +1845,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   DragStartEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DragStopEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DragResumeEvent:
     m_PersistentCalls:
       m_Calls: []
   limitMarker1: {fileID: 4197972176357472398}

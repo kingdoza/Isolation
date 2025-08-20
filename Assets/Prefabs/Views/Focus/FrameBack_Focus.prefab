@@ -201,6 +201,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 0
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!114 &4974939454365499792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,10 +235,12 @@ MonoBehaviour:
   interactItem: 1
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 8300000, guid: 610fea6cb6d286242b05ce144c2e2039, type: 3}
+  sfxClip: {fileID: 8300000, guid: 8ac9ee8ac4f74e749825c77f9bf797ec, type: 3}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   toggleObject: {fileID: 3716315587047798207}
   initialEnable: 1
   ToggleEvent:
@@ -374,10 +377,12 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: faeb977e243155c4cbe0eccf868db590, type: 3}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   otherTransform: {fileID: 1862893691219381622}
   otherRenderer: {fileID: 5479189154850041209}
 --- !u!60 &93523835786042104
@@ -561,6 +566,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 0
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &1511688777539172815
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +778,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 0
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!114 &7750893902111024456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,10 +812,12 @@ MonoBehaviour:
   interactItem: 1
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 8300000, guid: 610fea6cb6d286242b05ce144c2e2039, type: 3}
+  sfxClip: {fileID: 8300000, guid: 8ac9ee8ac4f74e749825c77f9bf797ec, type: 3}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   toggleObject: {fileID: 2114379170323526015}
   initialEnable: 0
   ToggleEvent:
@@ -1113,6 +1122,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 0
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!114 &1577726162821802670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1146,10 +1156,12 @@ MonoBehaviour:
   interactItem: 1
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 8300000, guid: 610fea6cb6d286242b05ce144c2e2039, type: 3}
+  sfxClip: {fileID: 8300000, guid: 8ac9ee8ac4f74e749825c77f9bf797ec, type: 3}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   toggleObject: {fileID: 2438839072453095360}
   initialEnable: 0
   ToggleEvent:
@@ -1356,6 +1368,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 0
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!114 &973407271552325484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1389,10 +1402,12 @@ MonoBehaviour:
   interactItem: 1
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 8300000, guid: 610fea6cb6d286242b05ce144c2e2039, type: 3}
+  sfxClip: {fileID: 8300000, guid: 8ac9ee8ac4f74e749825c77f9bf797ec, type: 3}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   toggleObject: {fileID: 1511688777539172815}
   initialEnable: 1
   ToggleEvent:
@@ -1601,6 +1616,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 0
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!114 &7208860004258456758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1634,10 +1650,12 @@ MonoBehaviour:
   interactItem: 1
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 8300000, guid: 610fea6cb6d286242b05ce144c2e2039, type: 3}
+  sfxClip: {fileID: 8300000, guid: 8ac9ee8ac4f74e749825c77f9bf797ec, type: 3}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   toggleObject: {fileID: 1874374189152276821}
   initialEnable: 1
   ToggleEvent:
@@ -1833,10 +1851,12 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: faeb977e243155c4cbe0eccf868db590, type: 3}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   otherTransform: {fileID: 1184522205722127520}
   otherRenderer: {fileID: 2513196466344468320}
 --- !u!60 &8991518312983308398
@@ -1987,6 +2007,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 0
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &3716315587047798207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2199,6 +2220,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 0
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!114 &1448951330257057663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2232,10 +2254,12 @@ MonoBehaviour:
   interactItem: 1
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 8300000, guid: 610fea6cb6d286242b05ce144c2e2039, type: 3}
+  sfxClip: {fileID: 8300000, guid: 8ac9ee8ac4f74e749825c77f9bf797ec, type: 3}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   toggleObject: {fileID: 400020498298630245}
   initialEnable: 0
   ToggleEvent:
@@ -2451,6 +2475,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 0
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!114 &2137220489139462065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2484,10 +2509,12 @@ MonoBehaviour:
   interactItem: 1
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 8300000, guid: 610fea6cb6d286242b05ce144c2e2039, type: 3}
+  sfxClip: {fileID: 8300000, guid: 8ac9ee8ac4f74e749825c77f9bf797ec, type: 3}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   toggleObject: {fileID: 8480242232471316815}
   initialEnable: 0
   ToggleEvent:
@@ -2645,6 +2672,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 0
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!114 &7783549509975817449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2685,10 +2713,12 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: e3c1f3de8fcaadd43bf205aba2b03bd5, type: 3}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
 --- !u!60 &775474089238227312
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3490,10 +3520,12 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: 69ab8827b4f8a3c4db2d08bdbdbeff67, type: 3}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   toggleObject: {fileID: 8454839978121659970}
   initialEnable: 0
   ToggleEvent:
@@ -3715,10 +3747,12 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: cf40c95092505cd449b2a3526a772825, type: 3}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   toggleObject: {fileID: 7426893907238453698}
   initialEnable: 1
   ToggleEvent:
@@ -3743,6 +3777,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 0
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!60 &7433391244188938386
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4087,6 +4122,7 @@ MonoBehaviour:
   wakeEnabled: 0
   sleepEnabled: 0
   sfxClip: {fileID: 0}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!114 &3910021243630778962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4120,10 +4156,12 @@ MonoBehaviour:
   interactItem: 1
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 8300000, guid: 610fea6cb6d286242b05ce144c2e2039, type: 3}
+  sfxClip: {fileID: 8300000, guid: 8ac9ee8ac4f74e749825c77f9bf797ec, type: 3}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  isItemOnce: 0
   toggleObject: {fileID: 4484982441531874251}
   initialEnable: 1
   ToggleEvent:

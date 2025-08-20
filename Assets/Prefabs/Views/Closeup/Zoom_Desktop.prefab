@@ -289,6 +289,7 @@ MonoBehaviour:
       m_Calls: []
   isItemOnce: 0
   focusPrefab: {fileID: 6907309563162764960, guid: 9f220199b487ec648bb748740c170af4, type: 3}
+  outClip: {fileID: 0}
 --- !u!1 &757606574675725098
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,13 +694,14 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: 1f7e3a2bfaa3af54b854553945c1b08b, type: 3}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
   isItemOnce: 0
   focusPrefab: {fileID: 6907309563162764960, guid: 62fa93532c12e3e42b2b3a49cb71683c, type: 3}
+  outClip: {fileID: 8300000, guid: 0e5be98d96ab0f94f88384b089013076, type: 3}
 --- !u!60 &7796464724383784555
 PolygonCollider2D:
   m_ObjectHideFlags: 0

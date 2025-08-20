@@ -206,13 +206,14 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: cf1c5658c708a494e898dee353939e2c, type: 3}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
   isItemOnce: 0
   focusPrefab: {fileID: 6907309563162764960, guid: bc41235184956104d99bab66a5c46905, type: 3}
+  outClip: {fileID: 0}
 --- !u!1 &3986073243150926656
 GameObject:
   m_ObjectHideFlags: 0

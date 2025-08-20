@@ -534,7 +534,8 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 0
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: 4ba9aaed97543de44b729ac1cf8b9359, type: 3}
+  hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
