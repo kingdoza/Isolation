@@ -9,7 +9,7 @@ public class ToSampleScene : MonoBehaviour
         Time.timeScale = 1;
         //GameManager.Instance.LoadSceneWithFade("Refactor");
         if (GameManager.Instance.IsIntroStart)
-            GameManager.Instance.LoadSceneWithFade("Intro");
+            GameManager.Instance.LoadSceneWithFade("Intro", false);
         else
             GameManager.Instance.LoadSceneWithFade("Refactor");
         //SceneManager.LoadScene("Refactor");

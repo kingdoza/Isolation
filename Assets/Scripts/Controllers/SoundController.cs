@@ -130,7 +130,7 @@ public class SoundController : MonoBehaviour
 
 
 
-    public void FadeOutBGM()
+    public void FadeOutBGM(float fadeDuration)
     {
         fadeTween?.Kill();
 
@@ -140,7 +140,7 @@ public class SoundController : MonoBehaviour
             return;
         }
 
-        fadeTween = bgmSource.DOFade(0f, FadeDuration)
+        fadeTween = bgmSource.DOFade(0f, fadeDuration)
             .SetUpdate(true)
             .OnComplete(() =>
             {
@@ -150,7 +150,7 @@ public class SoundController : MonoBehaviour
 
 
 
-    public void FadeInBGM(AudioClip bgmClip)
+    public void FadeInBGM(AudioClip bgmClip, float fadeDuration)
     {
         fadeTween?.Kill();
 
@@ -158,7 +158,8 @@ public class SoundController : MonoBehaviour
         bgmSource.clip = bgmClip;
         bgmSource.Play();
 
-        fadeTween = bgmSource.DOFade(0f, BGM_Volume)
+        Debug.Log("fadeDuration : " + fadeDuration);
+        fadeTween = bgmSource.DOFade(BGM_Volume, fadeDuration)
             .SetUpdate(true);
     }
 

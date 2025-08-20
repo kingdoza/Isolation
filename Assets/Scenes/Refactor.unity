@@ -27605,7 +27605,7 @@ MonoBehaviour:
   isIntroStart: 0
   isTutorial: 0
   isEndingComplete: 1
-  testEndingType: 0
+  testEndingType: 1
 --- !u!4 &1921262178
 Transform:
   m_ObjectHideFlags: 0

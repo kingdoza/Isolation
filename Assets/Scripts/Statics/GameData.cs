@@ -33,6 +33,9 @@ public static class GameData
     private static StuffTypeData _screenStuffData;
     public static StuffTypeData ScreenStuffData => LoadResource(ref _screenStuffData, "Stuffs/SO_Screen");
 
+    private static StuffTypeData _doorStuffData;
+    public static StuffTypeData DoorStuffData => LoadResource(ref _doorStuffData, "Stuffs/SO_Door");
+
 
     public static readonly int PasswordCheckMinutes = 30;
     public static readonly int AppOpenCloseMinutes = 30;

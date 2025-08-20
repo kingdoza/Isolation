@@ -6,6 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class DoorStuff : ClickableStuff
 {
+    protected override StuffTypeData StuffData => GameData.DoorStuffData;
     [SerializeField] private float dialogueDelay;
     [HideInInspector] public bool canOpen = false;
 

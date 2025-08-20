@@ -41,7 +41,8 @@ public class GameManager : PersistentSingleton<GameManager>
     //
     public RoomController RC;
     public EndingType EndingType {  get; set; } = EndingType.None;
-    private const float DadeDuration = 0.8f;
+    private const float FadeInDuration = 0.8f;
+    private const float FadeOutDuration = 1.6f;
     private GameObject sceneFadePanel;
     [Header("테스트 전용")] [Space]
     [SerializeField] private bool isIntroStart;
@@ -128,14 +129,16 @@ public class GameManager : PersistentSingleton<GameManager>
 
 
 
-    public void LoadSceneWithFade(string sceneName)
+    public void LoadSceneWithFade(string sceneName, bool withBgmFade = true)
     {
         if (sceneFadePanel == null)
             sceneFadePanel = CreateFadePanel();
         sceneFadePanel.SetActive(true);
+        if (withBgmFade)
+            soundController.FadeOutBGM(FadeOutDuration);
         Image image = sceneFadePanel.GetComponent<Image>();
         image.color = new Color(0, 0, 0, 0);
-        image.DOFade(1f, DadeDuration) // 1.5초 동안 페이드아웃
+        image.DOFade(1f, FadeOutDuration) // 1.5초 동안 페이드아웃
             .SetEase(Ease.InOutQuad) // 부드럽게
             .SetUpdate(true)
             .OnComplete(() =>
@@ -151,7 +154,7 @@ public class GameManager : PersistentSingleton<GameManager>
     {
         sceneFadePanel.SetActive(true);
         Image image = sceneFadePanel.GetComponent<Image>();
-        image.DOFade(0f, DadeDuration) // 1.5초 동안 페이드아웃
+        image.DOFade(0f, FadeOutDuration) // 1.5초 동안 페이드아웃
             .SetEase(Ease.InOutQuad); // 부드럽게
     }
 
@@ -160,7 +163,7 @@ public class GameManager : PersistentSingleton<GameManager>
     private void FadeoutPanel()
     {
         Image image = sceneFadePanel.GetComponent<Image>();
-        image.DOFade(0f, DadeDuration) // 1.5초 동안 페이드아웃
+        image.DOFade(0f, FadeOutDuration) // 1.5초 동안 페이드아웃
             .SetEase(Ease.InOutQuad) // 부드럽게
             .OnComplete(() =>
             {
@@ -196,7 +199,8 @@ public class GameManager : PersistentSingleton<GameManager>
         if (scene.name == "MainScene")
         {
             //if (isIntroStart == false)
-                PlayBGM(BGMClips.main, true);
+            ////PlayBGM(BGMClips.main, true);
+            soundController.FadeInBGM(BGMClips.main, FadeInDuration);
         }
         if (scene.name == "Clock")
         {
@@ -206,7 +210,8 @@ public class GameManager : PersistentSingleton<GameManager>
         if (scene.name == "Refactor")
         {
             StartStage();
-            PlayBGM(BGMClips.inGame, true);
+            ////PlayBGM(BGMClips.inGame, true);
+            soundController.FadeInBGM(BGMClips.inGame, FadeInDuration);
         }
 
         if (scene.name == "Ending")
@@ -215,15 +220,18 @@ public class GameManager : PersistentSingleton<GameManager>
             FindAnyObjectByType<EndingDialogue>().ShowEndingDialogues(EndingType);
             if (EndingType == EndingType.Bad)
             {
-                PlayBGM(BGMClips.badEnding, true);
+                ////PlayBGM(BGMClips.badEnding, true);
+                soundController.FadeInBGM(BGMClips.badEnding, FadeInDuration);
             }
             else if (EndingType == EndingType.Happy)
             {
-                PlayBGM(BGMClips.trueEnding, true);
+                ////PlayBGM(BGMClips.trueEnding, true);
+                soundController.FadeInBGM(BGMClips.trueEnding, FadeInDuration);
             }
             else
             {
-                PlayBGM(BGMClips.timeoutEnding, true);
+                ////PlayBGM(BGMClips.timeoutEnding, true);
+                soundController.FadeInBGM(BGMClips.timeoutEnding, FadeInDuration);
             }
             //PlayBGM(null, true);
         }

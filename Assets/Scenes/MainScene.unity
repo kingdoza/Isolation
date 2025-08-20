@@ -2487,13 +2487,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c158a77ef860a884882308e5aacb448f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverCursor: {fileID: 0}
-  viewSpriteSize: {x: 0, y: 0}
   BackGround: {fileID: 0}
   UIBlocker: {fileID: 0}
   RC: {fileID: 0}
   isIntroStart: 1
   isTutorial: 0
+  isEndingComplete: 0
+  testEndingType: 0
 --- !u!4 &1609102364
 Transform:
   m_ObjectHideFlags: 0
