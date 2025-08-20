@@ -27604,7 +27604,7 @@ MonoBehaviour:
   RC: {fileID: 1118970126}
   isIntroStart: 0
   isTutorial: 0
-  isEndingComplete: 1
+  isEndingComplete: 0
   testEndingType: 1
 --- !u!4 &1921262178
 Transform:
