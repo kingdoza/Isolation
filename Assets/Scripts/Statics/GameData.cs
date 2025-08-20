@@ -36,5 +36,6 @@ public static class GameData
 
     public static readonly int PasswordCheckMinutes = 30;
     public static readonly int AppOpenCloseMinutes = 30;
-    public static readonly int MoveSidewayMinutes = 15;
+    //public static readonly int MoveSidewayMinutes = 15;
+    public static readonly int MoveSidewayMinutes = 360;
 }

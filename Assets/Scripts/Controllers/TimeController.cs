@@ -94,6 +94,7 @@ public class TimeController : SceneSingleton<TimeController>
             nextWakeDate.AdvanceDays();
         nextWakeDate.AdvanceHours(wakeupHour);
         int minutes = nextWakeDate.GetTotalMinutes() - currentGameDate.GetTotalMinutes();
+        Debug.Log(minutes);
         //ProgressMinutes(minutes);
         currentGameDate.AdvanceMinutes(minutes);
 
@@ -132,6 +133,11 @@ public class TimeController : SceneSingleton<TimeController>
     {
         if (GameManager.Instance.EndingType != EndingType.None)
             return;
+        if (Player.Instance.IsSleeping != isWakeup)
+        {
+            return;
+        }
+
         if (isWakeup)
         {
             OnWakeupTime();
@@ -159,7 +165,7 @@ public class TimeController : SceneSingleton<TimeController>
 
 
 
-    private void ShowWakeSleepDialogue()
+    public void ShowWakeSleepDialogue()
     {
         GameManager.Instance.UIController.DisableMoveButtons();
         GameManager.Instance.DialogueController.DiagloueEndEvent.AddListener(OnDiaglogueClosed);

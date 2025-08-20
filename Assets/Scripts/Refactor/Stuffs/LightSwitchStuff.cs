@@ -17,6 +17,7 @@ public class LightSwitchStuff : ClickableStuff
         {
             PlaySFX(SFXClips.lightSwitch_Off);
             Player.Instance.Sleep();
+            TimeController.Instance.ShowWakeSleepDialogue();
         }
         else
         {
