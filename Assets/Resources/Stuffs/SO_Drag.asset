@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SO_Drag
   m_EditorClassIdentifier: 
   cursorTexture: {fileID: 2800000, guid: 5ef76e33ac2fe2f47a3e09cd0db1c24d, type: 3}
-  minuteWaste: 0
+  minuteWaste: 30
