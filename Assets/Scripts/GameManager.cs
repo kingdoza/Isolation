@@ -18,8 +18,8 @@ public class GameManager : PersistentSingleton<GameManager>
     private PuzzleController puzzleController;
     private TriggerEventController triggerController;
     private Player player;
-    [SerializeField] private Texture2D hoverCursor;
-    [SerializeField] private Vector2 viewSpriteSize;
+    //[SerializeField] private Texture2D hoverCursor;
+    //[SerializeField] private Vector2 viewSpriteSize;
     public RoomController RoomController => roomController;
     public UIController UIController => uiController;
     public TimeController TimeController => timeController;
@@ -30,8 +30,8 @@ public class GameManager : PersistentSingleton<GameManager>
     public PuzzleController PuzzleController => puzzleController;
     public TriggerEventController TriggerController => triggerController;
     public Player Player => player;
-    public Texture2D HoverCursor => hoverCursor;
-    public Vector2 ViewSpriteSize => viewSpriteSize;
+    //public Texture2D HoverCursor => hoverCursor;
+    //public Vector2 ViewSpriteSize => viewSpriteSize;
     //
 
     public GameObject BackGround;
@@ -43,9 +43,13 @@ public class GameManager : PersistentSingleton<GameManager>
     public EndingType EndingType {  get; set; } = EndingType.None;
     private const float DadeDuration = 0.8f;
     private GameObject sceneFadePanel;
+    [Header("테스트 전용")] [Space]
     [SerializeField] private bool isIntroStart;
+    [SerializeField] public bool isTutorial;
     public bool IsIntroStart => isIntroStart;
-    public bool isTutorial;
+
+    [SerializeField] private bool isEndingComplete;
+    [SerializeField] private EndingType testEndingType;
 
 
     void Update()
@@ -94,6 +98,12 @@ public class GameManager : PersistentSingleton<GameManager>
     private void Start()
     {
         //soundController.PlayBGM();
+        if (isEndingComplete)
+        {
+            timeController.ProgressToNextWakeup();
+            EndingType = testEndingType;
+            roomController.DisableRoomViews();
+        }
     }
 
 
