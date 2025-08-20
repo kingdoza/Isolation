@@ -8,26 +8,26 @@ using UnityEngine.Events;
 
 public class UIController : MonoBehaviour
 {
-    [Header("ÀÌµ¿ ¹öÆ°")] [Space]
+    [Header("ï¿½Ìµï¿½ ï¿½ï¿½Æ°")] [Space]
     [SerializeField] private List<MoveButton> moveButtons;
 
-    [Header("½ÃÁ¡ ÀüÈ¯ÀÇ ÆäÀÌµå ÀÎ&¾Æ¿ô")] [Space]
+    [Header("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½&ï¿½Æ¿ï¿½")] [Space]
     [SerializeField] private CanvasGroup fadeCanvas;
     [SerializeField] private float fadeDuration;
     [SerializeField] private float fadeWait;
 
-    [Header("³¯Â¥&½Ã°£ UI")] [Space]
+    [Header("ï¿½ï¿½Â¥&ï¿½Ã°ï¿½ UI")] [Space]
     [SerializeField] private TextMeshProUGUI ampmUI;
     [SerializeField] private TextMeshProUGUI timeUI;
     [SerializeField] private TextMeshProUGUI dateUI;
     [SerializeField] private TextMeshProUGUI daysOfWeekUI;
 
-    [Header("½É»ó °ü·Ã UI")] [Space]
+    [Header("ï¿½É»ï¿½ ï¿½ï¿½ï¿½ï¿½ UI")] [Space]
     [SerializeField] private MindTreeUI mindTreeUI;
     [SerializeField] private GameObject toMindButton;
     [SerializeField] private GameObject toRoomButton;
 
-    [Header("ÁÂÃø UI »óÈ£ÀÛ¿ë")] [Space]
+    [Header("ï¿½ï¿½ï¿½ï¿½ UI ï¿½ï¿½È£ï¿½Û¿ï¿½")] [Space]
     [SerializeField] private CanvasGroup[] leftUICanvases;
 
     [HideInInspector] public UnityEvent FadeCompleteEvent = new();
@@ -139,7 +139,8 @@ public class UIController : MonoBehaviour
 
     public void ShowGameDateClock(GameDate gameDate)
     {
-        timeUI.text = gameDate.TwelveClockTimeString(out string ampm);
+        //timeUI.text = gameDate.TwelveClockTimeString(out string ampm);
+        timeUI.text = gameDate.TwentyFourClockTimeString(out string ampm);
         ampmUI.text = ampm;
         dateUI.text = gameDate.DateString;
         daysOfWeekUI.text = gameDate.DayOfWeek.ToString();

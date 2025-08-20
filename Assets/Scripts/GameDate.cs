@@ -32,7 +32,7 @@ public class GameDate : ICloneable
         30,
         31,
         30,
-        31 
+        31
     };
 
 
@@ -187,6 +187,14 @@ public class GameDate : ICloneable
             twelveClockHours = 12;
         ampm = hours >= 12 ? "PM" : "AM";
         return $"{twelveClockHours:D2}:{minutes:D2}";
+    }
+    
+
+
+    public string TwentyFourClockTimeString(out string ampm)
+    {
+        ampm = hours >= 12 ? "PM" : "AM";
+        return $"{hours:D2}:{minutes:D2}";
     }
 }
 

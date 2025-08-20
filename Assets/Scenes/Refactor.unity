@@ -12795,7 +12795,7 @@ MonoBehaviour:
   sleepDialogue:
   - "\uD604\uC900\uC774\uAC00 \uC7A0\uB4E4\uC5C8\uB2E4."
   isTest: 1
-  hours: 7
+  hours: 4
   minutes: 0
 --- !u!1 &874042126
 GameObject:
