@@ -24,3 +24,4 @@ MonoBehaviour:
   evidence_Collect: {fileID: 8300000, guid: 7edff4d72e0e31b4fa612f994a5647da, type: 3}
   computer_Keyboard: {fileID: 8300000, guid: d4d406fc360761b49a0000a126d30e32, type: 3}
   computer_Mouse: {fileID: 8300000, guid: 26f5e116a87c9bb45a28531703cbd8f8, type: 3}
+  screw_Item: {fileID: 8300000, guid: 0f7e90ac1230c384a99a5f4d6b40fd42, type: 3}
