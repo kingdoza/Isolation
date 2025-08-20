@@ -21,19 +21,19 @@ public class FocusStuff : ClickableStuff
             sfxClip = ControllerUtils.SFXClips.click1;
         if (outClip == null)
             outClip = sfxClip;
-        //focusView = Instantiate(focusPrefab);
-        //focusView.SetActive(false);
+        focusView = Instantiate(focusPrefab);
+        focusView.SetActive(false);
 
-        if (_instantiatedMap.ContainsKey(focusPrefab))
-        {
-            focusView = _instantiatedMap[focusPrefab];
-        }
-        else
-        {
-            _instantiatedMap[focusPrefab] = focusView;
-            focusView = Instantiate(focusPrefab);
-            focusView.SetActive(false);
-        }
+        // if (_instantiatedMap.ContainsKey(focusPrefab))
+        // {
+        //     focusView = _instantiatedMap[focusPrefab];
+        // }
+        // else
+        // {
+        //     _instantiatedMap[focusPrefab] = focusView;
+        //     focusView = Instantiate(focusPrefab);
+        //     focusView.SetActive(false);
+        // }
     }
 
 
