@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 8300000, guid: df1967c3bdf254d46aa12229af1b4c3c, type: 3}
   inGame: {fileID: 8300000, guid: 484e976746304084c9a24ea151e4384f, type: 3}
-  trueEnding: {fileID: 0}
+  timeoutEnding: {fileID: 0}
+  trueEnding: {fileID: 8300000, guid: 4b56f81e5a17f3e4386c6aec43bb4fd2, type: 3}
   badEnding: {fileID: 8300000, guid: 60f4ad78bdc6afb4988e879e6486202b, type: 3}
