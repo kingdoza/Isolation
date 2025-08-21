@@ -145,6 +145,10 @@ public class RoomController : MonoBehaviour {
         Vector3 cameraPos = Camera.main.transform.position;
         itemFocusedView.transform.position = new Vector3(cameraPos.x, cameraPos.y, 0);
         itemFocusedView.SetActive(true);
+        if (itemFocusedView.name.Equals("Focus_Computer(Clone)"))
+        {
+            GameManager.Instance.FilterController.SetMonitorNightFilter();
+        }
         uiController.EnableMoveButtons();
     }
 
@@ -154,6 +158,14 @@ public class RoomController : MonoBehaviour {
     {
         isFocusIn = false;
         PlaySFX(focusInClip);
+        if (itemFocusedView.name.Equals("Focus_Computer(Clone)"))
+        {
+            GameManager.Instance.FilterController.SetMotiveFilter(null, string.Empty);
+            if (Player.Instance.IsSleeping)
+                GameManager.Instance.FilterController.SetSleep();
+            else
+                GameManager.Instance.FilterController.SetWakeup();
+        }
         itemFocusedView.SetActive(false);
         MouseInteraction.EnableSubObjectInputs(currentView);
         itemFocusedView = null;

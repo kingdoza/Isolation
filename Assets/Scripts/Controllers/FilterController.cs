@@ -7,6 +7,9 @@ public class FilterController : MonoBehaviour
 {
     [SerializeField] private Volume filter;
     private ColorAdjustments colorAdjustments;
+    private Vignette vignette;
+    private float originalIntensity;
+    private float originalSmoothness;
 
 
 
@@ -14,12 +17,36 @@ public class FilterController : MonoBehaviour
     {
         if (filter.profile.TryGet(out ColorAdjustments ca))
             colorAdjustments = ca;
+        if (filter.profile.TryGet(out Vignette vn))
+            vignette = vn;
+        originalIntensity = vignette.intensity.value;
+        originalSmoothness = vignette.smoothness.value;
         Player.Instance.EvidenceCollectEvent.AddListener(SetMotiveFilter);
     }
 
 
 
-    private void SetMotiveFilter(MotiveProgress motive, string name)
+    public void SetMonitorNightFilter()
+    {
+        if (Player.Instance.IsSleeping == false)
+            return;
+        colorAdjustments.active = false;
+        vignette.intensity.value = 0.5f;
+        vignette.smoothness.value = 0.5f;
+    }
+
+
+
+    public void UnsetMonitorNightFilter()
+    {
+        colorAdjustments.active = true;
+        vignette.intensity.value = originalIntensity;
+        vignette.smoothness.value = originalSmoothness;
+    }
+
+
+
+    public void SetMotiveFilter(MotiveProgress motive, string name)
     {
         float happyProgress = Player.Instance.GetMotivePercentage(EndingType.Happy);
         float badProgress = Player.Instance.GetMotivePercentage(EndingType.Bad);
@@ -47,6 +74,8 @@ public class FilterController : MonoBehaviour
     public void SetWakeup()
     {
         colorAdjustments.active = false;
+        vignette.intensity.value = originalIntensity;
+        vignette.smoothness.value = originalSmoothness;
     }
 
 
@@ -54,5 +83,7 @@ public class FilterController : MonoBehaviour
     public void SetSleep()
     {
         colorAdjustments.active = true;
+        vignette.intensity.value = originalIntensity;
+        vignette.smoothness.value = originalSmoothness;
     }
 }
