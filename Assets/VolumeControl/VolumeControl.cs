@@ -1,6 +1,8 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using static GameData;
 
 public class SettingsController : MonoBehaviour
 {
@@ -12,7 +14,9 @@ public class SettingsController : MonoBehaviour
 
     private const float MinVolume = 0.0001f; 
     private const float MaxVolume = 1.0f; 
-    private const float DefaultVolume = 0.75f; 
+    private const float DefaultVolume = 0.5f;
+
+    private const float VolumeRate = 20f;
     //
     void Awake()
     {
@@ -27,6 +31,16 @@ public class SettingsController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
+
+    public void SetVolumes()
+    {
+        Debug.Log("SetVolumes");
+        gameAudioMixer.SetFloat("MasterVolume", ConvertToDecibel(MasterVolume));
+        gameAudioMixer.SetFloat("BGMVolume", ConvertToDecibel(BGMVolume));
+        gameAudioMixer.SetFloat("SFXVolume", ConvertToDecibel(SFXVolume));
+    }
 //
     void Start()
     {
@@ -36,27 +50,34 @@ public class SettingsController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         SetSliderRanges();
         LoadVolumeSettings();
+        //transform.parent.gameObject.SetActive(false);
+    }
+
+
+    private void OnEnable()
+    {
+        LoadVolumeSettings();
     }
 
     public void SetMasterVolume()
     {
-        float volume = Mathf.Clamp(masterSlider.value, MinVolume, MaxVolume);
-        gameAudioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("MasterVolume", volume);
+        MasterVolume = Mathf.Clamp(masterSlider.value, MinVolume, MaxVolume);
+        gameAudioMixer.SetFloat("MasterVolume", ConvertToDecibel(MasterVolume));
+        //PlayerPrefs.SetFloat("MasterVolume", volume);
     }
 
     public void SetBGMVolume()
     {
-        float volume = Mathf.Clamp(bgmSlider.value, MinVolume, MaxVolume);
-        gameAudioMixer.SetFloat("BGMVolume", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("BGMVolume", volume);
+        BGMVolume = Mathf.Clamp(bgmSlider.value, MinVolume, MaxVolume);
+        gameAudioMixer.SetFloat("BGMVolume", ConvertToDecibel(BGMVolume));
+        //PlayerPrefs.SetFloat("BGMVolume", volume);
     }
 
     public void SetSFXVolume()
     {
-        float volume = Mathf.Clamp(sfxSlider.value, MinVolume, MaxVolume);
-        gameAudioMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("SFXVolume", volume);
+        SFXVolume = Mathf.Clamp(sfxSlider.value, MinVolume, MaxVolume);
+        gameAudioMixer.SetFloat("SFXVolume", ConvertToDecibel(SFXVolume));
+        //PlayerPrefs.SetFloat("SFXVolume", volume);
     }
     private void SetSliderRanges()
 {
@@ -71,16 +92,28 @@ public class SettingsController : MonoBehaviour
 }
     private void LoadVolumeSettings()
     {
-        float masterVolume = Mathf.Clamp(PlayerPrefs.GetFloat("MasterVolume", DefaultVolume), MinVolume, MaxVolume);
-        float bgmVolume = Mathf.Clamp(PlayerPrefs.GetFloat("BGMVolume", DefaultVolume), MinVolume, MaxVolume);
-        float sfxVolume = Mathf.Clamp(PlayerPrefs.GetFloat("SFXVolume", DefaultVolume), MinVolume, MaxVolume);
+        //float masterVolume = Mathf.Clamp(PlayerPrefs.GetFloat("MasterVolume", DefaultVolume), MinVolume, MaxVolume);
+        //float bgmVolume = Mathf.Clamp(PlayerPrefs.GetFloat("BGMVolume", DefaultVolume), MinVolume, MaxVolume);
+        //float sfxVolume = Mathf.Clamp(PlayerPrefs.GetFloat("SFXVolume", DefaultVolume), MinVolume, MaxVolume);
 
-        masterSlider.value = DefaultVolume;
-        bgmSlider.value = DefaultVolume;
-        sfxSlider.value = DefaultVolume;
+        masterSlider.value = MasterVolume;
+        bgmSlider.value = BGMVolume;
+        sfxSlider.value = SFXVolume;
+        SetVolumes();
 
-        gameAudioMixer.SetFloat("MasterVolume", Mathf.Log10(masterSlider.value) * 20);
-        gameAudioMixer.SetFloat("BGMVolume", Mathf.Log10(bgmSlider.value) * 20);
-        gameAudioMixer.SetFloat("SFXVolume", Mathf.Log10(sfxSlider.value) * 20);
+        //gameAudioMixer.SetFloat("MasterVolume", Mathf.Log10(masterSlider.value) * 20);
+        //gameAudioMixer.SetFloat("BGMVolume", Mathf.Log10(bgmSlider.value) * 20);
+        //gameAudioMixer.SetFloat("SFXVolume", Mathf.Log10(sfxSlider.value) * 20);
+    }
+
+
+
+    public float ConvertToDecibel(float value)
+    {
+        if (value <= 0.0001f)
+            return -80f; // mute
+
+        // 0.5°¡ ±âÁØ ¡æ 0 dB
+        return 20f * Mathf.Log10(value / 0.5f);
     }
 }

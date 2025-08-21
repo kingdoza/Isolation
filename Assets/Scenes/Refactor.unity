@@ -18276,7 +18276,7 @@ GameObject:
   - component: {fileID: 1262774644}
   - component: {fileID: 1262774643}
   m_Layer: 5
-  m_Name: Settings
+  m_Name: Settings2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29851,6 +29851,7 @@ MonoBehaviour:
   BackGround: {fileID: 141932917}
   UIBlocker: {fileID: 1453486245}
   RC: {fileID: 1118970126}
+  settingsController: {fileID: 816717238}
   isIntroStart: 0
   isTutorial: 0
   isEndingComplete: 0

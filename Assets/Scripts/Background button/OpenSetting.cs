@@ -16,6 +16,7 @@ public class OpenSetting : MonoBehaviour
         {
             PlaySFX(SFXClips.click2);
         }
+        Debug.Log(settingsPanel);
         settingsPanel.SetActive(true);
     }
 }

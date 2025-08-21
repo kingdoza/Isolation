@@ -44,6 +44,7 @@ public class GameManager : PersistentSingleton<GameManager>
     private const float FadeInDuration = 0.8f;
     private const float FadeOutDuration = 1.6f;
     private GameObject sceneFadePanel;
+    [SerializeField] private SettingsController settingsController;
     [Header("테스트 전용")] [Space]
     [SerializeField] private bool isIntroStart;
     [SerializeField] public bool isTutorial;
@@ -92,6 +93,7 @@ public class GameManager : PersistentSingleton<GameManager>
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
+        //settingsController.SetVolumes();
     }
 
 
@@ -100,7 +102,7 @@ public class GameManager : PersistentSingleton<GameManager>
     private void Start()
     {
         //soundController.PlayBGM();
-        
+
     }
 
 

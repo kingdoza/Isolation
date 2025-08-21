@@ -2506,6 +2506,7 @@ MonoBehaviour:
   BackGround: {fileID: 0}
   UIBlocker: {fileID: 0}
   RC: {fileID: 0}
+  settingsController: {fileID: 560964998}
   isIntroStart: 0
   isTutorial: 0
   isEndingComplete: 0
