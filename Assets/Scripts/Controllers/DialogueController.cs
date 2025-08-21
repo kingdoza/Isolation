@@ -25,6 +25,7 @@ public class DialogueController : MonoBehaviour
     private UnityEvent OnDialogueClosed = new UnityEvent();
     [HideInInspector] public UnityEvent DiagloueEndEvent = new UnityEvent();
     private AudioSource typeAudioSource;
+    private bool isDelaying;
 
     public Color DarkenColor => darkenColor;
 
@@ -87,7 +88,9 @@ public class DialogueController : MonoBehaviour
 
     private IEnumerator TypeText_Co(float delay)
     {
+        isDelaying = true;
         yield return new WaitForSeconds(delay);
+        isDelaying = false;
         isTyping = true;
         textBox.text = "";
         typeAudioSource.Play();
@@ -118,6 +121,8 @@ public class DialogueController : MonoBehaviour
         {
             PlaySFX(SFXClips.click1);
         }
+        if (isDelaying)
+            return;
         if (isTyping)
         {
             CompleteDialogue();
