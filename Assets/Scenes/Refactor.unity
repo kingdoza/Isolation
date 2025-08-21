@@ -13741,7 +13741,7 @@ MonoBehaviour:
   limitDayGap: 7
   wakeupHour: 19
   sleepHour: 7
-  isWakeupStart: 1
+  isWakeupStart: 0
   wakeupDialogue:
   - "\uD604\uC900\uC774\uAC00 \uAE68\uC5B4\uB0AC\uB2E4."
   sleepDialogue:
