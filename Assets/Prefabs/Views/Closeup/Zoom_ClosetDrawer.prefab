@@ -362,7 +362,7 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 8300000, guid: 20904a5525790a64a911c639b31126f6, type: 3}
+  sfxClip: {fileID: 8300000, guid: 5d3b2499c51cc1c4ab2cbf57b9d1557b, type: 3}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
@@ -1204,7 +1204,7 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 8300000, guid: 20904a5525790a64a911c639b31126f6, type: 3}
+  sfxClip: {fileID: 8300000, guid: 5d3b2499c51cc1c4ab2cbf57b9d1557b, type: 3}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
