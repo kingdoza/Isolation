@@ -362,6 +362,7 @@ MonoBehaviour:
   bgmSource: {fileID: 115282835}
   sfxSource: {fileID: 115282834}
   bgmClips: {fileID: 11400000, guid: b6242283972221241ba33bbd0c4a70ee, type: 2}
+  sfxMixerGroup: {fileID: 0}
 --- !u!1 &251670793
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,12 +623,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c158a77ef860a884882308e5aacb448f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverCursor: {fileID: 0}
-  viewSpriteSize: {x: 0, y: 0}
   BackGround: {fileID: 0}
   UIBlocker: {fileID: 0}
   RC: {fileID: 0}
   isIntroStart: 0
+  isTutorial: 0
+  isEndingComplete: 0
+  testEndingType: 0
 --- !u!4 &934900714
 Transform:
   m_ObjectHideFlags: 0
@@ -728,8 +730,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

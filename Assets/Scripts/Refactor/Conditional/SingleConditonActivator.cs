@@ -1,4 +1,3 @@
-using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public abstract class SingleConditonActivator : ConditionalActivator

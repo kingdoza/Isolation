@@ -12791,8 +12791,8 @@ MonoBehaviour:
     minutes: 15
   startGameDate:
     years: 2025
-    months: 7
-    days: 1
+    months: 4
+    days: 14
     dayOfWeek: 0
   limitDayGap: 7
   wakeupHour: 19

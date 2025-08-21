@@ -111,11 +111,11 @@ public class Intro : MonoBehaviour
 
         if (currentPhraseIdx == phrases.Length - 1)
         {
-            phraseBox.fontSize = 70;
+            phraseBox.fontSize = 80;
             DOTween.To(
                 () => phraseBox.fontSize,
                 x => phraseBox.fontSize = x,
-                75,
+                88,
                 fadeoutDuration + fadeinDuration + holdDuration
             ).SetEase(Ease.Linear);
         }

@@ -1,7 +1,4 @@
-using System;
-using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.Audio;
 using static ControllerUtils;
 
 [RequireComponent(typeof(CursorHover))]
