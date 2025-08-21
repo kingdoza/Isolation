@@ -87,7 +87,6 @@ public class InventoryUI : MonoBehaviour
 
     public bool HasTwoScrews()
     {
-        return true;
         int screwCount = 0;
         foreach (InventorySlot slot in slots)
         {
@@ -101,7 +100,6 @@ public class InventoryUI : MonoBehaviour
 
     public void DeleteTwoScrews()
     {
-        return;
         foreach (InventorySlot slot in slots)
         {
             if (slot.Item.Type != ItemType.Screw)
