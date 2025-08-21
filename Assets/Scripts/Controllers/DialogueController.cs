@@ -25,7 +25,6 @@ public class DialogueController : MonoBehaviour
     private UnityEvent OnDialogueClosed = new UnityEvent();
     [HideInInspector] public UnityEvent DiagloueEndEvent = new UnityEvent();
     private AudioSource typeAudioSource;
-    private AudioClip clickClip;
 
     public Color DarkenColor => darkenColor;
 
@@ -33,14 +32,6 @@ public class DialogueController : MonoBehaviour
 
     private void Awake()
     {
-        if (SceneManager.GetActiveScene().name.Equals("Refactor"))
-        {
-            clickClip = SFXClips.click1;
-        }
-        else
-        {
-            clickClip = SFXClips.click2;
-        }
         typeAudioSource = gameObject.AddComponent<AudioSource>();
         SetLoopSFXAudioSource(ref typeAudioSource, SFXClips.narration);
     }
@@ -123,7 +114,10 @@ public class DialogueController : MonoBehaviour
 
     public void OnDialogueBoxClicked()
     {
-        PlaySFX(clickClip);
+        if (SceneManager.GetActiveScene().name.Equals("Refactor"))
+        {
+            PlaySFX(SFXClips.click1);
+        }
         if (isTyping)
         {
             CompleteDialogue();
