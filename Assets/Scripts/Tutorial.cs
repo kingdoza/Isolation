@@ -16,11 +16,27 @@ public class Tutorial : MonoBehaviour
             return;
         }
 
+        ShowTutorial();
+    }
+
+
+
+    private void ShowTutorial()
+    {
         foreach (GameObject panel in infoPanels)
         {
             panel.SetActive(false);
         }
+        currentIdx = 0;
+        gameObject.SetActive(true);
         infoPanels[0].SetActive(true);
+    }
+
+
+
+    public void ShowTutorial_Button()
+    {
+        ShowTutorial();
     }
 
 
