@@ -11,6 +11,7 @@ public class EvidenceStuff : DialogueStuff
     public string[] Dialogues => dialogues;
     protected override StuffTypeData StuffData => GameData.EvidenceStuffData;
     public EndingType EndingType => endingType;
+    protected bool isPlayerSleepAtClicked = false;
     private CollectStatus collectStatus = CollectStatus.Negative;
     public CollectStatus CollectStatus
     {
@@ -48,6 +49,7 @@ public class EvidenceStuff : DialogueStuff
 
     protected override string[] GetPrintTargetDialogues()
     {
+        isPlayerSleepAtClicked = Player.Instance.IsSleeping;
         if (Player.Instance.IsSleeping)
             return playerSleepDialogues;
         if (collectStatus == CollectStatus.Negative)
@@ -70,7 +72,7 @@ public class EvidenceStuff : DialogueStuff
     public override void OnDialogueClosed()
     {
         //base.OnDialogueClosed();
-        if (CollectStatus == CollectStatus.Positive && Player.Instance.IsSleeping == false)
+        if (CollectStatus == CollectStatus.Positive && isPlayerSleepAtClicked == false)
         {
             Debug.Log("Collect");
             PlaySFX(SFXClips.evidence_Collect);

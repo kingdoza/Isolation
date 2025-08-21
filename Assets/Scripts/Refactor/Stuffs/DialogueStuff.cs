@@ -29,9 +29,9 @@ public class DialogueStuff : ClickableStuff
         if (!enabled) return;
         if (dialogues.Length <= 0) return;
         OnDiaglogueStart();
+        dialogueController.StartDialogueSequence(GetPrintTargetDialogues());
         base.OnClicked();
         dialogueController.DiagloueEndEvent.AddListener(OnDialogueClosed);
-        dialogueController.StartDialogueSequence(GetPrintTargetDialogues());
     }
 
 
