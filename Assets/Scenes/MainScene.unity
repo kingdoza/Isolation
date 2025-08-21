@@ -2490,7 +2490,7 @@ MonoBehaviour:
   BackGround: {fileID: 0}
   UIBlocker: {fileID: 0}
   RC: {fileID: 0}
-  isIntroStart: 0
+  isIntroStart: 1
   isTutorial: 0
   isEndingComplete: 1
   testEndingType: 0

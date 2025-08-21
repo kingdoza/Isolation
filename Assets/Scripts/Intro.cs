@@ -61,7 +61,15 @@ public class Intro : MonoBehaviour
             }
         });
         seq.Append(phrasePanel.DOFade(1f, fadeinDuration));
-        seq.AppendInterval(holdDuration);
+        seq.AppendInterval(holdDuration / 2);
+        seq.AppendCallback(() =>
+        {
+            if (currentPhraseIdx >= phrases.Length - 1) // 조건 예시: 짝수번째 문장일 때
+            {
+                GameManager.Instance.SoundController.FadeOutBGM(holdDuration / 2 + fadeoutDuration);
+            }
+        });
+        seq.AppendInterval(holdDuration / 2);
         seq.Append(phrasePanel.DOFade(0f, fadeoutDuration));
         seq.OnComplete(SkipNextPhrase);
         seq.Play();
