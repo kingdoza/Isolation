@@ -32,8 +32,9 @@ public class BackPlateClose : ConditionalActivator, ITriggerEventSendable
 
 
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         isClose = true;
         TriggerChangeAction?.Invoke();
     }
