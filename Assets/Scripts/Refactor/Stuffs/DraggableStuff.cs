@@ -61,7 +61,7 @@ public class DraggableStuff : BaseStuff
 
     private void OnDragStop()
     {
-        draggingSource.Pause();
+        draggingSource.Stop();
     }
 
 
