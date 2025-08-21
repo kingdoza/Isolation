@@ -53,13 +53,6 @@ public class Intro : MonoBehaviour
         //phraseBox.text = phrases[currentPhraseIdx];
         ApplyPhraseText();
         DG.Tweening.Sequence seq = DOTween.Sequence();
-        seq.AppendCallback(() =>
-        {
-            if (currentPhraseIdx >= phrases.Length - 1) // 조건 예시: 짝수번째 문장일 때
-            {
-                GameManager.Instance.SoundController.FadeOutBGM(holdDuration + fadeinDuration + fadeoutDuration);
-            }
-        });
         seq.Append(phrasePanel.DOFade(1f, fadeinDuration));
         seq.AppendInterval(holdDuration / 2);
         seq.AppendCallback(() =>
@@ -70,6 +63,13 @@ public class Intro : MonoBehaviour
             }
         });
         seq.AppendInterval(holdDuration / 2);
+        //seq.AppendCallback(() =>
+        //{
+        //    if (currentPhraseIdx >= phrases.Length - 1) // 조건 예시: 짝수번째 문장일 때
+        //    {
+        //        GameManager.Instance.SoundController.FadeOutBGM(fadeoutDuration);
+        //    }
+        //});
         seq.Append(phrasePanel.DOFade(0f, fadeoutDuration));
         seq.OnComplete(SkipNextPhrase);
         seq.Play();
