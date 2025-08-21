@@ -36,6 +36,7 @@ public class Tutorial : MonoBehaviour
 
     public void ShowTutorial_Button()
     {
+        PlaySFX(SFXClips.click1);
         ShowTutorial();
     }
 
