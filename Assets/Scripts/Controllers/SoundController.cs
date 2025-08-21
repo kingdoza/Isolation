@@ -53,6 +53,13 @@ public class SoundController : MonoBehaviour
 
 
 
+    private void Awake()
+    {
+        bgmSource.loop = true;
+    }
+
+
+
     public void PlaySFX(AudioClip sfxClip)
     {
         if (sfxClip == null)
