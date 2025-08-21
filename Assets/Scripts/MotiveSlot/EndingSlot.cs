@@ -11,7 +11,8 @@ public class EndingSlot : MotiveSlot
     public override void Collected(MindTreeUI mindTreeUI)
     {
         transform.Find("Fill").GetComponent<Image>().color = mindTreeUI.FinalSlotColor;
-        ShowPopup();
+        GameManager.Instance.DialogueController.StartDialogueSequence(new string[] { evidenceMessage }, 0.5f);
+        //ShowPopup();
         UIColorController.Instance.ChangeImageColor();
     }
 

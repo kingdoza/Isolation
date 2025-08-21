@@ -27911,8 +27911,8 @@ MonoBehaviour:
   UIBlocker: {fileID: 1453486245}
   RC: {fileID: 1118970126}
   isIntroStart: 0
-  isTutorial: 1
-  isEndingComplete: 1
+  isTutorial: 0
+  isEndingComplete: 0
   testEndingType: 1
 --- !u!4 &1921262178
 Transform:
