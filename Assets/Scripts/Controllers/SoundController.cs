@@ -8,8 +8,8 @@ public class SoundController : MonoBehaviour
     [SerializeField] private AudioSource bgmSource;
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private BGMLibrary bgmClips;
-    public static float BGM_Volume = 0.5f;
-    public static float SFX_Volume = 0.6f;
+    public static float BGM_Volume = 1.0f;
+    public static float SFX_Volume = 0.8f;
     private const float FadeDuration = 1.8f;
     public static SoundController instance;
     public static SoundController Instance => instance;
