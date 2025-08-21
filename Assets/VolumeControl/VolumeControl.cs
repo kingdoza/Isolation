@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class SettingsController : MonoBehaviour
 {
@@ -75,12 +75,12 @@ public class SettingsController : MonoBehaviour
         float bgmVolume = Mathf.Clamp(PlayerPrefs.GetFloat("BGMVolume", DefaultVolume), MinVolume, MaxVolume);
         float sfxVolume = Mathf.Clamp(PlayerPrefs.GetFloat("SFXVolume", DefaultVolume), MinVolume, MaxVolume);
 
-        masterSlider.value = masterVolume;
-        bgmSlider.value = bgmVolume;
-        sfxSlider.value = sfxVolume;
+        masterSlider.value = DefaultVolume;
+        bgmSlider.value = DefaultVolume;
+        sfxSlider.value = DefaultVolume;
 
-        gameAudioMixer.SetFloat("MasterVolume", Mathf.Log10(masterVolume) * 20);
-        gameAudioMixer.SetFloat("BGMVolume", Mathf.Log10(bgmVolume) * 20);
-        gameAudioMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVolume) * 20);
+        gameAudioMixer.SetFloat("MasterVolume", Mathf.Log10(masterSlider.value) * 20);
+        gameAudioMixer.SetFloat("BGMVolume", Mathf.Log10(bgmSlider.value) * 20);
+        gameAudioMixer.SetFloat("SFXVolume", Mathf.Log10(sfxSlider.value) * 20);
     }
 }
