@@ -362,7 +362,7 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: cd2e686b15ee64840b018f8f181f592e, type: 3}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
@@ -561,7 +561,7 @@ MonoBehaviour:
   interactItem: 3
   wakeEnabled: 0
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: a3860bcbd13a0054f94a31265d9fbc83, type: 3}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
@@ -1204,7 +1204,7 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: cd2e686b15ee64840b018f8f181f592e, type: 3}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
@@ -1624,7 +1624,7 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: 550444b032a2d814a92725151318165c, type: 3}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
@@ -1777,13 +1777,14 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: 8a273aa22e69f5447b2ec18add891499, type: 3}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
   isItemOnce: 0
   focusPrefab: {fileID: 6907309563162764960, guid: 13a6a18187bdb134180e1f8beff1d804, type: 3}
+  outClip: {fileID: 8300000, guid: b424cb3a56e480643ac7387c5f618136, type: 3}
 --- !u!60 &333621438718260464
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2169,7 +2170,7 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: 550444b032a2d814a92725151318165c, type: 3}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:

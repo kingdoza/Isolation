@@ -823,6 +823,12 @@ MonoBehaviour:
   DragStartEvent:
     m_PersistentCalls:
       m_Calls: []
+  DragStopEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DragResumeEvent:
+    m_PersistentCalls:
+      m_Calls: []
   limitMarker1: {fileID: 3717622098807948657}
   limitMarker2: {fileID: 4113039342221580747}
 --- !u!114 &2067983670753676438
@@ -863,6 +869,9 @@ MonoBehaviour:
   sleepEnabled: 1
   sfxClip: {fileID: 0}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  pickClip: {fileID: 0}
+  dragClip: {fileID: 8300000, guid: a2bacf14376d0cc4a92513cec4ff4692, type: 3}
+  putClip: {fileID: 0}
 --- !u!60 &2082608397826644917
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1249,6 +1258,7 @@ MonoBehaviour:
       m_Calls: []
   isItemOnce: 0
   zoomPrefab: {fileID: 6907309563162764960, guid: e3fb2f752020fc24fbcf392b668b0a77, type: 3}
+  outClip: {fileID: 0}
 --- !u!114 &9197097793188574116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2270,6 +2280,7 @@ MonoBehaviour:
       m_Calls: []
   isItemOnce: 0
   zoomPrefab: {fileID: 6038186748799628573, guid: 5fc5fa4450e404643bdf10df35e224a4, type: 3}
+  outClip: {fileID: 0}
 --- !u!60 &2573734234768658528
 PolygonCollider2D:
   m_ObjectHideFlags: 0

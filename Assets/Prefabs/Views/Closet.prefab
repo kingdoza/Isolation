@@ -1888,14 +1888,14 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 0}
+  sfxClip: {fileID: 8300000, guid: e0f0da1bf1e96a9439c7c552d3dcd5d9, type: 3}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
       m_Calls: []
   isItemOnce: 0
   zoomPrefab: {fileID: 6907309563162764960, guid: 66e6fc4bb142d614daf5e4582d6732b8, type: 3}
-  outClip: {fileID: 0}
+  outClip: {fileID: 8300000, guid: 6732089cea635ba45979431aecc56fcc, type: 3}
 --- !u!114 &7580661118237990577
 MonoBehaviour:
   m_ObjectHideFlags: 0

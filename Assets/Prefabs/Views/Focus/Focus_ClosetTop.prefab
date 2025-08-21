@@ -812,6 +812,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6565610391297708648, guid: 42010691f0175104da671aba8f652974, type: 3}
+      propertyPath: sfxClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 27c6168c2885ffa4c87a278f0c046e25, type: 3}
     - target: {fileID: 6907309563162764960, guid: 42010691f0175104da671aba8f652974, type: 3}
       propertyPath: m_Name
       value: DeliveryBox
