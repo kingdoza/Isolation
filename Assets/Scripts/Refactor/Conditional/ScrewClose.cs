@@ -14,9 +14,9 @@ public class ScrewClose : ConditionalActivator, ITriggerEventSendable
         {
             if (isLoose != value)
             {
+                isLoose = value;
                 TriggerChangeAction?.Invoke();
             }
-            isLoose = value;
         }
     }
 

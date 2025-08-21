@@ -28,6 +28,7 @@ public class ScrewsLooseTrigger : ConditionalActivator, ITriggerEventSendable
 
     public bool GetTriggerValue()
     {
+        Debug.Log("ScrewsLooseTrigger : " + screwsClose.GetValue(EvaluateType.AND));
         return screwsClose.GetValue(EvaluateType.AND);
     }
 
