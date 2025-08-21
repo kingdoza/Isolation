@@ -65,6 +65,7 @@ public class GameManager : PersistentSingleton<GameManager>
             if (!isActive)
             {
                 Time.timeScale = 0f;
+                sceneFadePanel.SetActive(false);
                 roomController.enabled = false;
                 if (!Player.Instance.IsUsingItemTypeMatched(ItemType.None))
                     ItemCursor.Instance.Disable();
@@ -99,12 +100,7 @@ public class GameManager : PersistentSingleton<GameManager>
     private void Start()
     {
         //soundController.PlayBGM();
-        if (isEndingComplete)
-        {
-            timeController.ProgressToNextWakeup();
-            EndingType = testEndingType;
-            roomController.DisableRoomViews();
-        }
+        
     }
 
 
@@ -200,6 +196,7 @@ public class GameManager : PersistentSingleton<GameManager>
         {
             //if (isIntroStart == false)
             ////PlayBGM(BGMClips.main, true);
+            EndingType = EndingType.None;
             soundController.FadeInBGM(BGMClips.main, FadeInDuration);
         }
         if (scene.name == "Clock")
@@ -243,6 +240,8 @@ public class GameManager : PersistentSingleton<GameManager>
 
     private void StartStage()
     {
+        
+
         //나중에 FindAnyObjectByType 는 전부 최적화 필요, 모든 컨트롤러들은 Controllers 안에 있으니
         roomController = FindAnyObjectByType<RoomController>();
         uiController = FindAnyObjectByType<UIController>();
@@ -263,5 +262,16 @@ public class GameManager : PersistentSingleton<GameManager>
         timeController.InitGameTime();
         uiController.InitMindTreeUI();
         dialogueController.DisableDialoguePanel();
+
+        if (isEndingComplete)
+        {
+            timeController.ProgressToNextWakeup();
+            EndingType = testEndingType;
+            roomController.DisableRoomViews();
+        }
+        else
+        {
+            EndingType = EndingType.None;
+        }
     }
 }

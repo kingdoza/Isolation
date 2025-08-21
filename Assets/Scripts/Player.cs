@@ -30,7 +30,8 @@ public class Player : SceneSingleton<Player>, ITriggerEventSendable
 
     protected override void Awake()
     {
-        Debug.Log("Player Awake");
+        base.Awake();
+        Debug.Log("Player Awake : " + isSleeping);
         TriggerEventController.Instance.PlayerWakeup = this;
     }
 

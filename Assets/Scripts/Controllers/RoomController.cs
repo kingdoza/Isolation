@@ -252,7 +252,8 @@ public class RoomController : MonoBehaviour {
         --currentRoom.ViewIndex;
         ChangeRoomView(currentRoom.CurrentView);
         //timeController.ProgressMinutes(ProgressTimeType.Move);
-        timeController.ProgressMinutes(GameData.MoveSidewayMinutes);
+        if (GameManager.Instance.EndingType == EndingType.None)
+            timeController.ProgressMinutes(GameData.MoveSidewayMinutes);
     }
 
 
@@ -263,7 +264,8 @@ public class RoomController : MonoBehaviour {
         ++currentRoom.ViewIndex;
         ChangeRoomView(currentRoom.CurrentView);
         //timeController.ProgressMinutes(ProgressTimeType.Move);
-        timeController.ProgressMinutes(GameData.MoveSidewayMinutes);
+        if(GameManager.Instance.EndingType == EndingType.None)
+            timeController.ProgressMinutes(GameData.MoveSidewayMinutes);
     }
 
 

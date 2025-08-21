@@ -73,6 +73,7 @@ public class FilterController : MonoBehaviour
 
     public void SetWakeup()
     {
+        Debug.Log("Set Filter Wakeup");
         colorAdjustments.active = false;
         vignette.intensity.value = originalIntensity;
         vignette.smoothness.value = originalSmoothness;
@@ -82,6 +83,7 @@ public class FilterController : MonoBehaviour
 
     public void SetSleep()
     {
+        Debug.Log("Set Filter Sleep");
         colorAdjustments.active = true;
         vignette.intensity.value = originalIntensity;
         vignette.smoothness.value = originalSmoothness;

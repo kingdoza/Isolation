@@ -1,3 +1,4 @@
+using DG.Tweening.Core.Easing;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
@@ -131,6 +132,8 @@ public class TimeController : SceneSingleton<TimeController>
 
     private void OnTimeStatusChanged(bool isWakeup)
     {
+        Debug.Log("OnTimeStatusChanged - EndingType : " + GameManager.Instance.EndingType);
+        Debug.Log("OnTimeStatusChanged - IsSleeping : " + Player.Instance.IsSleeping + ", " + isWakeup);
         if (GameManager.Instance.EndingType != EndingType.None)
             return;
         if (Player.Instance.IsSleeping != isWakeup)
