@@ -1647,7 +1647,7 @@ MonoBehaviour:
   sfxClip: {fileID: 0}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   pickClip: {fileID: 8300000, guid: 549d27788aac1414888e9f308e0931f4, type: 3}
-  dragClip: {fileID: 8300000, guid: 377e4f792aa29b74ba4447087cd1f77e, type: 3}
+  dragClip: {fileID: 8300000, guid: e093202ebd8286443b7ed9ef0d0fde02, type: 3}
   putClip: {fileID: 8300000, guid: 134b56037cd2ae74e88d99301e82085b, type: 3}
   highestSortLayer: {fileID: 8085795009795336433}
 --- !u!1 &3419108795454361022

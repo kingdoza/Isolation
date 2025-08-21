@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49440f5099f5ac7448506fc998eba53c, type: 3}
   m_Name: SO_SFXClips
   m_EditorClassIdentifier: 
-  click1: {fileID: 8300000, guid: 93a52ba01a0a06e4391deb83e647805a, type: 3}
-  click2: {fileID: 8300000, guid: 21c6d65c3c86edd47beefafa32adf8f9, type: 3}
-  narration: {fileID: 8300000, guid: 8793da6ef68e74d46b566ad7d908f004, type: 3}
-  tutorial: {fileID: 8300000, guid: 45772fe6a5ed5fb478619b2f455eb475, type: 3}
-  door_Lock: {fileID: 8300000, guid: 1254ec960c054774389cdcaa27864653, type: 3}
-  door_Handle: {fileID: 8300000, guid: e47f3d4037c758d42b9de95bfb4188c1, type: 3}
+  click1: {fileID: 8300000, guid: 39bf5ba8e03967943bb494dcbabb16b7, type: 3}
+  click2: {fileID: 8300000, guid: c1c0c8373266c66418cc33adec642969, type: 3}
+  narration: {fileID: 8300000, guid: 7f1ad8749f850c440939b19639d5fb97, type: 3}
+  tutorial: {fileID: 8300000, guid: 14516f701fa7a9546badc5e8a64f83f9, type: 3}
+  door_Lock: {fileID: 8300000, guid: 287aa9a8a2cfa634d8182c1abd6e2f8f, type: 3}
+  door_Handle: {fileID: 8300000, guid: f33db914e9217bd4c8fce2dfac793ef1, type: 3}
   door_Open: {fileID: 8300000, guid: 6f77b784b8f040b4f8e8699a30bd8fa9, type: 3}
   lightSwitch_Off: {fileID: 8300000, guid: a6f6e0c76ec106c468fd85fa53245842, type: 3}
   lightSwitch_On: {fileID: 8300000, guid: 1ac7aaf4bdb62494d83b855a8d4bd70f, type: 3}

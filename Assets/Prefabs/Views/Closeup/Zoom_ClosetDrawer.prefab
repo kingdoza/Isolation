@@ -362,7 +362,7 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 8300000, guid: cd2e686b15ee64840b018f8f181f592e, type: 3}
+  sfxClip: {fileID: 8300000, guid: 20904a5525790a64a911c639b31126f6, type: 3}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
@@ -1204,7 +1204,7 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 8300000, guid: cd2e686b15ee64840b018f8f181f592e, type: 3}
+  sfxClip: {fileID: 8300000, guid: 20904a5525790a64a911c639b31126f6, type: 3}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
@@ -1624,7 +1624,7 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 8300000, guid: 550444b032a2d814a92725151318165c, type: 3}
+  sfxClip: {fileID: 8300000, guid: 8ec464c619747c847bf92e0aba72afd5, type: 3}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
@@ -2170,7 +2170,7 @@ MonoBehaviour:
   interactItem: 0
   wakeEnabled: 1
   sleepEnabled: 1
-  sfxClip: {fileID: 8300000, guid: 550444b032a2d814a92725151318165c, type: 3}
+  sfxClip: {fileID: 8300000, guid: 8ec464c619747c847bf92e0aba72afd5, type: 3}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   ClickEvent:
     m_PersistentCalls:
