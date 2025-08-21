@@ -173,7 +173,7 @@ public class TimeController : SceneSingleton<TimeController>
         GameManager.Instance.UIController.DisableMoveButtons();
         GameManager.Instance.DialogueController.DiagloueEndEvent.AddListener(OnDiaglogueClosed);
         string[] dialogues = Player.Instance.IsSleeping ? sleepDialogue : wakeupDialogue;
-        GameManager.Instance.DialogueController.StartDialogueSequence(dialogues);
+        GameManager.Instance.DialogueController.StartDialogueSequence(dialogues, 0.5f);
     }
 
 
