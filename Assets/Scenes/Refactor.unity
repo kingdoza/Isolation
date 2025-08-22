@@ -8141,7 +8141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2eb647ca89e26a4db8891655e61e492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sentivity: 0.6
+  sentivity: 0.5
   smoothTime: 0.05
   rightLayout: {fileID: 2060738835}
 --- !u!114 &519420036
