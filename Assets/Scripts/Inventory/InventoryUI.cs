@@ -100,8 +100,16 @@ public class InventoryUI : MonoBehaviour
 
     public void DeleteTwoScrews()
     {
-        foreach (InventorySlot slot in slots)
+        //foreach (InventorySlot slot in slots)
+        //{
+        //    if (slot.Item.Type != ItemType.Screw)
+        //        continue;
+        //    DeleteSlot(slot);
+        //}
+
+        for (int i = slots.Count - 1; i >= 0; i--)
         {
+            InventorySlot slot = slots[i];
             if (slot.Item.Type != ItemType.Screw)
                 continue;
             DeleteSlot(slot);
