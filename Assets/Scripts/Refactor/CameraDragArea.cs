@@ -46,12 +46,13 @@ public class CameraDragArea : MouseInteraction
 
     private void Update()
     {
-        mainCamera.transform.position = Vector3.SmoothDamp(
-            mainCamera.transform.position,
-            targetPosition,
-            ref smoothVel,
-            _camDragData.SmoothTime
-        );
+        mainCamera.transform.position = targetPosition;
+        //mainCamera.transform.position = Vector3.SmoothDamp(
+        //    mainCamera.transform.position,
+        //    targetPosition,
+        //    ref smoothVel,
+        //    _camDragData.SmoothTime
+        //);
     }
 
 
@@ -94,6 +95,7 @@ public class CameraDragArea : MouseInteraction
     public override void OnInteractStart()
     {
         targetPosition = mainCamera.transform.position;
+        //dragOrigin = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, mainCamera.transform.position.z));
         dragOrigin = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         dragDistance = 0;
     }
