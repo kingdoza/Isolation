@@ -37,11 +37,13 @@ public class FrameBack : ConditionalActivator
     {
         if (screwsTightTrigger.GetValue())
         {
+            GameManager.Instance.UIController.EnableMoveButtons();
             inactiveStuff.enabled = false;
             clickableStuff.enabled = true;
         }
         else
         {
+            GameManager.Instance.UIController.DisableMoveButtons();
             clickableStuff.enabled = false;
             inactiveStuff.enabled = true;
         }

@@ -273,7 +273,7 @@ MonoBehaviour:
     globalType: 0
     targetComponent: {fileID: 0}
   interactItem: 0
-  wakeEnabled: 0
+  wakeEnabled: 1
   sleepEnabled: 1
   sfxClip: {fileID: 0}
   hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

@@ -22,7 +22,7 @@ public class ScreenStuff : ClickableStuff
 
     private void Update()
     {
-        if (inputComp.IsEnabled && Input.anyKeyDown && !Input.GetMouseButtonDown(0) && !Input.GetMouseButtonDown(1))
+        if (Player.Instance.IsSleeping && inputComp.IsEnabled && Input.anyKeyDown && !Input.GetMouseButtonDown(0) && !Input.GetMouseButtonDown(1))
         {
             PlaySFX(SFXClips.computer_Keyboard);
         }

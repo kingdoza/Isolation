@@ -23,6 +23,7 @@ public class Tutorial : MonoBehaviour
 
     private void ShowTutorial()
     {
+        GameManager.Instance.UIController.DisableMoveButtons();
         foreach (GameObject panel in infoPanels)
         {
             panel.SetActive(false);
@@ -48,6 +49,7 @@ public class Tutorial : MonoBehaviour
         infoPanels[currentIdx++].SetActive(false);
         if (currentIdx >= infoPanels.Length)
         {
+            GameManager.Instance.UIController.EnableMoveButtons();
             gameObject.SetActive(false);
             GameManager.Instance.isTutorial = false;
             return;
