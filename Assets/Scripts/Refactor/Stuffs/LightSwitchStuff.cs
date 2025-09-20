@@ -13,6 +13,12 @@ public class LightSwitchStuff : ClickableStuff
     {
         if (!enabled) return;
         base.OnClicked();
+        if (GameManager.Instance.TimeController.IsLastDay())
+        {
+            GameManager.Instance.UIController.ShowLightSwitchWarning();
+            return;
+        }
+
         if (Player.Instance.IsSleeping == false)
         {
             PlaySFX(SFXClips.lightSwitch_Off);

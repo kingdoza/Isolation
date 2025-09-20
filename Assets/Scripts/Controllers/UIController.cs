@@ -29,6 +29,7 @@ public class UIController : MonoBehaviour
 
     [Header("���� UI ��ȣ�ۿ�")] [Space]
     [SerializeField] private CanvasGroup[] leftUICanvases;
+    [SerializeField] private GameObject lightSwitchWarning;
 
     [HideInInspector] public UnityEvent FadeCompleteEvent = new();
 
@@ -38,6 +39,7 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
+        lightSwitchWarning.SetActive(false);
         RegisterDragScrollCondition(() => !mindTreeUI.gameObject.activeSelf);
         GameManager.Instance.Player.OnInventoryItemSelect.AddListener(OnPlayerItemSelected);
         Player.Instance.ItemSelectEvent.AddListener((ItemData) => DisableLeftUI());
@@ -218,6 +220,36 @@ public class UIController : MonoBehaviour
             uiCanvas.interactable = false;
             uiCanvas.blocksRaycasts = false;
         }
+    }
+
+
+
+    public void ShowLightSwitchWarning()
+    {
+        lightSwitchWarning.SetActive(true);
+    }
+
+
+
+    public void HideLightSwitchWarning()
+    {
+        lightSwitchWarning.SetActive(false);
+    }
+
+
+
+    public void LightSwitch()
+    {
+        HideLightSwitchWarning();
+        if (Player.Instance.IsSleeping == false)
+        {
+            PlaySFX(SFXClips.lightSwitch_Off);
+        }
+        else
+        {
+            PlaySFX(SFXClips.lightSwitch_On);
+        }
+        TimeController.Instance.TimeOver();
     }
 
 

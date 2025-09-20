@@ -201,7 +201,7 @@ public class TimeController : SceneSingleton<TimeController>
 
 
 
-    private void TimeOver()
+    public void TimeOver()
     {
         Debug.Log("Time Over!!!");
         SetCursorTexture();
