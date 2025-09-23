@@ -54,7 +54,16 @@ public class TimeController : SceneSingleton<TimeController>
         uiController.ShowGameDateClock(currentGameDate);
         isTimeChanged = false;
 
-        progressionDict = new Dictionary<ProgressTimeType, int>();
+        if (isWakeupStart)
+        {
+            Player.Instance.Wakeup();
+        }
+        else
+        {
+            Player.Instance.Sleep();
+        }
+
+            progressionDict = new Dictionary<ProgressTimeType, int>();
         foreach (var prog in minuteProgressions)
         {
             progressionDict[prog.type] = prog.minutes;

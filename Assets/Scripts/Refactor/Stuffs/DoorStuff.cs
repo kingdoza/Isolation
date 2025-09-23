@@ -9,17 +9,17 @@ public class DoorStuff : ClickableStuff
     protected override StuffTypeData StuffData => GameData.DoorStuffData;
     [SerializeField] private float dialogueDelay;
     [HideInInspector] public bool canOpen = false;
+    private Tutorial tutorial;
 
 
     protected override void Awake()
     {
         base.Awake();
+        tutorial = FindAnyObjectByType<Tutorial>();
         //inputComp.DisableInput()
+        tutorial.TutorialStartEvent.AddListener(() => inputComp.DisableInput());
+        tutorial.TutorialEndEvent.AddListener(() => inputComp.EnableInput());
     }
-
-
-
-    //protected override void ChangeInputStatus() { }
 
 
 

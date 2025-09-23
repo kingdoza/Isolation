@@ -29,11 +29,13 @@ public class RoomController : MonoBehaviour {
     private Stack<GameObject> zoomStack = new Stack<GameObject>();
     private AudioClip focusInClip;
     private Stack<AudioClip> zoomClipStack = new Stack<AudioClip>();
+    private Tutorial tutorial;
 
 
 
     private void Awake()
     {
+        tutorial = FindAnyObjectByType<Tutorial>();
     }
 
 
@@ -215,6 +217,11 @@ public class RoomController : MonoBehaviour {
         //DragScroller.CanDrag = false;
         ChangeRoomView(newView);
         //timeController.ProgressMinutes(ProgressTimeType.ZoomIn);
+
+        if (tutorial.IsProgessing)
+        {
+            tutorial.gameObject.SetActive(false);
+        }
     }
 
 
@@ -235,6 +242,11 @@ public class RoomController : MonoBehaviour {
 
         //Camera.main.gameObject.GetComponent<DragScroller>().InitPosAndSetView(currentView);
         uiController.EnableMoveButtons();
+
+        if (tutorial.IsProgessing)
+        {
+            //GameManager.Instance.UIController.DisableMoveButtons();
+        }
     }
 
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using static ControllerUtils;
 
 public class Tutorial : MonoBehaviour
@@ -8,6 +9,9 @@ public class Tutorial : MonoBehaviour
     //[SerializeField] private GameObject background;
     private Transform uiOriginParent;
     private int currentIdx = 0;
+    public bool IsProgessing { get; private set; } = false;
+    [HideInInspector] public UnityEvent TutorialStartEvent;
+    [HideInInspector] public UnityEvent TutorialEndEvent;
 
 
 
@@ -20,6 +24,7 @@ public class Tutorial : MonoBehaviour
             return;
         }
 
+        GameManager.Instance.UIController.FadeCompleteEvent.AddListener(OnFadeComplete);
         ShowTutorial();
     }
 
@@ -27,8 +32,11 @@ public class Tutorial : MonoBehaviour
 
     private void ShowTutorial()
     {
+        TutorialStartEvent?.Invoke();
+        IsProgessing = true;
         //background.SetActive(true);
         GameManager.Instance.UIController.DisableMoveButtons();
+        GameManager.Instance.UIController.DeactiveMindTree();
         foreach (InfoEntry infoEntry in infoEntries)
         {
             infoEntry.infoPanel.SetActive(false);
@@ -37,6 +45,20 @@ public class Tutorial : MonoBehaviour
         gameObject.SetActive(true);
         //infoEntries[0].infoPanel.SetActive(true);
         ActiveInfoAt(0);
+    }
+
+
+
+    private void OnFadeComplete()
+    {
+        Debug.Log("OnFadeComplete : " + IsProgessing);
+        if (IsProgessing == false)
+            return;
+        if (GameManager.Instance.RoomController.IsZoomIn)
+            return;
+        gameObject.SetActive(true);
+        transform.GetChild(0).GetComponent<CanvasGroup>().blocksRaycasts = true;
+        SkipNextPanel(false);
     }
 
 
@@ -53,6 +75,23 @@ public class Tutorial : MonoBehaviour
             uiOriginParent = infoEntries[idx].topLayerObject.transform.parent;
             infoEntries[idx].topLayerObject.transform.SetParent(transform);
         }
+
+        if (infoEntries[idx].isSwitch)
+        {
+            EnableSwitchZoom();
+        }
+        if (infoEntries[idx].isMindTree)
+        {
+            GameManager.Instance.UIController.ActiveMindTree();
+        }
+    }
+
+
+
+    private void EnableSwitchZoom()
+    {
+        //transform.GetChild(0).GetComponent<CanvasGroup>().interactable = false;
+        transform.GetChild(0).GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 
 
@@ -66,6 +105,7 @@ public class Tutorial : MonoBehaviour
         infoEntries[idx].topLayerObject.SetActive(false);
         if (infoEntries[idx].isObject == false)
         {
+            Debug.Log("DeactiveInfoAt : " + infoEntries[idx].topLayerObject + ", " + uiOriginParent);
             infoEntries[idx].topLayerObject.SetActive(true);
             infoEntries[idx].topLayerObject.transform.SetParent(uiOriginParent);
         }
@@ -75,14 +115,27 @@ public class Tutorial : MonoBehaviour
 
     public void ShowTutorial_Button()
     {
+        if (IsProgessing)
+            return;
         PlaySFX(SFXClips.click1);
         ShowTutorial();
     }
 
 
 
-    public void SkipNextPanel()
+    public void SkipNextPanel_Button()
     {
+        SkipNextPanel(true);
+    }
+
+
+
+    public void SkipNextPanel(bool checkSwitch = true)
+    {
+        Debug.Log("SkipNextPanel");
+        if (checkSwitch && (infoEntries[currentIdx].isSwitch || infoEntries[currentIdx].isMindTree))
+            return;
+
         PlaySFX(SFXClips.tutorial);
         DeactiveInfoAt(currentIdx++);
         //infoEntries[currentIdx++].infoPanel.SetActive(false);
@@ -92,6 +145,8 @@ public class Tutorial : MonoBehaviour
             gameObject.SetActive(false);
             //background.SetActive(false);
             GameManager.Instance.isTutorial = false;
+            IsProgessing = false;
+            TutorialEndEvent?.Invoke();
             return;
         }
         //infoEntries[currentIdx].infoPanel.SetActive(true);
@@ -117,4 +172,6 @@ public class InfoEntry
     public GameObject infoPanel;
     public GameObject topLayerObject;
     public bool isObject;
+    public bool isSwitch;
+    public bool isMindTree;
 }

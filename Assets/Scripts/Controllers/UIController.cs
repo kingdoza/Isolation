@@ -33,12 +33,15 @@ public class UIController : MonoBehaviour
 
     [HideInInspector] public UnityEvent FadeCompleteEvent = new();
 
+    private Tutorial tutorial;
+
     private bool isFading = false;
     public bool IsFading => isFading;
 
 
     private void Start()
     {
+        tutorial = FindAnyObjectByType<Tutorial>();
         lightSwitchWarning.SetActive(false);
         RegisterDragScrollCondition(() => !mindTreeUI.gameObject.activeSelf);
         GameManager.Instance.Player.OnInventoryItemSelect.AddListener(OnPlayerItemSelected);
@@ -76,6 +79,8 @@ public class UIController : MonoBehaviour
 
     public void EnableMoveButtons()
     {
+        if (tutorial && tutorial.IsProgessing)
+            return;
         MoveDirection[] zoomOutDirs = { MoveDirection.Left, MoveDirection.Right };
         MoveDirection[] zoomInDirs = { MoveDirection.Down };
 
@@ -152,6 +157,10 @@ public class UIController : MonoBehaviour
 
     public void EnableMindTree_Button()
     {
+        if (tutorial.IsProgessing)
+        {
+            tutorial.SkipNextPanel(false);
+        }
         PlaySFX(SFXClips.click2);
         EnableMindTree();
     }
@@ -200,7 +209,25 @@ public class UIController : MonoBehaviour
 
 
 
-    private void EnableLeftUI()
+    public void DeactiveMindTree()
+    {
+        toMindButton.GetComponent<CanvasGroup>().alpha = 0.5f;
+        toMindButton.GetComponent<CanvasGroup>().interactable = false;
+        toMindButton.GetComponent<CanvasGroup>().blocksRaycasts = false;
+    }
+
+
+
+    public void ActiveMindTree()
+    {
+        toMindButton.GetComponent<CanvasGroup>().alpha = 1;
+        toMindButton.GetComponent<CanvasGroup>().interactable = true;
+        toMindButton.GetComponent<CanvasGroup>().blocksRaycasts = true;
+    }
+
+
+
+    public void EnableLeftUI()
     {
         foreach (CanvasGroup uiCanvas in leftUICanvases)
         {
@@ -212,7 +239,7 @@ public class UIController : MonoBehaviour
 
 
 
-    private void DisableLeftUI()
+    public void DisableLeftUI()
     {
         foreach (CanvasGroup uiCanvas in leftUICanvases)
         {
