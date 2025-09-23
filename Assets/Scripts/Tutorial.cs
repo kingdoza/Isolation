@@ -141,12 +141,12 @@ public class Tutorial : MonoBehaviour
         //infoEntries[currentIdx++].infoPanel.SetActive(false);
         if (currentIdx >= infoEntries.Length)
         {
-            GameManager.Instance.UIController.EnableMoveButtons();
             gameObject.SetActive(false);
             //background.SetActive(false);
             GameManager.Instance.isTutorial = false;
             IsProgessing = false;
             TutorialEndEvent?.Invoke();
+            GameManager.Instance.UIController.EnableMoveButtons();
             return;
         }
         //infoEntries[currentIdx].infoPanel.SetActive(true);

@@ -18,7 +18,7 @@ public class DoorStuff : ClickableStuff
         tutorial = FindAnyObjectByType<Tutorial>();
         //inputComp.DisableInput()
         tutorial.TutorialStartEvent.AddListener(() => inputComp.DisableInput());
-        tutorial.TutorialEndEvent.AddListener(() => inputComp.EnableInput());
+        //tutorial.TutorialEndEvent.AddListener(() => inputComp.EnableInput());
     }
 
 
