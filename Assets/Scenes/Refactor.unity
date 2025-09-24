@@ -32184,6 +32184,7 @@ MonoBehaviour:
   isEndingComplete: 0
   testEndingType: 1
   defaultCursor: {fileID: 2800000, guid: a9811d4281f60ed40807d4ad762a0a2d, type: 3}
+  holdingCursor: {fileID: 2800000, guid: a52f3c5a459031244ba80502e8a73147, type: 3}
 --- !u!4 &1921262178
 Transform:
   m_ObjectHideFlags: 0

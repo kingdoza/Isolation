@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using static GameData;
 
 public static class EtcUtils
@@ -13,6 +14,12 @@ public static class EtcUtils
 
     public static void SetCursorTexture(Texture2D texture, Vector2 hotspot)
     {
+        if (Time.timeScale < 0.5f)
+        {
+            Cursor.SetCursor(GameManager.Instance.DefaultCursor, GetCenter(GameManager.Instance.DefaultCursor), CursorMode.Auto);
+            return;
+        }
+        //Debug.Log("SetCursorTexture(Texture2D texture, Vector2 hotspot) : " + texture);
         Cursor.SetCursor(texture, hotspot, CursorMode.Auto);
     }
 
@@ -20,6 +27,7 @@ public static class EtcUtils
 
     public static void SetCursorTexture(Texture2D texture)
     {
+        //Debug.Log("SetCursorTexture(Texture2D texture) : " + texture);
         Cursor.SetCursor(texture, Vector2.zero, CursorMode.Auto);
     }
 
@@ -27,6 +35,12 @@ public static class EtcUtils
 
     public static void SetCursorTextureCenter(Texture2D texture)
     {
+        if (Time.timeScale < 0.5f)
+        {
+            Cursor.SetCursor(GameManager.Instance.DefaultCursor, GetCenter(GameManager.Instance.DefaultCursor), CursorMode.Auto);
+            return;
+        }
+        //Debug.Log("SetCursorTextureCenter(Texture2D texture) : " + texture);
         SetCursorTexture(texture, new Vector2(texture.width / 2, texture.height / 2));
     }
 
@@ -34,6 +48,7 @@ public static class EtcUtils
 
     public static void SetCursorTextureCenter()
     {
+        //Debug.Log("SetCursorTextureCenter()");
         SetCursorTextureCenter(NoneStuffData.CursorTexture);
     }
 
@@ -41,6 +56,7 @@ public static class EtcUtils
 
     public static void SetCursorTexture()
     {
+        //Debug.Log("SetCursorTexture()");
         Cursor.SetCursor(NoneStuffData.CursorTexture, Vector2.zero, CursorMode.Auto);
     }
 

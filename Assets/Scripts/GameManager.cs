@@ -53,7 +53,9 @@ public class GameManager : PersistentSingleton<GameManager>
     [SerializeField] private bool isEndingComplete;
     [SerializeField] private EndingType testEndingType;
     [SerializeField] private Texture2D defaultCursor;
+    [SerializeField] private Texture2D holdingCursor;
     public Texture2D DefaultCursor => defaultCursor;
+    public Texture2D HoldingCursor => holdingCursor;
     private float prevScaleTime = 1f;
 
 
@@ -96,8 +98,9 @@ public class GameManager : PersistentSingleton<GameManager>
             {
                 EtcUtils.SetCursorTextureCenter();
             }
+            prevScaleTime = Time.timeScale;
         }
-        prevScaleTime = Time.timeScale;
+        //prevScaleTime = Time.timeScale;
     }
 
 

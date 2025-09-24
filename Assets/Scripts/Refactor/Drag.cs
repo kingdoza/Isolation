@@ -56,6 +56,7 @@ public class Drag : MouseInteraction
         //WatchDragStopResume(newPosition);
         dragDistance += moveDistance;
         transform.position = newPosition;
+        //SetCursorTextureCenter(GameManager.Instance.HoldingCursor);
     }
 
 
@@ -91,6 +92,7 @@ public class Drag : MouseInteraction
     {
         dragDistance = 0;
         DragEndEvent?.Invoke();
+        //SetCursorTextureCenter();
     }
 
 

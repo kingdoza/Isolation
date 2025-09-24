@@ -98,12 +98,14 @@ public class CameraDragArea : MouseInteraction
         //dragOrigin = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, mainCamera.transform.position.z));
         dragOrigin = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         dragDistance = 0;
+        //SetCursorTextureCenter(GameManager.Instance.HoldingCursor);
     }
 
 
 
     public override void OnInteracting()
     {
+        //SetCursorTextureCenter(GameManager.Instance.HoldingCursor);
         Vector3 current = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector3 difference = dragOrigin - current;
         if (difference.magnitude >= Mathf.Epsilon)
@@ -120,7 +122,7 @@ public class CameraDragArea : MouseInteraction
 
     public override void OnInteractEnd()
     {
-        
+        //SetCursorTextureCenter();
     }
 
 
