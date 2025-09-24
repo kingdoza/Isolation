@@ -30,6 +30,7 @@ public class UIController : MonoBehaviour
     [Header("���� UI ��ȣ�ۿ�")] [Space]
     [SerializeField] private CanvasGroup[] leftUICanvases;
     [SerializeField] private GameObject lightSwitchWarning;
+    [SerializeField] private GameObject helpPanel;
 
     [HideInInspector] public UnityEvent FadeCompleteEvent = new();
 
@@ -41,6 +42,7 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
+        helpPanel.SetActive(false);
         tutorial = FindAnyObjectByType<Tutorial>();
         lightSwitchWarning.SetActive(false);
         RegisterDragScrollCondition(() => !mindTreeUI.gameObject.activeSelf);
@@ -157,7 +159,7 @@ public class UIController : MonoBehaviour
 
     public void EnableMindTree_Button()
     {
-        if (tutorial.IsProgessing)
+        if (tutorial && tutorial.IsProgessing)
         {
             tutorial.SkipNextPanel(false);
         }
@@ -277,6 +279,38 @@ public class UIController : MonoBehaviour
             PlaySFX(SFXClips.lightSwitch_On);
         }
         TimeController.Instance.TimeOver();
+    }
+
+
+
+    public void Help_Button()
+    {
+        if (helpPanel.activeSelf)
+        {
+            HideHelp();
+        }
+        else
+        {
+            ShowHelp();
+        }
+    }
+
+
+
+    private void ShowHelp()
+    {
+        DisableMoveButtons();
+        PlaySFX(SFXClips.click1);
+        helpPanel.SetActive(true);
+    }
+
+
+
+    private void HideHelp()
+    {
+        EnableMoveButtons();
+        PlaySFX(SFXClips.click2);
+        helpPanel.SetActive(false);
     }
 
 

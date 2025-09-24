@@ -218,7 +218,7 @@ public class RoomController : MonoBehaviour {
         ChangeRoomView(newView);
         //timeController.ProgressMinutes(ProgressTimeType.ZoomIn);
 
-        if (tutorial.IsProgessing)
+        if (tutorial && tutorial.IsProgessing)
         {
             tutorial.gameObject.SetActive(false);
         }
@@ -242,11 +242,6 @@ public class RoomController : MonoBehaviour {
 
         //Camera.main.gameObject.GetComponent<DragScroller>().InitPosAndSetView(currentView);
         uiController.EnableMoveButtons();
-
-        if (tutorial.IsProgessing)
-        {
-            //GameManager.Instance.UIController.DisableMoveButtons();
-        }
     }
 
 
