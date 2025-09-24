@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c09348ad2aba049b492d45feb204b5, type: 3}
   m_Name: SO_Item
   m_EditorClassIdentifier: 
-  cursorTexture: {fileID: 2800000, guid: 5ef76e33ac2fe2f47a3e09cd0db1c24d, type: 3}
+  cursorTexture: {fileID: 2800000, guid: a1dee31d9ed80fd47950b88ac9f4e1f2, type: 3}
   minuteWaste: 30

@@ -52,6 +52,10 @@ public class GameManager : PersistentSingleton<GameManager>
 
     [SerializeField] private bool isEndingComplete;
     [SerializeField] private EndingType testEndingType;
+    [SerializeField] private Texture2D defaultCursor;
+    public Texture2D DefaultCursor => defaultCursor;
+    private float prevScaleTime = 1f;
+
 
 
     void Update()
@@ -79,6 +83,21 @@ public class GameManager : PersistentSingleton<GameManager>
                     ItemCursor.Instance.Enable(Player.Instance.ItemInUse);
             }
         }
+
+        if (SceneManager.GetActiveScene().name.Equals("Refactor") == false)
+            return;
+        if (Mathf.Abs(prevScaleTime - Time.timeScale) >= 0.01)
+        {
+            if (Time.timeScale < 0.5f)
+            {
+                EtcUtils.SetCursorTexture(defaultCursor);
+            }
+            else
+            {
+                EtcUtils.SetCursorTextureCenter();
+            }
+        }
+        prevScaleTime = Time.timeScale;
     }
 
 
@@ -204,6 +223,7 @@ public class GameManager : PersistentSingleton<GameManager>
         if (scene.name == "Intro")
         {
             isIntroStart = false;
+            EtcUtils.SetCursorTexture(defaultCursor);
             //isIntroStart = true;
             //PlayBGM(BGMClips.main, true);
         }
@@ -211,6 +231,8 @@ public class GameManager : PersistentSingleton<GameManager>
         {
             //if (isIntroStart == false)
             ////PlayBGM(BGMClips.main, true);
+            ///EtcUtils.SetCursorTexture(defaultCursor);
+            EtcUtils.SetCursorTexture(defaultCursor);
             EndingType = EndingType.None;
             soundController.FadeInBGM(BGMClips.main, FadeInDuration);
         }
@@ -228,6 +250,7 @@ public class GameManager : PersistentSingleton<GameManager>
 
         if (scene.name == "Ending")
         {
+            EtcUtils.SetCursorTexture(defaultCursor);
             dialogueController = FindAnyObjectByType<DialogueController>();
             FindAnyObjectByType<EndingDialogue>().ShowEndingDialogues(EndingType);
             if (EndingType == EndingType.Bad)

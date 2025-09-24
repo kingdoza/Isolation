@@ -175,6 +175,8 @@ public class UIController : MonoBehaviour
         toRoomButton.SetActive(true);
         //DragScroller.CanDrag = false;
         mindTreeUI.gameObject.SetActive(true);
+        //EtcUtils.SetCursorTexture(GameManager.Instance.DefaultCursor);
+        Time.timeScale = 0;
     }
 
 
@@ -193,6 +195,8 @@ public class UIController : MonoBehaviour
         toRoomButton.SetActive(false);
         //DragScroller.CanDrag = true;
         mindTreeUI.gameObject.SetActive(false);
+        //EtcUtils.SetCursorTextureCenter();
+        Time.timeScale = 1;
     }
 
 
@@ -302,6 +306,7 @@ public class UIController : MonoBehaviour
         DisableMoveButtons();
         PlaySFX(SFXClips.click1);
         helpPanel.SetActive(true);
+        Time.timeScale = 0;
     }
 
 
@@ -311,6 +316,7 @@ public class UIController : MonoBehaviour
         EnableMoveButtons();
         PlaySFX(SFXClips.click2);
         helpPanel.SetActive(false);
+        Time.timeScale = 1;
     }
 
 

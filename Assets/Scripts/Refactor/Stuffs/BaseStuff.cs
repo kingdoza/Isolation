@@ -85,7 +85,7 @@ public abstract class BaseStuff : SingleConditonActivator
         if (!enabled) return;
         if (GetComponent<SpriteRenderer>())
             GetComponent<SpriteRenderer>().color = hoverColor;
-        SetCursorTexture(StuffData.CursorTexture);
+        SetCursorTextureCenter(StuffData.CursorTexture);
     }
 
 
@@ -95,7 +95,7 @@ public abstract class BaseStuff : SingleConditonActivator
         if (!enabled) return;
         if (GetComponent<SpriteRenderer>())
             GetComponent<SpriteRenderer>().color = originalColor;
-        SetCursorTexture();
+        SetCursorTextureCenter();
     }
 
 
