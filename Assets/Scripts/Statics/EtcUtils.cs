@@ -16,7 +16,7 @@ public static class EtcUtils
     {
         if (Time.timeScale < 0.5f)
         {
-            Cursor.SetCursor(GameManager.Instance.DefaultCursor, GetCenter(GameManager.Instance.DefaultCursor), CursorMode.Auto);
+            Cursor.SetCursor(GameManager.Instance.DefaultCursor, Vector2.zero, CursorMode.Auto);
             return;
         }
         //Debug.Log("SetCursorTexture(Texture2D texture, Vector2 hotspot) : " + texture);
@@ -37,7 +37,7 @@ public static class EtcUtils
     {
         if (Time.timeScale < 0.5f)
         {
-            Cursor.SetCursor(GameManager.Instance.DefaultCursor, GetCenter(GameManager.Instance.DefaultCursor), CursorMode.Auto);
+            Cursor.SetCursor(GameManager.Instance.DefaultCursor, Vector2.zero, CursorMode.Auto);
             return;
         }
         //Debug.Log("SetCursorTextureCenter(Texture2D texture) : " + texture);
