@@ -13332,8 +13332,8 @@ MonoBehaviour:
   - {fileID: 6907309563162764960, guid: 13a6a18187bdb134180e1f8beff1d804, type: 3}
   badButtonFill: {fileID: 401465503}
   happyButtonFill: {fileID: 521848791}
-  badButton: {fileID: 0}
-  happyButton: {fileID: 0}
+  badButton: {fileID: 774640428}
+  happyButton: {fileID: 2005166678}
 --- !u!1 &779953654
 GameObject:
   m_ObjectHideFlags: 0
