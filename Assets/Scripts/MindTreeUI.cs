@@ -10,20 +10,22 @@ using static ControllerUtils;
 
 public class MindTreeUI : MonoBehaviour
 {
-    [Header("½½·Ô Ã¤¿ò »ö±ò")][Space]
+    [Header("ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½")][Space]
     [SerializeField] private Color itemSlotColor;
     [SerializeField] private Color clueSlotColor;
     [SerializeField] private Color finalSlotColor;
-    [Header("UI ¿ÀºêÁ§Æ®")][Space]
+    [Header("UI ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®")][Space]
     [SerializeField] private EndingRouteUI[] routhUIs;
     [SerializeField] private TextMeshProUGUI subtitle;
     [SerializeField] private EvidenceWindow evidenceWindow;
-    [Header("Ãß°¡ ÈçÀû ÇÁ¸®ÆÕ")][Space]
+    [Header("ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")][Space]
     [SerializeField] private GameObject[] additionalEvidences;
-    [Header("±âÅ¸")][Space]
+    [Header("ï¿½ï¿½Å¸")][Space]
     [SerializeField] private Image badButtonFill;
     [SerializeField] private Image happyButtonFill;
     public GameObject[] AdditionalEvidences => additionalEvidences;
+    [SerializeField] private GameObject badButton;
+    [SerializeField] private GameObject happyButton;
 
 
     private EndingType currentType;
@@ -71,15 +73,20 @@ public class MindTreeUI : MonoBehaviour
         ShowSlotPanel();
         ShowSubtitle();
 
+        badButton.transform.GetChild(0).gameObject.SetActive(currentType != EndingType.Bad);
+        badButton.transform.GetChild(1).gameObject.SetActive(currentType == EndingType.Bad);
+        happyButton.transform.GetChild(0).gameObject.SetActive(currentType != EndingType.Happy);
+        happyButton.transform.GetChild(1).gameObject.SetActive(currentType == EndingType.Happy);
+
         if (currentType == EndingType.Bad)
         {
-            badButtonFill.enabled = false;
-            happyButtonFill.enabled = true;
+            //badButtonFill.enabled = false;
+            //happyButtonFill.enabled = true;
         }
         else if (currentType == EndingType.Happy)
         {
-            badButtonFill.enabled = true;
-            happyButtonFill.enabled = false;
+            //badButtonFill.enabled = true;
+            //happyButtonFill.enabled = false;
         }
     }
 
