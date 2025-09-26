@@ -7602,7 +7602,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1315629146}
-  m_Father: {fileID: 2060738832}
+  m_Father: {fileID: 566528689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9412,6 +9412,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1648255102}
+  - {fileID: 465197100}
   m_Father: {fileID: 2060738832}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -32681,7 +32682,7 @@ MonoBehaviour:
   RC: {fileID: 1118970126}
   settingsController: {fileID: 816717238}
   isIntroStart: 0
-  isTutorial: 0
+  isTutorial: 1
   isEndingComplete: 0
   testEndingType: 1
   defaultCursor: {fileID: 2800000, guid: a9811d4281f60ed40807d4ad762a0a2d, type: 3}
@@ -35392,7 +35393,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 566528689}
-  - {fileID: 465197100}
   m_Father: {fileID: 294012030}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
