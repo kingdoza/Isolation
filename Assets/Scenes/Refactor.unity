@@ -15089,7 +15089,7 @@ MonoBehaviour:
     months: 4
     days: 14
     dayOfWeek: 0
-  limitDayGap: 2
+  limitDayGap: 7
   wakeupHour: 19
   sleepHour: 7
   isWakeupStart: 1
@@ -32682,8 +32682,8 @@ MonoBehaviour:
   RC: {fileID: 1118970126}
   settingsController: {fileID: 816717238}
   isIntroStart: 0
-  isTutorial: 1
-  isEndingComplete: 0
+  isTutorial: 0
+  isEndingComplete: 1
   testEndingType: 1
   defaultCursor: {fileID: 2800000, guid: a9811d4281f60ed40807d4ad762a0a2d, type: 3}
   holdingCursor: {fileID: 2800000, guid: a52f3c5a459031244ba80502e8a73147, type: 3}
