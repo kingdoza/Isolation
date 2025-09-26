@@ -123,6 +123,9 @@ public class TriggerEvent
             case GlobalTriggerEvent.ExpulsionOpen:
                 targetSender = TriggerEventController.Instance.ExpulsionOpen;
                 break;
+            case GlobalTriggerEvent.KeyGain:
+                targetSender = TriggerEventController.Instance.KeyGain;
+                break;
             default:
                 Debug.LogError("Invalid GlobalType");
                 break;

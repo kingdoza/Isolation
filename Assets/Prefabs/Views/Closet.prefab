@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 2970571112005222262}
   - component: {fileID: 6028900477849722456}
   - component: {fileID: 3243680196531402538}
+  - component: {fileID: 5256801736342010227}
   m_Layer: 0
   m_Name: "[\uC544\uC774\uD15C] \uB2E4\uC774\uC5B4\uB9AC \uC5F4\uC1E0_0"
   m_TagString: Untagged
@@ -843,6 +844,18 @@ MonoBehaviour:
   isItemOnce: 0
   itemData: {fileID: 11400000, guid: a02cdba1d4f9668459fbb1bcd7767ad0, type: 2}
   itemData2: {fileID: 0}
+--- !u!114 &5256801736342010227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3921346234745636924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbb3cd420be869141a2c3499da54830f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4362137531724202648
 GameObject:
   m_ObjectHideFlags: 0

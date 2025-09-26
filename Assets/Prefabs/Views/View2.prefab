@@ -2783,6 +2783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5609378181303117171}
   - component: {fileID: 7234397459875680710}
+  - component: {fileID: 9028612195436082753}
   m_Layer: 0
   m_Name: "[\uC544\uC774\uD15C] \uB2E4\uC774\uC5B4\uB9AC \uC5F4\uC1E0_0"
   m_TagString: Untagged
@@ -2860,6 +2861,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9028612195436082753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6834557368429819366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410fcd4fbcd29094197db15c098f2629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 10
+    targetComponent: {fileID: 0}
+  trueConditonSprite: {fileID: 0}
+  falseConditonSprite: {fileID: 8389972081480265182, guid: b8086dd44a6cc624d9bd9c0f14830324, type: 3}
 --- !u!1 &6863394447049489303
 GameObject:
   m_ObjectHideFlags: 0
