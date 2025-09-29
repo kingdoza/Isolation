@@ -98,6 +98,7 @@ public class Tutorial : MonoBehaviour
     {
         //transform.GetChild(0).GetComponent<CanvasGroup>().interactable = false;
         transform.GetChild(0).GetComponent<CanvasGroup>().blocksRaycasts = false;
+        FindAnyObjectByType<CameraDragArea>().enabled = false;
     }
 
 
@@ -149,6 +150,7 @@ public class Tutorial : MonoBehaviour
         if (currentIdx >= infoEntries.Length)
         {
             gameObject.SetActive(false);
+            FindAnyObjectByType<CameraDragArea>().enabled = true;
             //background.SetActive(false);
             GameManager.Instance.isTutorial = false;
             IsProgessing = false;
