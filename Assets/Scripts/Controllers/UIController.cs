@@ -183,6 +183,10 @@ public class UIController : MonoBehaviour
 
     public void DisableMindTree_Button()
     {
+        if (tutorial.IsProgessing)
+        {
+            tutorial.SkipNextPanel(false);
+        }
         PlaySFX(SFXClips.click2);
         DisableMindTree();
     }
@@ -229,6 +233,24 @@ public class UIController : MonoBehaviour
         toMindButton.GetComponent<CanvasGroup>().alpha = 1;
         toMindButton.GetComponent<CanvasGroup>().interactable = true;
         toMindButton.GetComponent<CanvasGroup>().blocksRaycasts = true;
+    }
+
+
+
+    public void DeactiveRoomTree()
+    {
+        toRoomButton.GetComponent<CanvasGroup>().alpha = 0.5f;
+        toRoomButton.GetComponent<CanvasGroup>().interactable = false;
+        toRoomButton.GetComponent<CanvasGroup>().blocksRaycasts = false;
+    }
+
+
+
+    public void ActiveRoonTree()
+    {
+        toRoomButton.GetComponent<CanvasGroup>().alpha = 1;
+        toRoomButton.GetComponent<CanvasGroup>().interactable = true;
+        toRoomButton.GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
 
 

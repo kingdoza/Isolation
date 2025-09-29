@@ -37,6 +37,7 @@ public class Tutorial : MonoBehaviour
         //background.SetActive(true);
         GameManager.Instance.UIController.DisableMoveButtons();
         GameManager.Instance.UIController.DeactiveMindTree();
+        GameManager.Instance.UIController.DeactiveRoomTree();
         foreach (InfoEntry infoEntry in infoEntries)
         {
             infoEntry.infoPanel.SetActive(false);
@@ -66,14 +67,15 @@ public class Tutorial : MonoBehaviour
     private void ActiveInfoAt(int idx)
     {
         infoEntries[idx].infoPanel.SetActive(true);
-        if (infoEntries[idx].topLayerObject == null)
-            return;
 
-        infoEntries[idx].topLayerObject.SetActive(true);
-        if (infoEntries[idx].isObject == false)
+        if (infoEntries[idx].topLayerObject)
         {
-            uiOriginParent = infoEntries[idx].topLayerObject.transform.parent;
-            infoEntries[idx].topLayerObject.transform.SetParent(transform);
+            infoEntries[idx].topLayerObject.SetActive(true);
+            if (infoEntries[idx].isObject == false)
+            {
+                uiOriginParent = infoEntries[idx].topLayerObject.transform.parent;
+                infoEntries[idx].topLayerObject.transform.SetParent(transform);
+            }
         }
 
         if (infoEntries[idx].isSwitch)
@@ -83,6 +85,10 @@ public class Tutorial : MonoBehaviour
         if (infoEntries[idx].isMindTree)
         {
             GameManager.Instance.UIController.ActiveMindTree();
+        }
+        if (infoEntries[idx].isRoom)
+        {
+            GameManager.Instance.UIController.ActiveRoonTree();
         }
     }
 
@@ -130,10 +136,11 @@ public class Tutorial : MonoBehaviour
 
 
 
-    public void SkipNextPanel(bool checkSwitch = true)
+    public void SkipNextPanel(bool blockArrow = true)
     {
         Debug.Log("SkipNextPanel");
-        if (checkSwitch && (infoEntries[currentIdx].isSwitch || infoEntries[currentIdx].isMindTree))
+
+        if (blockArrow && infoEntries[currentIdx].isArrow)
             return;
 
         PlaySFX(SFXClips.tutorial);
@@ -150,6 +157,14 @@ public class Tutorial : MonoBehaviour
             return;
         }
         //infoEntries[currentIdx].infoPanel.SetActive(true);
+        if (infoEntries[currentIdx].isArrow)
+        {
+            transform.GetChild(0).GetComponent<CanvasGroup>().alpha = 0;
+        }
+        else
+        {
+            transform.GetChild(0).GetComponent<CanvasGroup>().alpha = 1;
+        }
         ActiveInfoAt(currentIdx);
     }
 
@@ -173,5 +188,7 @@ public class InfoEntry
     public GameObject topLayerObject;
     public bool isObject;
     public bool isSwitch;
+    public bool isRoom;
     public bool isMindTree;
+    public bool isArrow;
 }
