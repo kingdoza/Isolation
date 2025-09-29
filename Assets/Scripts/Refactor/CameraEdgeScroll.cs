@@ -5,12 +5,13 @@ public class CameraEdgeScroll : MonoBehaviour
 {
     [Header("모서리 스크롤 설정")]
     [SerializeField]
-    [Tooltip("가장자리 픽셀")]
-    private float edgeThreshold = 50f;
+    [Tooltip("픽셀 단위")]
+    private float edgeThickness = 30f; // 픽셀 단위 경계
 
     [SerializeField]
-    [Tooltip("카메라 스크롤 속도")]
-    private float scrollSpeed = 10f;
+    [Tooltip("카메라 스크롤 최대 속도")]
+    private float scrollSpeed = 15f;
+
     private CameraDragArea cameraDragArea;
     private bool isMouseDragging = false;
 
@@ -21,59 +22,34 @@ public class CameraEdgeScroll : MonoBehaviour
 
     private void Update()
     {
-        
-        if (Input.GetMouseButtonDown(0))
-        {
-            isMouseDragging = true;
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            isMouseDragging = false;
-        }
+        if (Input.GetMouseButtonDown(0)) isMouseDragging = true;
+        if (Input.GetMouseButtonUp(0)) isMouseDragging = false;
+        if (isMouseDragging) return;
 
-        
-        if (isMouseDragging)
-        {
-            return;
-        }
-
-        HandleEdgeScrolling();
+        HandleEdgeScroll();
     }
 
-    private void HandleEdgeScrolling()
+    private void HandleEdgeScroll()
     {
-        Vector2 mousePosition = Input.mousePosition;
-        Vector3 moveDirection = Vector3.zero;
+        Vector2 screenCenter = new Vector2(Screen.width / 2f, Screen.height / 2f);
+        Vector2 mouseOffset = new Vector2(Input.mousePosition.x - screenCenter.x,
+                                          Input.mousePosition.y - screenCenter.y);
+
+        float halfWidth = Screen.width / 2f;
+        float halfHeight = Screen.height / 2f;
 
         
-        if (mousePosition.x > Screen.width - edgeThreshold)
-        {
-            moveDirection.x += 1;
-        }
-        
-        if (mousePosition.x < edgeThreshold)
-        {
-            moveDirection.x -= 1;
-        }
-      
-        if (mousePosition.y > Screen.height - edgeThreshold)
-        {
-            moveDirection.y += 1;
-        }
-        
-        if (mousePosition.y < edgeThreshold)
-        {
-            moveDirection.y -= 1;
-        }
+        float xStrength = Mathf.Max(Mathf.Abs(mouseOffset.x) - (halfWidth - edgeThickness), 0f) / edgeThickness;
+        float yStrength = Mathf.Max(Mathf.Abs(mouseOffset.y) - (halfHeight - edgeThickness), 0f) / edgeThickness;
+        float strength = Mathf.Clamp01(Mathf.Max(xStrength, yStrength));
 
-        
-        // moveDirection.normalized
-        
-        Vector3 delta = moveDirection.normalized * scrollSpeed * Time.deltaTime;
-
-        // 이동할 방향 존재
-        if (delta != Vector3.zero)
+        if (strength > 0f)
         {
+            
+            Vector2 moveDir = mouseOffset.normalized;
+
+            // 최종
+            Vector3 delta = new Vector3(moveDir.x, moveDir.y, 0f) * strength * scrollSpeed * Time.deltaTime;
             cameraDragArea.MoveCamera(delta);
         }
     }
