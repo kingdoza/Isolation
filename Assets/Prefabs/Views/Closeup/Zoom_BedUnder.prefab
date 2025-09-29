@@ -484,6 +484,7 @@ MonoBehaviour:
   isItemOnce: 0
   toggleObject: {fileID: 0}
   initialEnable: 1
+  maintainThis: 0
   ToggleEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1357,6 +1358,7 @@ GameObject:
   - component: {fileID: 3461088807729634869}
   - component: {fileID: 5630395773795382913}
   - component: {fileID: 937454760016362302}
+  - component: {fileID: 2162173695930859446}
   m_Layer: 0
   m_Name: Zoom_BedUnder
   m_TagString: Untagged
@@ -1521,6 +1523,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scale: 2.2
+--- !u!114 &2162173695930859446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6907309563162764960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15486917988b4ccb8a6ad3c06f5a5c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  edgeThreshold: 50
+  scrollSpeed: 10
 --- !u!1 &7148156146082278979
 GameObject:
   m_ObjectHideFlags: 0

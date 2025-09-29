@@ -1079,6 +1079,7 @@ MonoBehaviour:
       m_Calls: []
   isItemOnce: 0
   zoomPrefab: {fileID: 6907309563162764960, guid: e3fb2f752020fc24fbcf392b668b0a77, type: 3}
+  outClip: {fileID: 0}
 --- !u!114 &4603091989742008111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1291,6 +1292,7 @@ MonoBehaviour:
       m_Calls: []
   isItemOnce: 0
   zoomPrefab: {fileID: 6907309563162764960, guid: d611d53a67cf6714aa4f69a585e51d17, type: 3}
+  outClip: {fileID: 0}
 --- !u!1 &6031501034971675352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,6 +1393,7 @@ GameObject:
   - component: {fileID: -7877189563013531658}
   - component: {fileID: 1520594866463068636}
   - component: {fileID: 1533631393451430163}
+  - component: {fileID: 8488610725655978038}
   m_Layer: 0
   m_Name: View4
   m_TagString: Untagged
@@ -1556,6 +1559,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragDirection: 2
+--- !u!114 &8488610725655978038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6038186748799628573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15486917988b4ccb8a6ad3c06f5a5c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  edgeThreshold: 50
+  scrollSpeed: 10
 --- !u!1 &6855284955451967712
 GameObject:
   m_ObjectHideFlags: 0

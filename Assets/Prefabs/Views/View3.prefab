@@ -419,6 +419,7 @@ MonoBehaviour:
       m_Calls: []
   isItemOnce: 0
   zoomPrefab: {fileID: 6907309563162764960, guid: e3fb2f752020fc24fbcf392b668b0a77, type: 3}
+  outClip: {fileID: 0}
 --- !u!114 &3631826420611178591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,6 +624,7 @@ GameObject:
   - component: {fileID: 6770848934198412645}
   - component: {fileID: 2574064034240820079}
   - component: {fileID: 6016356511443305509}
+  - component: {fileID: -833869143139850692}
   m_Layer: 0
   m_Name: View3
   m_TagString: Untagged
@@ -785,6 +787,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 69.09528, y: 48.92}
   m_EdgeRadius: 0
+--- !u!114 &-833869143139850692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3407988332131748097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15486917988b4ccb8a6ad3c06f5a5c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  edgeThreshold: 50
+  scrollSpeed: 10
 --- !u!1 &3704721752171842056
 GameObject:
   m_ObjectHideFlags: 0
