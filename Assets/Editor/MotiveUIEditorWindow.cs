@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.Graphs;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -203,6 +204,19 @@ public class MotiveUIEditorWindow : EditorWindow
                     var rect = slotGO.GetComponent<RectTransform>();
                     if (rect != null)
                         rect.sizeDelta = Vector2.one * generationFormat.itemSlotSize;
+
+                    var img = slotGO.GetComponent<Image>();
+                    if (img != null)
+                    {
+                        if (motivationAsset.type == EndingType.Bad)
+                        {
+                            img.sprite = generationFormat.badEvidenceSprite;
+                        }
+                        else if (motivationAsset.type == EndingType.Happy)
+                        {
+                            img.sprite = generationFormat.happyEvidenceSprite;
+                        }
+                    }
                 }
             }
 
@@ -224,6 +238,19 @@ public class MotiveUIEditorWindow : EditorWindow
                 var rect = evidenceNode.GetComponent<RectTransform>();
                 if (rect != null)
                     rect.sizeDelta = Vector2.one * generationFormat.clueSlotSize;
+
+                var img = evidenceNode.GetComponent<Image>();
+                if (img != null)
+                {
+                    if (motivationAsset.type == EndingType.Bad)
+                    {
+                        img.sprite = generationFormat.badMemorySprite;
+                    }
+                    else if (motivationAsset.type == EndingType.Happy)
+                    {
+                        img.sprite = generationFormat.happyMemorySprite;
+                    }
+                }
             }
             else
             {
@@ -275,6 +302,19 @@ public class MotiveUIEditorWindow : EditorWindow
                 var text = finalSlotGO.GetComponentInChildren<Text>();
                 if (text != null)
                     text.text = "Final Slot";
+
+                var img = finalSlotGO.GetComponent<Image>();
+                if (img != null)
+                {
+                    if (motivationAsset.type == EndingType.Bad)
+                    {
+                        img.sprite = generationFormat.badEndingSprite;
+                    }
+                    else if (motivationAsset.type == EndingType.Happy)
+                    {
+                        img.sprite = generationFormat.happyEndingSprite;
+                    }
+                }
             }
         }
 

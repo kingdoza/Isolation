@@ -63,7 +63,8 @@ public class CollectionSlot : MotiveSlot, IPointerEnterHandler, IPointerExitHand
     public override void Collected(MindTreeUI mindTreeUI)
     {
         isCollected = true;
-        transform.Find("Fill").GetComponent<Image>().color = mindTreeUI.ItemSlotColor;
+        GetComponent<Image>().sprite = collectSprite;
+        //transform.Find("Fill").GetComponent<Image>().color = mindTreeUI.ItemSlotColor;
         if (NotificationManager.Instance != null)
         {
             NotificationManager.Instance.ShowNotification();
@@ -75,7 +76,7 @@ public class CollectionSlot : MotiveSlot, IPointerEnterHandler, IPointerExitHand
     public void OnPointerEnter(PointerEventData eventData)
     {
         PlaySFX(SFXClips.click2);
-        GetComponent<Image>().color = Color.yellow;
+        GetComponent<Image>().color = Color.gray;
         mindTreeUI.ShowEvidenceInfo(this);
     }
 

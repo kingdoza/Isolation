@@ -8,9 +8,9 @@ public class EvidenceSlot : MotiveSlot
 
     public override void Collected(MindTreeUI mindTreeUI)
     {
-        transform.Find("Fill").GetComponent<Image>().color = mindTreeUI.ClueSlotColor;
-        
-        
+        //transform.Find("Fill").GetComponent<Image>().color = mindTreeUI.ClueSlotColor;
+        GetComponent<Image>().sprite = collectSprite;
+
     }
     
 }

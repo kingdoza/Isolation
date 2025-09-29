@@ -5,6 +5,7 @@ public abstract class MotiveSlot : MonoBehaviour
 {
     public MotiveSlot NextSlot { get; set; }
     private RectTransform slotLine;
+    [SerializeField] protected Sprite collectSprite;
 
 
 
@@ -26,8 +27,9 @@ public abstract class MotiveSlot : MonoBehaviour
         float length = dir.magnitude;
 
         RectTransform line = CreateSlotLine(generationFormat);
+        line.GetComponent<Image>().color = new Color(1, 1, 1, 0.25f);
         line.position = (start + end) / 2;
-        line.sizeDelta = new Vector2(length, generationFormat.lineThickness);
+        line.sizeDelta = new Vector2(length * 0.4f, generationFormat.lineThickness);
         line.rotation = Quaternion.FromToRotation(Vector3.right, dir);
     }
 

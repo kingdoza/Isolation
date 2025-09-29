@@ -12,10 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ef2b06c094677d4fb9333d2a2dfcf23, type: 3}
   m_Name: SO_MotiveUIData
   m_EditorClassIdentifier: 
-  slotPrefab: {fileID: 5030242033438432127, guid: 143d0c87a58a2ed4bb0691fbbc522b02, type: 3}
+  slotPrefab: {fileID: 5030242033438432127, guid: d23113332dd333f4a9e5b521c74a3978, type: 3}
   lineSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  lineThickness: 8
-  itemSlotSize: 50
-  clueSlotSize: 80
+  lineThickness: 4
+  itemSlotSize: 80
+  clueSlotSize: 100
   finalSlotSize: 120
   finalSlotPosition: {x: 0, y: 300}
+  happyEvidenceSprite: {fileID: 6054812823833655, guid: 914588b949850b04396934b44cb7ea7b, type: 3}
+  happyMemorySprite: {fileID: 4578107153938869110, guid: df42bc28e159f6842b92bc80e55e9c8c, type: 3}
+  happyEndingSprite: {fileID: 1919060358545490505, guid: 07c6cddd5d20d8842a90b416e5527d6c, type: 3}
+  badEvidenceSprite: {fileID: 6054812823833655, guid: 814b5c3f4f517b343a7c54d108ba4b2a, type: 3}
+  badMemorySprite: {fileID: 4578107153938869110, guid: 0814fbf78882a7c4fa7bdeb6c89ac545, type: 3}
+  badEndingSprite: {fileID: 1919060358545490505, guid: ea099613ad50a7941ab2c6571a9319dc, type: 3}

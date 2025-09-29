@@ -10,4 +10,11 @@ public class MotiveUIData : ScriptableObject
     public float clueSlotSize;
     public float finalSlotSize;
     public Vector2 finalSlotPosition;
+
+    public Sprite happyEvidenceSprite;
+    public Sprite happyMemorySprite;
+    public Sprite happyEndingSprite;
+    public Sprite badEvidenceSprite;
+    public Sprite badMemorySprite;
+    public Sprite badEndingSprite;
 }
