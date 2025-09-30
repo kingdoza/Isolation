@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -16,6 +17,14 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     public CollectibleItem SlotItem => slotItem;
     public ItemData Item => item;
     private GameObject itemIconObject;
+
+
+
+    private void Awake()
+    {
+        itemIconObject = transform.Find("Image").gameObject;
+        itemIconObject.SetActive(false);
+    }
 
 
 
@@ -47,11 +56,20 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
 
 
 
+    public void DeleteItem()
+    {
+        item = null;
+        itemIconObject.SetActive(false);
+        itemIconObject.GetComponent<Image>().sprite = null;
+    }
+
+
+
     public void SetItem(ItemData itemData)
     {
         item = itemData;
-        itemIconObject = transform.Find("Image").gameObject;
         itemIconObject.GetComponent<Image>().sprite = item.Icon;
+        itemIconObject.SetActive(true);
     }
 
 

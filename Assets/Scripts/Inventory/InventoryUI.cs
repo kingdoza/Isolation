@@ -18,6 +18,7 @@ public class InventoryUI : MonoBehaviour
     private List<InventorySlot> slots = new List<InventorySlot>();
     private InventorySlot slotSelected = null;
     private bool canSelect = true;
+    [SerializeField] private GameObject lockPanel;
 
 
 
@@ -30,6 +31,27 @@ public class InventoryUI : MonoBehaviour
 
         Player.Instance.OnSleep.AddListener(OpenAllSlots);
         Player.Instance.OnWakeup.AddListener(CloseAllSlots);
+
+        for (int i = 0; i < 8; ++i)
+        {
+            GameObject slot = Instantiate(slotPrefab, slotParent);
+            InventorySlot newSlot = slot.GetComponent<InventorySlot>();
+            slots.Add(newSlot);
+        }
+    }
+
+
+
+    private void ShowLock()
+    {
+        lockPanel.SetActive(true);
+    }
+
+
+
+    private void HideLock()
+    {
+        lockPanel.SetActive(false);
     }
 
 
@@ -59,16 +81,28 @@ public class InventoryUI : MonoBehaviour
 
 
 
+    //public void AddItem(ItemData itemData)
+    //{
+    //    GameObject slot = Instantiate(slotPrefab, slotParent);
+
+    //    InventorySlot newSlot = slot.GetComponent<InventorySlot>();
+    //    slots.Add(newSlot);
+    //    newSlot.OnClicked.AddListener(OnSlotClicked);
+    //    newSlot.SetItem(itemData);
+    //}
+
+
+
     public void AddItem(ItemData itemData)
     {
-        GameObject slot = Instantiate(slotPrefab, slotParent);
-
-        InventorySlot newSlot = slot.GetComponent<InventorySlot>();
-        slots.Add(newSlot);
-        newSlot.OnClicked.AddListener(OnSlotClicked);
-        newSlot.SetItem(itemData);
-        //Image image = slot.transform.Find("Image").GetComponent<Image>();
-        //image.sprite = item.InventorySprite;
+        foreach (var slot in slots)
+        {
+            if (slot.Item)
+                continue;
+            slot.OnClicked.AddListener(OnSlotClicked);
+            slot.SetItem(itemData);
+            break;
+        }
     }
 
 
@@ -90,7 +124,7 @@ public class InventoryUI : MonoBehaviour
         int screwCount = 0;
         foreach (InventorySlot slot in slots)
         {
-            if (slot.Item.Type == ItemType.Screw)
+            if (slot.Item && slot.Item.Type == ItemType.Screw)
                 ++screwCount;
         }
         return screwCount >= 2;
@@ -110,7 +144,7 @@ public class InventoryUI : MonoBehaviour
         for (int i = slots.Count - 1; i >= 0; i--)
         {
             InventorySlot slot = slots[i];
-            if (slot.Item.Type != ItemType.Screw)
+            if (slot.Item == null || slot.Item.Type != ItemType.Screw)
                 continue;
             DeleteSlot(slot);
         }
@@ -131,14 +165,16 @@ public class InventoryUI : MonoBehaviour
     public void DeleteSlot(InventorySlot targetSlot)
     {
         targetSlot.Unselect();
-        slots.Remove(targetSlot);
-        Destroy(targetSlot.gameObject);
+        //slots.Remove(targetSlot);
+        //Destroy(targetSlot.gameObject);
+        targetSlot.DeleteItem();
     }
 
 
 
     private void CloseAllSlots()
     {
+        lockPanel.SetActive(true);
         canSelect = false;
         slotSelected?.Unselect();
         foreach (InventorySlot slot in slots)
@@ -151,6 +187,7 @@ public class InventoryUI : MonoBehaviour
 
     private void OpenAllSlots()
     {
+        lockPanel.SetActive(false);
         canSelect = true;
         foreach (InventorySlot slot in slots)
         {
