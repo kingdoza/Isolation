@@ -43,4 +43,5 @@ public class SFXLibrary : ScriptableObject
     public AudioClip computer_Keyboard;
     public AudioClip computer_Mouse;
     public AudioClip screw_Item;
+    public AudioClip trace_Button;
 }

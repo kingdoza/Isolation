@@ -110,6 +110,8 @@ public class InventoryUI : MonoBehaviour
     public void OnSlotClicked(InventorySlot clickedSlot)
     {
         if (!canSelect) return;
+        if (clickedSlot.Item == null)
+            return;
 
         PlaySFX(SFXClips.click1);
         slotSelected?.Unselect();

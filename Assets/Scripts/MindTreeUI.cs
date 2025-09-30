@@ -41,13 +41,13 @@ public class MindTreeUI : MonoBehaviour
 
     public void SetRouthUI_Bad()
     {
-        PlaySFX(SFXClips.click2);
+        PlaySFX(SFXClips.trace_Button);
         SetRouthUI(EndingType.Bad);
     }
 
     public void SetRouthUI_Happy()
     {
-        PlaySFX(SFXClips.click2);
+        PlaySFX(SFXClips.trace_Button);
         SetRouthUI(EndingType.Happy);
     }
 
