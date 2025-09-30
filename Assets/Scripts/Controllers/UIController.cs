@@ -183,7 +183,7 @@ public class UIController : MonoBehaviour
 
     public void DisableMindTree_Button()
     {
-        if (tutorial.IsProgessing)
+        if (tutorial && tutorial.IsProgessing)
         {
             tutorial.SkipNextPanel(false);
         }

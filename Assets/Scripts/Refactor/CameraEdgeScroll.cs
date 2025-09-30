@@ -25,7 +25,7 @@ public class CameraEdgeScroll : MonoBehaviour
 
     private void Update()
     {
-        if (tutorial.IsProgessing)
+        if (tutorial && tutorial.IsProgessing)
             return;
         if (Input.GetMouseButtonDown(0)) isMouseDragging = true;
         if (Input.GetMouseButtonUp(0)) isMouseDragging = false;
