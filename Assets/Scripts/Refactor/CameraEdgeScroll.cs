@@ -15,13 +15,18 @@ public class CameraEdgeScroll : MonoBehaviour
     private CameraDragArea cameraDragArea;
     private bool isMouseDragging = false;
 
+    private Tutorial tutorial;
+
     private void Awake()
     {
+        tutorial = FindAnyObjectByType<Tutorial>();
         cameraDragArea = GetComponent<CameraDragArea>();
     }
 
     private void Update()
     {
+        if (tutorial.IsProgessing)
+            return;
         if (Input.GetMouseButtonDown(0)) isMouseDragging = true;
         if (Input.GetMouseButtonUp(0)) isMouseDragging = false;
         if (isMouseDragging) return;
