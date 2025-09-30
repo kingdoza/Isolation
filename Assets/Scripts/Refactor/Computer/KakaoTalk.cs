@@ -54,6 +54,9 @@ public class KakaoTalk : MonoBehaviour
 
     public void CheckPin()
     {
+        if (Player.Instance.IsSleeping == false)
+            return;
+        Debug.Log("CheckPin");
         if (!isLocked) return;
         TimeController.Instance.ProgressMinutes(GameData.PasswordCheckMinutes);
         TimeController.Instance.CheckTimeChanged();

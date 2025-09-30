@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -7,6 +8,15 @@ using static ControllerUtils;
 public class ScreenStuff : ClickableStuff
 {
     protected override StuffTypeData StuffData => GameData.ScreenStuffData;
+    private GameObject screenObject;
+
+
+
+    protected override void Awake()
+    {
+        base.Awake();
+        screenObject = GameObject.FindWithTag("ScreenCanvas");
+    }
 
 
 
@@ -26,5 +36,20 @@ public class ScreenStuff : ClickableStuff
         {
             PlaySFX(SFXClips.computer_Keyboard);
         }
+    }
+
+
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        screenObject.SetActive(true);
+    }
+
+
+
+    protected void OnDisable()
+    {
+        screenObject.SetActive(false);
     }
 }
