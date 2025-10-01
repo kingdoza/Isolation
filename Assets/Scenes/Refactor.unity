@@ -4274,6 +4274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSprite: {fileID: 2883408226214398628, guid: 533751b1b143061488c5e8849d290b3f, type: 3}
   sprite: {fileID: 0}
+  explanation: 
 --- !u!1 &270832960
 GameObject:
   m_ObjectHideFlags: 0
@@ -9526,6 +9527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSprite: {fileID: 2883408226214398628, guid: 1e00b1a8bfa73284ca57fd5837a39e93, type: 3}
   sprite: {fileID: 0}
+  explanation: 
 --- !u!1 &582758437
 GameObject:
   m_ObjectHideFlags: 0
@@ -13859,6 +13861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSprite: {fileID: 2883408226214398628, guid: 533751b1b143061488c5e8849d290b3f, type: 3}
   sprite: {fileID: 0}
+  explanation: 
 --- !u!1 &787119173
 GameObject:
   m_ObjectHideFlags: 0
@@ -18035,6 +18038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSprite: {fileID: -8109925029918088235, guid: e14c07e262025f84492a712b9a971759, type: 3}
   sprite: {fileID: 0}
+  explanation: 
 --- !u!1 &1073382878
 GameObject:
   m_ObjectHideFlags: 0
@@ -18526,6 +18530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSprite: {fileID: -8109925029918088235, guid: 940f744287e1b5d46b70b249ad93ca2e, type: 3}
   sprite: {fileID: 0}
+  explanation: 
 --- !u!1001 &1105274751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24971,6 +24976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSprite: {fileID: 2883408226214398628, guid: 1e00b1a8bfa73284ca57fd5837a39e93, type: 3}
   sprite: {fileID: 0}
+  explanation: 
 --- !u!1 &1466864550
 GameObject:
   m_ObjectHideFlags: 0
@@ -25238,6 +25244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSprite: {fileID: 2883408226214398628, guid: 533751b1b143061488c5e8849d290b3f, type: 3}
   sprite: {fileID: 0}
+  explanation: 
 --- !u!1 &1479718078
 GameObject:
   m_ObjectHideFlags: 0
@@ -29203,6 +29210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSprite: {fileID: 2883408226214398628, guid: 1e00b1a8bfa73284ca57fd5837a39e93, type: 3}
   sprite: {fileID: 0}
+  explanation: "\uAD6C\uC9C1\uD3EC\uC2A4\uD130"
 --- !u!1 &1653366615
 GameObject:
   m_ObjectHideFlags: 0
@@ -29951,6 +29959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSprite: {fileID: -8109925029918088235, guid: 940f744287e1b5d46b70b249ad93ca2e, type: 3}
   sprite: {fileID: 0}
+  explanation: 
 --- !u!1 &1688465460
 GameObject:
   m_ObjectHideFlags: 0
@@ -31356,6 +31365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSprite: {fileID: -8109925029918088235, guid: 940f744287e1b5d46b70b249ad93ca2e, type: 3}
   sprite: {fileID: 0}
+  explanation: 
 --- !u!1 &1780914984
 GameObject:
   m_ObjectHideFlags: 0
@@ -34232,6 +34242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSprite: {fileID: -8109925029918088235, guid: e14c07e262025f84492a712b9a971759, type: 3}
   sprite: {fileID: 0}
+  explanation: 
 --- !u!1 &1985837130
 GameObject:
   m_ObjectHideFlags: 0
@@ -34778,6 +34789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSprite: {fileID: -8109925029918088235, guid: e14c07e262025f84492a712b9a971759, type: 3}
   sprite: {fileID: 0}
+  explanation: 
 --- !u!1 &2004224306
 GameObject:
   m_ObjectHideFlags: 0

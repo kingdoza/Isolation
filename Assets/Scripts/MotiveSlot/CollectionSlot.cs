@@ -17,6 +17,7 @@ public class CollectionSlot : MotiveSlot, IPointerEnterHandler, IPointerExitHand
 
     public bool IsCollected => isCollected;
     public EvidenceInfo EvidenceInfo => evidenceInfo;
+    [SerializeField] [TextArea] private string explanation;
 
 
 
@@ -49,13 +50,14 @@ public class CollectionSlot : MotiveSlot, IPointerEnterHandler, IPointerExitHand
                 evidenceStuffs.Add(prefabEvidence);
             }
         }
-        foreach (EvidenceStuff stuff in evidenceStuffs)
-        {
-            if (stuff.EvidenceName.Equals(evidenceInfo.name))
-            {
-                evidenceInfo.texts = stuff.Dialogues;
-            }
-        }
+        evidenceInfo.texts = new string[]{ explanation };
+        //foreach (EvidenceStuff stuff in evidenceStuffs)
+        //{
+        //    if (stuff.EvidenceName.Equals(evidenceInfo.name))
+        //    {
+        //        evidenceInfo.texts = stuff.Dialogues;
+        //    }
+        //}
     }
 
 
