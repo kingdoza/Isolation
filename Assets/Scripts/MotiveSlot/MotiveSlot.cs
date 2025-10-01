@@ -29,7 +29,7 @@ public abstract class MotiveSlot : MonoBehaviour
         RectTransform line = CreateSlotLine(generationFormat);
         line.GetComponent<Image>().color = new Color(1, 1, 1, 0.25f);
         line.position = (start + end) / 2;
-        line.sizeDelta = new Vector2(length * 0.4f, generationFormat.lineThickness);
+        line.sizeDelta = new Vector2(length * 0.9f, generationFormat.lineThickness);
         line.rotation = Quaternion.FromToRotation(Vector3.right, dir);
     }
 
