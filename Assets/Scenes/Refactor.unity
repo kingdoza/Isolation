@@ -14919,7 +14919,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 1200, y: 180}
+  m_SizeDelta: {x: 1300, y: 180}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &826626350
 MonoBehaviour:
@@ -34641,7 +34641,7 @@ MonoBehaviour:
   RC: {fileID: 1118970126}
   settingsController: {fileID: 816717238}
   isIntroStart: 0
-  isTutorial: 1
+  isTutorial: 0
   isEndingComplete: 0
   testEndingType: 1
   defaultCursor: {fileID: 2800000, guid: a9811d4281f60ed40807d4ad762a0a2d, type: 3}
