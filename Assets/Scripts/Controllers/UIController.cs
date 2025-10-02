@@ -311,7 +311,7 @@ public class UIController : MonoBehaviour
 
     public void Help_Button()
     {
-        if (tutorial.IsProgessing)
+        if (tutorial && tutorial.IsProgessing)
             return;
         if (helpPanel.activeSelf)
         {
