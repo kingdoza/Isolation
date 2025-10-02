@@ -8,6 +8,7 @@ public class Tutorial : MonoBehaviour
     //[SerializeField] private GameObject[] infoPanels;
     //[SerializeField] private GameObject background;
     private Transform uiOriginParent;
+    private int uiOriginIndex;
     private int currentIdx = 0;
     public bool IsProgessing { get; private set; } = false;
     [HideInInspector] public UnityEvent TutorialStartEvent;
@@ -74,6 +75,7 @@ public class Tutorial : MonoBehaviour
             if (infoEntries[idx].isObject == false)
             {
                 uiOriginParent = infoEntries[idx].topLayerObject.transform.parent;
+                uiOriginIndex = infoEntries[idx].topLayerObject.transform.GetSiblingIndex();
                 infoEntries[idx].topLayerObject.transform.SetParent(transform);
             }
         }
@@ -88,6 +90,8 @@ public class Tutorial : MonoBehaviour
         }
         if (infoEntries[idx].isRoom)
         {
+            transform.GetChild(0).GetComponent<CanvasGroup>().blocksRaycasts = false;
+            //transform.GetChild(0).GetComponent<CanvasGroup>().interactable = false;
             GameManager.Instance.UIController.ActiveRoonTree();
         }
     }
@@ -115,6 +119,7 @@ public class Tutorial : MonoBehaviour
             Debug.Log("DeactiveInfoAt : " + infoEntries[idx].topLayerObject + ", " + uiOriginParent);
             infoEntries[idx].topLayerObject.SetActive(true);
             infoEntries[idx].topLayerObject.transform.SetParent(uiOriginParent);
+            infoEntries[idx].topLayerObject.transform.SetSiblingIndex(uiOriginIndex);
         }
     }
 

@@ -311,6 +311,8 @@ public class UIController : MonoBehaviour
 
     public void Help_Button()
     {
+        if (tutorial.IsProgessing)
+            return;
         if (helpPanel.activeSelf)
         {
             HideHelp();
