@@ -17,7 +17,7 @@ public class CollectionSlot : MotiveSlot, IPointerEnterHandler, IPointerExitHand
 
     public bool IsCollected => isCollected;
     public EvidenceInfo EvidenceInfo => evidenceInfo;
-    [SerializeField] [TextArea] private string explanation;
+    [SerializeField] [TextArea(20, 25)] private string explanation;
 
 
 

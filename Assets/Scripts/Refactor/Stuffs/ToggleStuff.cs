@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class ToggleStuff : ClickableStuff
 {
-    protected override StuffTypeData StuffData => GameData.FocusStuffData;
+    protected override StuffTypeData StuffData => GameData.ClickStuffData;
     [SerializeField] private GameObject toggleObject;
     [SerializeField] private bool initialEnable;
     [SerializeField] private bool maintainThis;

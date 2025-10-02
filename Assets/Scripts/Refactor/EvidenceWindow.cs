@@ -27,7 +27,7 @@ public class EvidenceWindow : MonoBehaviour
         title.text = evidenceInfo.name;
         memory.text = evidenceInfo.description;
         icon.sprite = evidenceInfo.sprite;
-        textArea.text = "  ";
+        textArea.text = "";
 
         foreach (string text in evidenceInfo.texts)
         {
