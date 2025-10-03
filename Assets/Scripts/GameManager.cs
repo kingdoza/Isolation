@@ -79,7 +79,8 @@ public class GameManager : PersistentSingleton<GameManager>
             }
             else
             {
-                Time.timeScale = 1f;
+                if (GameManager.Instance.UIController.IsHelp == false && GameManager.Instance.UIController.IsMind == false)
+                    Time.timeScale = 1f;
                 roomController.enabled = true;
                 if (!Player.Instance.IsUsingItemTypeMatched(ItemType.None))
                     ItemCursor.Instance.Enable(Player.Instance.ItemInUse);

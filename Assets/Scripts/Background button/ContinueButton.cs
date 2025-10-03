@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 using static ControllerUtils;
 
 public class ContinueButton : MonoBehaviour
@@ -18,7 +19,8 @@ public class ContinueButton : MonoBehaviour
         PlaySFX(SFXClips.click2);
         Background.SetActive(false);
         UIBlocker.SetActive(false);
-        Time.timeScale = 1f;
+        if (GameManager.Instance.UIController.IsHelp == false && GameManager.Instance.UIController.IsMind == false)
+            Time.timeScale = 1f;
         RC.enabled = true;
         //DragScroller.CanDrag = true;
     }

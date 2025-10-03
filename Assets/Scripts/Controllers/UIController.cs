@@ -5,6 +5,7 @@ using DG.Tweening;
 using TMPro;
 using static ControllerUtils;
 using UnityEngine.Events;
+using System.Runtime.CompilerServices;
 
 public class UIController : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private CanvasGroup[] leftUICanvases;
     [SerializeField] private GameObject lightSwitchWarning;
     [SerializeField] private GameObject helpPanel;
+    [SerializeField] private GameObject helpMindPanel;
 
     [HideInInspector] public UnityEvent FadeCompleteEvent = new();
 
@@ -38,11 +40,14 @@ public class UIController : MonoBehaviour
 
     private bool isFading = false;
     public bool IsFading => isFading;
+    public bool IsMind => toRoomButton.activeSelf;
+    public bool IsHelp { private set; get; } = false;
 
 
     private void Start()
     {
         helpPanel.SetActive(false);
+        helpMindPanel.SetActive(false);
         tutorial = FindAnyObjectByType<Tutorial>();
         lightSwitchWarning.SetActive(false);
         RegisterDragScrollCondition(() => !mindTreeUI.gameObject.activeSelf);
@@ -313,13 +318,27 @@ public class UIController : MonoBehaviour
     {
         if (tutorial && tutorial.IsProgessing)
             return;
-        if (helpPanel.activeSelf)
+        if (toMindButton.activeSelf)
         {
-            HideHelp();
+            if (helpPanel.activeSelf)
+            {
+                HideHelp();
+            }
+            else
+            {
+                ShowHelp();
+            }
         }
         else
         {
-            ShowHelp();
+            if (helpMindPanel.activeSelf)
+            {
+                HideHelpMind();
+            }
+            else
+            {
+                ShowHelpMind();
+            }
         }
     }
 
@@ -327,6 +346,7 @@ public class UIController : MonoBehaviour
 
     private void ShowHelp()
     {
+        IsHelp = true;
         DisableMoveButtons();
         PlaySFX(SFXClips.click1);
         helpPanel.SetActive(true);
@@ -337,10 +357,29 @@ public class UIController : MonoBehaviour
 
     private void HideHelp()
     {
+        IsHelp = false;
         EnableMoveButtons();
         PlaySFX(SFXClips.click2);
         helpPanel.SetActive(false);
         Time.timeScale = 1;
+    }
+
+
+
+    private void ShowHelpMind()
+    {
+        IsHelp = true;
+        PlaySFX(SFXClips.click1);
+        helpMindPanel.SetActive(true);
+    }
+
+
+
+    private void HideHelpMind()
+    {
+        IsHelp = false;
+        PlaySFX(SFXClips.click2);
+        helpMindPanel.SetActive(false);
     }
 
 
