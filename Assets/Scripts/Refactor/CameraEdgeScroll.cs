@@ -19,6 +19,8 @@ public class CameraEdgeScroll : MonoBehaviour
 
     private void Awake()
     {
+        scrollSpeed = 8;
+        //Debug.Log("scrollSpeed : " + scrollSpeed);
         tutorial = FindAnyObjectByType<Tutorial>();
         cameraDragArea = GetComponent<CameraDragArea>();
     }
