@@ -1,5 +1,6 @@
 using System;
 using System.Net.WebSockets;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 
@@ -23,6 +24,13 @@ public class TriggerEventController : SceneSingleton<TriggerEventController>
         //Debug.Log("PlayerWakeup : " + PlayerWakeup);
         //Debug.Log("FirstScrewsLoose : " + FirstScrewsLoose.GetTriggerValue());
         //Debug.Log("FramePhotoFlip : " + FramePhotoFlip.GetTriggerValue());
+    }
+
+
+
+    public ITriggerEventSendable GetChair()
+    {
+        return FindAnyObjectByType<ClosetChair>() as ITriggerEventSendable;
     }
 }
 

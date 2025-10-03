@@ -4,6 +4,7 @@ public class ConditionalPosition : SingleConditonActivator
 {
     [SerializeField] private Transform trueConditonMarker;
     [SerializeField] private Transform falseConditonMarker;
+    [SerializeField] private bool isStart = false;
     private Vector3 trueConditonPos;
     private Vector3 falseConditonPos;
 
@@ -11,9 +12,20 @@ public class ConditionalPosition : SingleConditonActivator
 
     protected override void Awake()
     {
-        base.Awake();
+        if (isStart == false)
+            base.Awake();
         trueConditonPos = trueConditonMarker.position;
         falseConditonPos = falseConditonMarker.position;
+    }
+
+
+
+    private void Start()
+    {
+        if (isStart)
+        {
+            InitTrigger(triggerEvent);
+        }
     }
 
 

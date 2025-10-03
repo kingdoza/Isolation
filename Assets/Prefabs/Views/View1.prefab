@@ -1890,6 +1890,7 @@ MonoBehaviour:
     targetComponent: {fileID: 0}
   trueConditonMarker: {fileID: 5758262669282542876}
   falseConditonMarker: {fileID: 2105461858236690611}
+  isStart: 0
 --- !u!1 &6639965587321159166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2688,6 +2689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3857150720190144759}
   - component: {fileID: 6344697729703802448}
+  - component: {fileID: 3522737215135949653}
   m_Layer: 0
   m_Name: "(11) \uC758\uC790"
   m_TagString: Untagged
@@ -2704,7 +2706,7 @@ Transform:
   m_GameObject: {fileID: 8741339883146131438}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.072731875, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2765,6 +2767,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3522737215135949653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8741339883146131438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e767273c4826dec428796afc46c064a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 2
+    targetComponent: {fileID: 0}
+  trueConditonMarker: {fileID: 2105461858236690611}
+  falseConditonMarker: {fileID: 3857150720190144759}
+  isStart: 1
 --- !u!1 &8897434291997338536
 GameObject:
   m_ObjectHideFlags: 0
