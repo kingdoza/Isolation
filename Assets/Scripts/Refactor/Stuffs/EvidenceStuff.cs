@@ -28,8 +28,10 @@ public class EvidenceStuff : DialogueStuff
     protected override void Awake()
     {
         base.Awake();
-        collectBeforeDialogues = new string[] { string.Format("{0}인데 아직 잘 모르겠다.", evidenceName) };
-        playerSleepDialogues = new string[] { string.Format("{0}(이)다.", evidenceName) };
+        //collectBeforeDialogues = new string[] { string.Format("{0}인데 아직 잘 모르겠다.", evidenceName) };
+        //playerSleepDialogues = new string[] { string.Format("{0}(이)다.", evidenceName) };
+        collectBeforeDialogues = new string[] { evidenceName + "인데 아직 잘 모르겠다." };
+        playerSleepDialogues = new string[] { evidenceName + "(이)다." };
         Player.Instance.EvidenceCollectEvent.AddListener(OnPlayerCollectedEvidence);
         CollectStatus = Player.Instance.GetCollectStatus(this);
     }
