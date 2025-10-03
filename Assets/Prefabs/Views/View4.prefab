@@ -1303,6 +1303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8456973483411439146}
   - component: {fileID: 8319584406317750460}
+  - component: {fileID: 4281735776146654174}
   m_Layer: 0
   m_Name: "(10) \uC774\uBD88"
   m_TagString: Untagged
@@ -1380,6 +1381,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4281735776146654174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6031501034971675352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410fcd4fbcd29094197db15c098f2629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 1
+    targetComponent: {fileID: 0}
+  trueConditonSprite: {fileID: 21300000, guid: 16f15330a0ca07147b6f22e501deae30, type: 3}
+  falseConditonSprite: {fileID: 21300000, guid: 00187a4fae019304a918fa573789315a, type: 3}
 --- !u!1 &6038186748799628573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,7 +1589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15486917988b4ccb8a6ad3c06f5a5c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  edgeThreshold: 50
+  edgeThickness: 30
   scrollSpeed: 10
 --- !u!1 &6855284955451967712
 GameObject:

@@ -184,6 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3598628830095772204}
   - component: {fileID: 8549484938578442653}
+  - component: {fileID: 49077700821595745}
   m_Layer: 0
   m_Name: "(17) \uC774\uBD88"
   m_TagString: Untagged
@@ -261,6 +262,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &49077700821595745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136650270337033886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410fcd4fbcd29094197db15c098f2629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvent:
+    globalType: 1
+    targetComponent: {fileID: 0}
+  trueConditonSprite: {fileID: 21300000, guid: 89c7b5ec174ccdc46ac0325bb7270215, type: 3}
+  falseConditonSprite: {fileID: 21300000, guid: 4497b846ce0ee9f468f1a62a5f7193d7, type: 3}
 --- !u!1 &1461930113844131143
 GameObject:
   m_ObjectHideFlags: 0
