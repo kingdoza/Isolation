@@ -221,8 +221,8 @@ public class UIController : MonoBehaviour
 
     public void DeactiveMindTree()
     {
-        toMindButton.GetComponent<CanvasGroup>().alpha = 0.5f;
-        toMindButton.GetComponent<CanvasGroup>().interactable = false;
+        toMindButton.GetComponent<CanvasGroup>().alpha = 1f;
+        //toMindButton.GetComponent<CanvasGroup>().interactable = false;
         toMindButton.GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 
@@ -239,8 +239,8 @@ public class UIController : MonoBehaviour
 
     public void DeactiveRoomTree()
     {
-        toRoomButton.GetComponent<CanvasGroup>().alpha = 0.5f;
-        toRoomButton.GetComponent<CanvasGroup>().interactable = false;
+        toRoomButton.GetComponent<CanvasGroup>().alpha = 1f;
+        //toRoomButton.GetComponent<CanvasGroup>().interactable = false;
         toRoomButton.GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 
