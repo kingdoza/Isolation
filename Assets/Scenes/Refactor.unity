@@ -36035,7 +36035,7 @@ MonoBehaviour:
     \uB9D0 \uD55C\uB9C8\uB514 \uC5C6\uC774 \uC220\uC794\uC744 \uBE44\uC6B0\uB294
     \uC544\uBC84\uC9C0\uAC00 \uBCF4\uC778\uB2E4"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 518e44b7247da334caf11fd9b44008f6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3c3eee197edbe6c4fb58df8b24f01549, type: 2}
   m_sharedMaterial: {fileID: 1725447287718112264, guid: 3c3eee197edbe6c4fb58df8b24f01549, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
