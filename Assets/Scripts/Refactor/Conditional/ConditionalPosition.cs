@@ -25,6 +25,7 @@ public class ConditionalPosition : SingleConditonActivator
         if (isStart)
         {
             InitTrigger(triggerEvent);
+            SetConditionalComponent();
         }
     }
 

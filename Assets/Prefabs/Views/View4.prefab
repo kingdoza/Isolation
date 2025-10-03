@@ -1576,6 +1576,7 @@ Transform:
   - {fileID: 6908576340452675860}
   - {fileID: 7386884185053541897}
   - {fileID: 5560565785473808116}
+  - {fileID: 4481725248790814977}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1120903117594093379
@@ -1912,6 +1913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2773598628408827163}
   - component: {fileID: 6839096085971515043}
+  - component: {fileID: 4672887884652122291}
   m_Layer: 0
   m_Name: "(12) \uC758\uC790"
   m_TagString: Untagged
@@ -1992,6 +1994,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4672887884652122291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8190224301155927591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e767273c4826dec428796afc46c064a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConditionalPosition
+  triggerEvent:
+    globalType: 2
+    targetComponent: {fileID: 0}
+  trueConditonMarker: {fileID: 2773598628408827163}
+  falseConditonMarker: {fileID: 4481725248790814977}
+  isStart: 1
 --- !u!1 &8236006749793799476
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,3 +2192,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &9009544247511570252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4481725248790814977}
+  m_Layer: 0
+  m_Name: DisablePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4481725248790814977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9009544247511570252}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -50, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7688409632944904424}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
