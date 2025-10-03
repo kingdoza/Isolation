@@ -60,8 +60,10 @@ public class GameManager : PersistentSingleton<GameManager>
 
     [SerializeField] private string dontknow;
     [SerializeField] private string thisis;
+    [SerializeField] private string memory;
     public string Dontknow => dontknow;
     public string Thisis => thisis;
+    public string Memory => memory;
 
 
 

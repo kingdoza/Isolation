@@ -39,7 +39,7 @@ public class CollectionSlot : MotiveSlot, IPointerEnterHandler, IPointerExitHand
                 break;
             }
         }
-        evidenceInfo.description = string.Format("È¸°í{0}. {1}", memoryNum, memoryName);
+        evidenceInfo.description = string.Format("{0}{1}. {2}", GameManager.Instance.Memory, memoryNum, memoryName);
 
         List<EvidenceStuff> evidenceStuffs = FindObjectsOfType<EvidenceStuff>(true).ToList();
         foreach (GameObject evidencePrefab in mindTreeUI.AdditionalEvidences)

@@ -2602,6 +2602,9 @@ MonoBehaviour:
   testEndingType: 0
   defaultCursor: {fileID: 0}
   holdingCursor: {fileID: 0}
+  dontknow: "\uC778\uB370 \uC544\uC9C1 \uC798 \uBAA8\uB974\uACA0\uB2E4."
+  thisis: "(\uC774)\uB2E4."
+  memory: "\uD68C\uACE0"
 --- !u!4 &1609102364
 Transform:
   m_ObjectHideFlags: 0
