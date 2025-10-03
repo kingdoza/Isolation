@@ -85,6 +85,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
 
     public void Select()
     {
+        Debug.Log("Select");
         GetComponent<Image>().color = Color.gray;
         GameManager.Instance.Player.SelectItem(item);
     }
@@ -93,6 +94,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
 
     public void Unselect()
     {
+        Debug.Log("Unselect");
         GetComponent<Image>().color = Color.white;
         GameManager.Instance.Player.UnselectItem();
     }

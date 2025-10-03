@@ -36,6 +36,7 @@ public class InventoryUI : MonoBehaviour
         {
             GameObject slot = Instantiate(slotPrefab, slotParent);
             InventorySlot newSlot = slot.GetComponent<InventorySlot>();
+            newSlot.OnClicked.AddListener(OnSlotClicked);
             slots.Add(newSlot);
         }
     }
@@ -99,7 +100,7 @@ public class InventoryUI : MonoBehaviour
         {
             if (slot.Item)
                 continue;
-            slot.OnClicked.AddListener(OnSlotClicked);
+            //slot.OnClicked.AddListener(OnSlotClicked);
             slot.SetItem(itemData);
             break;
         }
