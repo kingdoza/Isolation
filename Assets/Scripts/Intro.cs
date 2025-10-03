@@ -99,11 +99,11 @@ public class Intro : MonoBehaviour
             }
             phraseBox.text = firstPart + colorFormat + lastTwo + "</color>";
         }
-        else if (currentPhraseIdx == 3)
-        {
-            string colored = targetPhrase.Replace("고립", "<color=#FF0000>고립</color>");
-            phraseBox.text = colored;
-        }
+        //else if (currentPhraseIdx == 3)
+        //{
+        //    string colored = targetPhrase.Replace("고립", "<color=#FF0000>고립</color>");
+        //    phraseBox.text = colored;
+        //}
         else
         {
             phraseBox.text = targetPhrase;

@@ -676,6 +676,8 @@ MonoBehaviour:
   isTutorial: 0
   isEndingComplete: 0
   testEndingType: 0
+  defaultCursor: {fileID: 0}
+  holdingCursor: {fileID: 0}
 --- !u!4 &934900714
 Transform:
   m_ObjectHideFlags: 0
@@ -868,7 +870,7 @@ MonoBehaviour:
   phraseBox: {fileID: 1322546348}
   fadeinDuration: 1.3
   fadeoutDuration: 0.9
-  holdDuration: 1.5
+  holdDuration: 1
   playDuration: 1
 --- !u!4 &1584302740
 Transform:
