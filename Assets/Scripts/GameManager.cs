@@ -58,6 +58,11 @@ public class GameManager : PersistentSingleton<GameManager>
     public Texture2D HoldingCursor => holdingCursor;
     private float prevScaleTime = 1f;
 
+    [SerializeField] private string dontknow;
+    [SerializeField] private string thisis;
+    public string Dontknow => dontknow;
+    public string Thisis => thisis;
+
 
 
     void Update()
