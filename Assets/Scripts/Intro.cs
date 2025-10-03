@@ -109,16 +109,16 @@ public class Intro : MonoBehaviour
             phraseBox.text = targetPhrase;
         }
 
-        if (currentPhraseIdx == phrases.Length - 1)
-        {
-            phraseBox.fontSize = 80;
-            DOTween.To(
-                () => phraseBox.fontSize,
-                x => phraseBox.fontSize = x,
-                88,
-                fadeoutDuration + fadeinDuration + holdDuration
-            ).SetEase(Ease.Linear);
-        }
+        //if (currentPhraseIdx == phrases.Length - 1)
+        //{
+        //    phraseBox.fontSize = 80;
+        //    DOTween.To(
+        //        () => phraseBox.fontSize,
+        //        x => phraseBox.fontSize = x,
+        //        88,
+        //        fadeoutDuration + fadeinDuration + holdDuration
+        //    ).SetEase(Ease.Linear);
+        //}
     }
 
 

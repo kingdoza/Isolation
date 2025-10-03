@@ -116,10 +116,15 @@ public class Tutorial : MonoBehaviour
         infoEntries[idx].topLayerObject.SetActive(false);
         if (infoEntries[idx].isObject == false)
         {
-            Debug.Log("DeactiveInfoAt : " + infoEntries[idx].topLayerObject + ", " + uiOriginParent);
+            //Debug.Log("DeactiveInfoAt : " + infoEntries[idx].topLayerObject + ", " + uiOriginParent);
             infoEntries[idx].topLayerObject.SetActive(true);
             infoEntries[idx].topLayerObject.transform.SetParent(uiOriginParent);
             infoEntries[idx].topLayerObject.transform.SetSiblingIndex(uiOriginIndex);
+        }
+        if (infoEntries[idx].isArrow)
+        {
+            transform.GetChild(0).GetComponent<CanvasGroup>().interactable = true;
+            transform.GetChild(0).GetComponent<CanvasGroup>().blocksRaycasts = true;
         }
     }
 
