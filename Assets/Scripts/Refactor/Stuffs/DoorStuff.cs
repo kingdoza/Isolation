@@ -40,7 +40,7 @@ public class DoorStuff : ClickableStuff
         else
         {
             PlaySFX(SFXClips.door_Lock);
-            GameManager.Instance.DialogueController.StartDialogueSequence(new string[] { "문은 잠겨있다." }, dialogueDelay);
+            GameManager.Instance.DialogueController.StartDialogueSequence(new string[] { GameManager.Instance.Doorlock }, dialogueDelay);
         }
         //SceneManager.LoadScene("Ending");
     }
