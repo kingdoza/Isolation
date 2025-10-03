@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static ControllerUtils;
+using static EtcUtils;
 
 public class ScreenStuff : ClickableStuff
 {
@@ -50,5 +51,15 @@ public class ScreenStuff : ClickableStuff
     protected void OnDisable()
     {
         screenObject.SetActive(false);
+    }
+
+
+
+    protected override void OnCursorEntered()
+    {
+        if (!enabled) return;
+        if (GetComponent<SpriteRenderer>())
+            GetComponent<SpriteRenderer>().color = hoverColor;
+        EtcUtils.SetCursorTexture(StuffData.CursorTexture);
     }
 }
