@@ -215,8 +215,8 @@ RectTransform:
   m_Children:
   - {fileID: 1683536127}
   - {fileID: 1626954269}
-  - {fileID: 549162083}
   - {fileID: 231465818}
+  - {fileID: 549162083}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -707,6 +707,7 @@ GameObject:
   - component: {fileID: 231465818}
   - component: {fileID: 231465820}
   - component: {fileID: 231465819}
+  - component: {fileID: 231465821}
   m_Layer: 5
   m_Name: Logo
   m_TagString: Untagged
@@ -771,6 +772,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231465817}
   m_CullTransparentMesh: 1
+--- !u!225 &231465821
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231465817}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &235077901
 GameObject:
   m_ObjectHideFlags: 0
