@@ -21111,7 +21111,7 @@ MonoBehaviour:
   collectSprite: {fileID: 6265145246279007859, guid: 8adae9b12af620445862410d74c3804a, type: 3}
   evidencePopup: {fileID: 0}
   popupText: {fileID: 0}
-  evidenceMessage: 
+  evidenceMessage: "\uC774\uC81C \uB098\uAC08 \uC218 \uC788\uC744 \uAC83 \uAC19\uB2E4."
 --- !u!1 &1107698692
 GameObject:
   m_ObjectHideFlags: 0
@@ -37058,7 +37058,7 @@ MonoBehaviour:
   collectSprite: {fileID: 6265145246279007859, guid: 6e1ed8b6cafeae94ca10c55c662d6a49, type: 3}
   evidencePopup: {fileID: 0}
   popupText: {fileID: 0}
-  evidenceMessage: 
+  evidenceMessage: "\uC774\uC81C \uB098\uAC08 \uC218 \uC788\uC744 \uAC83 \uAC19\uB2E4."
 --- !u!1 &1891703195
 GameObject:
   m_ObjectHideFlags: 0
