@@ -6638,6 +6638,7 @@ MonoBehaviour:
     isRoom: 0
     isMindTree: 0
     isArrow: 0
+    isMemory: 0
   - infoPanel: {fileID: 497138094}
     topLayerObject: {fileID: 920448609}
     isObject: 0
@@ -6645,6 +6646,7 @@ MonoBehaviour:
     isRoom: 0
     isMindTree: 0
     isArrow: 0
+    isMemory: 0
   - infoPanel: {fileID: 1759965777}
     topLayerObject: {fileID: 566528688}
     isObject: 0
@@ -6652,6 +6654,7 @@ MonoBehaviour:
     isRoom: 0
     isMindTree: 0
     isArrow: 0
+    isMemory: 0
   - infoPanel: {fileID: 58291251}
     topLayerObject: {fileID: 1629252647}
     isObject: 1
@@ -6659,6 +6662,7 @@ MonoBehaviour:
     isRoom: 0
     isMindTree: 0
     isArrow: 0
+    isMemory: 0
   - infoPanel: {fileID: 1322647709}
     topLayerObject: {fileID: 0}
     isObject: 0
@@ -6666,6 +6670,7 @@ MonoBehaviour:
     isRoom: 0
     isMindTree: 0
     isArrow: 1
+    isMemory: 0
   - infoPanel: {fileID: 660737194}
     topLayerObject: {fileID: 566528688}
     isObject: 0
@@ -6673,6 +6678,7 @@ MonoBehaviour:
     isRoom: 0
     isMindTree: 0
     isArrow: 0
+    isMemory: 0
   - infoPanel: {fileID: 207877877}
     topLayerObject: {fileID: 941733935}
     isObject: 0
@@ -6680,6 +6686,7 @@ MonoBehaviour:
     isRoom: 0
     isMindTree: 0
     isArrow: 0
+    isMemory: 0
   - infoPanel: {fileID: 1911317172}
     topLayerObject: {fileID: 941733935}
     isObject: 0
@@ -6687,6 +6694,7 @@ MonoBehaviour:
     isRoom: 0
     isMindTree: 1
     isArrow: 1
+    isMemory: 0
   - infoPanel: {fileID: 1001693200}
     topLayerObject: {fileID: 1286250265}
     isObject: 0
@@ -6694,6 +6702,7 @@ MonoBehaviour:
     isRoom: 0
     isMindTree: 0
     isArrow: 0
+    isMemory: 0
   - infoPanel: {fileID: 2107983204}
     topLayerObject: {fileID: 56187241}
     isObject: 0
@@ -6701,6 +6710,7 @@ MonoBehaviour:
     isRoom: 0
     isMindTree: 0
     isArrow: 0
+    isMemory: 1
   - infoPanel: {fileID: 185637370}
     topLayerObject: {fileID: 264460837}
     isObject: 0
@@ -6708,6 +6718,7 @@ MonoBehaviour:
     isRoom: 0
     isMindTree: 0
     isArrow: 0
+    isMemory: 0
   - infoPanel: {fileID: 265824790}
     topLayerObject: {fileID: 1105274753}
     isObject: 0
@@ -6715,6 +6726,7 @@ MonoBehaviour:
     isRoom: 0
     isMindTree: 0
     isArrow: 0
+    isMemory: 0
   - infoPanel: {fileID: 1911317172}
     topLayerObject: {fileID: 922823890}
     isObject: 0
@@ -6722,6 +6734,7 @@ MonoBehaviour:
     isRoom: 1
     isMindTree: 0
     isArrow: 1
+    isMemory: 0
   - infoPanel: {fileID: 1761551576}
     topLayerObject: {fileID: 174116690}
     isObject: 1
@@ -6729,6 +6742,7 @@ MonoBehaviour:
     isRoom: 0
     isMindTree: 0
     isArrow: 0
+    isMemory: 0
   - infoPanel: {fileID: 1718815070}
     topLayerObject: {fileID: 0}
     isObject: 0
@@ -6736,6 +6750,7 @@ MonoBehaviour:
     isRoom: 0
     isMindTree: 0
     isArrow: 0
+    isMemory: 0
   TutorialStartEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -37922,7 +37937,7 @@ MonoBehaviour:
   RC: {fileID: 1118970126}
   settingsController: {fileID: 816717238}
   isIntroStart: 0
-  isTutorial: 0
+  isTutorial: 1
   isEndingComplete: 0
   testEndingType: 1
   defaultCursor: {fileID: 2800000, guid: a9811d4281f60ed40807d4ad762a0a2d, type: 3}

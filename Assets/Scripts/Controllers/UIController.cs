@@ -42,6 +42,7 @@ public class UIController : MonoBehaviour
     public bool IsFading => isFading;
     public bool IsMind => toRoomButton.activeSelf;
     public bool IsHelp { private set; get; } = false;
+    public MindTreeUI MindTreeUI => mindTreeUI;
 
 
     private void Start()

@@ -64,7 +64,7 @@ public class MindTreeUI : MonoBehaviour
 
 
 
-    private void SetRouthUI(EndingType endingType, bool checkType = true)
+    public void SetRouthUI(EndingType endingType, bool checkType = true)
     {
         if (checkType && currentType == endingType)
             return;

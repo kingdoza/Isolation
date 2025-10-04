@@ -94,6 +94,10 @@ public class Tutorial : MonoBehaviour
             //transform.GetChild(0).GetComponent<CanvasGroup>().interactable = false;
             GameManager.Instance.UIController.ActiveRoonTree();
         }
+        if (infoEntries[idx].isMemory)
+        {
+            GameManager.Instance.UIController.MindTreeUI.SetRouthUI(EndingType.Bad);
+        }
     }
 
 
@@ -203,4 +207,5 @@ public class InfoEntry
     public bool isRoom;
     public bool isMindTree;
     public bool isArrow;
+    public bool isMemory;
 }
