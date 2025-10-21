@@ -64,7 +64,7 @@ public class EvidenceWindow : MonoBehaviour
         InsertBasicInfo(evidenceInfo);
         //sentenceParent.SetActive(true);
         textArea.gameObject.SetActive(true);
-        rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, 700f);
+        rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, 800f);
         canvasGroup.alpha = 1;
     }
 
